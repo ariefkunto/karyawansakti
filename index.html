@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karyawan Sakti — Kenali Dirimu, Kuasai Karirmu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<style>
+:root{
+  --cream:#FFFEF7;--cream2:#F5F3EC;
+  --ink:#0F172A;--ink2:#334155;--ink3:#64748B;
+  --indigo:#4F46E5;--indigoL:#6366F1;--indigoP:#EEF2FF;--indigoD:#3730A3;
+  --amber:#F59E0B;--amberL:#FCD34D;--amberP:#FFFBEB;--amberD:#D97706;
+  --green:#10B981;--greenP:#ECFDF5;
+  --white:#FFFFFF;--g100:#F1F5F9;--g200:#E2E8F0;--g400:#94A3B8;--g600:#64748B;
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --r:14px;--rl:20px;--rxl:28px;--rs:8px;
+  --sh:0 2px 16px rgba(15,23,42,.07);--shm:0 8px 32px rgba(15,23,42,.11);--shl:0 16px 56px rgba(15,23,42,.16);
+  --tr:all .25s cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--cream);line-height:1.65;overflow-x:hidden}
+.container{max-width:1140px;margin:0 auto;padding:0 24px}
+.hidden{display:none!important}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,254,247,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(79,70,229,.1)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:var(--fd);font-size:1.25rem;font-weight:800;color:var(--ink);text-decoration:none;letter-spacing:-.03em}
+.logo span{color:var(--indigo)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-size:.875rem;font-weight:500;color:var(--ink3);text-decoration:none;transition:var(--tr)}
+.nav-links a:hover{color:var(--indigo)}
+.nav-r{display:flex;align-items:center;gap:12px}
+.lt{display:flex;background:var(--g100);border-radius:10px;overflow:hidden;border:1px solid var(--g200)}
+.lb{padding:5px 13px;font-size:.74rem;font-weight:700;color:var(--ink3);background:transparent;border:none;cursor:pointer;transition:var(--tr);font-family:var(--fb);letter-spacing:.02em}
+.lb.on{background:var(--indigo);color:var(--white)}
+.btn-cta{padding:9px 22px;background:var(--indigo);color:var(--white);font-size:.875rem;font-weight:700;border:none;border-radius:10px;cursor:pointer;transition:var(--tr);text-decoration:none;display:inline-block;font-family:var(--fb)}
+.btn-cta:hover{background:var(--indigoD);transform:translateY(-1px);box-shadow:0 6px 20px rgba(79,70,229,.3)}
+
+/* ── HERO ── */
+#hero{min-height:100vh;background:var(--cream);display:flex;align-items:center;padding-top:64px;position:relative;overflow:hidden}
+.hero-blob1{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(79,70,229,.08) 0%,transparent 70%);top:-100px;right:-80px;pointer-events:none}
+.hero-blob2{position:absolute;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,.08) 0%,transparent 70%);bottom:-60px;left:-60px;pointer-events:none}
+.hero-in{display:grid;grid-template-columns:1fr 420px;gap:56px;align-items:center;padding:80px 0 72px;position:relative;z-index:1}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--indigoP);border:1px solid rgba(99,102,241,.25);border-radius:50px;padding:5px 14px 5px 10px;font-size:.78rem;font-weight:700;color:var(--indigo);letter-spacing:.04em;text-transform:uppercase;margin-bottom:22px}
+.hero-dot{width:8px;height:8px;background:var(--indigo);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+.hero-h1{font-family:var(--fd);font-size:clamp(2.8rem,5.5vw,4.6rem);font-weight:800;color:var(--ink);line-height:1.06;letter-spacing:-.04em;margin-bottom:20px}
+.hero-h1 em{color:var(--indigo);font-style:normal;position:relative}
+.hero-h1 em::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:4px;background:var(--amber);border-radius:2px}
+.hero-p{font-size:1.08rem;color:var(--ink2);line-height:1.78;margin-bottom:36px;font-weight:400;max-width:500px}
+.hero-p strong{color:var(--ink);font-weight:600}
+.hero-acts{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px}
+.btn-hero{padding:14px 30px;background:var(--indigo);color:var(--white);font-weight:700;font-size:1rem;border:none;border-radius:12px;cursor:pointer;transition:var(--tr);text-decoration:none;display:inline-flex;align-items:center;gap:8px;font-family:var(--fb)}
+.btn-hero:hover{background:var(--indigoD);transform:translateY(-2px);box-shadow:0 10px 28px rgba(79,70,229,.32)}
+.btn-hero2{padding:14px 24px;background:transparent;color:var(--ink2);font-weight:600;font-size:.95rem;border:1.5px solid var(--g200);border-radius:12px;cursor:pointer;transition:var(--tr);text-decoration:none;display:inline-flex;align-items:center;gap:8px;font-family:var(--fb)}
+.btn-hero2:hover{border-color:var(--indigo);color:var(--indigo)}
+.hero-pills{display:flex;gap:10px;flex-wrap:wrap}
+.hero-pill{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:600;color:var(--ink3)}
+.hero-pill::before{content:'✓';width:18px;height:18px;background:var(--greenP);color:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;flex-shrink:0}
+
+/* HERO CARD */
+.hero-card{background:var(--white);border-radius:var(--rxl);padding:28px;box-shadow:var(--shl);border:1px solid var(--g200)}
+.hc-label{font-size:.72rem;font-weight:700;color:var(--indigo);letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px}
+.hc-tests{display:grid;gap:10px}
+.hc-test{display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--cream);border-radius:12px;border:1px solid var(--g200);cursor:pointer;transition:var(--tr)}
+.hc-test:hover{background:var(--indigoP);border-color:rgba(99,102,241,.3);transform:translateX(3px)}
+.hc-ico{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.hc-ico.bg1{background:#EDE9FE}
+.hc-ico.bg2{background:#FEF3C7}
+.hc-ico.bg3{background:#D1FAE5}
+.hc-ico.bg4{background:#FEE2E2}
+.hc-info{flex:1}
+.hc-nm{font-size:.9rem;font-weight:700;color:var(--ink);margin-bottom:1px}
+.hc-dur{font-size:.75rem;color:var(--ink3)}
+.hc-arr{color:var(--g400);font-size:.85rem;transition:var(--tr)}
+.hc-test:hover .hc-arr{color:var(--indigo)}
+.hc-note{margin-top:14px;padding:10px 13px;background:var(--amberP);border-radius:10px;font-size:.78rem;color:var(--amberD);font-weight:600;text-align:center;border:1px solid rgba(245,158,11,.2)}
+
+/* ── WHY SECTION ── */
+#why{background:var(--indigo);padding:60px 0}
+.why-g{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.why-item{text-align:center;padding:32px 24px}
+.why-ico{font-size:1.8rem;margin-bottom:12px}
+.why-t{font-family:var(--fd);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:6px}
+.why-d{font-size:.85rem;color:rgba(255,255,255,.65);line-height:1.6}
+
+/* ── TESTS ── */
+#tests{background:var(--white);padding:88px 0}
+.sec-eye{display:inline-flex;align-items:center;gap:6px;background:var(--indigoP);border-radius:50px;padding:4px 13px;font-size:.74rem;font-weight:700;color:var(--indigo);letter-spacing:.04em;text-transform:uppercase;margin-bottom:12px}
+.sec-h{font-family:var(--fd);font-size:clamp(1.9rem,3.8vw,3rem);font-weight:800;color:var(--ink);line-height:1.12;letter-spacing:-.035em;margin-bottom:12px}
+.sec-h span{color:var(--indigo)}
+.sec-p{font-size:1rem;color:var(--ink3);line-height:1.72;max-width:520px}
+.sec-hd{margin-bottom:48px}
+.tg{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.tc{background:var(--cream);border-radius:var(--rxl);padding:28px;border:1.5px solid var(--g200);transition:var(--tr);cursor:pointer;position:relative;overflow:hidden}
+.tc:hover{border-color:var(--indigo);background:var(--white);transform:translateY(-4px);box-shadow:var(--shl)}
+.tc-top{display:flex;align-items:flex-start;gap:14px;margin-bottom:16px}
+.tc-ico{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
+.tc-ico.c1{background:#EDE9FE}
+.tc-ico.c2{background:#FEF3C7}
+.tc-ico.c3{background:#D1FAE5}
+.tc-ico.c4{background:#FEE2E2}
+.tc-meta-top{flex:1}
+.tc-cat{font-size:.7rem;font-weight:700;color:var(--indigo);letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
+.tc-nm{font-family:var(--fd);font-size:1.3rem;font-weight:800;color:var(--ink);letter-spacing:-.02em;margin-bottom:2px}
+.tc-fn{font-size:.77rem;color:var(--g400)}
+.tc-meta-row{display:flex;gap:14px;margin-bottom:14px}
+.tc-mi{font-size:.77rem;color:var(--ink3);font-weight:500;display:flex;align-items:center;gap:4px}
+.tc-divider{height:1px;background:var(--g200);margin-bottom:14px}
+.tc-benefit{font-size:.88rem;color:var(--ink2);line-height:1.65;margin-bottom:20px}
+.tc-benefit strong{color:var(--ink);font-weight:600}
+.btn-start{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:var(--indigo);color:var(--white);font-size:.85rem;font-weight:700;border:none;border-radius:10px;cursor:pointer;transition:var(--tr);font-family:var(--fb)}
+.btn-start:hover{background:var(--indigoD);transform:translateX(3px)}
+
+/* ── HOW ── */
+#how{background:var(--cream2);padding:88px 0}
+.how-g{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px;position:relative}
+.how-line{position:absolute;top:28px;left:calc(16.67% + 28px);right:calc(16.67% + 28px);height:2px;background:repeating-linear-gradient(to right,var(--indigo) 0,var(--indigo) 8px,transparent 8px,transparent 16px);opacity:.3}
+.hw-s{text-align:center;position:relative}
+.hw-n{width:58px;height:58px;background:var(--indigo);border-radius:16px;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:1.3rem;font-weight:800;color:var(--white);margin:0 auto 16px;position:relative;z-index:1;transform:rotate(-3deg)}
+.hw-n:nth-child(1){transform:rotate(3deg)}
+.hw-t{font-family:var(--fd);font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:8px;letter-spacing:-.02em}
+.hw-d{font-size:.87rem;color:var(--ink3);line-height:1.65}
+.hw-tag{display:inline-block;margin-top:10px;background:var(--amberP);color:var(--amberD);font-size:.73rem;font-weight:700;padding:3px 10px;border-radius:50px;border:1px solid rgba(245,158,11,.2)}
+
+/* ── CREATOR ── */
+#creator{background:var(--ink);padding:88px 0}
+.cr-in{display:grid;grid-template-columns:1fr 420px;gap:64px;align-items:center}
+.cr-eyebrow{display:inline-flex;align-items:center;gap:6px;background:rgba(99,102,241,.15);border:1px solid rgba(99,102,241,.3);border-radius:50px;padding:4px 13px;font-size:.74rem;font-weight:700;color:var(--indigoL);letter-spacing:.04em;text-transform:uppercase;margin-bottom:16px}
+.cr-nm{font-family:var(--fd);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;color:var(--white);line-height:1.1;letter-spacing:-.04em;margin-bottom:6px}
+.cr-role{font-size:.95rem;color:var(--amber);font-weight:600;margin-bottom:20px}
+.cr-bio{font-size:.93rem;color:rgba(255,255,255,.6);line-height:1.85;margin-bottom:28px}
+.cr-links{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px}
+.cr-lk{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;font-size:.83rem;font-weight:600;color:rgba(255,255,255,.75);text-decoration:none;transition:var(--tr)}
+.cr-lk:hover{background:var(--indigo);border-color:var(--indigo);color:var(--white);transform:translateY(-2px)}
+.cr-quote{padding:20px 24px;background:rgba(79,70,229,.15);border:1px solid rgba(99,102,241,.3);border-radius:14px;border-left:4px solid var(--indigo)}
+.cr-q-text{font-size:.93rem;color:rgba(255,255,255,.8);line-height:1.75;font-style:italic;margin-bottom:8px}
+.cr-q-by{font-size:.78rem;color:var(--indigoL);font-weight:700}
+.cr-stats-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:var(--rxl);padding:28px}
+.cr-sts-label{font-size:.72rem;font-weight:700;color:rgba(255,255,255,.4);letter-spacing:.06em;text-transform:uppercase;margin-bottom:20px}
+.cr-sts-g{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px}
+.cr-st{padding:16px;background:rgba(255,255,255,.04);border-radius:12px;border:1px solid rgba(255,255,255,.06)}
+.cr-sn{font-family:var(--fd);font-size:2rem;font-weight:800;color:var(--amber);line-height:1;margin-bottom:4px}
+.cr-sl{font-size:.75rem;color:rgba(255,255,255,.45);line-height:1.4}
+.cr-industries{display:flex;gap:6px;flex-wrap:wrap}
+.cr-ind{font-size:.75rem;font-weight:600;padding:5px 11px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:50px;color:rgba(255,255,255,.6)}
+
+/* ── FOOTER ── */
+footer{background:#070B14;padding:36px 0;border-top:1px solid rgba(255,255,255,.06)}
+.ft-in{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.ft-logo{font-family:var(--fd);font-size:1.1rem;font-weight:800;color:var(--white);text-decoration:none;letter-spacing:-.03em}
+.ft-logo span{color:var(--indigoL)}
+.ft-copy{font-size:.78rem;color:rgba(255,255,255,.28)}
+
+/* ── MODAL ── */
+.mov{position:fixed;inset:0;background:rgba(15,23,42,.75);backdrop-filter:blur(10px);z-index:2000;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;visibility:hidden;transition:var(--tr)}
+.mov.on{opacity:1;visibility:visible}
+.mbox{background:var(--white);border-radius:var(--rxl);width:100%;max-width:540px;max-height:92vh;overflow-y:auto;box-shadow:0 32px 80px rgba(15,23,42,.35);transform:scale(.97) translateY(12px);transition:var(--tr)}
+.mov.on .mbox{transform:scale(1) translateY(0)}
+.mh{padding:20px 24px 16px;border-bottom:1px solid var(--g100);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:var(--white);border-radius:var(--rxl) var(--rxl) 0 0;z-index:1}
+.mh-lb{font-size:.7rem;font-weight:700;color:var(--indigo);letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px}
+.mh-nm{font-family:var(--fd);font-size:1.2rem;font-weight:800;color:var(--ink);letter-spacing:-.02em}
+.mc{width:32px;height:32px;background:var(--g100);border:none;border-radius:50%;cursor:pointer;font-size:.9rem;color:var(--ink3);transition:var(--tr);font-family:var(--fb);display:flex;align-items:center;justify-content:center}
+.mc:hover{background:var(--ink);color:var(--white)}
+.mb{padding:24px}
+
+/* STEP INFO */
+.stt{font-family:var(--fd);font-size:1.2rem;font-weight:800;color:var(--ink);letter-spacing:-.02em;margin-bottom:5px}
+.std{font-size:.86rem;color:var(--ink3);margin-bottom:20px;line-height:1.65}
+.fg{margin-bottom:14px}
+.fl{display:block;font-size:.77rem;font-weight:700;color:var(--ink);letter-spacing:.02em;margin-bottom:6px}
+.fi{width:100%;padding:10px 13px;border:1.5px solid var(--g200);border-radius:10px;font-family:var(--fb);font-size:.9rem;color:var(--ink);background:var(--cream);transition:var(--tr);outline:none}
+.fi:focus{border-color:var(--indigo);background:var(--white);box-shadow:0 0 0 3px rgba(79,70,229,.1)}
+.fcons{display:flex;align-items:flex-start;gap:9px;margin-bottom:20px}
+.fcons input[type=checkbox]{width:16px;height:16px;accent-color:var(--indigo);flex-shrink:0;margin-top:2px;cursor:pointer}
+.fcons label{font-size:.77rem;color:var(--ink3);line-height:1.55;cursor:pointer}
+
+/* QUESTIONS */
+.pb-w{background:var(--g100);border-radius:4px;height:4px;margin-bottom:16px;overflow:hidden}
+.pb-f{height:100%;background:linear-gradient(to right,var(--indigo),var(--indigoL));border-radius:4px;transition:width .35s ease}
+.qcnt{font-size:.7rem;font-weight:700;color:var(--indigo);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.qtxt{font-family:var(--fd);font-size:1.08rem;font-weight:700;color:var(--ink);line-height:1.45;margin-bottom:4px;letter-spacing:-.01em}
+.qen{font-size:.81rem;color:var(--g400);font-style:italic;margin-bottom:20px;font-weight:400}
+.pat{background:var(--indigoP);border-radius:10px;padding:12px;text-align:center;font-family:var(--fd);font-size:1.25rem;letter-spacing:5px;margin-bottom:13px;color:var(--indigo);font-weight:800;line-height:2;border:1px solid rgba(79,70,229,.15)}
+
+/* LIKERT */
+.lk-w{display:flex;gap:6px;margin-bottom:20px}
+.lk-o{flex:1}
+.lk-o input{display:none}
+.lk-l{display:block;width:100%;padding:10px 2px;text-align:center;border:1.5px solid var(--g200);border-radius:10px;cursor:pointer;transition:var(--tr);font-size:.7rem;color:var(--ink3);font-weight:500;line-height:1.35;white-space:pre-line}
+.lk-l:hover{border-color:var(--indigo);color:var(--indigo);background:var(--indigoP)}
+.lk-o input:checked+.lk-l{background:var(--indigo);border-color:var(--indigo);color:var(--white);font-weight:700}
+.lk-sc{display:flex;justify-content:space-between;font-size:.67rem;color:var(--g400);margin:-14px 0 16px}
+
+/* MCQ */
+.mcq-w{display:grid;gap:8px;margin-bottom:20px}
+.mcq-o{display:flex;align-items:center;gap:10px;padding:11px 13px;border:1.5px solid var(--g200);border-radius:10px;cursor:pointer;transition:var(--tr);font-size:.87rem;color:var(--ink)}
+.mcq-o:hover{border-color:var(--indigo);background:var(--indigoP)}
+.mcq-o.sel{border-color:var(--indigo);background:var(--indigo);color:var(--white)}
+.mcq-lt{width:26px;height:26px;background:var(--g100);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.72rem;flex-shrink:0;transition:var(--tr)}
+.mcq-o.sel .mcq-lt{background:rgba(255,255,255,.25);color:var(--white)}
+
+/* YES/NO */
+.yn-w{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}
+.yn-b{padding:13px;border:1.5px solid var(--g200);border-radius:10px;cursor:pointer;font-size:.9rem;font-weight:700;color:var(--ink3);background:var(--white);transition:var(--tr);font-family:var(--fb)}
+.yn-b:hover,.yn-b.sel{border-color:var(--indigo);background:var(--indigo);color:var(--white)}
+
+.btn-nx{width:100%;padding:12px;background:var(--indigo);color:var(--white);font-weight:700;font-size:.9rem;border:none;border-radius:10px;cursor:pointer;transition:var(--tr);font-family:var(--fb)}
+.btn-nx:hover:not(:disabled){background:var(--indigoD);transform:translateY(-1px);box-shadow:0 6px 20px rgba(79,70,229,.3)}
+.btn-nx:disabled{opacity:.35;cursor:not-allowed;transform:none;box-shadow:none}
+
+/* RESULTS */
+.rh{text-align:center;margin-bottom:22px;padding-bottom:20px;border-bottom:1px solid var(--g100)}
+.rbadge{display:inline-flex;align-items:center;gap:6px;background:var(--greenP);color:var(--green);font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:50px;border:1px solid rgba(16,185,129,.2);margin-bottom:9px}
+.rnm{font-family:var(--fd);font-size:1.4rem;font-weight:800;color:var(--ink);letter-spacing:-.02em;margin-bottom:3px}
+.rdt{font-size:.77rem;color:var(--g400)}
+.rb-i{margin-bottom:12px}
+.rb-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.rb-lb{font-size:.82rem;font-weight:600;color:var(--ink)}
+.rb-sc{font-size:.82rem;font-weight:800;color:var(--indigo)}
+.rb-tr{height:8px;background:var(--g100);border-radius:4px;overflow:hidden}
+.rb-fi{height:100%;background:linear-gradient(to right,var(--indigo),var(--indigoL));border-radius:4px;width:0;transition:width 1.1s cubic-bezier(.4,0,.2,1)}
+.rcls{text-align:center;padding:16px;background:var(--indigoP);border-radius:12px;margin:16px 0;border:1px solid rgba(79,70,229,.15)}
+.rcl-l{font-size:.7rem;font-weight:700;color:var(--indigo);letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
+.rcl-v{font-family:var(--fd);font-size:1.45rem;font-weight:800;color:var(--ink);letter-spacing:-.02em}
+.rdi{padding:13px 15px;background:var(--cream);border-radius:10px;margin-bottom:8px;border-left:3px solid var(--amber)}
+.rdi-t{font-size:.74rem;font-weight:700;color:var(--amberD);margin-bottom:3px;text-transform:uppercase;letter-spacing:.04em}
+.rdi-d{font-size:.85rem;color:var(--ink2);line-height:1.6}
+.ract{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:18px}
+.btn-em{padding:11px;background:var(--indigo);color:var(--white);font-weight:700;font-size:.84rem;border:none;border-radius:10px;cursor:pointer;transition:var(--tr);font-family:var(--fb)}
+.btn-em:hover{background:var(--indigoD);transform:translateY(-1px);box-shadow:0 6px 20px rgba(79,70,229,.3)}
+.btn-rt{padding:11px;background:transparent;color:var(--ink);font-weight:600;font-size:.84rem;border:1.5px solid var(--g200);border-radius:10px;cursor:pointer;transition:var(--tr);font-family:var(--fb)}
+.btn-rt:hover{border-color:var(--ink);background:var(--ink);color:var(--white)}
+
+/* TOAST */
+.toast{position:fixed;bottom:24px;right:24px;background:var(--ink);color:var(--white);padding:11px 18px;border-radius:10px;font-size:.84rem;font-weight:600;z-index:9999;transform:translateY(60px);opacity:0;transition:var(--tr);border-left:3px solid var(--indigo);max-width:280px;pointer-events:none}
+.toast.on{transform:translateY(0);opacity:1}
+
+@keyframes fy{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:960px){
+  .nav-links{display:none}
+  .hero-in{grid-template-columns:1fr;gap:40px}
+  .hero-card{max-width:480px}
+  .how-g{grid-template-columns:1fr;gap:20px}
+  .how-line{display:none}
+  .cr-in{grid-template-columns:1fr;gap:36px}
+  .tg{grid-template-columns:1fr}
+  .ract{grid-template-columns:1fr}
+  .lk-w{gap:3px}
+  .lk-l{font-size:.65rem;padding:8px 1px}
+  .mb{padding:16px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="nav-in">
+      <a href="#" class="logo">Karyawan<span>Sakti</span></a>
+      <ul class="nav-links">
+        <li><a href="#" data-k="n1">Beranda</a></li>
+        <li><a href="#tests" data-k="n2">Pilih Tes</a></li>
+        <li><a href="#how" data-k="n3">Cara Kerja</a></li>
+        <li><a href="#creator" data-k="n4">Tentang</a></li>
+      </ul>
+      <div class="nav-r">
+        <div class="lt">
+          <button class="lb on" onclick="setLang('id')">ID</button>
+          <button class="lb" onclick="setLang('en')">EN</button>
+        </div>
+        <a href="#tests" class="btn-cta" data-k="n5">Mulai Tes</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="hero-blob1"></div>
+  <div class="hero-blob2"></div>
+  <div class="container">
+    <div class="hero-in">
+      <div>
+        <div class="hero-eyebrow"><span class="hero-dot"></span><span data-k="heyebrow">Gratis · Bilingual · Hasil ke Email</span></div>
+        <h1 class="hero-h1" data-k="htitle">Seberapa Dalam<br>Kamu Kenal<br><em>Dirimu?</em></h1>
+        <p class="hero-p" data-k="hdesc">Tes kepribadian & kognitif berbasis sains yang kasih kamu <strong>insight nyata</strong> — bukan sekadar label. Pahami gaya kerja, potensi, dan minat karirmu dalam 15 menit.</p>
+        <div class="hero-acts">
+          <a href="#tests" class="btn-hero" data-k="hcta1">Coba Gratis Sekarang →</a>
+          <a href="#how" class="btn-hero2" data-k="hcta2">Gimana caranya?</a>
+        </div>
+        <div class="hero-pills">
+          <span class="hero-pill" data-k="hp1">Tidak perlu daftar</span>
+          <span class="hero-pill" data-k="hp2">100% gratis</span>
+          <span class="hero-pill" data-k="hp3">Hasil langsung ke email</span>
+        </div>
+      </div>
+      <div>
+        <div class="hero-card">
+          <div class="hc-label" data-k="hcardlabel">4 Tes Tersedia — Pilih Satu</div>
+          <div class="hc-tests" id="heroCardTests"></div>
+          <div class="hc-note" data-k="hcnote">✨ Semua tes gratis. Hasil dikirim ke emailmu.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="container">
+    <div class="why-g">
+      <div class="why-item">
+        <div class="why-ico">🔬</div>
+        <div class="why-t" data-k="w1t">Berbasis Sains</div>
+        <div class="why-d" data-k="w1d">Semua tes menggunakan framework psikologi yang diakui secara akademis dan profesional.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-ico">⚡</div>
+        <div class="why-t" data-k="w2t">Selesai dalam 15 Menit</div>
+        <div class="why-d" data-k="w2d">Tidak bertele-tele. Jawab pertanyaan, langsung dapat hasil yang actionable.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-ico">📧</div>
+        <div class="why-t" data-k="w3t">Hasil Dikirim ke Email</div>
+        <div class="why-d" data-k="w3d">Laporan lengkap langsung masuk ke inbox kamu. Simpan dan bagi ke HRD kapan saja.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tests">
+  <div class="container">
+    <div class="sec-hd">
+      <div class="sec-eye" data-k="tb">✦ Pilih Tes</div>
+      <h2 class="sec-h" data-k="tt">Mulai dari yang<br><span>Paling Kamu Butuhkan</span></h2>
+      <p class="sec-p" data-k="td">Setiap tes punya tujuan yang berbeda. Baca deskripsinya, pilih yang paling relevan sama kondisi kamu sekarang.</p>
+    </div>
+    <div class="tg" id="testsGrid"></div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="container">
+    <div class="sec-hd">
+      <div class="sec-eye" data-k="hwb">✦ Cara Kerjanya</div>
+      <h2 class="sec-h" data-k="hwt">Simpel Banget —<br><span>3 Langkah Doang</span></h2>
+      <p class="sec-p" data-k="hwd">Serius, semudah itu. Tidak perlu akun, tidak perlu bayar, tidak ada data yang dijual.</p>
+    </div>
+    <div class="how-g">
+      <div class="how-line"></div>
+      <div class="hw-s">
+        <div class="hw-n">1</div>
+        <div class="hw-t" data-k="hw1t">Pilih Tesmu</div>
+        <div class="hw-d" data-k="hw1d">Baca objektif setiap tes. Ada 4 pilihan — pilih yang paling pas sama kebutuhanmu sekarang.</div>
+        <div class="hw-tag" data-k="hw1tag">5 detik doang</div>
+      </div>
+      <div class="hw-s">
+        <div class="hw-n">2</div>
+        <div class="hw-t" data-k="hw2t">Jawab Jujur</div>
+        <div class="hw-d" data-k="hw2d">Tidak ada jawaban yang salah — kecuali di tes IQ 😄. Makin jujur, makin akurat hasilnya.</div>
+        <div class="hw-tag" data-k="hw2tag">10–15 menit</div>
+      </div>
+      <div class="hw-s">
+        <div class="hw-n">3</div>
+        <div class="hw-t" data-k="hw3t">Terima Hasilmu</div>
+        <div class="hw-d" data-k="hw3d">Hasil langsung muncul di layar, plus laporan lengkap dikirim ke emailmu. Simpan dan bagikan.</div>
+        <div class="hw-tag" data-k="hw3tag">Langsung selesai</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="creator">
+  <div class="container">
+    <div class="cr-in">
+      <div>
+        <div class="cr-eyebrow" data-k="crb">✦ Tentang Pembuat</div>
+        <h2 class="cr-nm">Arief Permadi<br>Kuntoaji</h2>
+        <p class="cr-role">Operations &amp; Business Growth Leader</p>
+        <p class="cr-bio" data-k="crbio">Praktisi operasional dengan 10+ tahun pengalaman lintas industri — F&amp;B, EV, healthcare, dan edukasi. Platform ini dibuat karena satu keyakinan: <em>orang yang kenal dirinya sendiri, kerja lebih efektif dan karir lebih terarah.</em></p>
+        <div class="cr-links">
+          <a href="https://linkedin.com/in/ariefpermadi" target="_blank" class="cr-lk">💼 LinkedIn</a>
+          <a href="https://wa.me/6285714142712" target="_blank" class="cr-lk">💬 WhatsApp</a>
+          <a href="mailto:arief.kunto@gmail.com" class="cr-lk">✉️ Email</a>
+          <a href="https://ariefkunto.github.io/ariefpermadi/" target="_blank" class="cr-lk">🌐 Portfolio</a>
+        </div>
+        <div class="cr-quote">
+          <p class="cr-q-text" data-k="crquote">"Self-awareness bukan kemewahan — itu fondasi dari karir yang benar-benar kamu bangun sendiri, bukan yang kebetulan terjadi."</p>
+          <p class="cr-q-by">— Arief Permadi Kuntoaji</p>
+        </div>
+      </div>
+      <div>
+        <div class="cr-stats-card">
+          <div class="cr-sts-label" data-k="crstl">Track Record</div>
+          <div class="cr-sts-g">
+            <div class="cr-st"><div class="cr-sn">10+</div><div class="cr-sl" data-k="cs1">Tahun Pengalaman Profesional</div></div>
+            <div class="cr-st"><div class="cr-sn">100+</div><div class="cr-sl" data-k="cs2">Outlet &amp; Tim yang Dikelola</div></div>
+            <div class="cr-st"><div class="cr-sn">97%</div><div class="cr-sl" data-k="cs3">Customer SLA Rate</div></div>
+            <div class="cr-st"><div class="cr-sn">15%+</div><div class="cr-sl" data-k="cs4">Cost Reduction Achieved</div></div>
+          </div>
+          <div class="cr-sts-label" data-k="crindl">Industri</div>
+          <div class="cr-industries">
+            <span class="cr-ind">F&amp;B Retail</span>
+            <span class="cr-ind">EV / Otomotif</span>
+            <span class="cr-ind">Healthcare</span>
+            <span class="cr-ind">EdTech</span>
+            <span class="cr-ind">Fashion Retail</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="ft-in">
+      <a href="#" class="ft-logo">Karyawan<span>Sakti</span></a>
+      <p class="ft-copy" data-k="fc">© 2026 KaryawanSakti. Dibuat oleh Arief Permadi Kuntoaji.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="mov" id="modal">
+  <div class="mbox">
+    <div class="mh">
+      <div><div class="mh-lb" id="mhLb">Tes Psikologi</div><div class="mh-nm" id="mhNm">Big Five OCEAN</div></div>
+      <button class="mc" onclick="closeModal()">✕</button>
+    </div>
+    <div class="mb">
+      <div id="sInfo">
+        <h3 class="stt" data-k="s1t">Sebelum Mulai 👋</h3>
+        <p class="std" data-k="s1d">Isi nama dan email dulu ya — biar hasilmu bisa dikirim langsung ke inbox kamu setelah selesai.</p>
+        <div class="fg"><label class="fl" data-k="fn">Nama Lengkap</label><input type="text" class="fi" id="iName" placeholder="Masukkan nama lengkap kamu"></div>
+        <div class="fg"><label class="fl" data-k="fe">Alamat Email</label><input type="email" class="fi" id="iEmail" placeholder="nama@email.com"></div>
+        <div class="fcons"><input type="checkbox" id="iConsent"><label for="iConsent" data-k="sc">Saya setuju hasil tes ini dikirim ke email saya, dan saya paham bahwa ini adalah asesmen mandiri — bukan pengganti evaluasi profesional.</label></div>
+        <button class="btn-hero" style="width:100%;justify-content:center" onclick="startTest()" data-k="bst">Mulai Tes →</button>
+      </div>
+      <div id="sQ" class="hidden">
+        <div class="pb-w"><div class="pb-f" id="pbF" style="width:0%"></div></div>
+        <div class="qcnt" id="qCnt">Pertanyaan 1 / 20</div>
+        <div class="pat hidden" id="patD"></div>
+        <div class="qtxt" id="qTxt"></div>
+        <div class="qen" id="qEn"></div>
+        <div id="ansC"></div>
+        <button class="btn-nx" id="btnN" onclick="nextQ()" disabled data-k="bnn">Selanjutnya →</button>
+      </div>
+      <div id="sRes" class="hidden">
+        <div class="rh"><div class="rbadge" id="rBadge">✓ Selesai</div><div class="rnm" id="rNm"></div><div class="rdt" id="rDt"></div></div>
+        <div id="rC"></div>
+        <div class="ract">
+          <button class="btn-em" onclick="doEmail()" data-k="bem">📧 Kirim ke Email</button>
+          <button class="btn-rt" onclick="tryAnother()" data-k="bta">Coba Tes Lain</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+// ═══════════════════════════════════════════════
+// EMAILJS CONFIG — GANTI DENGAN DATA KAMU
+// Daftar gratis di: https://www.emailjs.com
+// ═══════════════════════════════════════════════
+const EJS={pub:'YOUR_PUBLIC_KEY',svc:'YOUR_SERVICE_ID',tpl:'YOUR_TEMPLATE_ID'};
+
+const TR={
+  id:{n1:'Beranda',n2:'Pilih Tes',n3:'Cara Kerja',n4:'Tentang',n5:'Mulai Tes',
+    heyebrow:'Gratis · Bilingual · Hasil ke Email',
+    htitle:'Seberapa Dalam<br>Kamu Kenal<br><em>Dirimu?</em>',
+    hdesc:'Tes kepribadian & kognitif berbasis sains yang kasih kamu <strong>insight nyata</strong> — bukan sekadar label. Pahami gaya kerja, potensi, dan minat karirmu dalam 15 menit.',
+    hcta1:'Coba Gratis Sekarang →',hcta2:'Gimana caranya?',
+    hp1:'Tidak perlu daftar',hp2:'100% gratis',hp3:'Hasil langsung ke email',
+    hcardlabel:'4 Tes Tersedia — Pilih Satu',
+    hcnote:'✨ Semua tes gratis. Hasil dikirim ke emailmu.',
+    w1t:'Berbasis Sains',w1d:'Semua tes menggunakan framework psikologi yang diakui secara akademis dan profesional.',
+    w2t:'Selesai dalam 15 Menit',w2d:'Tidak bertele-tele. Jawab pertanyaan, langsung dapat hasil yang actionable.',
+    w3t:'Hasil Dikirim ke Email',w3d:'Laporan lengkap langsung masuk ke inbox kamu. Simpan dan bagi ke HRD kapan saja.',
+    tb:'✦ Pilih Tes',tt:'Mulai dari yang<br><span>Paling Kamu Butuhkan</span>',
+    td:'Setiap tes punya tujuan yang berbeda. Baca deskripsinya, pilih yang paling relevan sama kondisi kamu sekarang.',
+    hwb:'✦ Cara Kerjanya',hwt:'Simpel Banget —<br><span>3 Langkah Doang</span>',
+    hwd:'Serius, semudah itu. Tidak perlu akun, tidak perlu bayar, tidak ada data yang dijual.',
+    hw1t:'Pilih Tesmu',hw1d:'Baca objektif setiap tes. Ada 4 pilihan — pilih yang paling pas sama kebutuhanmu sekarang.',hw1tag:'5 detik doang',
+    hw2t:'Jawab Jujur',hw2d:'Tidak ada jawaban yang salah — kecuali di tes IQ 😄. Makin jujur, makin akurat hasilnya.',hw2tag:'10–15 menit',
+    hw3t:'Terima Hasilmu',hw3d:'Hasil langsung muncul di layar, plus laporan lengkap dikirim ke emailmu.',hw3tag:'Langsung selesai',
+    crb:'✦ Tentang Pembuat',
+    crbio:'Praktisi operasional dengan 10+ tahun pengalaman lintas industri — F&B, EV, healthcare, dan edukasi. Platform ini dibuat karena satu keyakinan: <em>orang yang kenal dirinya sendiri, kerja lebih efektif dan karir lebih terarah.</em>',
+    crquote:'"Self-awareness bukan kemewahan — itu fondasi dari karir yang benar-benar kamu bangun sendiri, bukan yang kebetulan terjadi."',
+    crstl:'Track Record',cs1:'Tahun Pengalaman Profesional',cs2:'Outlet & Tim yang Dikelola',cs3:'Customer SLA Rate',cs4:'Cost Reduction Achieved',
+    crindl:'Industri',fc:'© 2026 KaryawanSakti. Dibuat oleh Arief Permadi Kuntoaji.',
+    s1t:'Sebelum Mulai 👋',s1d:'Isi nama dan email dulu ya — biar hasilmu bisa dikirim langsung ke inbox kamu setelah selesai.',
+    fn:'Nama Lengkap',fe:'Alamat Email',sc:'Saya setuju hasil tes ini dikirim ke email saya, dan saya paham bahwa ini adalah asesmen mandiri — bukan pengganti evaluasi profesional.',
+    bst:'Mulai Tes →',bnn:'Selanjutnya →',bem:'📧 Kirim ke Email',bta:'Coba Tes Lain',
+    pn:'Masukkan nama lengkap kamu',pe:'nama@email.com',
+    ql:'Pertanyaan',qo:'dari',
+    l1:'Sangat\nTidak Setuju',l2:'Tidak\nSetuju',l3:'Netral',l4:'Setuju',l5:'Sangat\nSetuju',
+    ll:'Sangat Tidak Setuju',lr:'Sangat Setuju',yes:'✓ Ya',no:'✕ Tidak',
+    dnebtn:'Lihat Hasil →',tlab:'Tes Psikologi',
+    profdom:'Profil Dominan',what:'Apa Artinya',hcode:'Kode Holland Kamu',
+    benar:'Jawaban Benar',skor:'Skor',klas:'Klasifikasi',iqrange:'Estimasi Rentang IQ',
+    iqnote:'Estimasi awal berdasarkan tes singkat. Bukan pengganti evaluasi psikometrik profesional.',
+    iqest:'Berdasarkan performa kamu, estimasi rentang IQ kamu adalah'},
+  en:{n1:'Home',n2:'Take a Test',n3:'How It Works',n4:'About',n5:'Start Test',
+    heyebrow:'Free · Bilingual · Results to Email',
+    htitle:'How Well Do You<br>Really Know<br><em>Yourself?</em>',
+    hdesc:'Science-based personality & cognitive tests that give you <strong>real insights</strong> — not just labels. Understand your work style, potential, and career interests in 15 minutes.',
+    hcta1:'Try for Free →',hcta2:'How does it work?',
+    hp1:'No registration needed',hp2:'100% free',hp3:'Results straight to email',
+    hcardlabel:'4 Tests Available — Choose One',
+    hcnote:'✨ All tests are free. Results sent to your email.',
+    w1t:'Science-Based',w1d:'All tests use psychology frameworks recognized by academics and professionals worldwide.',
+    w2t:'Done in 15 Minutes',w2d:"No fluff. Answer the questions, get actionable results immediately.",
+    w3t:'Results to Your Email',w3d:'Full report sent straight to your inbox. Save it and share with HR anytime.',
+    tb:'✦ Choose a Test',tt:'Start with What<br><span>You Need Most Right Now</span>',
+    td:"Each test serves a different purpose. Read the description, pick the one most relevant to where you are right now.",
+    hwb:'✦ How It Works',hwt:"Seriously Simple —<br><span>Just 3 Steps</span>",
+    hwd:"No account, no payment, no data selling. Just honest results.",
+    hw1t:'Pick Your Test',hw1d:"Read each test's objective. 4 options — pick the one that fits your needs right now.",hw1tag:'Takes 5 seconds',
+    hw2t:'Answer Honestly',hw2d:"There are no wrong answers — except in the IQ test 😄. The more honest, the more accurate.",hw2tag:'10–15 minutes',
+    hw3t:'Get Your Results',hw3d:"Results appear on screen instantly, plus a full report sent to your email to keep.",hw3tag:'Done immediately',
+    crb:'✦ About the Creator',
+    crbio:"Operations practitioner with 10+ years across industries — F&B, EV, healthcare, and education. This platform was built on one belief: <em>people who truly know themselves work more effectively and build more intentional careers.</em>",
+    crquote:'"Self-awareness isn\'t a luxury — it\'s the foundation of a career you actually build on purpose, not one that just happens to you."',
+    crstl:'Track Record',cs1:'Years Professional Experience',cs2:'Outlets & Teams Managed',cs3:'Customer SLA Rate',cs4:'Cost Reduction Achieved',
+    crindl:'Industries',fc:'© 2026 KaryawanSakti. Built by Arief Permadi Kuntoaji.',
+    s1t:'Before We Start 👋',s1d:"Enter your name and email so your results can land straight in your inbox when you're done.",
+    fn:'Full Name',fe:'Email Address',sc:"I agree that my test results will be sent to my email above, and I understand this is a self-assessment tool — not a replacement for professional evaluation.",
+    bst:'Start Test →',bnn:'Next →',bem:'📧 Send to Email',bta:'Try Another Test',
+    pn:'Enter your full name',pe:'name@email.com',
+    ql:'Question',qo:'of',
+    l1:'Strongly\nDisagree',l2:'Disagree',l3:'Neutral',l4:'Agree',l5:'Strongly\nAgree',
+    ll:'Strongly Disagree',lr:'Strongly Agree',yes:'✓ Yes',no:'✕ No',
+    dnebtn:'See Results →',tlab:'Psychology Test',
+    profdom:'Dominant Profile',what:'What This Means',hcode:'Your Holland Code',
+    benar:'Correct Answers',skor:'Score',klas:'Classification',iqrange:'Estimated IQ Range',
+    iqnote:'Initial estimate based on a short test. Not a substitute for professional psychometric evaluation.',
+    iqest:'Based on your performance, your estimated IQ range is'}
+};
+
+const TESTS={
+  bigfive:{id:'bigfive',cat_id:'Kepribadian',cat_en:'Personality',
+    nm_id:'Big Five OCEAN',nm_en:'Big Five OCEAN',fn_id:'Model Kepribadian Lima Faktor',fn_en:'Five-Factor Personality Model',
+    ico:'🧬',bg:'c1',dur_id:'10-12 Menit',dur_en:'10-12 Min',qn:'20',
+    obj_id:'Pahami 5 dimensi kepribadianmu: Keterbukaan, Kesadaran, Ekstraversi, Keramahan, dan Neurotisme. Cocok banget kalau kamu mau lebih kenal dirimu sendiri atau lagi dalam proses pengembangan diri.',
+    obj_en:'Understand your 5 personality dimensions: Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism. Perfect if you want to deeply understand yourself or are in a personal development journey.',
+    benefit_id:'Kamu bakal tau <strong>kekuatan dan blind spot</strong> kepribadianmu — plus profesi apa yang paling cocok buat kamu.',
+    benefit_en:"You'll discover your personality <strong>strengths and blind spots</strong> — plus which careers actually fit who you are.",
+    type:'likert',dims:['O','C','E','A','N'],
+    dn_id:{O:'Openness (Keterbukaan)',C:'Conscientiousness (Kesadaran)',E:'Extraversion (Ekstraversi)',A:'Agreeableness (Keramahan)',N:'Neuroticism (Neurotisme)'},
+    dn_en:{O:'Openness',C:'Conscientiousness',E:'Extraversion',A:'Agreeableness',N:'Neuroticism'},
+    qs:[
+      {id:'Saya suka menjelajahi ide-ide baru dan tidak biasa.',en:'I enjoy exploring new and unusual ideas.',d:'O'},
+      {id:'Saya memiliki imajinasi yang kaya dan aktif.',en:'I have a rich and active imagination.',d:'O'},
+      {id:'Saya tertarik pada seni, musik, atau sastra.',en:'I am interested in art, music, or literature.',d:'O'},
+      {id:'Saya suka merenung dan berpikir tentang hal-hal yang mendalam.',en:'I enjoy reflecting and thinking about deep topics.',d:'O'},
+      {id:'Saya selalu menyelesaikan tugas tepat waktu.',en:'I always complete tasks on time.',d:'C'},
+      {id:'Saya terorganisir dan sistematis dalam bekerja.',en:'I am organized and systematic at work.',d:'C'},
+      {id:'Saya membuat rencana dan mengikutinya dengan konsisten.',en:'I make plans and follow through on them consistently.',d:'C'},
+      {id:'Saya sangat teliti dalam setiap pekerjaan yang saya lakukan.',en:'I am very thorough in everything I do.',d:'C'},
+      {id:'Saya merasa nyaman berbicara di depan banyak orang.',en:'I feel comfortable speaking in front of a large group.',d:'E'},
+      {id:'Saya mudah bergaul dan membuat teman baru.',en:'I easily socialize and make new friends.',d:'E'},
+      {id:'Saya merasa berenergi setelah bersama banyak orang.',en:'I feel energized after spending time with many people.',d:'E'},
+      {id:'Saya suka menjadi pemimpin dalam sebuah kelompok.',en:'I enjoy being the leader in a group.',d:'E'},
+      {id:'Saya mudah berempati dengan perasaan orang lain.',en:"I easily empathize with others' feelings.",d:'A'},
+      {id:'Saya suka membantu orang lain yang membutuhkan.',en:'I enjoy helping people who are in need.',d:'A'},
+      {id:'Saya cenderung menghindari konflik dan perdebatan.',en:'I tend to avoid conflict and arguments.',d:'A'},
+      {id:'Saya percaya pada kebaikan dan kejujuran orang lain.',en:'I believe in the goodness and honesty of others.',d:'A'},
+      {id:'Saya mudah merasa cemas atau khawatir.',en:'I easily feel anxious or worried.',d:'N'},
+      {id:'Saya mudah terpengaruh oleh suasana hati yang buruk.',en:'I am easily affected by bad moods.',d:'N'},
+      {id:'Saya sering merasa tertekan atau stres.',en:'I often feel pressured or stressed.',d:'N'},
+      {id:'Saya sulit untuk tetap tenang saat menghadapi masalah.',en:'I find it hard to stay calm when facing problems.',d:'N'}
+    ]},
+  disc:{id:'disc',cat_id:'Gaya Kerja',cat_en:'Work Style',
+    nm_id:'DISC',nm_en:'DISC',fn_id:'Asesmen Gaya Perilaku',fn_en:'Behavioral Style Assessment',
+    ico:'🎯',bg:'c2',dur_id:'10-12 Menit',dur_en:'10-12 Min',qn:'24',
+    obj_id:'Temukan gaya perilaku dominanmu: Dominance, Influence, Steadiness, atau Conscientiousness. Sangat berguna buat kamu yang mau ngerti cara kerja, komunikasi, dan gaya kepemimpinanmu.',
+    obj_en:'Discover your dominant behavioral style: Dominance, Influence, Steadiness, or Conscientiousness. Super useful for understanding how you work, communicate, and lead.',
+    benefit_id:'Kamu bakal ngerti <strong>kenapa kamu bereaksi seperti itu</strong> di tempat kerja — dan cara kerja paling efektif buat kamu.',
+    benefit_en:"You'll understand <strong>why you react the way you do</strong> at work — and what work style actually brings out your best.",
+    type:'likert',dims:['D','I','S','C'],
+    dn_id:{D:'Dominance (Dominan)',I:'Influence (Pengaruh)',S:'Steadiness (Stabilitas)',C:'Conscientiousness (Ketelitian)'},
+    dn_en:{D:'Dominance',I:'Influence',S:'Steadiness',C:'Conscientiousness'},
+    qs:[
+      {id:'Saya suka mengambil kendali dan membuat keputusan.',en:'I like taking control and making decisions.',d:'D'},
+      {id:'Saya berani menghadapi tantangan secara langsung.',en:'I boldly face challenges head-on.',d:'D'},
+      {id:'Saya lebih suka bertindak cepat daripada menunggu.',en:'I prefer acting quickly rather than waiting.',d:'D'},
+      {id:'Saya tidak takut bersaing dengan orang lain.',en:"I'm not afraid to compete with others.",d:'D'},
+      {id:'Saya tegas dan langsung dalam menyampaikan pendapat.',en:"I'm assertive and direct in expressing my opinions.",d:'D'},
+      {id:'Saya lebih fokus pada hasil akhir daripada prosesnya.',en:'I focus more on end results than the process.',d:'D'},
+      {id:'Saya pandai meyakinkan dan memotivasi orang lain.',en:"I'm good at persuading and motivating others.",d:'I'},
+      {id:'Antusiasme saya mudah menular ke orang lain.',en:'My enthusiasm is contagious to others.',d:'I'},
+      {id:'Saya suka bertemu orang baru dan membangun jaringan.',en:'I love meeting new people and building my network.',d:'I'},
+      {id:'Saya ekspresif dan komunikatif dalam berinteraksi.',en:"I'm expressive and communicative when interacting.",d:'I'},
+      {id:'Saya sangat optimis dan selalu melihat sisi positif.',en:"I'm very optimistic and always see the positive side.",d:'I'},
+      {id:'Saya senang bekerja dalam tim dan berkolaborasi.',en:'I enjoy working in teams and collaborating.',d:'I'},
+      {id:'Saya lebih suka lingkungan kerja yang stabil dan dapat diprediksi.',en:'I prefer a stable and predictable work environment.',d:'S'},
+      {id:'Saya sabar dan tekun dalam menyelesaikan tugas.',en:"I'm patient and persistent in completing tasks.",d:'S'},
+      {id:'Saya sangat loyal kepada tim dan organisasi saya.',en:"I'm very loyal to my team and organization.",d:'S'},
+      {id:'Saya mendengarkan dengan sangat penuh perhatian.',en:'I listen with great attentiveness.',d:'S'},
+      {id:'Saya bisa diandalkan dan selalu konsisten.',en:"I'm dependable and always consistent.",d:'S'},
+      {id:'Saya tidak terburu-buru dalam mengambil keputusan penting.',en:"I don't rush when making important decisions.",d:'S'},
+      {id:'Saya sangat memperhatikan detail dan akurasi.',en:'I pay great attention to detail and accuracy.',d:'C'},
+      {id:'Saya selalu mengikuti prosedur dan standar yang berlaku.',en:'I always follow established procedures and standards.',d:'C'},
+      {id:'Saya suka menganalisis data secara mendalam sebelum memutuskan.',en:'I like to analyze data thoroughly before making decisions.',d:'C'},
+      {id:'Saya sangat kritis terhadap kualitas pekerjaan saya sendiri.',en:"I'm very critical of the quality of my own work.",d:'C'},
+      {id:'Saya lebih suka bukti dan fakta daripada opini.',en:'I prefer evidence and facts over opinions.',d:'C'},
+      {id:'Saya mendekati setiap masalah secara sistematis.',en:'I approach every problem systematically.',d:'C'}
+    ]},
+  holland:{id:'holland',cat_id:'Minat Karir',cat_en:'Career Interest',
+    nm_id:'Holland Code',nm_en:'Holland Code',fn_id:'RIASEC — Minat Karir & Kepribadian',fn_en:'RIASEC — Career Interest & Personality',
+    ico:'🧭',bg:'c3',dur_id:'8-10 Menit',dur_en:'8-10 Min',qn:'30',
+    obj_id:'Temukan tipe kepribadian karirmu dari 6 dimensi RIASEC. Hasilnya berupa kode 3 huruf yang nunjukin karir ideal, lingkungan kerja yang cocok, dan bidang studi yang relevan buat kamu.',
+    obj_en:'Discover your career personality from 6 RIASEC dimensions. Results in a 3-letter code that points to your ideal career, suitable work environment, and relevant fields of study.',
+    benefit_id:'Kamu bakal dapat <strong>arah karir yang konkret</strong> — bukan cuma "kamu cocok jadi X" tapi juga kenapa dan lingkungan seperti apa yang bikin kamu produktif.',
+    benefit_en:"You'll get <strong>concrete career direction</strong> — not just 'you'd be good at X' but why, and what kind of environment makes you most productive.",
+    type:'yesno',dims:['R','I','A','S','E','C'],
+    dn_id:{R:'Realistic (Praktis)',I:'Investigative (Analitis)',A:'Artistic (Kreatif)',S:'Social (Sosial)',E:'Enterprising (Wirausaha)',C:'Conventional (Terstruktur)'},
+    dn_en:{R:'Realistic',I:'Investigative',A:'Artistic',S:'Social',E:'Enterprising',C:'Conventional'},
+    qs:[
+      {id:'Saya menikmati pekerjaan yang melibatkan tangan atau alat fisik.',en:'I enjoy work that involves using hands or physical tools.',d:'R'},
+      {id:'Saya suka memperbaiki atau merakit benda-benda.',en:'I like fixing or assembling things.',d:'R'},
+      {id:'Saya tertarik pada cara kerja mesin dan teknologi.',en:"I'm interested in how machines and technology work.",d:'R'},
+      {id:'Saya lebih suka kerja praktis daripada pekerjaan administratif.',en:'I prefer practical work over administrative tasks.',d:'R'},
+      {id:'Saya nyaman bekerja di lapangan atau luar ruangan.',en:"I'm comfortable working in the field or outdoors.",d:'R'},
+      {id:'Saya suka menganalisis data dan informasi secara mendalam.',en:'I enjoy analyzing data and information in depth.',d:'I'},
+      {id:'Saya menikmati penelitian dan investigasi masalah.',en:'I enjoy research and problem investigation.',d:'I'},
+      {id:'Saya ingin tahu cara kerja sesuatu secara ilmiah.',en:"I'm curious about how things work scientifically.",d:'I'},
+      {id:'Saya suka memecahkan masalah yang kompleks dan menantang.',en:'I like solving complex and challenging problems.',d:'I'},
+      {id:'Saya lebih suka bekerja sendiri dengan fokus mendalam.',en:'I prefer working alone with deep focus.',d:'I'},
+      {id:'Saya suka mengekspresikan diri melalui seni atau desain.',en:'I like expressing myself through art or design.',d:'A'},
+      {id:'Saya menikmati menulis, membuat musik, atau fotografi.',en:'I enjoy writing, making music, or photography.',d:'A'},
+      {id:'Saya suka berkreasi dan menghasilkan karya orisinal.',en:'I enjoy creating and producing original work.',d:'A'},
+      {id:'Saya lebih suka pekerjaan yang tidak terlalu kaku dan terstruktur.',en:"I prefer work that isn't too rigid or structured.",d:'A'},
+      {id:'Saya sangat tertarik pada estetika, keindahan, dan gaya.',en:"I'm very interested in aesthetics, beauty, and style.",d:'A'},
+      {id:'Saya senang membantu orang lain mengatasi masalah mereka.',en:'I enjoy helping others overcome their problems.',d:'S'},
+      {id:'Saya tertarik pada dunia pengajaran, pelatihan, atau konseling.',en:"I'm interested in teaching, training, or counseling.",d:'S'},
+      {id:'Saya sangat peduli pada kesejahteraan orang di sekitar saya.',en:'I deeply care about the well-being of people around me.',d:'S'},
+      {id:'Saya senang bekerja bersama kelompok yang beragam.',en:'I enjoy working with diverse groups.',d:'S'},
+      {id:'Saya suka berkomunikasi, mendengarkan, dan memfasilitasi.',en:'I enjoy communicating, listening, and facilitating.',d:'S'},
+      {id:'Saya suka memimpin dan mempengaruhi keputusan orang lain.',en:"I like leading and influencing others' decisions.",d:'E'},
+      {id:'Saya tertarik pada dunia bisnis dan kewirausahaan.',en:"I'm interested in business and entrepreneurship.",d:'E'},
+      {id:'Saya suka menjual ide, produk, atau layanan.',en:'I enjoy selling ideas, products, or services.',d:'E'},
+      {id:'Saya suka mengambil risiko yang sudah diperhitungkan.',en:'I like taking calculated risks.',d:'E'},
+      {id:'Saya percaya diri dalam negosiasi dan persuasi.',en:"I'm confident in negotiation and persuasion.",d:'E'},
+      {id:'Saya suka pekerjaan yang terstruktur, terorganisir, dan jelas.',en:'I enjoy work that is structured, organized, and clear.',d:'C'},
+      {id:'Saya teliti dan akurat dalam menangani data dan administrasi.',en:"I'm thorough and accurate in handling data and administration.",d:'C'},
+      {id:'Saya mengikuti prosedur dengan penuh disiplin.',en:'I follow procedures with full discipline.',d:'C'},
+      {id:'Saya nyaman bekerja dengan angka, laporan, dan spreadsheet.',en:"I'm comfortable working with numbers, reports, and spreadsheets.",d:'C'},
+      {id:'Saya suka merapikan, mengkategorikan, dan mendokumentasikan informasi.',en:'I enjoy organizing, categorizing, and documenting information.',d:'C'}
+    ]},
+  iq:{id:'iq',cat_id:'Kemampuan Kognitif',cat_en:'Cognitive Ability',
+    nm_id:'Logical Reasoning',nm_en:'Logical Reasoning',fn_id:'Tes Kemampuan Kognitif & IQ',fn_en:'Cognitive Ability & IQ Test',
+    ico:'🧩',bg:'c4',dur_id:'12-15 Menit',dur_en:'12-15 Min',qn:'15',
+    obj_id:'Ukur kemampuan berpikir logis, pengenalan pola, dan penalaran verbal-numerikmu. Memberikan gambaran umum kemampuan kognitif yang sering dipakai dalam seleksi rekrutmen dan pengembangan karir.',
+    obj_en:'Measure your logical thinking, pattern recognition, and verbal-numerical reasoning. Gives a general picture of cognitive abilities commonly used in recruitment screening and career development.',
+    benefit_id:'Kamu bakal tau <strong>seberapa kuat kemampuan logika</strong> dan penalaranmu — relevan banget buat persiapan rekrutmen atau assessment kerja.',
+    benefit_en:"You'll know <strong>how strong your logical reasoning</strong> actually is — highly relevant for job recruitment preparation or workplace assessments.",
+    type:'mcq',
+    qs:[
+      {id:'Lanjutkan pola berikut:',en:'Continue the following pattern:',pat:'2 — 4 — 8 — 16 — ?',oi:['A. 24','B. 32','C. 20','D. 28'],oe:['A. 24','B. 32','C. 20','D. 28'],ans:1},
+      {id:'Lanjutkan pola berikut:',en:'Continue the following pattern:',pat:'1 — 4 — 9 — 16 — ?',oi:['A. 20','B. 25','C. 24','D. 21'],oe:['A. 20','B. 25','C. 24','D. 21'],ans:1},
+      {id:'Lanjutkan pola berikut:',en:'Continue the following pattern:',pat:'2 — 3 — 5 — 8 — 13 — ?',oi:['A. 21','B. 18','C. 20','D. 16'],oe:['A. 21','B. 18','C. 20','D. 16'],ans:0},
+      {id:'Lanjutkan pola berikut:',en:'Continue the following pattern:',pat:'5 — 10 — 20 — 35 — ?',oi:['A. 50','B. 55','C. 45','D. 60'],oe:['A. 50','B. 55','C. 45','D. 60'],ans:1},
+      {id:'Lanjutkan pola huruf:',en:'Continue the letter pattern:',pat:'A — C — E — G — ?',oi:['A. H','B. I','C. J','D. K'],oe:['A. H','B. I','C. J','D. K'],ans:1},
+      {id:'Analogi: Dokter : Rumah Sakit = Guru : __',en:'Analogy: Doctor : Hospital = Teacher : __',pat:null,oi:['A. Buku','B. Murid','C. Sekolah','D. Kelas'],oe:['A. Book','B. Student','C. School','D. Classroom'],ans:2},
+      {id:'Analogi: Panas : Dingin = Siang : __',en:'Analogy: Hot : Cold = Day : __',pat:null,oi:['A. Sore','B. Malam','C. Gelap','D. Bulan'],oe:['A. Evening','B. Night','C. Dark','D. Moon'],ans:1},
+      {id:'Analogi: Burung : Terbang = Ikan : __',en:'Analogy: Bird : Fly = Fish : __',pat:null,oi:['A. Air','B. Berlari','C. Berenang','D. Bernafas'],oe:['A. Water','B. Run','C. Swim','D. Breathe'],ans:2},
+      {id:'Mana yang BERBEDA dari kelompoknya?',en:'Which one is DIFFERENT from the group?',pat:null,oi:['A. Apel','B. Mangga','C. Wortel','D. Anggur'],oe:['A. Apple','B. Mango','C. Carrot','D. Grape'],ans:2},
+      {id:'Mana yang BERBEDA dari kelompoknya?',en:'Which one is DIFFERENT from the group?',pat:null,oi:['A. Kucing','B. Anjing','C. Harimau','D. Elang'],oe:['A. Cat','B. Dog','C. Tiger','D. Eagle'],ans:3},
+      {id:'Semua A adalah B. Semua B adalah C. Maka...',en:'All A are B. All B are C. Therefore...',pat:null,oi:['A. Semua C adalah A','B. Semua A adalah C','C. Tidak ada A yang C','D. Beberapa C adalah A'],oe:['A. All C are A','B. All A are C','C. No A are C','D. Some C are A'],ans:1},
+      {id:'Jika hujan → jalan basah. Jalan TIDAK basah. Maka...',en:'If rain → road is wet. Road is NOT wet. Therefore...',pat:null,oi:['A. Tidak hujan','B. Sudah hujan','C. Akan hujan','D. Mungkin hujan'],oe:["A. It didn't rain",'B. It has rained','C. It will rain','D. Maybe it rained'],ans:0},
+      {id:'Jika 5 pekerja selesaikan pekerjaan dalam 10 hari, berapa lama 10 pekerja?',en:'If 5 workers complete a job in 10 days, how long will 10 workers take?',pat:null,oi:['A. 20 hari','B. 5 hari','C. 4 hari','D. 8 hari'],oe:['A. 20 days','B. 5 days','C. 4 days','D. 8 days'],ans:1},
+      {id:'Lanjutkan pola berikut:',en:'Continue the following pattern:',pat:'100 — 81 — 64 — 49 — ?',oi:['A. 36','B. 40','C. 30','D. 42'],oe:['A. 36','B. 40','C. 30','D. 42'],ans:0},
+      {id:'Hubungan SAMA dengan: Penulis → Novel',en:'SAME relationship as: Author → Novel',pat:null,oi:['A. Rumah : Arsitek','B. Komposer : Simfoni','C. Dokter : Pasien','D. Guru : Kelas'],oe:['A. House : Architect','B. Composer : Symphony','C. Doctor : Patient','D. Teacher : Classroom'],ans:1}
+    ]}
+};
+
+const BF={
+  id:{O:'Kamu sangat terbuka terhadap pengalaman baru — imajinatif, kreatif, dan suka menjelajahi ide serta perspektif yang tidak biasa.',C:'Kamu sangat terorganisir, disiplin, dan berorientasi tujuan. Bisa diandalkan untuk menyelesaikan tugas dengan baik dan konsisten.',E:'Kamu sangat ekstrovert — energik, suka bersosialisasi, dan merasa paling hidup saat bersama banyak orang.',A:'Kamu sangat ramah, empatik, dan kooperatif. Cenderung mengutamakan harmoni dalam setiap hubungan sosial.',N:'Kamu lebih sensitif secara emosional. Merasakan emosi dengan intens — kekuatan empati sekaligus area untuk membangun resiliensi.'},
+  en:{O:"You're highly open to new experiences — imaginative, creative, and love exploring unusual ideas and perspectives.",C:"You're highly organized, disciplined, and goal-oriented. Relied upon to complete tasks thoroughly and consistently.",E:"You're highly extroverted — energetic, sociable, and feel most alive when around many people.",A:"You're highly agreeable, empathetic, and cooperative. You tend to prioritize harmony in every social relationship.",N:"You tend to be more emotionally sensitive. You feel emotions intensely — a strength for empathy and an area to build resilience."}
+};
+const DISC_D={
+  id:{D:'Kamu tipe Dominant — pengambil keputusan cepat, berorientasi hasil, dan tidak takut menghadapi tantangan. Natural leader efektif di lingkungan kompetitif.',I:'Kamu tipe Influence — komunikatif, optimis, dan pandai memotivasi. Bersinar di peran yang butuh persuasi dan networking.',S:'Kamu tipe Steadiness — sabar, loyal, dan dapat diandalkan. Menciptakan stabilitas dalam tim dan jadi perekat kuat di organisasi.',C:'Kamu tipe Conscientiousness — analitis, teliti, dan berorientasi kualitas. Orang yang pastikan standar tinggi selalu terpenuhi.'},
+  en:{D:"You're a Dominant type — fast decision-maker, results-oriented, unafraid of challenges. A natural leader effective in competitive environments.",I:"You're an Influence type — communicative, optimistic, great at motivating others. You shine in roles requiring persuasion and networking.",S:"You're a Steadiness type — patient, loyal, and dependable. You create stability in teams and serve as a strong bonding force.",C:"You're a Conscientiousness type — analytical, thorough, quality-oriented. The person who ensures high standards are always met."}
+};
+const RIASEC={
+  id:{R:'Lingkungan paling cocok: teknis & praktis — engineering, konstruksi, teknisi, militer, atau pertanian.',I:'Lingkungan paling cocok: penelitian & analitis — laboratorium, akademia, data science, atau konsultasi strategis.',A:'Lingkungan paling cocok: kreatif & ekspresif — desain, media, seni, penulisan, atau entertainment.',S:'Lingkungan paling cocok: berorientasi manusia — pendidikan, kesehatan, konseling, HR, atau pelayanan sosial.',E:'Lingkungan paling cocok: kepemimpinan & bisnis — sales, manajemen, kewirausahaan, atau konsultasi bisnis.',C:'Lingkungan paling cocok: terstruktur & data-driven — akuntansi, administrasi, IT, perbankan, atau manajemen data.'},
+  en:{R:'Ideal environment: practical & technical — engineering, construction, technical roles, military, or agriculture.',I:'Ideal environment: research & analytical — laboratories, academia, data science, or strategic consulting.',A:'Ideal environment: creative & expressive — design, media, arts, writing, or entertainment.',S:'Ideal environment: people-oriented — education, healthcare, counseling, HR, or social services.',E:'Ideal environment: leadership & business — sales, management, entrepreneurship, or business consulting.',C:'Ideal environment: structured & data-driven — accounting, administration, IT, banking, or data management.'}
+};
+
+let LG='id',CUR=null,CQ=0,ANS=[],UI={name:'',email:''},RES=null;
+
+function setLang(l){
+  LG=l;document.documentElement.lang=l;
+  document.querySelectorAll('.lb').forEach(b=>b.classList.toggle('on',b.textContent===l.toUpperCase()));
+  document.querySelectorAll('[data-k]').forEach(el=>{const v=TR[l][el.dataset.k];if(v!==undefined)el.innerHTML=v;});
+  document.getElementById('iName').placeholder=TR[l].pn;
+  document.getElementById('iEmail').placeholder=TR[l].pe;
+  renderCards();renderHeroCard();
+  if(CUR&&!document.getElementById('sQ').classList.contains('hidden'))renderQ();
+}
+
+function renderHeroCard(){
+  const tOrder=['bigfive','disc','holland','iq'];
+  document.getElementById('heroCardTests').innerHTML=tOrder.map(id=>{
+    const t=TESTS[id];
+    return`<div class="hc-test" onclick="openTest('${t.id}')">
+      <div class="hc-ico ${t.bg}">${t.ico}</div>
+      <div class="hc-info">
+        <div class="hc-nm">${LG==='id'?t.nm_id:t.nm_en}</div>
+        <div class="hc-dur">${LG==='id'?t.dur_id:t.dur_en} · ${t.qn} ${LG==='id'?'soal':'questions'}</div>
+      </div>
+      <div class="hc-arr">→</div>
+    </div>`;
+  }).join('');
+}
+
+function renderCards(){
+  document.getElementById('testsGrid').innerHTML=Object.values(TESTS).map(t=>`
+    <div class="tc" onclick="openTest('${t.id}')">
+      <div class="tc-top">
+        <div class="tc-ico ${t.bg}">${t.ico}</div>
+        <div class="tc-meta-top">
+          <div class="tc-cat">${LG==='id'?t.cat_id:t.cat_en}</div>
+          <div class="tc-nm">${LG==='id'?t.nm_id:t.nm_en}</div>
+          <div class="tc-fn">${LG==='id'?t.fn_id:t.fn_en}</div>
+        </div>
+      </div>
+      <div class="tc-meta-row">
+        <span class="tc-mi">⏱ ${LG==='id'?t.dur_id:t.dur_en}</span>
+        <span class="tc-mi">📝 ${t.qn} ${LG==='id'?'pertanyaan':'questions'}</span>
+      </div>
+      <div class="tc-divider"></div>
+      <div class="tc-benefit">${LG==='id'?t.benefit_id:t.benefit_en}</div>
+      <button class="btn-start">${LG==='id'?'Mulai Tes →':'Start Test →'}</button>
+    </div>`).join('');
+}
+
+function openTest(id){
+  CUR=TESTS[id];CQ=0;ANS=[];
+  document.getElementById('mhLb').textContent=TR[LG].tlab;
+  document.getElementById('mhNm').textContent=LG==='id'?CUR.nm_id:CUR.nm_en;
+  showStep('info');
+  document.getElementById('modal').classList.add('on');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  document.getElementById('modal').classList.remove('on');
+  document.body.style.overflow='';
+  setTimeout(()=>{showStep('info');CUR=null;ANS=[];},300);
+}
+function showStep(s){
+  ['sInfo','sQ','sRes'].forEach(id=>document.getElementById(id).classList.add('hidden'));
+  document.getElementById(s==='info'?'sInfo':s==='q'?'sQ':'sRes').classList.remove('hidden');
+}
+function startTest(){
+  const n=document.getElementById('iName').value.trim();
+  const e=document.getElementById('iEmail').value.trim();
+  const c=document.getElementById('iConsent').checked;
+  if(!n){toast(LG==='id'?'Mohon isi nama lengkap.':'Please enter your full name.','w');return;}
+  if(!e||!e.includes('@')){toast(LG==='id'?'Mohon isi email yang valid.':'Please enter a valid email.','w');return;}
+  if(!c){toast(LG==='id'?'Mohon centang persetujuan.':'Please check the consent box.','w');return;}
+  UI={name:n,email:e};CQ=0;ANS=[];showStep('q');renderQ();
+}
+
+function renderQ(){
+  const t=CUR,L=TR[LG],q=t.qs[CQ],tot=t.qs.length;
+  document.getElementById('pbF').style.width=`${(CQ/tot)*100}%`;
+  document.getElementById('qCnt').textContent=`${L.ql} ${CQ+1} ${L.qo} ${tot}`;
+  document.getElementById('qTxt').textContent=LG==='id'?q.id:q.en;
+  document.getElementById('qEn').textContent=LG==='en'?'':q.en;
+  const pd=document.getElementById('patD');
+  if(q.pat){pd.textContent=q.pat;pd.classList.remove('hidden');}else pd.classList.add('hidden');
+  const ac=document.getElementById('ansC');
+  const bn=document.getElementById('btnN');
+  bn.disabled=true;
+  bn.textContent=CQ===tot-1?L.dnebtn:L.bnn;
+  if(t.type==='likert'){
+    const labs=[L.l1,L.l2,L.l3,L.l4,L.l5];
+    ac.innerHTML=`<div class="lk-w">${labs.map((lb,i)=>`<div class="lk-o"><input type="radio" name="lk" id="lk${i}" value="${i+1}" onchange="onA(${i+1})"><label class="lk-l" for="lk${i}">${lb}</label></div>`).join('')}</div><div class="lk-sc"><span>${L.ll}</span><span>${L.lr}</span></div>`;
+    if(ANS[CQ]!==undefined){const r=document.getElementById('lk'+(ANS[CQ]-1));if(r){r.checked=true;bn.disabled=false;}}
+  }else if(t.type==='yesno'){
+    ac.innerHTML=`<div class="yn-w"><button class="yn-b${ANS[CQ]===1?' sel':''}" onclick="onYN(1,this)">${L.yes}</button><button class="yn-b${ANS[CQ]===0?' sel':''}" onclick="onYN(0,this)">${L.no}</button></div>`;
+    if(ANS[CQ]!==undefined)bn.disabled=false;
+  }else if(t.type==='mcq'){
+    const opts=LG==='id'?q.oi:q.oe;
+    ac.innerHTML=`<div class="mcq-w">${opts.map((op,i)=>`<div class="mcq-o${ANS[CQ]===i?' sel':''}" onclick="onM(${i},this)"><div class="mcq-lt">${String.fromCharCode(65+i)}</div><span>${op.slice(3)}</span></div>`).join('')}</div>`;
+    if(ANS[CQ]!==undefined)bn.disabled=false;
+  }
+}
+
+function onA(v){ANS[CQ]=v;document.getElementById('btnN').disabled=false;}
+function onYN(v,el){ANS[CQ]=v;document.querySelectorAll('.yn-b').forEach(b=>b.classList.remove('sel'));el.classList.add('sel');document.getElementById('btnN').disabled=false;}
+function onM(i,el){ANS[CQ]=i;document.querySelectorAll('.mcq-o').forEach(o=>o.classList.remove('sel'));el.classList.add('sel');document.getElementById('btnN').disabled=false;}
+function nextQ(){if(ANS[CQ]===undefined)return;if(CQ<CUR.qs.length-1){CQ++;renderQ();}else calcAndShow();}
+
+function calcAndShow(){
+  const t=CUR;
+  if(t.id==='bigfive'){
+    const s={O:[],C:[],E:[],A:[],N:[]};
+    t.qs.forEach((q,i)=>{if(ANS[i]!==undefined)s[q.d].push(ANS[i]);});
+    RES={};Object.keys(s).forEach(d=>{const a=s[d];RES[d]=Math.round((a.reduce((x,y)=>x+y,0)/(a.length*5))*100);});
+  }else if(t.id==='disc'){
+    const s={D:0,I:0,S:0,C:0};
+    t.qs.forEach((q,i)=>{if(ANS[i]!==undefined)s[q.d]+=ANS[i];});
+    const tot=Object.values(s).reduce((a,b)=>a+b,0);
+    RES={};Object.keys(s).forEach(d=>{RES[d]=Math.round((s[d]/tot)*100);});
+  }else if(t.id==='holland'){
+    const s={R:0,I:0,A:0,S:0,E:0,C:0},cnt={R:0,I:0,A:0,S:0,E:0,C:0};
+    t.qs.forEach((q,i)=>{cnt[q.d]++;if(ANS[i]===1)s[q.d]++;});
+    RES={};Object.keys(s).forEach(d=>{RES[d]=Math.round((s[d]/cnt[d])*100);});
+  }else if(t.id==='iq'){
+    let ok=0;t.qs.forEach((q,i)=>{if(ANS[i]===q.ans)ok++;});
+    const pct=Math.round((ok/t.qs.length)*100);
+    let cls,iqr;
+    if(pct>=93){cls={id:'Luar Biasa',en:'Exceptional'};iqr='130+';}
+    else if(pct>=80){cls={id:'Superior',en:'Superior'};iqr='120–129';}
+    else if(pct>=67){cls={id:'Di Atas Rata-Rata',en:'Above Average'};iqr='110–119';}
+    else if(pct>=47){cls={id:'Rata-Rata',en:'Average'};iqr='90–109';}
+    else{cls={id:'Perlu Latihan',en:'Needs Practice'};iqr='< 90';}
+    RES={ok,tot:t.qs.length,pct,cls,iqr};
+  }
+  showStep('res');renderRes();
+}
+
+function renderRes(){
+  const t=CUR,L=TR[LG],nm=LG==='id'?t.nm_id:t.nm_en;
+  document.getElementById('rNm').textContent=UI.name;
+  document.getElementById('rDt').textContent=new Date().toLocaleDateString(LG==='id'?'id-ID':'en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+  document.getElementById('rBadge').textContent=`✓ ${nm} ${LG==='id'?'Selesai':'Complete'}`;
+  const rc=document.getElementById('rC');
+  if(t.id==='bigfive'||t.id==='disc'){
+    const dn=LG==='id'?t.dn_id:t.dn_en;
+    const dom=Object.entries(RES).sort((a,b)=>b[1]-a[1])[0];
+    const desc=t.id==='bigfive'?BF[LG][dom[0]]:DISC_D[LG][dom[0]];
+    rc.innerHTML=`<div>${Object.entries(RES).map(([d,sc])=>`<div class="rb-i"><div class="rb-hd"><span class="rb-lb">${dn[d]}</span><span class="rb-sc">${sc}%</span></div><div class="rb-tr"><div class="rb-fi" data-w="${sc}"></div></div></div>`).join('')}</div>
+    <div class="rcls"><div class="rcl-l">${L.profdom}</div><div class="rcl-v">${dn[dom[0]]}</div></div>
+    <div class="rdi"><div class="rdi-t">${L.what}</div><div class="rdi-d">${desc}</div></div>`;
+  }else if(t.id==='holland'){
+    const dn=LG==='id'?t.dn_id:t.dn_en;
+    const sorted=Object.entries(RES).sort((a,b)=>b[1]-a[1]);
+    const code=sorted.slice(0,3).map(([d])=>d).join('');
+    rc.innerHTML=`<div>${Object.entries(RES).map(([d,sc])=>`<div class="rb-i"><div class="rb-hd"><span class="rb-lb">${dn[d]}</span><span class="rb-sc">${sc}%</span></div><div class="rb-tr"><div class="rb-fi" data-w="${sc}"></div></div></div>`).join('')}</div>
+    <div class="rcls"><div class="rcl-l">${L.hcode}</div><div class="rcl-v">${code}</div></div>
+    <div class="rdi"><div class="rdi-t">${L.what}</div><div class="rdi-d">${RIASEC[LG][sorted[0][0]]}</div></div>`;
+  }else if(t.id==='iq'){
+    const clsL=LG==='id'?RES.cls.id:RES.cls.en;
+    rc.innerHTML=`<div class="rcls"><div class="rcl-l">${L.benar}</div><div class="rcl-v">${RES.ok} / ${RES.tot}</div></div>
+    <div class="rb-i" style="margin:14px 0"><div class="rb-hd"><span class="rb-lb">${L.skor}</span><span class="rb-sc">${RES.pct}%</span></div><div class="rb-tr"><div class="rb-fi" data-w="${RES.pct}"></div></div></div>
+    <div class="rcls"><div class="rcl-l">${L.klas}</div><div class="rcl-v">${clsL}</div></div>
+    <div class="rdi"><div class="rdi-t">${L.iqrange}</div><div class="rdi-d">${L.iqest} <strong>${RES.iqr}</strong>. ${L.iqnote}</div></div>`;
+  }
+  setTimeout(()=>document.querySelectorAll('.rb-fi').forEach(b=>{b.style.width=(b.dataset.w||0)+'%';}),120);
+}
+
+function doEmail(){
+  if(EJS.pub==='YOUR_PUBLIC_KEY'){toast(LG==='id'?'⚠️ EmailJS belum dikonfigurasi. Lihat komentar di kode.':'⚠️ EmailJS not configured. See code comments.','w');return;}
+  const t=CUR,L=TR[LG],dn=LG==='id'?t.dn_id:t.dn_en;
+  let rt='';
+  if(t.id==='iq'){rt=`Skor: ${RES.ok}/${RES.tot} (${RES.pct}%)\nKlasifikasi: ${LG==='id'?RES.cls.id:RES.cls.en}\nEstimasi IQ: ${RES.iqr}`;}
+  else if(t.id==='holland'){const s=Object.entries(RES).sort((a,b)=>b[1]-a[1]);rt=`Kode Holland: ${s.slice(0,3).map(([d])=>d).join('')}\n`+Object.entries(RES).map(([d,sc])=>`${dn[d]}: ${sc}%`).join('\n');}
+  else{rt=Object.entries(RES).map(([d,sc])=>`${dn[d]}: ${sc}%`).join('\n');}
+  emailjs.init(EJS.pub);
+  toast(LG==='id'?'📤 Mengirim hasil...':'📤 Sending results...','i');
+  emailjs.send(EJS.svc,EJS.tpl,{to_name:UI.name,to_email:UI.email,test_name:LG==='id'?t.nm_id:t.nm_en,test_full:LG==='id'?t.fn_id:t.fn_en,result_text:rt,date:new Date().toLocaleDateString(LG==='id'?'id-ID':'en-US',{year:'numeric',month:'long',day:'numeric'}),platform:'KaryawanSakti'})
+  .then(()=>toast(LG==='id'?`✓ Hasil dikirim ke ${UI.email}`:`✓ Results sent to ${UI.email}`,'s'))
+  .catch(()=>toast(LG==='id'?'✕ Gagal mengirim. Coba lagi.':'✕ Failed to send. Try again.','e'));
+}
+function tryAnother(){closeModal();setTimeout(()=>document.getElementById('tests').scrollIntoView({behavior:'smooth'}),350);}
+function toast(msg,type='i'){
+  const el=document.getElementById('toast');el.textContent=msg;
+  el.style.borderLeftColor=type==='s'?'#10B981':type==='w'?'#F59E0B':type==='e'?'#EF4444':'var(--indigo)';
+  el.classList.add('on');setTimeout(()=>el.classList.remove('on'),3600);
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  renderCards();renderHeroCard();
+  document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)closeModal();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+});
+</script>
+</body>
+</html>
