@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#4F46E5">
+<meta name="color-scheme" content="light">
 <title>KaryawanSakti — Tes Psikologi & Tools Karir Gratis</title>
 <meta name="description" content="Kenali potensimu lewat tes DISC, Big Five, MBTI, Holland Code & IQ gratis. Lengkap dengan CV Builder, SOP Builder, Training Analysis & Knowledge Center untuk karirmu yang lebih terarah.">
 <meta name="keywords" content="tes psikologi gratis, tes DISC online, tes MBTI gratis, Big Five test, pengembangan karir Indonesia, CV builder, SOP builder, training HR">
@@ -18,8 +20,13 @@
 <meta name="twitter:title" content="KaryawanSakti — Platform Pengembangan Karir Profesional Indonesia">
 <meta name="twitter:description" content="Kenali potensimu lewat tes DISC, Big Five, MBTI, Holland Code & IQ gratis. Lengkap dengan CV Builder, SOP Builder, Training Analysis & Knowledge Center.">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"KaryawanSakti","url":"https://karyawansakti.com","description":"Platform tools karir dan pengembangan profesional untuk mid-level workers Indonesia","potentialAction":{"@type":"SearchAction","target":"https://karyawansakti.com/#tests","query-input":"required name=search_term_string"}}</script>
+<!-- DNS prefetch for external resources -->
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.gstatic.com/s/sora/v12/xMQOuFFYT72X5wkB_18qmnndmSdSnk-DKQJRBg.woff2" as="font" type="font/woff2" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"></noscript>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
@@ -43,6 +50,18 @@ html{scroll-behavior:smooth;overflow-x:hidden}
 body{font-family:var(--fb);color:var(--ink);background:var(--cream);line-height:1.65;overflow-x:hidden;padding-top:64px}
 .container{max-width:1140px;margin:0 auto;padding:0 24px}
 .hidden{display:none!important}
+/* Performance: contain layout for below-fold sections */
+#tests,#tips,#career-profile,#why,#wb-promo,#sop-promo,#kc-promo{
+  contain:layout style;
+}
+/* Reduce CLS: reserve space for dynamic content */
+.tg{min-height:200px}
+#tipsGrid{min-height:100px}
+/* Reduce paint cost on animations */
+.tc,.store-card,.tip-card{will-change:transform}
+.hero-blob1,.hero-blob2{will-change:opacity}
+/* Optimize font rendering */
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeSpeed}
 
 /* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,254,247,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(79,70,229,.1)}
@@ -61,8 +80,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,254,247
 
 /* ── HERO ── */
 #hero{min-height:calc(100vh - 64px);background:var(--cream);display:flex;align-items:flex-start;padding-top:0;position:relative;overflow:hidden}
-.hero-blob1{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(79,70,229,.08) 0%,transparent 70%);top:-100px;right:-80px;pointer-events:none}
-.hero-blob2{position:absolute;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,.08) 0%,transparent 70%);bottom:-60px;left:-60px;pointer-events:none}
+.hero-blob1{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(79,70,229,.08) 0%,transparent 70%);top:-100px;right:-80px;pointer-events:none;will-change:auto}
+.hero-blob2{position:absolute;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,.08) 0%,transparent 70%);bottom:-60px;left:-60px;pointer-events:none;will-change:auto}
 .hero-in{padding:16px 0 64px;position:relative;z-index:1;max-width:720px}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--indigoP);border:1px solid rgba(99,102,241,.25);border-radius:50px;padding:5px 14px 5px 10px;font-size:.78rem;font-weight:700;color:var(--indigo);letter-spacing:.04em;text-transform:uppercase;margin-bottom:22px}
 .hero-dot{width:8px;height:8px;background:var(--indigo);border-radius:50%;animation:pulse 2s infinite}
@@ -781,7 +800,7 @@ footer{background:#070B14;padding:36px 0;border-top:1px solid rgba(255,255,255,.
 .hero-social-proof{display:flex;align-items:center;gap:16px;margin-top:20px;flex-wrap:wrap}
 .sp-stat{display:flex;align-items:center;gap:8px}
 .sp-avatars{display:flex}
-.sp-avatar{width:28px;height:28px;border-radius:50%;border:2px solid var(--white);background:linear-gradient(135deg,var(--indigo),var(--indigoL));display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:700;color:#fff;margin-left:-8px;flex-shrink:0}
+.sp-avatar{width:28px;height:28px;min-width:28px;min-height:28px;border-radius:50%;border:2px solid var(--white);background:linear-gradient(135deg,var(--indigo),var(--indigoL));display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:700;color:#fff;margin-left:-8px;flex-shrink:0}
 .sp-avatar:first-child{margin-left:0}
 .sp-text{font-size:.78rem;color:var(--ink3)}
 .sp-text strong{color:var(--ink);font-weight:700}
@@ -825,6 +844,17 @@ footer{background:#070B14;padding:36px 0;border-top:1px solid rgba(255,255,255,.
   #kc-promo .container{grid-template-columns:1fr!important;gap:16px!important}
   #kc-promo .btn-inhouse{width:100%!important;justify-content:center!important}
   .why-g{grid-template-columns:1fr!important}
+}
+
+/* Respect user preference for reduced motion */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+  }
+  .hero-blob1,.hero-blob2{display:none}
+  .hero-dot{animation:none}
 }
 </style>
 <script type="application/ld+json">
@@ -2180,13 +2210,24 @@ function initHamburger() {
 }
 
 document.addEventListener('DOMContentLoaded',()=>{
+  // Critical — run immediately for nav & lang
   initHamburger();
   initDropdown();
-  renderCards();
-  renderTips();
   setLang(LG);
   document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)closeModal();});
   document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+
+  // Non-critical — defer to idle time to reduce TBT
+  const deferRender = (fn) => {
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(fn, {timeout: 2000});
+    } else {
+      setTimeout(fn, 1);
+    }
+  };
+  deferRender(() => renderCards());
+  deferRender(() => renderTips());
+  deferRender(() => renderCareerProfile());
 });
 
 
@@ -3601,6 +3642,7 @@ const TIMELINE_REC = {
 let TS = { mode:null, step:0, profile:{}, ratings:{}, goals:{}, style:null };
 
 function openTraining(mode) {
+  // Ensure jsPDF and html2canvas are loaded before opening
   TS = { mode, step:1, profile:{}, ratings:{}, goals:{}, style:null };
   document.getElementById('tmhLb').textContent = TR[LG].n_train||'Training Analysis';
   document.getElementById('tmhNm').textContent = mode==='individual'?(LG==='id'?'Individual Development Plan':'Individual Development Plan'):(LG==='id'?'Training Needs Analysis':'Training Needs Analysis');
@@ -4269,6 +4311,27 @@ document.addEventListener('DOMContentLoaded', () => {
   if (tm) tm.addEventListener('click', function(e) { if (e.target === this) closeTModal(); });
 });
 
+
+// ── Intersection Observer for lazy section reveal ────────────────
+(function(){
+  if(!('IntersectionObserver' in window)) return;
+  const sections = document.querySelectorAll('#tips,#career-profile,#wb-promo,#sop-promo,#kc-promo,#creator');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        e.target.style.opacity='1';
+        e.target.style.transform='none';
+        obs.unobserve(e.target);
+      }
+    });
+  },{rootMargin:'100px',threshold:0.05});
+  sections.forEach(s => {
+    s.style.opacity='0';
+    s.style.transform='translateY(16px)';
+    s.style.transition='opacity .4s ease, transform .4s ease';
+    obs.observe(s);
+  });
+})();
 </script>
 
 <!-- Floating WA Button -->
