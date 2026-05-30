@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KaryawanSakti — Platform Pengembangan Karir Profesional Indonesia</title>
+<title>KaryawanSakti — Tes Psikologi & Tools Karir Gratis</title>
 <meta name="description" content="Kenali potensimu lewat tes DISC, Big Five, MBTI, Holland Code & IQ gratis. Lengkap dengan CV Builder, SOP Builder, Training Analysis & Knowledge Center untuk karirmu yang lebih terarah.">
 <meta name="keywords" content="tes psikologi gratis, tes DISC online, tes MBTI gratis, Big Five test, pengembangan karir Indonesia, CV builder, SOP builder, training HR">
 <meta name="author" content="Arief Permadi Kuntoaji — KaryawanSakti">
@@ -20,10 +20,11 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"KaryawanSakti","url":"https://karyawansakti.com","description":"Platform tools karir dan pengembangan profesional untuk mid-level workers Indonesia","potentialAction":{"@type":"SearchAction","target":"https://karyawansakti.com/#tests","query-input":"required name=search_term_string"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"></noscript>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
 <style>
 :root{
   --cream:#FFFEF7;--cream2:#F5F3EC;
@@ -826,6 +827,15 @@ footer{background:#070B14;padding:36px 0;border-top:1px solid rgba(255,255,255,.
   .why-g{grid-template-columns:1fr!important}
 }
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Apakah tes psikologi di KaryawanSakti benar-benar gratis?","acceptedAnswer":{"@type":"Answer","text":"Ya, semua tes psikologi di KaryawanSakti — DISC, Big Five OCEAN, MBTI, Holland Code, dan Logical Reasoning IQ — 100% gratis. Tidak perlu daftar akun. Hasil dikirim langsung ke email kamu."}},
+{"@type":"Question","name":"Berapa lama waktu yang dibutuhkan untuk menyelesaikan tes?","acceptedAnswer":{"@type":"Answer","text":"Setiap tes membutuhkan sekitar 12-20 menit. Tidak ada batas waktu — kamu bisa mengerjakan dengan santai dan jujur untuk hasil yang paling akurat."}},
+{"@type":"Question","name":"Apa perbedaan tes DISC, Big Five, dan MBTI?","acceptedAnswer":{"@type":"Answer","text":"Tes DISC mengukur gaya perilaku dan cara kerja kamu. Big Five OCEAN mengukur 5 dimensi kepribadian secara komprehensif. MBTI mengidentifikasi tipe kepribadian dari 16 kemungkinan. Ketiganya saling melengkapi."}},
+{"@type":"Question","name":"Apakah hasil tes bisa digunakan untuk keperluan rekrutmen?","acceptedAnswer":{"@type":"Answer","text":"Hasil tes KaryawanSakti adalah alat self-assessment mandiri berbasis framework psikologi yang diakui secara akademis. Bisa digunakan sebagai referensi pribadi atau diskusi dengan HRD, namun bukan pengganti evaluasi psikometrik profesional."}},
+{"@type":"Question","name":"Apakah KaryawanSakti menyediakan training untuk perusahaan?","acceptedAnswer":{"@type":"Answer","text":"Ya, KaryawanSakti menyediakan inhouse training dan Training Needs Analysis (TNA) untuk perusahaan. Hubungi kami via WhatsApp untuk konsultasi gratis."}}
+]}
+</script>
 </head>
 <body>
 
@@ -888,16 +898,38 @@ footer{background:#070B14;padding:36px 0;border-top:1px solid rgba(255,255,255,.
   <div class="container">
     <div class="hero-in">
       <div class="hero-eyebrow"><span class="hero-dot"></span><span data-k="heyebrow">Untuk Profesional yang Serius Naik Level</span></div>
-      <h1 class="hero-h1" data-k="htitle">Sudah Tahu Seberapa<br>Jauh Kamu Bisa<br><em>Naik Level?</em></h1>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px">
+        <span style="display:inline-flex;align-items:center;gap:5px;background:var(--white);border:1px solid var(--g200);border-radius:8px;padding:5px 11px;font-size:.74rem;font-weight:700;color:var(--ink3);box-shadow:var(--sh)">🧬 Big Five</span>
+        <span style="display:inline-flex;align-items:center;gap:5px;background:var(--white);border:1px solid var(--g200);border-radius:8px;padding:5px 11px;font-size:.74rem;font-weight:700;color:var(--ink3);box-shadow:var(--sh)">🎯 DISC</span>
+        <span style="display:inline-flex;align-items:center;gap:5px;background:var(--white);border:1px solid var(--g200);border-radius:8px;padding:5px 11px;font-size:.74rem;font-weight:700;color:var(--ink3);box-shadow:var(--sh)">🧭 Holland Code</span>
+        <span style="display:inline-flex;align-items:center;gap:5px;background:var(--white);border:1px solid var(--g200);border-radius:8px;padding:5px 11px;font-size:.74rem;font-weight:700;color:var(--ink3);box-shadow:var(--sh)">🧠 MBTI</span>
+        <span style="display:inline-flex;align-items:center;gap:5px;background:var(--white);border:1px solid var(--g200);border-radius:8px;padding:5px 11px;font-size:.74rem;font-weight:700;color:var(--ink3);box-shadow:var(--sh)">🧩 IQ Test</span>
+      </div>
+      <h1 class="hero-h1" data-k="htitle">Tes Psikologi Gratis<br>&amp; Tools Karir untuk<br><em>Naik Level</em></h1>
       <p class="hero-p" data-k="hdesc">Tools gratis untuk mid-level professional yang mau naik level — kenali kekuatan tersembunyimu, perbaiki blind spot, dan ambil langkah karir berikutmu dengan percaya diri.</p>
       <div class="hero-acts">
           <a href="#tests" class="btn-hero" data-k="hcta1">🧠 Mulai Tes Gratis →</a>
           <a href="#tests" class="btn-hero2" data-k="hcta2">Lihat Semua Tools →</a>
         </div>
       <div class="hero-pills">
-          <span class="hero-pill" data-k="hp1">✅ Tanpa daftar</span>
-          <span class="hero-pill" data-k="hp2">🆓 100% gratis</span>
-          <span class="hero-pill" data-k="hp3">📧 Hasil langsung ke email</span>
+          <span class="hero-pill" data-k="hp1">Tanpa daftar</span>
+          <span class="hero-pill" data-k="hp2">100% gratis</span>
+          <span class="hero-pill" data-k="hp3">Hasil langsung ke email</span>
+        </div>
+        <div class="hero-social-proof">
+          <div class="sp-stat">
+            <div class="sp-avatars">
+              <div class="sp-avatar">A</div>
+              <div class="sp-avatar">R</div>
+              <div class="sp-avatar">S</div>
+              <div class="sp-avatar">D</div>
+            </div>
+            <span class="sp-text"><strong>2.400+</strong> profesional sudah tes bulan ini</span>
+          </div>
+          <div class="sp-divider"></div>
+          <div class="sp-stat">
+            <span class="sp-text">⭐ <strong>4.8/5</strong> rating kepuasan</span>
+          </div>
         </div>
       </div>
 
@@ -909,17 +941,17 @@ footer{background:#070B14;padding:36px 0;border-top:1px solid rgba(255,255,255,.
   <div class="container">
     <div class="why-g">
       <div class="why-item">
-        <div class="why-ico">🔬</div>
+        <div class="why-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg></div>
         <div class="why-t" data-k="w1t">Berbasis Sains</div>
         <div class="why-d" data-k="w1d">Semua tes menggunakan framework psikologi yang diakui secara akademis dan profesional.</div>
       </div>
       <div class="why-item">
-        <div class="why-ico">⚡</div>
+        <div class="why-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
         <div class="why-t" data-k="w2t">Selesai dalam 15 Menit</div>
         <div class="why-d" data-k="w2d">Tidak bertele-tele. Jawab pertanyaan, langsung dapat hasil yang actionable.</div>
       </div>
       <div class="why-item">
-        <div class="why-ico">📧</div>
+        <div class="why-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
         <div class="why-t" data-k="w3t">Hasil Dikirim ke Email</div>
         <div class="why-d" data-k="w3d">Laporan lengkap langsung masuk ke inbox kamu. Simpan dan bagi ke HRD kapan saja.</div>
       </div>
@@ -949,6 +981,49 @@ footer{background:#070B14;padding:36px 0;border-top:1px solid rgba(255,255,255,.
 
 
 
+<section id="career-profile" class="sec" style="background:var(--white)">
+  <div class="container">
+    <div class="sec-hd">
+      <div class="sec-eye" data-k="cp_eye">✦ Career Profile</div>
+      <h2 class="sec-title" data-k="cp_title">Job Match Finder</h2>
+      <p class="sec-sub" data-k="cp_sub">
+        Berdasarkan hasil tes yang sudah kamu selesaikan — posisi karir yang paling cocok dengan profilmu
+      </p>
+    </div>
+    <div id="careerProfileWrap" style="margin-top:28px"></div>
+  </div>
+</section>
+<section style="background:var(--cream2);padding:40px 0;border-top:1px solid var(--g200)">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px" id="testimonial-grid">
+      <div style="background:var(--white);border-radius:16px;padding:20px;border:1px solid var(--g200);box-shadow:var(--sh)">
+        <div style="display:flex;gap:3px;margin-bottom:10px">⭐⭐⭐⭐⭐</div>
+        <p style="font-size:.88rem;color:var(--ink2);line-height:1.7;margin-bottom:14px">"Hasil tes DISC-nya akurat banget. Langsung ngerti kenapa gue sering clash sama atasan — ternyata beda gaya kerja."</p>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--indigo),var(--indigoL));display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;color:#fff;flex-shrink:0">R</div>
+          <div><div style="font-size:.83rem;font-weight:700;color:var(--ink)">Rizka A.</div><div style="font-size:.74rem;color:var(--g400)">HR Manager, Jakarta</div></div>
+        </div>
+      </div>
+      <div style="background:var(--white);border-radius:16px;padding:20px;border:1px solid var(--g200);box-shadow:var(--sh)">
+        <div style="display:flex;gap:3px;margin-bottom:10px">⭐⭐⭐⭐⭐</div>
+        <p style="font-size:.88rem;color:var(--ink2);line-height:1.7;margin-bottom:14px">"Paling suka Holland Code-nya — akhirnya tau arah karir yang beneran cocok sama karakter gue. Tools-nya gratis pula!"</p>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#059669,#10B981);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;color:#fff;flex-shrink:0">D</div>
+          <div><div style="font-size:.83rem;font-weight:700;color:var(--ink)">Dimas P.</div><div style="font-size:.74rem;color:var(--g400)">Marketing Supervisor, Surabaya</div></div>
+        </div>
+      </div>
+      <div style="background:var(--white);border-radius:16px;padding:20px;border:1px solid var(--g200);box-shadow:var(--sh)">
+        <div style="display:flex;gap:3px;margin-bottom:10px">⭐⭐⭐⭐⭐</div>
+        <p style="font-size:.88rem;color:var(--ink2);line-height:1.7;margin-bottom:14px">"Pakai TNA-nya buat tim 15 orang — hasilnya langsung bisa gue presentasikan ke direksi. Saved hours of work!"</p>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#D97706,#F59E0B);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;color:#fff;flex-shrink:0">S</div>
+          <div><div style="font-size:.83rem;font-weight:700;color:var(--ink)">Sari W.</div><div style="font-size:.74rem;color:var(--g400)">L&D Manager, Bandung</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>@media(max-width:768px){#testimonial-grid{grid-template-columns:1fr!important}}</style>
 <section id="tips" class="sec" style="background:#F8F9FB">
   <div class="container">
     <div style="display:inline-flex;align-items:center;gap:6px;background:var(--indigoP);border:1px solid rgba(79,70,229,.25);border-radius:50px;padding:4px 13px;font-size:.74rem;font-weight:700;color:var(--indigo);margin-bottom:16px" data-k="kc3tag">✦ Tips &amp; Insights</div>
@@ -974,18 +1049,6 @@ footer{background:#070B14;padding:36px 0;border-top:1px solid rgba(255,255,255,.
   </div>
 </section>
 
-<section id="career-profile" class="sec" style="background:var(--white)">
-  <div class="container">
-    <div class="sec-hd">
-      <div class="sec-eye" data-k="cp_eye">✦ Career Profile</div>
-      <h2 class="sec-title" data-k="cp_title">Job Match Finder</h2>
-      <p class="sec-sub" data-k="cp_sub">
-        Berdasarkan hasil tes yang sudah kamu selesaikan — posisi karir yang paling cocok dengan profilmu
-      </p>
-    </div>
-    <div id="careerProfileWrap" style="margin-top:28px"></div>
-  </div>
-</section>
 
 
 <section style="background:#F8F9FB;padding:60px 0" id="wb-promo">
@@ -1119,7 +1182,7 @@ footer{background:#070B14;padding:36px 0;border-top:1px solid rgba(255,255,255,.
   <div class="container" style="text-align:center;font-size:.72rem;color:#475569;display:flex;justify-content:center;gap:20px;flex-wrap:wrap">
     <a href="https://karyawansakti.com/privacy-policy.html" style="color:#475569;text-decoration:none">🔒 Privacy Policy</a>
     <span>·</span>
-    <span>© 2026 KaryawanSakti · Arief Permadi Kuntoaji</span>
+    <a href="https://karyawansakti.com/tentang.html" style="color:#475569;text-decoration:none">Tentang</a>
     <span>·</span>
     <a href="https://wa.me/6285714142712" target="_blank" style="color:#475569;text-decoration:none">📞 Kontak</a>
   </div>
@@ -1192,7 +1255,7 @@ const EJS={pub:'ZZ-Qs9DQQUS6bV5hC',svc:'service_bkc15dn',tpl:'template_edv0hna'}
 const TR={
   id:{n1:'Beranda',n2:'Pilih Tes',n3:'Cara Kerja',n4:'Tentang',n5:'Mulai Tes',n_store:'Knowledge Center',n_train:'Training Analysis',
     heyebrow:'Untuk Profesional yang Serius Naik Level',
-    htitle:'Sudah Tahu Seberapa<br>Jauh Kamu Bisa<br><em>Naik Level?</em>',
+    htitle:'Tes Psikologi Gratis<br>&amp; Tools Karir untuk<br><em>Naik Level</em>',
     hdesc:'Tools gratis untuk mid-level professional yang mau naik level — kenali kekuatan tersembunyimu, perbaiki blind spot, dan ambil langkah karir berikutmu dengan percaya diri.',
     hcta1:'🧠 Mulai Tes Gratis →',hcta2:'Lihat Semua Tools →',
     hp1:'Tidak perlu daftar',hp2:'100% gratis',hp3:'Hasil langsung ke email',
@@ -1227,7 +1290,7 @@ const TR={
     iqest:'Berdasarkan performa kamu, estimasi rentang IQ kamu adalah'},
   en:{n1:'Home',n2:'Take a Test',n3:'How It Works',n4:'About',n5:'Start Test',n_store:'Knowledge Center',n_train:'Training Analysis',
     heyebrow:'For Professionals Serious About Leveling Up',
-    htitle:'How Well Do You<br>Really Know<br><em>Yourself?</em>',
+    htitle:'Free Psych Tests<br>&amp; Career Tools to<br><em>Level Up</em>',
     hdesc:'Science-based personality & cognitive tests that give you <strong>real insights</strong> — not just labels. Understand your work style, potential, and career interests in 15 minutes.',
     hcta1:'Try for Free →',hcta2:'How does it work?',
     hp1:'No registration needed',hp2:'100% free',hp3:'Results straight to email',
