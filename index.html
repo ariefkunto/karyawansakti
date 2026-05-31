@@ -29,7 +29,8 @@
 <noscript><link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"></noscript></noscript></noscript></noscript>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"></noscript></noscript></noscript></noscript></noscript>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
@@ -107,7 +108,7 @@ profdom:'Profil Dominan',what:'Apa Artinya',hcode:'Kode Holland Kamu',
 benar:'Jawaban Benar',skor:'Skor',klas:'Klasifikasi',iqrange:'Estimasi Rentang IQ',
 iqnote:'Estimasi awal berdasarkan tes singkat. Bukan pengganti evaluasi psikometrik profesional.',
 iqest:'Berdasarkan performa kamu, estimasi rentang IQ kamu adalah'},
-en:{n1:'Home',n2:'Take a Test',n3:'How It Works',n4:'About',n5:'Start Test',n_store:'Knowledge Center',n_train:'Training Analysis',n_store_desc:'Training, digital products & events',n_wb:'Website Builder',n_wb_desc:'Website, Google Business & SEO',n_sop:'SOP Builder',n_sop_desc:'SOP framework & document builder',n_cv:'CV Builder',n_cv_desc:'Build your professional CV, just fill in',n_store_desc:'Training, digital products & events',n_wb:'Website Builder',n_wb_desc:'Website, Google Business & SEO',n_sop:'SOP Builder',n_sop_desc:'SOP framework & document builder',n_cv:'CV Builder',n_cv_desc:'Build your professional CV, just fill in',n_store_desc:'Training, digital products & events',n_wb:'Website Builder',n_wb_desc:'Website, Google Business & SEO',n_sop:'SOP Builder',n_sop_desc:'SOP framework & document builder',n_cv:'CV Builder',n_cv_desc:'Build your professional CV, just fill in',n_store_desc:'Training, digital products & events',n_wb:'Website Builder',n_wb_desc:'Website, Google Business & SEO',n_sop:'SOP Builder',n_sop_desc:'SOP framework & document builder',n_cv:'CV Builder',n_cv_desc:'Build your professional CV, just fill in',
+en:{n1:'Home',n2:'Take a Test',n3:'How It Works',n4:'About',n5:'Start Test',n_store:'Knowledge Center',n_train:'Training Analysis',n_store_desc:'Training, digital products & events',n_wb:'Website Builder',n_wb_desc:'Website, Google Business & SEO',n_sop:'SOP Builder',n_sop_desc:'SOP framework & document builder',n_cv:'CV Builder',n_cv_desc:'Build your professional CV, just fill in',n_store_desc:'Training, digital products & events',n_wb:'Website Builder',n_wb_desc:'Website, Google Business & SEO',n_sop:'SOP Builder',n_sop_desc:'SOP framework & document builder',n_cv:'CV Builder',n_cv_desc:'Build your professional CV, just fill in',n_store_desc:'Training, digital products & events',n_wb:'Website Builder',n_wb_desc:'Website, Google Business & SEO',n_sop:'SOP Builder',n_sop_desc:'SOP framework & document builder',n_cv:'CV Builder',n_cv_desc:'Build your professional CV, just fill in',n_store_desc:'Training, digital products & events',n_wb:'Website Builder',n_wb_desc:'Website, Google Business & SEO',n_sop:'SOP Builder',n_sop_desc:'SOP framework & document builder',n_cv:'CV Builder',n_cv_desc:'Build your professional CV, just fill in',n_store_desc:'Training, digital products & events',n_wb:'Website Builder',n_wb_desc:'Website, Google Business & SEO',n_sop:'SOP Builder',n_sop_desc:'SOP framework & document builder',n_cv:'CV Builder',n_cv_desc:'Build your professional CV, just fill in',
 heyebrow:'For Professionals Serious About Leveling Up',
 htitle:'Free Psych Tests<br>&amp; Career Tools to<br><em>Level Up</em>',
 hdesc:'Science-based personality & cognitive tests that give you <strong>real insights</strong> — not just labels. Understand your work style, potential, and career interests in 15 minutes.',
@@ -618,14 +619,6 @@ const pdfFooter = document.createElement('div');
 pdfFooter.style.cssText = 'margin-top:24px;padding-top:12px;border-top:1px solid #E2E8F0;text-align:center';
 pdfFooter.innerHTML = '<div style="font-family:sans-serif;font-size:10px;color:#94A3B8">Dibuat oleh KaryawanSakti · karyawansakti.com · Dokumen ini adalah hasil asesmen mandiri</div>';
 clone.appendChild(pdfFooter);
-const pdfHeader = document.createElement('div');
-pdfHeader.style.cssText = 'padding:0 0 20px 0;margin-bottom:20px;border-bottom:3px solid #4F46E5;display:flex;align-items:center;justify-content:space-between';
-pdfHeader.innerHTML = '<div style="display:flex;align-items:center;gap:12px"><div style="width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#4F46E5,#6366F1);display:flex;align-items:center;justify-content:center;color:white;font-weight:900;font-size:18px;font-family:sans-serif">K</div><div><div style="font-family:sans-serif;font-size:18px;font-weight:900;color:#0F172A;letter-spacing:-0.03em">Karyawan<span style=\"color:#4F46E5\">Sakti</span></div><div style="font-family:sans-serif;font-size:11px;color:#94A3B8;margin-top:1px">Platform Pengembangan Karir Profesional Indonesia</div></div></div><div style="text-align:right"><div style="font-family:sans-serif;font-size:10px;color:#94A3B8">' + new Date().toLocaleDateString(LG==='id'?'id-ID':'en-US',{year:'numeric',month:'long',day:'numeric'}) + '</div><div style="font-family:sans-serif;font-size:10px;color:#94A3B8;margin-top:2px">karyawansakti.com</div></div>';
-clone.prepend(pdfHeader);
-const pdfFooter = document.createElement('div');
-pdfFooter.style.cssText = 'margin-top:24px;padding-top:12px;border-top:1px solid #E2E8F0;text-align:center';
-pdfFooter.innerHTML = '<div style="font-family:sans-serif;font-size:10px;color:#94A3B8">Dibuat oleh KaryawanSakti · karyawansakti.com · Dokumen ini adalah hasil asesmen mandiri</div>';
-clone.appendChild(pdfFooter);
 document.body.appendChild(clone);
 clone.querySelectorAll('.rb-fi,.t-gap-bar-fi').forEach(b => { b.style.width = (b.dataset.w||0)+'%'; });
 clone.querySelectorAll('.btn-pdf,.t-btn-pdf,.ract,.t-nav').forEach(el => el.style.display='none');
@@ -855,7 +848,15 @@ function clearCareerProfile() {
 renderCareerProfile();
 }
 document.addEventListener('DOMContentLoaded', () => {
-renderCareerProfile();
+initHamburger();
+initDropdown();
+setLang(LG);
+document.getElementById('modal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+const dR = (fn) => { 'requestIdleCallback' in window ? requestIdleCallback(fn, {timeout: 2000}) : setTimeout(fn, 1); };
+dR(() => renderCards());
+dR(() => renderTips());
+dR(() => renderCareerProfile());
 });
 function initDropdown() {
 document.querySelectorAll('.nav-dropdown').forEach(dd => {
