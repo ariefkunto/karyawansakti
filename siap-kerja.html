@@ -933,434 +933,377 @@ function buildPDF(d) {
   try {
     var jsPDF = window.jspdf.jsPDF;
     var doc = new jsPDF({ orientation:'portrait', unit:'mm', format:'a4' });
-    var W = 210, M = 20, CW = W - M*2;
+    var W=210, M=16, CW=W-M*2;
     var today = new Date();
     var tgl = today.toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'});
-    var pesertaNum = parseInt(d.peserta) || 20;
-    var totalInvestasi = (pesertaNum * 250000).toLocaleString('id-ID');
-    var dp = (pesertaNum * 250000 * 0.5).toLocaleString('id-ID');
+    var pesertaNum = parseInt(d.peserta)||20;
+    var HARGA = 200000;
+    var totalInvestasi = (pesertaNum*HARGA).toLocaleString('id-ID');
+    var dp = (pesertaNum*HARGA*0.5).toLocaleString('id-ID');
 
-    // Helper functions
-    function setFont(size, style, color) {
-      doc.setFontSize(size||10);
-      doc.setFont('helvetica', style||'normal');
-      doc.setTextColor(color||'#0F172A');
+    // ── HELPERS ──────────────────────────────────────────────────
+    function rgb(hex){
+      var r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);
+      return [r,g,b];
     }
-    function rect(x,y,w,h,color,r) {
-      doc.setFillColor(color||'#F5A623');
-      if(r) doc.roundedRect(x,y,w,h,r,r,'F');
+    function fillRect(x,y,w,h,hex,round){
+      var c=rgb(hex); doc.setFillColor(c[0],c[1],c[2]);
+      if(round) doc.roundedRect(x,y,w,h,round,round,'F');
       else doc.rect(x,y,w,h,'F');
     }
-    function line(x1,y1,x2,y2,color,lw) {
-      doc.setDrawColor(color||'#E2E8F0');
-      doc.setLineWidth(lw||0.3);
-      doc.line(x1,y1,x2,y2);
+    function strokeRect(x,y,w,h,hex,lw,round){
+      var c=rgb(hex); doc.setDrawColor(c[0],c[1],c[2]); doc.setLineWidth(lw||0.3);
+      if(round) doc.roundedRect(x,y,w,h,round,round,'S');
+      else doc.rect(x,y,w,h,'S');
     }
-    function text(txt,x,y,opts) {
-      doc.text(txt,x,y,opts||{});
+    function hline(x1,y,x2,hex,lw){
+      var c=rgb(hex); doc.setDrawColor(c[0],c[1],c[2]); doc.setLineWidth(lw||0.3);
+      doc.line(x1,y,x2,y);
     }
-    function wrap(txt,x,y,maxW,lineH,size,style,color) {
-      setFont(size||10,style||'normal',color||'#334155');
-      var lines = doc.splitTextToSize(txt,maxW);
-      doc.text(lines,x,y);
-      return y + lines.length*(lineH||5);
+    function sf(sz,st,hex){
+      doc.setFontSize(sz||10); doc.setFont('helvetica',st||'normal');
+      if(hex){var c=rgb(hex);doc.setTextColor(c[0],c[1],c[2]);}
+    }
+    function tx(str,x,y,opts){ doc.text(String(str),x,y,opts||{}); }
+    function wrapTx(str,x,y,maxW,lh,sz,st,hex){
+      sf(sz||9,st||'normal',hex||'#334155');
+      var lines=doc.splitTextToSize(String(str),maxW);
+      doc.text(lines,x,y); return y+lines.length*(lh||5);
+    }
+    function pageHeader(pageNum, school){
+      fillRect(0,0,W,14,'#0D1B2A');
+      fillRect(0,14,W,2,'#F5A623');
+      sf(7,'bold','#F5A623'); tx('SIAP KERJA  |  KaryawanSakti',M,10);
+      sf(7,'normal','#64748B'); tx('Proposal untuk '+school,W-M,10,{align:'right'});
+      sf(7,'normal','#475569'); tx('Hal. '+pageNum,W/2,10,{align:'center'});
+    }
+    function pageFooter(){
+      fillRect(0,284,W,13,'#0D1B2A');
+      fillRect(0,284,W,1.5,'#F5A623');
+      sf(6,'normal','#475569');
+      tx('Dokumen konfidensial untuk keperluan proposal  |  KaryawanSakti  |  karyawansakti.com  |  WA: +62 857-1414-2712',W/2,291,{align:'center'});
     }
 
-    // ── COVER PAGE ────────────────────────────────────────────────
-    // Navy header bar
-    rect(0,0,W,52,'#0D1B2A');
-    // Gold accent line
-    rect(0,52,W,3,'#F5A623');
+    // ═══════════════════════════════════════════════════════════
+    // PAGE 1 — COVER
+    // ═══════════════════════════════════════════════════════════
+    // Full navy top band
+    fillRect(0,0,W,72,'#0D1B2A');
+    // Gold accent left stripe
+    fillRect(0,0,4,72,'#F5A623');
+    // Gold bottom line of header
+    fillRect(0,72,W,3,'#F5A623');
 
-    // Logo area
-    setFont(18,'bold','#F5A623');
-    text('KaryawanSakti',M,20);
-    setFont(9,'normal','rgba(255,255,255,0.4)');
-    doc.setTextColor(160,180,200);
-    text('Platform Pengembangan Karir Profesional Indonesia',M,27);
+    // Logo text
+    sf(22,'bold','#F5A623'); tx('KaryawanSakti',M+6,26);
+    sf(8,'normal','#94A3B8'); tx('Platform Pengembangan Karir Profesional Indonesia',M+6,34);
+    // Divider inside header
+    hline(M+6,40,W-M,'#1E3A5F',0.5);
+    sf(8,'normal','#94A3B8'); tx('karyawansakti.com/siap-kerja',M+6,48);
+    // "PROPOSAL RESMI" badge
+    fillRect(W-M-36,16,36,14,'#F5A623',3);
+    sf(7,'bold','#0D1B2A'); tx('PROPOSAL RESMI',W-M-18,24,{align:'center'});
+    sf(6,'normal','#0D1B2A'); tx('Dokumen Resmi Program',W-M-18,29,{align:'center'});
 
-    // Confidential badge
-    rect(W-M-40,10,40,12,'#F5A623',3);
-    setFont(7,'bold','#0D1B2A');
-    doc.setTextColor(13,27,42);
-    text('PROPOSAL RESMI',W-M-20,17,{align:'center'});
+    // SIAP KERJA title block
+    fillRect(M,84,CW,22,'#F5A623',3);
+    sf(17,'bold','#0D1B2A'); tx('SIAP KERJA',W/2,93,{align:'center'});
+    sf(9,'normal','#0D1B2A'); tx('Work Readiness Program untuk Pelajar SMA / SMK / MA',W/2,101,{align:'center'});
 
-    // Program name
-    setFont(28,'bold','#0D1B2A');
-    doc.setTextColor(13,27,42);
-    rect(M,68,CW,18,'#F5A623',3);
-    doc.setTextColor(13,27,42);
-    setFont(16,'bold');
-    text('SIAP KERJA — Work Readiness Program',W/2,80,{align:'center'});
+    // Sub tagline
+    sf(8,'normal','#334155'); tx('Program 6 Jam Berbasis Kasus Nyata  |  Framework S.I.A.P  |  6 Tools Dibawa Pulang',W/2,113,{align:'center'});
 
-    setFont(11,'normal','#334155');
-    doc.setTextColor(51,65,85);
-    text('Program 6 Jam Kesiapan Kerja untuk Pelajar SMA/SMK/MA',W/2,93,{align:'center'});
+    hline(M,118,W-M,'#E2E8F0',0.4);
 
-    // Divider
-    line(M,100,W-M,100,'#E2E8F0',0.5);
+    // TO: school card
+    fillRect(M,122,CW,48,'#F8FAFC',3);
+    strokeRect(M,122,CW,48,'#E2E8F0',0.4,3);
+    // left accent
+    fillRect(M,122,3,48,'#F5A623');
 
-    // School info card
-    rect(M,106,CW,52,'#F8FAFC',3);
-    doc.setDrawColor(226,232,240);
-    doc.setLineWidth(0.4);
-    doc.roundedRect(M,106,CW,52,3,3,'S');
+    sf(6,'bold','#94A3B8'); tx('DIAJUKAN KEPADA',M+8,130);
+    sf(13,'bold','#0F172A'); tx(d.school,M+8,139);
+    sf(9,'normal','#334155'); tx(d.address,M+8,146); tx(d.city,M+8,152);
 
-    setFont(7,'bold'); doc.setTextColor(148,163,184);
-    text('DIAJUKAN KEPADA',M+8,115);
-    setFont(14,'bold'); doc.setTextColor(15,23,42);
-    text(d.school,M+8,124);
-    setFont(10,'normal'); doc.setTextColor(51,65,85);
-    text(d.address,M+8,131);
-    text(d.city,M+8,137);
+    hline(M+8,157,W-M-8,'#E2E8F0',0.3);
 
-    line(M+8,142,W-M-8,142,'#E2E8F0',0.3);
+    sf(6,'bold','#94A3B8'); tx('KEPADA YTH.',M+8,163);
+    sf(11,'bold','#0F172A'); tx('Bapak/Ibu '+d.kepsek,M+8,170);
+    sf(8,'normal','#475569'); tx(d.role+' — '+d.school,M+8,176);
 
-    setFont(7,'bold'); doc.setTextColor(148,163,184);
-    text('KEPADA YTH.',M+8,149);
-    setFont(11,'bold'); doc.setTextColor(15,23,42);
-    text('Bapak/Ibu '+d.kepsek,M+8,156);
-    setFont(9,'normal'); doc.setTextColor(51,65,85);
-    text('Kepala Sekolah '+d.school,M+8,162);
-
-    // Program highlights row
-    var hiY = 168;
-    // 3 highlight boxes
-    var bW = (CW-16)/3, bX = M;
-    var hls = [
-      {ico:'📅',num:'6 Jam',sub:'Program Intensif'},
-      {ico:'👥',num:'20–40',sub:'Peserta per Batch'},
-      {ico:'🏆',num:'6 Output',sub:'Konkret per Peserta'}
+    // 3 HIGHLIGHT BOXES
+    var hiY=178;
+    var hiW=(CW-8)/3;
+    var hiData=[
+      ['6 Jam','Program 1 Hari'],
+      ['20-40','Peserta / Batch'],
+      ['6 Tools','Dibawa Pulang']
     ];
-    hls.forEach(function(h,i){
-      rect(bX+i*(bW+8),hiY,bW,22,'#0D1B2A',3);
-      setFont(8,'bold'); doc.setTextColor(245,166,35);
-      text(h.num,bX+i*(bW+8)+bW/2,hiY+10,{align:'center'});
-      setFont(7,'normal'); doc.setTextColor(160,180,200);
-      text(h.sub,bX+i*(bW+8)+bW/2,hiY+16,{align:'center'});
+    hiData.forEach(function(h,i){
+      var bx=M+i*(hiW+4);
+      fillRect(bx,hiY,hiW,20,'#0D1B2A',3);
+      sf(13,'bold','#F5A623'); tx(h[0],bx+hiW/2,hiY+10,{align:'center'});
+      sf(6,'normal','#94A3B8'); tx(h[1],bx+hiW/2,hiY+17,{align:'center'});
     });
 
     // Investment highlight
-    rect(M,196,CW,20,'#FFFBEB',3);
-    doc.setDrawColor(245,166,35);
-    doc.setLineWidth(0.5);
-    doc.roundedRect(M,196,CW,20,3,3,'S');
-    setFont(8,'bold'); doc.setTextColor(212,137,10);
-    text('INVESTASI PROGRAM',M+8,204);
-    setFont(14,'bold'); doc.setTextColor(212,137,10);
-    text('Rp 200.000 / peserta',M+8,213);
-    setFont(9,'normal'); doc.setTextColor(180,130,50);
-    text('Total estimasi: Rp '+totalInvestasi+' ('+pesertaNum+' peserta)',W-M-8,213,{align:'right'});
+    fillRect(M,204,CW,18,'#FFFBEB',3);
+    strokeRect(M,204,CW,18,'#F5A623',0.5,3);
+    sf(7,'bold','#D97706'); tx('INVESTASI PROGRAM',M+8,211);
+    sf(14,'bold','#D97706'); tx('Rp 200.000 / peserta',M+8,221);
+    sf(8,'normal','#92400E'); tx('Total '+pesertaNum+' peserta: Rp '+totalInvestasi,W-M-8,221,{align:'right'});
 
-    // Date & contact
-    line(M,222,W-M,222,'#E2E8F0',0.3);
-    setFont(8,'normal'); doc.setTextColor(148,163,184);
-    text('Jakarta, '+tgl,M,229);
-    text('Kontak Pengisi: '+d.name+' ('+d.role+') · WA: '+d.wa,M,235);
-    if(d.email) text('Email: '+d.email,M,241);
+    // Request info
+    hline(M,228,W-M,'#E2E8F0',0.3);
+    sf(7,'normal','#94A3B8'); tx('Jakarta, '+tgl,M,234);
+    tx('Diisi oleh: '+d.name+' ('+d.role+')  |  WA: '+d.wa+(d.email?' | '+d.email:''),M,240);
 
-    // Footer cover
-    rect(0,270,W,27,'#0D1B2A');
-    rect(0,270,W,2,'#F5A623');
-    setFont(7,'normal'); doc.setTextColor(100,116,139);
-    text('Dokumen ini bersifat rahasia dan hanya untuk keperluan proposal kerjasama.',W/2,280,{align:'center'});
-    text('KaryawanSakti · karyawansakti.com · program SIAP KERJA',W/2,287,{align:'center'});
-    setFont(8,'bold'); doc.setTextColor(245,166,35);
-    text('Halaman 1',W/2,293,{align:'center'});
+    pageFooter();
 
-    // ── PAGE 2: WHY + FRAMEWORK ───────────────────────────────────
+    // ═══════════════════════════════════════════════════════════
+    // PAGE 2 — MASALAH + FRAMEWORK SIAP
+    // ═══════════════════════════════════════════════════════════
     doc.addPage();
+    pageHeader(2,d.school);
 
-    // Header bar
-    rect(0,0,W,16,'#0D1B2A');
-    setFont(7,'bold'); doc.setTextColor(245,166,35);
-    text('SIAP KERJA — Work Readiness Program',M,10);
-    doc.setTextColor(100,116,139);
-    text('Proposal untuk '+d.school,W-M,10,{align:'right'});
-    line(0,16,W,16,'#F5A623',0.5);
+    var y=24;
 
-    var y = 28;
+    // WHY section
+    sf(6,'bold','#D97706'); tx('MENGAPA PROGRAM INI HARUS ADA',M,y); y+=7;
+    sf(14,'bold','#0F172A'); tx('Data yang Tidak Bisa Diabaikan',M,y); y+=10;
 
-    // Why section
-    setFont(7,'bold'); doc.setTextColor(212,137,10);
-    text('MENGAPA PROGRAM INI HARUS ADA',M,y); y+=7;
-    setFont(14,'bold'); doc.setTextColor(15,23,42);
-    text('Data yang Tidak Bisa Diabaikan',M,y); y+=8;
-
-    // 3 data boxes
-    var dboxW = (CW-8)/3;
-    var dboxes = [
-      {num:'85%',desc:'Kesuksesan karier ditentukan soft skills — bukan kemampuan teknis (Harvard & Stanford)'},
-      {num:'60%',desc:'Fresh graduate gagal melewati masa probation 6 bulan pertama (NACE 2025)'},
-      {num:'11%',desc:'Employer yang merasa lulusan baru benar-benar siap dipakai kerja (Survei 400+ HRD)'}
+    var stats=[
+      {num:'85%',label:'Kesuksesan karier ditentukan oleh soft skills, bukan kemampuan teknis'},
+      {num:'60%',label:'Fresh graduate gagal di 6 bulan pertama masa probation'},
+      {num:'11%',label:'Employer yang merasa lulusan baru benar-benar siap dipakai'}
     ];
-    dboxes.forEach(function(b,i){
-      var bx = M+i*(dboxW+4);
-      rect(bx,y,dboxW,28,'#0D1B2A',3);
-      setFont(18,'bold'); doc.setTextColor(245,166,35);
-      text(b.num,bx+dboxW/2,y+13,{align:'center'});
-      setFont(6,'normal'); doc.setTextColor(180,200,220);
-      var ls = doc.splitTextToSize(b.desc,dboxW-6);
-      doc.text(ls,bx+dboxW/2,y+20,{align:'center'});
+    var sw=(CW-8)/3;
+    stats.forEach(function(s,i){
+      var sx=M+i*(sw+4);
+      fillRect(sx,y,sw,30,'#0D1B2A',3);
+      sf(18,'bold','#F5A623'); tx(s.num,sx+sw/2,y+13,{align:'center'});
+      sf(6,'normal','#94A3B8');
+      var lines=doc.splitTextToSize(s.label,sw-6);
+      doc.text(lines,sx+sw/2,y+20,{align:'center'});
     });
-    y+=36;
+    y+=38;
 
-    // Gap data
-    setFont(9,'normal'); doc.setTextColor(51,65,85);
-    y = wrap('Survei terhadap 400+ HRD dan hiring manager di Indonesia mengungkap tiga alasan utama fresh graduate dipecat — dan tidak satupun berhubungan dengan kemampuan teknis:',M,y,CW,4.5,9);
-    y+=4;
-    var gaps = [
-      '1. Attitude dan cara merespons situasi sulit (67% kasus)',
-      '2. Kemampuan komunikasi lisan dan tulisan (54% kasus)',
-      '3. Ketidakmampuan bekerja dalam tim yang heterogen (48% kasus)'
-    ];
-    gaps.forEach(function(g){
-      rect(M,y-3,3,4,'#F5A623');
-      setFont(9,'bold'); doc.setTextColor(15,23,42);
-      text(g,M+6,y); y+=6;
+    sf(8,'normal','#334155');
+    y=wrapTx('Survei terhadap 400+ HRD Indonesia: tiga alasan utama fresh graduate dipecat — tidak satupun berkaitan dengan kemampuan teknis:',M,y,CW,4.5,8);
+    y+=3;
+    [['67%','Attitude dan cara merespons situasi sulit'],['54%','Kemampuan komunikasi lisan dan tulisan'],['48%','Ketidakmampuan bekerja dalam tim yang heterogen']].forEach(function(r){
+      fillRect(M,y-3,3,5,'#F5A623');
+      sf(8,'bold','#0F172A'); tx(r[0],M+6,y);
+      sf(8,'normal','#334155'); tx(r[1],M+18,y);
+      y+=6;
     });
     y+=6;
 
-    // Framework section
-    line(M,y,W-M,y,'#E2E8F0',0.3); y+=8;
-    setFont(7,'bold'); doc.setTextColor(212,137,10);
-    text('FRAMEWORK PROGRAM',M,y); y+=7;
-    setFont(14,'bold'); doc.setTextColor(15,23,42);
-    text('Framework S.I.A.P — Empat Pilar Kompetensi',M,y); y+=9;
+    hline(M,y,W-M,'#E2E8F0',0.4); y+=8;
 
-    var pillars = [
-      {l:'S',t:'Self-Awareness',d:'Mengenali kekuatan, nilai, dan cara kerja diri sendiri. Growth mindset sebagai fondasi karier.'},
-      {l:'I',t:'Interpersonal Skills',d:'Komunikasi efektif di berbagai konteks: one-on-one, rapat, email, dan situasi sulit.'},
-      {l:'A',t:'Attitude & Professional Mindset',d:'Unwritten rules kerja, navigasi politik kantor, script konkret untuk 6 situasi sulit.'},
-      {l:'P',t:'Planning & Career Navigation',d:'CV yang dibaca HRD dalam 7 detik, interview yang memenangkan posisi, personal brand.'}
+    // FRAMEWORK
+    sf(6,'bold','#D97706'); tx('FRAMEWORK PROGRAM',M,y); y+=7;
+    sf(14,'bold','#0F172A'); tx('Framework S.I.A.P — Empat Pilar Kompetensi',M,y); y+=3;
+    sf(8,'normal','#64748B'); tx('Empat pilar yang saling mengunci seperti roda gigi — dirancang sebagai survival skills minimum dunia kerja.',M,y+=6); y+=8;
+
+    var pillars=[
+      {l:'S',t:'Self-Awareness',d:'Mengenali kekuatan, nilai, dan cara kerja diri. Growth mindset sebagai fondasi karier jangka panjang.'},
+      {l:'I',t:'Interpersonal Skills',d:'Komunikasi efektif dalam berbagai konteks: one-on-one, rapat, email, dan cara tidak setuju dengan elegan.'},
+      {l:'A',t:'Attitude & Professional Mindset',d:'Unwritten rules kantor, navigasi politik, dan script konkret untuk 6 situasi sulit yang paling sering mematikan karier.'},
+      {l:'P',t:'Planning & Career Navigation',d:'CV yang memenangkan 7 detik pertama HRD, interview yang menghasilkan tawaran, personal brand hari pertama kerja.'}
     ];
     pillars.forEach(function(p){
-      rect(M,y,CW,20,'#F8FAFC',3);
-      doc.setDrawColor(226,232,240); doc.setLineWidth(0.3);
-      doc.roundedRect(M,y,CW,20,3,3,'S');
-      // Gold letter
-      rect(M,y,12,20,'#F5A623',3);
-      setFont(14,'bold'); doc.setTextColor(13,27,42);
-      text(p.l,M+6,y+13,{align:'center'});
-      // Content
-      setFont(10,'bold'); doc.setTextColor(15,23,42);
-      text(p.t,M+16,y+8);
-      setFont(8,'normal'); doc.setTextColor(100,116,139);
-      var ls2 = doc.splitTextToSize(p.d,CW-20);
-      doc.text(ls2,M+16,y+14);
-      y+=24;
+      fillRect(M,y,CW,22,'#F8FAFC',3);
+      strokeRect(M,y,CW,22,'#E2E8F0',0.3,3);
+      fillRect(M,y,10,22,'#F5A623',2);
+      sf(13,'bold','#0D1B2A'); tx(p.l,M+5,y+14.5,{align:'center'});
+      sf(9,'bold','#0F172A'); tx(p.t,M+14,y+8);
+      sf(7,'normal','#64748B');
+      var ls=doc.splitTextToSize(p.d,CW-16);
+      doc.text(ls,M+14,y+14);
+      y+=26;
     });
 
-    // Footer
-    line(M,y+4,W-M,y+4,'#E2E8F0',0.3);
-    setFont(7,'normal'); doc.setTextColor(148,163,184);
-    text('SIAP KERJA · KaryawanSakti · karyawansakti.com',M,y+10);
-    text('Halaman 2',W-M,y+10,{align:'right'});
+    pageFooter();
 
-    // ── PAGE 3: OUTPUT + SCHEDULE + INVESTMENT ────────────────────
+    // ═══════════════════════════════════════════════════════════
+    // PAGE 3 — JADWAL + OUTPUT + INVESTASI
+    // ═══════════════════════════════════════════════════════════
     doc.addPage();
-    rect(0,0,W,16,'#0D1B2A');
-    setFont(7,'bold'); doc.setTextColor(245,166,35);
-    text('SIAP KERJA — Work Readiness Program',M,10);
-    doc.setTextColor(100,116,139);
-    text('Proposal untuk '+d.school,W-M,10,{align:'right'});
-    line(0,16,W,16,'#F5A623',0.5);
+    pageHeader(3,d.school);
+    y=24;
 
-    y = 28;
+    // JADWAL
+    sf(6,'bold','#D97706'); tx('JADWAL PROGRAM 6 JAM',M,y); y+=7;
+    sf(13,'bold','#0F172A'); tx('Rundown 09.00 – 15.00 (1 Hari)',M,y); y+=9;
 
-    // Output section
-    setFont(7,'bold'); doc.setTextColor(212,137,10);
-    text('OUTPUT PROGRAM',M,y); y+=7;
-    setFont(13,'bold'); doc.setTextColor(15,23,42);
-    text('Yang Peserta Bawa Pulang',M,y); y+=8;
-
-    var outputs = [
-      {ico:'📄',t:'Draft CV Profesional',d:'Direview menggunakan standar HRD — bukan CV asal jadi.'},
-      {ico:'🗺️',t:'Personal SIAP Profile',d:'Peta kekuatan, gaya kerja, dan area pengembangan.'},
-      {ico:'💬',t:'Survival Script Collection',d:'Script konkret untuk 6 situasi sulit paling umum di tempat kerja.'},
-      {ico:'📋',t:'30-Day Action Plan',d:'3 komitmen konkret dengan trigger situasi yang jelas.'},
-      {ico:'✉️',t:'Surat untuk Diri Sendiri',d:'Dikirim kembali 6 bulan kemudian sebagai akuntabilitas.'},
-      {ico:'🏆',t:'Sertifikat SIAP KERJA',d:'Dapat dilampirkan dalam portofolio atau CV.'}
+    var sessions=[
+      {time:'09.00-10.30',sesi:'S1 · 90 mnt',topic:'Wake Up Call + Self-Awareness',desc:'Data provokasi · Iceberg model · Micro-reflection · Tool #1'},
+      {time:'10.30-12.00',sesi:'S2 · 90 mnt',topic:'Attitude & Unwritten Rules',desc:'Bedah 3 situasi sulit · Reactive vs Responsive · Tool #2'},
+      {time:'12.00-13.00',sesi:'ISHOMA',topic:'Istirahat + Sholat + Makan',desc:'Disediakan pihak sekolah/EO'},
+      {time:'13.00-14.00',sesi:'S3 · 60 mnt',topic:'Komunikasi PREP & Problem Solving',desc:'PREP framework · Latihan berpasangan · Tool #3'},
+      {time:'14.00-14.45',sesi:'S4 · 45 mnt',topic:'CV + Interview + Closing Komitmen',desc:'Anatomi CV · 3 pertanyaan interview · 30-Day Action Plan · Tool #4,5,6'},
+      {time:'14.45-15.00',sesi:'Closing',topic:'Surat untuk Diri Sendiri + Sertifikasi',desc:'Ritual akuntabilitas · Penyerahan sertifikat'}
     ];
-    var oW = (CW-6)/2;
+    sessions.forEach(function(s,i){
+      var isBreak=(s.sesi==='ISHOMA');
+      var bg=isBreak?'#F1F5F9':'#FFFFFF';
+      fillRect(M,y,CW,16,bg,2);
+      strokeRect(M,y,CW,16,'#E2E8F0',0.3,2);
+      // time column
+      fillRect(M,y,26,16,isBreak?'#94A3B8':'#0D1B2A',2);
+      sf(6,'bold',isBreak?'#FFFFFF':'#F5A623'); tx(s.time,M+13,y+7,{align:'center'});
+      sf(5,'normal',isBreak?'#E2E8F0':'#94A3B8'); tx(s.sesi,M+13,y+12,{align:'center'});
+      sf(8,'bold',isBreak?'#64748B':'#0F172A'); tx(s.topic,M+30,y+7);
+      sf(6,'normal','#94A3B8'); tx(s.desc,M+30,y+12);
+      y+=19;
+    });
+    y+=4;
+
+    hline(M,y,W-M,'#E2E8F0',0.4); y+=8;
+
+    // OUTPUT
+    sf(6,'bold','#D97706'); tx('OUTPUT KONKRET',M,y); y+=7;
+    sf(13,'bold','#0F172A'); tx('6 Tools yang Peserta Bawa Pulang',M,y); y+=9;
+
+    var outputs=[
+      ['Tool #1','Personal SIAP Profile Worksheet','Self-assessment 16 pertanyaan + peta kekuatan & blind spot'],
+      ['Tool #2','Survival Script Collection','Script persis untuk 6 situasi sulit paling umum di kantor'],
+      ['Tool #3','PREP Practice Workbook','5 skenario komunikasi kantor + framework PREP'],
+      ['Tool #4','CV Template Standar HRD','Template CV siap isi dengan panduan per bagian'],
+      ['Tool #5','Interview Prep Card','10 pertanyaan interview + framework STAR per jawaban'],
+      ['Tool #6','30-Day Action Plan Card','3 komitmen trigger-based + tracker + akuntabilitas buddy']
+    ];
+    var oW=(CW-6)/2;
     outputs.forEach(function(o,i){
-      var ox = i%2===0 ? M : M+oW+6;
-      var oy = y + Math.floor(i/2)*18;
-      rect(ox,oy,oW,15,'#F8FAFC',2);
-      doc.setDrawColor(226,232,240); doc.setLineWidth(0.3);
-      doc.roundedRect(ox,oy,oW,15,2,2,'S');
-      setFont(9,'bold'); doc.setTextColor(15,23,42);
-      text(o.t,ox+6,oy+7);
-      setFont(7,'normal'); doc.setTextColor(100,116,139);
-      text(o.d,ox+6,oy+12);
+      var ox=i%2===0?M:M+oW+6;
+      var oy=y+Math.floor(i/2)*18;
+      fillRect(ox,oy,oW,15,'#F8FAFC',2);
+      strokeRect(ox,oy,oW,15,'#E2E8F0',0.3,2);
+      fillRect(ox,oy,18,15,'#0D1B2A',2);
+      sf(5,'bold','#F5A623'); tx(o[0],ox+9,oy+8.5,{align:'center'});
+      sf(8,'bold','#0F172A'); tx(o[1],ox+22,oy+7);
+      sf(6,'normal','#64748B'); tx(o[2],ox+22,oy+12);
     });
-    y += Math.ceil(outputs.length/2)*18 + 8;
+    y+=Math.ceil(outputs.length/2)*18+6;
 
-    // Investment section
-    line(M,y,W-M,y,'#E2E8F0',0.3); y+=8;
-    setFont(7,'bold'); doc.setTextColor(212,137,10);
-    text('INVESTASI PROGRAM',M,y); y+=7;
-    setFont(13,'bold'); doc.setTextColor(15,23,42);
-    text('Transparan. Tidak Ada Biaya Tersembunyi.',M,y); y+=9;
+    pageFooter();
 
-    // Price box
-    rect(M,y,CW,32,'#0D1B2A',4);
-    setFont(8,'bold'); doc.setTextColor(245,166,35);
-    text('INVESTASI PER PESERTA',M+10,y+9);
-    setFont(22,'bold'); doc.setTextColor(245,166,35);
-    text('Rp 200.000',M+10,y+21);
-    setFont(9,'normal'); doc.setTextColor(160,180,200);
-    text('Estimasi '+pesertaNum+' peserta:', W-M-10,y+10,{align:'right'});
-    setFont(14,'bold'); doc.setTextColor(245,200,100);
-    text('Rp '+totalInvestasi,W-M-10,y+22,{align:'right'});
-    y+=40;
+    // ═══════════════════════════════════════════════════════════
+    // PAGE 4 — INVESTASI + LANGKAH
+    // ═══════════════════════════════════════════════════════════
+    doc.addPage();
+    pageHeader(4,d.school);
+    y=24;
 
-    // Includes/excludes
-    var incl = ['Honorarium fasilitator & co-fasilitator','Handbook peserta eksklusif (per orang)','Set worksheet & 30-Day Action Plan card','Sertifikat SIAP KERJA (cetak)','Kustomisasi materi sesuai kebutuhan sekolah','Briefing pre-program & laporan pasca-program'];
-    var excl = ['Venue/Ruangan','Konsumsi peserta & fasilitator','Peralatan Audio-Visual','Transport fasilitator (luar kota)'];
+    // INVESTMENT
+    sf(6,'bold','#D97706'); tx('INVESTASI PROGRAM',M,y); y+=7;
+    sf(13,'bold','#0F172A'); tx('Transparan — Tidak Ada Biaya Tersembunyi',M,y); y+=9;
 
-    var colW = (CW-6)/2;
-    // Includes
-    rect(M,y,colW,6,'#ECFDF5',2);
-    setFont(7,'bold'); doc.setTextColor(5,150,105);
-    text('✓  TERMASUK INVESTASI',M+4,y+4.5);
-    y+=8;
-    incl.forEach(function(s){
-      setFont(8,'normal'); doc.setTextColor(51,65,85);
-      text('• '+s,M+4,y); y+=5;
+    // Big price box
+    fillRect(M,y,CW,30,'#0D1B2A',4);
+    fillRect(M,y,4,30,'#F5A623');
+    sf(7,'bold','#94A3B8'); tx('INVESTASI PER PESERTA',M+10,y+9);
+    sf(20,'bold','#F5A623'); tx('Rp 200.000',M+10,y+22);
+    sf(8,'normal','#94A3B8'); tx('Estimasi '+pesertaNum+' peserta:',W-M-10,y+11,{align:'right'});
+    sf(13,'bold','#FCD34D'); tx('Rp '+totalInvestasi,W-M-10,y+22,{align:'right'});
+    y+=38;
+
+    // Includes/excludes cols
+    var cW2=(CW-6)/2;
+    // LEFT: includes
+    fillRect(M,y,cW2,7,'#ECFDF5',2);
+    sf(7,'bold','#059669'); tx('TERMASUK INVESTASI',M+5,y+5);
+    y+=9;
+    ['Honorarium fasilitator & co-fasilitator','Handbook peserta eksklusif (per orang)','Set worksheet & 30-Day Action Plan card','Sertifikat SIAP KERJA (cetak)','Kustomisasi materi pre-program brief','Laporan evaluasi pasca-program'].forEach(function(s){
+      fillRect(M,y-3,2,5,'#10B981');
+      sf(7,'normal','#334155'); tx(s,M+5,y); y+=5;
     });
-
-    // Excludes
-    var ey = y - incl.length*5 - 2;
-    rect(M+colW+6,ey,colW,6,'#FEF2F2',2);
-    setFont(7,'bold'); doc.setTextColor(220,38,38);
-    text('✗  DISEDIAKAN SEKOLAH',M+colW+10,ey+4.5);
-    ey+=8;
-    excl.forEach(function(s){
-      setFont(8,'normal'); doc.setTextColor(51,65,85);
-      text('• '+s,M+colW+10,ey); ey+=5;
+    // RIGHT: excludes
+    var ey2=y-6*5-9;
+    fillRect(M+cW2+6,ey2,cW2,7,'#FEF2F2',2);
+    sf(7,'bold','#DC2626'); tx('DISEDIAKAN SEKOLAH/EO',M+cW2+11,ey2+5);
+    ey2+=9;
+    ['Venue / Ruangan','Konsumsi peserta & fasilitator','Peralatan Audio-Visual (proyektor, mic)','Transport fasilitator (jika luar kota)'].forEach(function(s){
+      fillRect(M+cW2+6,ey2-3,2,5,'#EF4444');
+      sf(7,'normal','#334155'); tx(s,M+cW2+11,ey2); ey2+=5;
     });
 
-    y+=8;
+    y+=6;
 
-    // Payment terms
-    rect(M,y,CW,18,'#FFFBEB',3);
-    doc.setDrawColor(245,166,35); doc.setLineWidth(0.5);
-    doc.roundedRect(M,y,CW,18,3,3,'S');
-    setFont(8,'bold'); doc.setTextColor(212,137,10);
-    text('SKEMA PEMBAYARAN',M+8,y+7);
-    setFont(8,'normal'); doc.setTextColor(51,65,85);
-    text('50% Down Payment setelah MoU ditandatangani: Rp '+dp,M+8,y+13);
-    text('50% Pelunasan minimal H-7 sebelum pelaksanaan',M+8,y+18);
+    // Payment
+    fillRect(M,y,CW,18,'#FFFBEB',3);
+    strokeRect(M,y,CW,18,'#F5A623',0.5,3);
+    sf(7,'bold','#D97706'); tx('SKEMA PEMBAYARAN',M+8,y+7);
+    sf(7,'normal','#334155');
+    tx('50% DP setelah MoU ditandatangani: Rp '+dp,M+8,y+13);
+    tx('50% Pelunasan min. H-7 sebelum pelaksanaan program',M+8,y+18);
     y+=26;
 
-    // Note
-    if(d.waktu && d.waktu !== 'belum ditentukan') {
-      setFont(8,'normal'); doc.setTextColor(100,116,139);
-      text('Rencana waktu pelaksanaan: '+d.waktu,M,y);
-      y+=6;
+    if(d.waktu && d.waktu!=='belum ditentukan'){
+      sf(7,'normal','#64748B'); tx('Rencana pelaksanaan: '+d.waktu,M,y); y+=7;
     }
-    if(d.note) {
-      setFont(8,'italic'); doc.setTextColor(100,116,139);
-      y = wrap('Catatan: '+d.note,M,y,CW,4.5,8);
-      y+=4;
+    if(d.note){
+      y=wrapTx('Catatan khusus: '+d.note,M,y,CW,4.5,7,'italic','#64748B');
+      y+=5;
     }
 
-    // Footer
-    line(M,y+2,W-M,y+2,'#E2E8F0',0.3);
-    setFont(7,'normal'); doc.setTextColor(148,163,184);
-    text('SIAP KERJA · KaryawanSakti · karyawansakti.com',M,y+8);
-    text('Halaman 3',W-M,y+8,{align:'right'});
+    hline(M,y,W-M,'#E2E8F0',0.4); y+=8;
 
-    // ── PAGE 4: NEXT STEPS ────────────────────────────────────────
-    doc.addPage();
-    rect(0,0,W,16,'#0D1B2A');
-    setFont(7,'bold'); doc.setTextColor(245,166,35);
-    text('SIAP KERJA — Work Readiness Program',M,10);
-    doc.setTextColor(100,116,139);
-    text('Proposal untuk '+d.school,W-M,10,{align:'right'});
-    line(0,16,W,16,'#F5A623',0.5);
+    // NEXT STEPS
+    sf(6,'bold','#D97706'); tx('LANGKAH SELANJUTNYA',M,y); y+=7;
+    sf(13,'bold','#0F172A'); tx('Proses Kerjasama yang Sederhana',M,y); y+=9;
 
-    y=28;
-    setFont(7,'bold'); doc.setTextColor(212,137,10);
-    text('LANGKAH SELANJUTNYA',M,y); y+=7;
-    setFont(13,'bold'); doc.setTextColor(15,23,42);
-    text('Proses Kerjasama yang Sederhana',M,y); y+=10;
-
-    var steps = [
-      {n:'1',t:'Diskusi Awal','d':'Hubungi kami via WhatsApp atau email untuk konfirmasi kebutuhan spesifik sekolah. Konsultasi gratis.'},
-      {n:'2',t:'Proposal Teknis','d':'Finalisasi tanggal, jumlah peserta, dan kebutuhan teknis dalam 3–5 hari kerja.'},
-      {n:'3',t:'MoU & Down Payment','d':'Penandatanganan surat kerjasama + DP 50%. Pengamanan jadwal min. 14 hari sebelum acara.'},
-      {n:'4',t:'Persiapan Program','d':'Kustomisasi materi, brief koordinator sekolah, persiapan perlengkapan. 7–10 hari sebelum acara.'},
-      {n:'5',t:'Pelaksanaan 1 Hari','d':'Program berjalan 09.00–15.00 sesuai jadwal yang telah disepakati.'},
-      {n:'6',t:'Laporan Pasca-Program','d':'Debrief hasil + laporan evaluasi dikirimkan dalam 3–5 hari kerja setelah program.'}
-    ];
-    steps.forEach(function(s){
-      rect(M,y,10,12,'#F5A623',2);
-      setFont(10,'bold'); doc.setTextColor(13,27,42);
-      text(s.n,M+5,y+8.5,{align:'center'});
-      setFont(10,'bold'); doc.setTextColor(15,23,42);
-      text(s.t,M+14,y+6);
-      setFont(8,'normal'); doc.setTextColor(100,116,139);
-      text(s.d,M+14,y+11);
-      y+=16;
+    [
+      ['1','Diskusi Awal','Konfirmasi kebutuhan spesifik sekolah via WA/email. Konsultasi gratis.'],
+      ['2','Proposal Teknis','Finalisasi tanggal, peserta, kebutuhan teknis. 3–5 hari kerja.'],
+      ['3','MoU & DP 50%','Penandatanganan MoU + DP. Pengamanan jadwal min. H-14.'],
+      ['4','Pelaksanaan','Program 09.00–15.00 sesuai jadwal yang disepakati.'],
+      ['5','Laporan','Debrief hasil + laporan evaluasi dalam 3 hari kerja pasca-program.']
+    ].forEach(function(s){
+      fillRect(M,y,9,10,'#F5A623',2);
+      sf(8,'bold','#0D1B2A'); tx(s[0],M+4.5,y+7.5,{align:'center'});
+      sf(9,'bold','#0F172A'); tx(s[1],M+13,y+5);
+      sf(7,'normal','#64748B'); tx(s[2],M+13,y+10);
+      y+=14;
     });
 
     y+=4;
 
-    // Contact box
-    rect(M,y,CW,40,'#0D1B2A',4);
-    setFont(12,'bold'); doc.setTextColor(245,166,35);
-    text('Siap untuk Memulai?',M+10,y+11);
-    setFont(9,'normal'); doc.setTextColor(160,180,200);
-    text('Hubungi kami sekarang untuk konsultasi gratis dan penjadwalan.',M+10,y+18);
+    // CONTACT BOX
+    fillRect(M,y,CW,36,'#0D1B2A',4);
+    fillRect(M,y,4,36,'#F5A623');
+    sf(11,'bold','#F5A623'); tx('Siap Memulai?',M+10,y+10);
+    sf(8,'normal','#94A3B8'); tx('Konsultasi gratis, tanpa komitmen. Hubungi kami sekarang.',M+10,y+17);
+    sf(8,'bold','#F5A623'); tx('WhatsApp:',M+10,y+25);
+    sf(8,'normal','#FFFFFF'); tx('+62 857-1414-2712',M+34,y+25);
+    sf(8,'bold','#F5A623'); tx('Website:',M+10,y+32);
+    sf(8,'normal','#FFFFFF'); tx('karyawansakti.com/siap-kerja',M+30,y+32);
+    y+=44;
 
-    setFont(9,'bold'); doc.setTextColor(245,166,35);
-    text('WhatsApp:',M+10,y+26);
-    doc.setTextColor(255,255,255);
-    text('+62 857-1414-2712',M+35,y+26);
+    // CLOSING QUOTE
+    fillRect(M,y,CW,20,'#F8FAFC',3);
+    fillRect(M,y,3,20,'#F5A623');
+    sf(8,'italic','#334155');
+    var qlines=doc.splitTextToSize('"Mereka tidak butuh lebih banyak ceramah tentang semangat kerja keras. Mereka butuh peta — dan program ini adalah peta itu."',CW-12);
+    doc.text(qlines,M+8,y+8);
+    sf(6,'bold','#94A3B8'); tx('— SIAP KERJA Work Readiness Program  |  KaryawanSakti',M+8,y+18);
+    y+=26;
 
-    setFont(9,'bold'); doc.setTextColor(245,166,35);
-    text('Website:',M+10,y+33);
-    doc.setTextColor(255,255,255);
-    text('karyawansakti.com/siap-kerja',M+30,y+33);
+    // SIGN
+    sf(8,'normal','#334155'); tx('Hormat kami,',M,y); y+=5;
+    sf(9,'bold','#0D1B2A'); tx('Tim Program SIAP KERJA  |  KaryawanSakti',M,y); y+=5;
+    sf(7,'normal','#64748B'); tx('karyawansakti.com  |  Arief Permadi Kuntoaji  |  arief.kunto@gmail.com',M,y);
 
-    y+=50;
+    pageFooter();
 
-    // Signature area
-    setFont(9,'normal'); doc.setTextColor(51,65,85);
-    text('Hormat kami,',M,y); y+=6;
-    text('Tim Program SIAP KERJA',M,y); y+=5;
-    setFont(8,'bold'); doc.setTextColor(15,23,42);
-    text('KaryawanSakti',M,y); y+=5;
-    setFont(8,'normal'); doc.setTextColor(100,116,139);
-    text('karyawansakti.com | Arief Permadi Kuntoaji',M,y);
-
-    // Quote
-    rect(M,240,CW,22,'#F8FAFC',4);
-    doc.setDrawColor(245,166,35); doc.setLineWidth(0.6);
-    doc.line(M,240,M,262);
-    setFont(9,'italic'); doc.setTextColor(51,65,85);
-    y = wrap('"Mereka tidak butuh lebih banyak ceramah tentang semangat kerja keras. Mereka butuh peta — dan program ini adalah peta itu."',M+8,250,CW-12,5,9);
-    setFont(7,'bold'); doc.setTextColor(100,116,139);
-    text('— SIAP KERJA Work Readiness Program',M+8,262);
-
-    // Final footer
-    rect(0,270,W,27,'#0D1B2A');
-    rect(0,270,W,2,'#F5A623');
-    setFont(7,'normal'); doc.setTextColor(100,116,139);
-    text('Dokumen ini bersifat rahasia dan hanya untuk keperluan proposal kerjasama program SIAP KERJA.',W/2,280,{align:'center'});
-    text('Generated: '+tgl+' · karyawansakti.com',W/2,287,{align:'center'});
-    setFont(8,'bold'); doc.setTextColor(245,166,35);
-    text('Halaman 4',W/2,293,{align:'center'});
-
-    // Save
-    var filename = 'Proposal-SIAPKERJA-'+d.school.replace(/[^a-zA-Z0-9]/g,'-')+'.pdf';
+    // SAVE
+    var filename='Proposal-SIAPKERJA-'+d.school.replace(/[^a-zA-Z0-9]/g,'-')+'.pdf';
     doc.save(filename);
     showSuccess(d.school);
 
   } catch(err) {
-    console.error(err);
+    console.error('PDF Error:', err);
     alert('Gagal generate PDF. Coba refresh halaman dan isi ulang form.');
   }
 }
