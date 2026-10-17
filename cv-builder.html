@@ -1,1549 +1,415 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-65EKSH52XF"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-65EKSH52XF');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CV & Resume Builder — KaryawanSakti</title>
-<meta name="description" content="Buat CV profesional dalam menit. Pilih template Fresh Graduate, Experienced, atau Expert — tinggal isi dan cetak.">
+<meta name="theme-color" content="#062C6A">
+<title>CV Builder — KaryawanSakti</title>
+<meta name="description" content="Buat CV profesional dan ATS-friendly dalam hitungan menit. Gratis, tinggal isi, langsung unduh PDF.">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@700;800&family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Sora:wght@600;700;800&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-/* ═══════════════ APP UI ═══════════════ */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --ind:#4F46E5;--indP:#EEF2FF;--ink:#1A1A2E;--ink2:#374151;--ink3:#6B7280;
-  --g50:#F9FAFB;--g100:#F3F4F6;--g200:#E5E7EB;--g400:#9CA3AF;
-  --white:#fff;--fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
-  --teal:#0EA5E9;--navy:#1E3A5F;--dark:#0F172A;--gold:#D97706;
+  --navy:#062C6A;--navyD:#041C45;--blue:#0167FC;--blueD:#0052D6;--blueP:#E8F0FF;
+  --paper:#F7F4EC;--line:#E1DDD1;--line2:#ECE8DD;--white:#fff;
+  --ink:#062C6A;--ink2:#2B3D63;--ink3:#5A6580;--mute:#8A92A8;
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
 }
-body{font-family:var(--fb);background:#F1F5F9;color:var(--ink);min-height:100vh;overflow-x:hidden}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:var(--fb);background:var(--paper);color:var(--ink);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+button,input,textarea,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid #4F8DFF;outline-offset:2px;border-radius:4px}
+[hidden]{display:none!important}
+.ic{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
 
-/* ── Top Bar ── */
-.topbar{position:fixed;top:0;left:0;right:0;height:56px;background:var(--dark);display:flex;align-items:center;justify-content:space-between;padding:0 20px;z-index:200;box-shadow:0 2px 12px rgba(0,0,0,.3)}
-.topbar-logo{font-family:var(--fd);font-size:1rem;font-weight:800;color:#fff;display:flex;align-items:center;gap:8px}
-.topbar-logo span{color:#93C5FD}
-.topbar-logo .badge{font-size:.62rem;background:rgba(147,197,253,.2);border:1px solid rgba(147,197,253,.3);color:#93C5FD;padding:2px 8px;border-radius:50px;font-weight:700;letter-spacing:.04em}
-.topbar-actions{display:flex;align-items:center;gap:8px}
-.btn-app{font-size:.8rem;font-weight:700;padding:7px 14px;border-radius:8px;cursor:pointer;border:none;transition:all .15s;display:flex;align-items:center;gap:6px}
-.btn-ghost{background:rgba(255,255,255,.1);color:#E2E8F0;border:1px solid rgba(255,255,255,.15)}
-.btn-ghost:hover{background:rgba(255,255,255,.18)}
-.btn-primary{background:var(--ind);color:#fff}
-.btn-primary:hover{background:#4338CA}
-.btn-success{background:#059669;color:#fff}
-.btn-success:hover{background:#047857}
-.btn-back{background:none;color:#94A3B8;border:none;font-size:.8rem;cursor:pointer;display:flex;align-items:center;gap:4px}
-.btn-back:hover{color:#fff}
+/* ===== app bar ===== */
+.bar{position:sticky;top:0;z-index:20;height:60px;background:rgba(247,244,236,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:16px;padding:0 24px}
+.bar a.logo{display:flex;align-items:center}
+.bar a.logo img{height:30px;width:auto;display:block}
+.bar .tool{font-family:var(--fd);font-weight:700;font-size:.95rem;color:var(--ink2);padding-left:16px;border-left:1px solid var(--line)}
+.bar .sp{flex:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:0 18px;border-radius:10px;border:1.5px solid transparent;font-weight:700;font-size:.9rem;cursor:pointer;text-decoration:none;white-space:nowrap;transition:background .15s,border-color .15s}
+.btn-pri{background:var(--blue);color:#fff}
+.btn-pri:hover{background:var(--blueD)}
+.btn-sec{background:var(--white);border-color:var(--line);color:var(--ink)}
+.btn-sec:hover{border-color:var(--ink)}
+.btn-link{background:none;border:0;color:var(--blue);font-weight:700;cursor:pointer;padding:0;display:inline-flex;align-items:center;gap:6px;font-size:.9rem}
+.btn-link:hover{color:var(--blueD)}
+.btn-x{background:none;border:0;color:var(--mute);cursor:pointer;padding:4px;border-radius:6px;display:inline-flex}
+.btn-x:hover{color:#B42318;background:#FEECEB}
 
-/* ── Tier Selector ── */
-.tier-wrap{position:fixed;top:56px;left:0;right:0;background:var(--dark);z-index:100;border-bottom:1px solid rgba(255,255,255,.08)}
-.tier-inner{max-width:100%;padding:8px 20px 6px}
-.tier-label{font-size:.68rem;font-weight:700;color:#64748B;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
-.tier-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding-bottom:0}
-.tier-card{background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.1);border-radius:10px;padding:10px 14px;cursor:pointer;transition:all .2s;position:relative}
-.tier-card:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25)}
-.tier-card.active{border-color:var(--ind);background:rgba(79,70,229,.2)}
-.tier-card-ico{font-size:1.1rem;margin-bottom:4px;display:inline-block}
-.tier-card-nm{font-family:var(--fd);font-size:.85rem;font-weight:800;color:#fff;margin-bottom:1px;display:inline;margin-left:6px}
-.tier-card-yrs{font-size:.68rem;color:#64748B;margin-bottom:3px}
-.tier-card-desc{font-size:.68rem;color:#94A3B8;line-height:1.4;display:none}
-.tier-card-badge{font-size:.6rem;font-weight:700;padding:1px 7px;border-radius:50px;display:inline-block;margin-top:3px}
-.tier-card.active .tier-card-badge{background:var(--ind);color:#fff}
+/* ===== layout ===== */
+.wrap{display:grid;grid-template-columns:minmax(380px,460px) 1fr;height:calc(100vh - 60px)}
+.form{overflow-y:auto;padding:28px 28px 80px;border-right:1px solid var(--line);background:var(--paper)}
+.view{overflow:auto;padding:28px 32px 60px;background:#ECE8DD;display:flex;flex-direction:column;align-items:center;gap:16px}
 
-/* ── Main Layout ── */
-.main-layout{display:grid;grid-template-columns:420px 1fr;gap:0;overflow:hidden}
+.intro h1{font-family:var(--fd);font-size:1.45rem;font-weight:800;letter-spacing:-.025em;line-height:1.2}
+.intro p{color:var(--ink3);margin-top:6px;font-size:.93rem}
 
-/* ── Form Panel ── */
-.form-panel{background:var(--white);overflow-y:auto;border-right:1px solid var(--g200)}
-.form-nav{display:flex;flex-direction:column;gap:0;padding:0}
-.section-header{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;cursor:pointer;border-bottom:1px solid var(--g100);background:var(--white);transition:background .15s;user-select:none;position:sticky;top:0;z-index:10}
-.section-header:hover{background:var(--g50)}
-.section-header.active{background:var(--indP)}
-.section-header-left{display:flex;align-items:center;gap:10px}
-.section-num{width:24px;height:24px;border-radius:50%;background:var(--g100);color:var(--ink3);font-size:.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.section-header.active .section-num{background:var(--ind);color:#fff}
-.section-header-nm{font-size:.85rem;font-weight:700;color:var(--ink)}
-.section-arrow{font-size:.7rem;color:var(--g400);transition:transform .2s}
-.section-body{display:none;padding:16px 20px;border-bottom:1px solid var(--g100);background:var(--g50)}
-.section-body.show{display:block}
+/* template picker */
+.tpl{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:22px 0 8px}
+.tpl label{position:relative;display:flex;gap:10px;align-items:center;padding:12px;border:1.5px solid var(--line);border-radius:12px;background:var(--white);cursor:pointer}
+.tpl input{position:absolute;opacity:0;pointer-events:none}
+.tpl label:has(input:checked){border-color:var(--blue);box-shadow:0 0 0 3px var(--blueP)}
+.tpl label:has(input:focus-visible){outline:3px solid #4F8DFF;outline-offset:2px}
+.tpl i{width:34px;height:44px;border-radius:4px;border:1px solid var(--line);flex:none;background:#fff;position:relative;overflow:hidden}
+.tpl i.k::before{content:'';position:absolute;left:5px;right:5px;top:6px;height:4px;background:var(--navy);border-radius:2px;box-shadow:0 8px 0 -1px #C9CEDB,0 14px 0 -1px #C9CEDB,0 20px 0 -1px #C9CEDB,0 26px 0 -1px #C9CEDB}
+.tpl i.m::before{content:'';position:absolute;left:0;top:0;bottom:0;width:12px;background:var(--navy)}
+.tpl i.m::after{content:'';position:absolute;left:16px;right:4px;top:7px;height:3px;background:#C9CEDB;border-radius:2px;box-shadow:0 7px 0 #C9CEDB,0 14px 0 #C9CEDB,0 21px 0 #C9CEDB}
+.tpl b{display:block;font-size:.9rem}
+.tpl small{display:block;font-size:.78rem;color:var(--ink3);line-height:1.3}
 
-/* ── Form Elements ── */
-.form-group{margin-bottom:14px}
-.form-label{font-size:.75rem;font-weight:700;color:var(--ink2);margin-bottom:5px;display:flex;align-items:center;gap:5px}
-.form-label .req{color:#EF4444}
-.form-hint{font-size:.7rem;color:var(--g400);margin-top:3px}
-.form-input,.form-textarea,.form-select{width:100%;padding:9px 12px;border:1px solid var(--g200);border-radius:8px;font-family:var(--fb);font-size:.83rem;color:var(--ink);background:var(--white);transition:border-color .15s;outline:none}
-.form-input:focus,.form-textarea:focus,.form-select:focus{border-color:var(--ind)}
-.form-textarea{resize:vertical;min-height:80px;line-height:1.6}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.form-row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
-.char-count{font-size:.68rem;color:var(--g400);text-align:right;margin-top:3px}
+/* sections */
+.sec{border-top:1px solid var(--line);padding:6px 0}
+.sec>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:14px 0;font-family:var(--fd);font-weight:700;font-size:1rem;letter-spacing:-.01em}
+.sec>summary::-webkit-details-marker{display:none}
+.sec>summary .ic{color:var(--mute);transition:transform .2s}
+.sec[open]>summary .ic{transform:rotate(180deg)}
+.sec>summary small{font-family:var(--fb);font-weight:500;font-size:.8rem;color:var(--mute);margin-left:8px}
+.sec-body{padding:2px 0 18px;display:grid;gap:14px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.f label{display:block;font-size:.82rem;font-weight:600;color:var(--ink2);margin-bottom:5px}
+.f label em{font-style:normal;color:var(--mute);font-weight:400}
+.f input,.f textarea{width:100%;background:var(--white);border:1.5px solid var(--line);border-radius:9px;padding:10px 12px;font-size:.92rem;outline:none;transition:border-color .15s}
+.f textarea{resize:vertical;min-height:84px;line-height:1.55}
+.f input:focus,.f textarea:focus{border-color:var(--blue)}
+.f input::placeholder,.f textarea::placeholder{color:#A9AFC0}
+.hint{font-size:.8rem;color:var(--ink3);line-height:1.45;margin-top:5px}
+.count{font-size:.75rem;color:var(--mute);text-align:right;margin-top:3px}
+.count.over{color:#B42318}
 
-/* Photo upload */
-.photo-upload{display:flex;align-items:center;gap:16px;margin-bottom:14px}
-.photo-preview{width:72px;height:72px;border-radius:50%;background:var(--g100);border:2px dashed var(--g200);display:flex;align-items:center;justify-content:center;font-size:1.5rem;overflow:hidden;flex-shrink:0;cursor:pointer;transition:border-color .15s}
-.photo-preview:hover{border-color:var(--ind)}
-.photo-preview img{width:100%;height:100%;object-fit:cover}
-.photo-upload-info{flex:1}
-.photo-upload-info p{font-size:.78rem;color:var(--ink2);margin-bottom:6px;line-height:1.5}
-.photo-upload-btn{font-size:.75rem;font-weight:700;color:var(--ind);background:var(--indP);border:1px solid rgba(79,70,229,.2);padding:5px 12px;border-radius:6px;cursor:pointer;display:inline-block}
-input[type=file]{display:none}
+.photo{display:flex;align-items:center;gap:14px}
+.photo-box{width:64px;height:64px;border-radius:50%;background:var(--white);border:1.5px dashed var(--line);display:flex;align-items:center;justify-content:center;color:var(--mute);overflow:hidden;flex:none}
+.photo-box img{width:100%;height:100%;object-fit:cover}
+.photo input{display:none}
+.photo .txt{font-size:.82rem;color:var(--ink3)}
+.photo .acts{display:flex;gap:14px;margin-top:4px}
 
-/* Repeatable items */
-.repeat-item{background:var(--white);border:1px solid var(--g200);border-radius:10px;padding:14px;margin-bottom:10px;position:relative}
-.repeat-item-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;cursor:pointer}
-.repeat-item-title{font-size:.82rem;font-weight:700;color:var(--ink)}
-.repeat-item-actions{display:flex;gap:6px}
-.btn-remove{background:none;border:none;color:#EF4444;font-size:.75rem;cursor:pointer;padding:3px 6px;border-radius:5px}
-.btn-remove:hover{background:#FEE2E2}
-.btn-add{width:100%;padding:9px;border:1px dashed var(--g200);border-radius:8px;background:none;color:var(--ind);font-size:.8rem;font-weight:600;cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;gap:6px;margin-top:8px}
-.btn-add:hover{background:var(--indP);border-color:var(--ind)}
+.item{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:14px;display:grid;gap:12px}
+.item-hd{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.item-hd b{font-size:.88rem;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.add{justify-self:start}
 
-/* Bullet items */
-.bullet-list{display:flex;flex-direction:column;gap:6px;margin-bottom:8px}
-.bullet-row{display:flex;align-items:center;gap:6px}
-.bullet-row input{flex:1;padding:7px 10px;border:1px solid var(--g200);border-radius:6px;font-size:.8rem;outline:none}
-.bullet-row input:focus{border-color:var(--ind)}
-.btn-bullet-remove{background:none;border:none;color:var(--g400);cursor:pointer;padding:4px;font-size:.8rem}
-.btn-bullet-add{font-size:.75rem;color:var(--ind);background:none;border:none;cursor:pointer;padding:4px 0;display:flex;align-items:center;gap:4px}
+.note{margin-top:22px;padding:14px 16px;border-radius:12px;background:var(--white);border:1px solid var(--line);font-size:.85rem;color:var(--ink3);line-height:1.5}
+.note a{color:var(--blue);font-weight:700;text-decoration:none}
+.note a:hover{text-decoration:underline}
 
-/* Skills tags */
-.skills-container{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
-.skill-tag{background:var(--indP);color:var(--ind);font-size:.75rem;font-weight:600;padding:4px 10px;border-radius:50px;display:flex;align-items:center;gap:5px}
-.skill-tag .rm{cursor:pointer;opacity:.6;font-size:.8rem}
-.skill-tag .rm:hover{opacity:1}
-.skill-input-row{display:flex;gap:6px}
-.skill-input-row input{flex:1;padding:7px 10px;border:1px solid var(--g200);border-radius:6px;font-size:.8rem;outline:none}
-.skill-input-row input:focus{border-color:var(--ind)}
-.skill-input-row button{padding:7px 12px;background:var(--ind);color:#fff;border:none;border-radius:6px;font-size:.78rem;font-weight:700;cursor:pointer}
+/* preview frame */
+.view-hd{width:100%;max-width:794px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:.85rem;color:var(--ink3)}
+.view-hd b{color:var(--ink2)}
+.sheet-wrap{width:100%;max-width:794px}
+.sheet-scale{transform-origin:top left}
+.sheet{width:794px;min-height:1123px;background:#fff;box-shadow:0 1px 2px rgba(6,44,106,.08),0 18px 48px rgba(6,44,106,.12)}
 
-/* Section only visible for certain tiers */
-.tier-only{display:none}
+/* ===== CV: shared ===== */
+.cv{color:#1d2433;font-size:10.5pt;line-height:1.45}
+.cv .ph{color:#B6BCCB}
+.cv ul{padding-left:16px;margin-top:4px}
+.cv li{margin:2px 0}
+.cv .entry{margin-bottom:12px;break-inside:avoid}
+.cv .e-hd{display:flex;justify-content:space-between;gap:14px;align-items:baseline}
+.cv .e-t{font-weight:700;color:#0d1630}
+.cv .e-s{color:#4a5368}
+.cv .e-d{white-space:nowrap;color:#4a5368;font-size:9.5pt;font-variant-numeric:tabular-nums}
+.cv .e-x{margin-top:3px;color:#2a3245}
 
-/* ── Preview Panel ── */
-.preview-panel{overflow-y:auto;background:#E2E8F0;padding:20px;display:flex;flex-direction:column;align-items:center}
-.preview-toolbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;width:100%;max-width:794px}
-.preview-label{font-size:.78rem;font-weight:700;color:#475569}
-.cv-paper{width:794px;min-height:1122px;background:#fff;box-shadow:0 4px 32px rgba(0,0,0,.15);border-radius:2px;overflow:hidden;position:relative;font-size:10pt}
+/* Klasik: single column, serif, ATS friendly */
+.cv-k{padding:56px 64px;font-family:'DM Sans',sans-serif}
+.cv-k .top{display:flex;gap:20px;align-items:center;padding-bottom:16px;border-bottom:2px solid #062C6A;margin-bottom:18px}
+.cv-k .top img{width:84px;height:84px;border-radius:50%;object-fit:cover;flex:none}
+.cv-k .nm{font-family:'Source Serif 4',Georgia,serif;font-size:25pt;font-weight:700;color:#062C6A;line-height:1.1;letter-spacing:-.01em}
+.cv-k .tt{font-size:11.5pt;color:#0052D6;font-weight:600;margin-top:4px}
+.cv-k .ct{font-size:9.5pt;color:#4a5368;margin-top:8px;display:flex;flex-wrap:wrap;gap:4px 14px}
+.cv-k h2{font-family:'Source Serif 4',Georgia,serif;font-size:12.5pt;font-weight:700;color:#062C6A;margin:16px 0 8px;padding-bottom:4px;border-bottom:1px solid #D9DEE8}
+.cv-k .sk{color:#2a3245}
+.cv-k .sk b{color:#0d1630}
 
-/* ═══════════════ CV TEMPLATES ═══════════════ */
+/* Modern: navy sidebar */
+.cv-m{display:grid;grid-template-columns:250px 1fr;min-height:1123px;font-family:'DM Sans',sans-serif}
+.cv-m .side{background:#062C6A;color:#E6ECF7;padding:44px 26px}
+.cv-m .side img{width:120px;height:120px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 22px;border:3px solid rgba(255,255,255,.18)}
+.cv-m .side h3{font-family:'Sora',sans-serif;font-size:9.5pt;font-weight:700;color:#fff;margin:20px 0 8px;padding-bottom:5px;border-bottom:1px solid rgba(255,255,255,.2)}
+.cv-m .side p,.cv-m .side li{font-size:9.3pt;color:#D3DCEE;word-break:break-word}
+.cv-m .side ul{list-style:none;padding:0}
+.cv-m .side li{margin:4px 0}
+.cv-m .side .ph{color:rgba(255,255,255,.35)}
+.cv-m .main{padding:44px 38px}
+.cv-m .nm{font-family:'Sora',sans-serif;font-size:24pt;font-weight:800;color:#062C6A;letter-spacing:-.02em;line-height:1.1}
+.cv-m .tt{font-size:11.5pt;color:#0167FC;font-weight:600;margin-top:5px}
+.cv-m .bar-acc{width:44px;height:4px;background:#0167FC;border-radius:2px;margin:16px 0 4px}
+.cv-m h2{font-family:'Sora',sans-serif;font-size:11pt;font-weight:700;color:#062C6A;margin:18px 0 8px}
 
-/* ── HORIZON (Fresh Graduate) ── */
-.cv-horizon{font-family:'Lato',sans-serif;color:#1a1a1a}
-.cv-horizon .cv-head{background:linear-gradient(135deg,#0EA5E9,#0284C7);padding:28px 32px;display:flex;align-items:center;gap:22px}
-.cv-horizon .cv-photo{width:80px;height:80px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,.4);flex-shrink:0}
-.cv-horizon .cv-photo-placeholder{width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,.2);border:2px dashed rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0}
-.cv-horizon .cv-head-info{flex:1}
-.cv-horizon .cv-name{font-family:'Lato',sans-serif;font-size:22pt;font-weight:700;color:#fff;margin-bottom:3px;letter-spacing:-.02em}
-.cv-horizon .cv-title{font-size:10pt;color:rgba(255,255,255,.85);font-weight:400;margin-bottom:8px}
-.cv-horizon .cv-contacts{display:flex;flex-wrap:wrap;gap:12px}
-.cv-horizon .cv-contact{font-size:8.5pt;color:rgba(255,255,255,.8);display:flex;align-items:center;gap:4px}
-.cv-horizon .cv-body{padding:22px 32px}
-.cv-horizon .cv-section{margin-bottom:18px}
-.cv-horizon .cv-section-title{font-size:9pt;font-weight:700;color:#0EA5E9;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;padding-bottom:4px;border-bottom:2px solid #E0F2FE}
-.cv-horizon .cv-entry{margin-bottom:10px}
-.cv-horizon .cv-entry-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:2px}
-.cv-horizon .cv-entry-title{font-size:10pt;font-weight:700;color:#0F172A}
-.cv-horizon .cv-entry-date{font-size:8.5pt;color:#64748B;white-space:nowrap}
-.cv-horizon .cv-entry-sub{font-size:9pt;color:#475569;margin-bottom:3px}
-.cv-horizon .cv-bullets{list-style:none;padding:0}
-.cv-horizon .cv-bullets li{font-size:9pt;color:#374151;padding:1px 0 1px 12px;position:relative;line-height:1.5}
-.cv-horizon .cv-bullets li::before{content:'▸';position:absolute;left:0;color:#0EA5E9;font-size:8pt}
-.cv-horizon .cv-two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.cv-horizon .cv-skills-grid{display:flex;flex-wrap:wrap;gap:5px;margin-top:4px}
-.cv-horizon .cv-skill-tag{background:#E0F2FE;color:#0369A1;font-size:8pt;padding:3px 9px;border-radius:50px;font-weight:500}
-.cv-horizon .cv-gpa{display:inline-block;background:#F0FDF4;color:#166534;font-size:8pt;font-weight:700;padding:2px 8px;border-radius:4px;margin-left:6px}
-.cv-horizon .cv-objective{font-size:9.5pt;color:#374151;line-height:1.65;font-style:italic}
+/* mobile tabs */
+.tabs{display:none}
 
-/* ── MERIDIAN (Experienced) ── */
-.cv-meridian{font-family:'Lato',sans-serif;color:#1a1a1a}
-.cv-meridian .cv-head{background:#1E3A5F;padding:28px 32px}
-.cv-meridian .cv-head-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:12px}
-.cv-meridian .cv-head-left{display:flex;align-items:center;gap:18px}
-.cv-meridian .cv-photo{width:72px;height:72px;border-radius:8px;object-fit:cover;border:2px solid rgba(255,255,255,.2);flex-shrink:0}
-.cv-meridian .cv-photo-placeholder{width:72px;height:72px;border-radius:8px;background:rgba(255,255,255,.1);border:2px dashed rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0}
-.cv-meridian .cv-name{font-size:22pt;font-weight:700;color:#fff;letter-spacing:-.02em;margin-bottom:2px}
-.cv-meridian .cv-title{font-size:10.5pt;color:#93C5FD;font-weight:400}
-.cv-meridian .cv-contacts{display:flex;flex-wrap:wrap;gap:16px}
-.cv-meridian .cv-contact{font-size:8.5pt;color:rgba(255,255,255,.7);display:flex;align-items:center;gap:4px}
-.cv-meridian .cv-body{padding:0}
-.cv-meridian .cv-summary-band{background:#EFF6FF;padding:14px 32px;border-bottom:2px solid #BFDBFE}
-.cv-meridian .cv-summary-label{font-size:8pt;font-weight:700;color:#1D4ED8;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
-.cv-meridian .cv-summary-text{font-size:9.5pt;color:#1E3A5F;line-height:1.65}
-.cv-meridian .cv-main{padding:20px 32px}
-.cv-meridian .cv-section{margin-bottom:18px}
-.cv-meridian .cv-section-title{font-size:9pt;font-weight:700;color:#1E3A5F;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;display:flex;align-items:center;gap:8px}
-.cv-meridian .cv-section-title::after{content:'';flex:1;height:1px;background:#BFDBFE}
-.cv-meridian .cv-entry{margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid #F1F5F9}
-.cv-meridian .cv-entry:last-child{border-bottom:none;padding-bottom:0}
-.cv-meridian .cv-entry-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:2px}
-.cv-meridian .cv-entry-title{font-size:10.5pt;font-weight:700;color:#0F172A}
-.cv-meridian .cv-entry-date{font-size:8.5pt;color:#64748B;white-space:nowrap;background:#F1F5F9;padding:2px 7px;border-radius:4px}
-.cv-meridian .cv-entry-sub{font-size:9pt;color:#1E3A5F;font-weight:600;margin-bottom:4px}
-.cv-meridian .cv-bullets{list-style:none;padding:0}
-.cv-meridian .cv-bullets li{font-size:9pt;color:#374151;padding:2px 0 2px 14px;position:relative;line-height:1.5}
-.cv-meridian .cv-bullets li::before{content:'◆';position:absolute;left:0;color:#1D4ED8;font-size:7pt;top:3px}
-.cv-meridian .cv-two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.cv-meridian .cv-skill-group-nm{font-size:8.5pt;font-weight:700;color:#1E3A5F;margin-bottom:4px}
-.cv-meridian .cv-skill-list{font-size:8.5pt;color:#374151;line-height:1.6}
-.cv-meridian .cv-cert-item{font-size:8.5pt;color:#374151;padding:2px 0;display:flex;align-items:flex-start;gap:6px}
-.cv-meridian .cv-cert-item::before{content:'•';color:#1D4ED8;flex-shrink:0}
-
-/* ── SUMMIT (Expert) ── */
-.cv-summit{font-family:'Lato',sans-serif;color:#1a1a1a}
-.cv-summit .cv-head{background:linear-gradient(135deg,#0F172A 0%,#1E293B 100%);padding:28px 32px;display:flex;align-items:flex-start;gap:22px}
-.cv-summit .cv-photo{width:80px;height:80px;border-radius:4px;object-fit:cover;border:2px solid rgba(212,163,66,.4);flex-shrink:0}
-.cv-summit .cv-photo-placeholder{width:80px;height:80px;border-radius:4px;background:rgba(255,255,255,.06);border:2px dashed rgba(212,163,66,.3);display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0}
-.cv-summit .cv-head-right{flex:1}
-.cv-summit .cv-name{font-size:22pt;font-weight:700;color:#fff;letter-spacing:-.02em;margin-bottom:2px}
-.cv-summit .cv-title{font-size:11pt;color:#D4A342;font-weight:600;margin-bottom:10px;letter-spacing:.02em}
-.cv-summit .cv-contacts{display:flex;flex-wrap:wrap;gap:14px}
-.cv-summit .cv-contact{font-size:8.5pt;color:rgba(255,255,255,.65);display:flex;align-items:center;gap:4px}
-.cv-summit .cv-gold-bar{height:3px;background:linear-gradient(90deg,#D4A342,#F59E0B,#D4A342)}
-.cv-summit .cv-body{padding:20px 32px}
-.cv-summit .cv-section{margin-bottom:18px}
-.cv-summit .cv-section-title{font-size:9pt;font-weight:700;color:#0F172A;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px;padding-bottom:4px;border-bottom:2px solid #D4A342;display:flex;align-items:center;gap:6px}
-.cv-summit .cv-exec-summary{font-size:10pt;color:#1E293B;line-height:1.75;font-style:italic;padding:12px 16px;background:#FFFBEB;border-left:3px solid #D4A342;border-radius:0 6px 6px 0}
-.cv-summit .cv-competencies{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:4px}
-.cv-summit .cv-comp-item{background:#F8FAFC;border:1px solid #E2E8F0;border-radius:4px;padding:6px 10px;font-size:8.5pt;font-weight:600;color:#0F172A;text-align:center}
-.cv-summit .cv-entry{margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid #F1F5F9}
-.cv-summit .cv-entry:last-child{border-bottom:none}
-.cv-summit .cv-entry-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:2px}
-.cv-summit .cv-entry-title{font-size:11pt;font-weight:700;color:#0F172A}
-.cv-summit .cv-entry-date{font-size:8.5pt;color:#64748B;background:#F8FAFC;padding:2px 8px;border-radius:4px;border:1px solid #E2E8F0;white-space:nowrap}
-.cv-summit .cv-entry-sub{font-size:9.5pt;color:#D4A342;font-weight:700;margin-bottom:4px}
-.cv-summit .cv-entry-org{font-size:9pt;color:#475569;margin-bottom:5px}
-.cv-summit .cv-entry-impact{font-size:9pt;color:#374151;font-style:italic;margin-bottom:5px;line-height:1.55}
-.cv-summit .cv-bullets{list-style:none;padding:0}
-.cv-summit .cv-bullets li{font-size:9pt;color:#374151;padding:2px 0 2px 14px;position:relative;line-height:1.5}
-.cv-summit .cv-bullets li::before{content:'▪';position:absolute;left:0;color:#D4A342;font-size:10pt;top:0}
-.cv-summit .cv-two-col{display:grid;grid-template-columns:3fr 2fr;gap:24px}
-.cv-summit .cv-pub-item{font-size:8.5pt;color:#374151;margin-bottom:6px;padding-left:12px;position:relative;line-height:1.5}
-.cv-summit .cv-pub-item::before{content:'"';position:absolute;left:0;color:#D4A342;font-weight:700}
-
-/* ── Responsive ── */
-
-/* ════ MOBILE RESPONSIVE ════ */
-@media(max-width:768px){
-  /* Topbar */
-  .topbar{padding:0 12px;height:52px}
-  .topbar-logo .badge{display:none}
-  .btn-app span{display:none}
-  .btn-app{padding:6px 10px}
-
-  /* Tier section — horizontal scroll on mobile */
-  .tier-inner{padding:6px 12px 5px;overflow-x:auto}
-  .tier-cards{grid-template-columns:repeat(3,minmax(180px,1fr));gap:6px;min-width:540px}
-  .tier-diff-btn{display:none}
-
-  /* Main layout — full width form, no preview */
-  .main-layout{grid-template-columns:1fr}
-  .preview-panel{display:none}
-  .form-panel{border-right:none}
-
-  /* Form compact */
-  .section-header{padding:12px 14px}
-  .section-body{padding:12px 14px}
-  .form-row,.form-row-3{grid-template-columns:1fr}
-  .form-input,.form-textarea,.form-select{font-size:.85rem;padding:9px 11px}
-
-  /* Preview button - show at bottom */
-  .mobile-preview-bar{display:flex!important}
+@media (max-width:900px){
+  .bar{padding:0 16px}
+  .bar .tool{display:none}
+  .wrap{display:block;height:auto}
+  .form{border-right:0;padding:20px 16px 100px}
+  .view{padding:16px 12px 100px;min-height:calc(100vh - 60px)}
+  .wrap[data-tab="form"] .view{display:none}
+  .wrap[data-tab="view"] .form{display:none}
+  .tabs{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--white);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom));gap:10px}
+  .tabs .btn{flex:1}
+  .bar .btn-dl-top{display:none}
+  .view-hd{display:none}
 }
+@media (max-width:420px){.row{grid-template-columns:1fr}.tpl{grid-template-columns:1fr}}
 
-@media(max-width:480px){
-  .topbar-logo{font-size:.88rem}
-  .tier-inner{padding:5px 10px 4px}
-  .section-body{padding:10px 12px}
-  .form-group{margin-bottom:10px}
-  .form-label{font-size:.72rem}
-  .repeat-item{padding:10px}
-  .photo-upload{gap:10px}
-  .photo-preview{width:58px;height:58px}
-}
-
-/* Mobile preview toggle bar */
-.mobile-preview-bar{
-  display:none;position:fixed;bottom:0;left:0;right:0;
-  background:var(--dark);border-top:1px solid rgba(255,255,255,.1);
-  padding:10px 16px;gap:8px;z-index:300;
-}
-.mobile-preview-bar .btn-app{flex:1;justify-content:center;font-size:.82rem;padding:10px}
-
-@media(max-width:1100px){
-  .main-layout{grid-template-columns:360px 1fr}
-  .cv-paper{width:680px}
-}
-@media(max-width:900px){
-  .main-layout{grid-template-columns:1fr;height:auto}
-  .preview-panel{display:none}
-  .tier-cards{grid-template-columns:1fr}
-  .cv-paper{width:100%}
-}
-
-/* Differences tooltip */
-.tier-diff-btn{position:fixed;top:160px;right:20px;z-index:99;background:rgba(79,70,229,.8);color:#fff;border:none;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:50px;cursor:pointer;display:flex;align-items:center;gap:5px;backdrop-filter:blur(4px)}
-.diff-panel{position:fixed;top:188px;right:20px;z-index:98;background:#1E293B;border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px;width:300px;display:none;box-shadow:0 8px 32px rgba(0,0,0,.3)}
-.diff-panel.show{display:block}
-.diff-row{display:flex;gap:10px;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.06)}
-.diff-row:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
-.diff-ico{font-size:1.2rem;width:28px;flex-shrink:0}
-.diff-title{font-size:.78rem;font-weight:700;color:#fff;margin-bottom:2px}
-.diff-body{font-size:.71rem;color:#94A3B8;line-height:1.5}
-
-/* ── Watermark ── */
-.cv-watermark{
-  position:relative;
-  padding-bottom:28px
-}
-.cv-watermark-bar{
-  position:absolute;bottom:0;left:0;right:0;
-  background:linear-gradient(135deg,#0F172A,#1E3A5F);
-  color:rgba(255,255,255,.85);
-  font-family:'Lato',sans-serif;
-  font-size:7.5pt;
-  padding:6px 16px;
-  display:flex;align-items:center;justify-content:space-between;
-  gap:8px;
-}
-.cv-watermark-left{display:flex;align-items:center;gap:6px}
-.cv-watermark-logo{font-weight:700;color:#93C5FD}
-.cv-watermark-text{color:rgba(255,255,255,.65)}
-.cv-watermark-cta{
-  font-weight:700;color:#FCD34D;
-  white-space:nowrap;font-size:7pt;
-  border:1px solid rgba(252,211,77,.4);
-  padding:2px 8px;border-radius:3px;
-}
+/* ===== print: only the CV ===== */
+@page{size:A4;margin:0}
 @media print{
-  .cv-watermark-bar{
-    -webkit-print-color-adjust:exact;
-    print-color-adjust:exact;
-    background:#0F172A !important;
-  }
+  html,body{height:auto;background:#fff}
+  .bar,.form,.tabs,.view-hd{display:none!important}
+  .wrap{display:block;height:auto}
+  .view{display:block!important;padding:0;background:#fff;overflow:visible}
+  .sheet-wrap{max-width:none;height:auto!important}
+  .sheet-scale{transform:none!important}
+  .sheet{box-shadow:none;width:210mm;min-height:297mm}
+  .cv .ph{display:none}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
-
-/* ── Upgrade CTA Banner in UI ── */
-.upgrade-banner{
-  background:linear-gradient(135deg,#FEF3C7,#FDE68A);
-  border:1px solid #FCD34D;
-  border-radius:12px;
-  padding:14px 18px;
-  margin:12px 0;
-  display:flex;align-items:center;justify-content:space-between;gap:12px;
-  flex-wrap:wrap;
-}
-.upgrade-banner-left{display:flex;align-items:center;gap:10px}
-.upgrade-banner-ico{font-size:1.3rem;flex-shrink:0}
-.upgrade-banner-title{font-size:.82rem;font-weight:700;color:#92400E;margin-bottom:2px}
-.upgrade-banner-desc{font-size:.73rem;color:#B45309;line-height:1.4}
-.upgrade-banner-btn{
-  background:#D97706;color:#fff;
-  font-size:.78rem;font-weight:700;
-  padding:8px 16px;border-radius:8px;
-  text-decoration:none;white-space:nowrap;
-  transition:all .15s;flex-shrink:0;
-}
-.upgrade-banner-btn:hover{background:#B45309}
-
-/* ── Preview watermark overlay notice ── */
-.preview-wm-notice{
-  background:#FEF3C7;border:1px solid #FCD34D;
-  border-radius:8px;padding:8px 12px;margin-bottom:8px;
-  font-size:.72rem;color:#92400E;
-  display:flex;align-items:center;gap:6px;
-}
-
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></symbol>
+  <symbol id="i-dl" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></symbol>
+</svg>
 
-<!-- TOP BAR -->
-<div class="topbar">
-  <div class="topbar-logo">
-    <a href="index.html" style="color:inherit;text-decoration:none">Karyawan<span>Sakti</span></a>
-    <span class="badge">CV Builder</span>
-  </div>
-  <div class="topbar-actions">
-    <button class="btn-app btn-ghost" onclick="previewOnly()">&#x1F441; Preview</button>
-    <button class="btn-app btn-success" onclick="printCV()">&#x1F4E5; Download PDF</button>
-  </div>
-</div>
+<header class="bar">
+  <a class="logo" href="https://karyawansakti.com" aria-label="Kembali ke karyawansakti.com"><img src="data:image/png;base64,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" alt="karyawansakti.com" width="180" height="30"></a>
+  <span class="tool">CV Builder</span>
+  <span class="sp"></span>
+  <button class="btn btn-pri btn-dl-top" type="button" onclick="downloadPDF()"><svg class="ic"><use href="#i-dl"/></svg>Unduh PDF</button>
+</header>
 
-<!-- TIER SELECTOR -->
-<div class="tier-wrap">
-  <div class="tier-inner">
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
-      <div class="tier-label" style="margin-bottom:0">Pilih level pengalamanmu</div>
-      <a href="website-builder.html" style="font-size:.7rem;font-weight:600;color:#93C5FD;text-decoration:none;display:flex;align-items:center;gap:4px;background:rgba(147,197,253,.1);border:1px solid rgba(147,197,253,.2);padding:3px 10px;border-radius:50px;white-space:nowrap" target="_blank">
-        🌐 Butuh website profesional? →
-      </a>
+<main class="wrap" id="wrap" data-tab="form">
+  <section class="form" aria-label="Isi data CV">
+    <div class="intro">
+      <h1>Buat CV yang rapi dan mudah dibaca rekruter</h1>
+      <p>Isi data di bawah, CV di sebelah kanan ikut berubah. Data tersimpan otomatis di browser ini.</p>
     </div>
-    <div class="tier-cards">
-      <div class="tier-card active" onclick="setTier('fresh')" id="tier-fresh">
-        <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
-          <span class="tier-card-ico">🌱</span>
-          <span class="tier-card-nm">Fresh Graduate</span>
-          <span class="tier-card-badge" style="background:rgba(14,165,233,.2);color:#38BDF8;border:1px solid rgba(14,165,233,.25)">Horizon</span>
-        </div>
-        <div class="tier-card-yrs">0–2 thn · Pendidikan & skills menonjol · Cocok untuk entry-level & magang</div>
-      </div>
-      <div class="tier-card" onclick="setTier('experienced')" id="tier-experienced">
-        <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
-          <span class="tier-card-ico">🏢</span>
-          <span class="tier-card-nm">Experienced</span>
-          <span class="tier-card-badge" style="background:rgba(30,58,95,.3);color:#93C5FD;border:1px solid rgba(30,58,95,.35)">Meridian</span>
-        </div>
-        <div class="tier-card-yrs">3–10 thn · Pengalaman & pencapaian quantified · ATS-friendly</div>
-      </div>
-      <div class="tier-card" onclick="setTier('expert')" id="tier-expert">
-        <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
-          <span class="tier-card-ico">⭐</span>
-          <span class="tier-card-nm">Expert / Senior</span>
-          <span class="tier-card-badge" style="background:rgba(212,163,66,.15);color:#D4A342;border:1px solid rgba(212,163,66,.2)">Summit</span>
-        </div>
-        <div class="tier-card-yrs">10+ thn · Executive profile · Competencies & board roles</div>
-      </div>
+
+    <div class="tpl" role="radiogroup" aria-label="Pilih desain CV">
+      <label><input type="radio" name="tpl" value="k" checked><i class="k"></i><span><b>Klasik</b><small>Satu kolom, paling aman untuk ATS</small></span></label>
+      <label><input type="radio" name="tpl" value="m"><i class="m"></i><span><b>Modern</b><small>Panel samping dengan foto</small></span></label>
     </div>
-  </div>
-</div>
 
-<!-- Diff info button -->
-<button class="tier-diff-btn" onclick="document.getElementById('diffPanel').classList.toggle('show')">
-  ℹ️ Perbedaan template
-</button>
-<div class="diff-panel" id="diffPanel">
-  <div style="font-size:.72rem;font-weight:700;color:#64748B;text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px">Bedanya Apa?</div>
-  <div class="diff-row">
-    <div class="diff-ico">🌱</div>
-    <div>
-      <div class="diff-title">Horizon — Fresh Graduate</div>
-      <div class="diff-body">Pendidikan di atas. Menonjolkan IPK, proyek kuliah, magang, dan organisasi. Cocok melamar kerja pertama atau internship.</div>
-    </div>
-  </div>
-  <div class="diff-row">
-    <div class="diff-ico">🏢</div>
-    <div>
-      <div class="diff-title">Meridian — Experienced</div>
-      <div class="diff-body">Pengalaman kerja di atas. Fokus pada pencapaian dengan angka. Professional summary yang kuat. ATS-friendly untuk melamar posisi mid-senior.</div>
-    </div>
-  </div>
-  <div class="diff-row">
-    <div class="diff-ico">⭐</div>
-    <div>
-      <div class="diff-title">Summit — Expert / Senior</div>
-      <div class="diff-body">Executive summary + core competencies di atas. Ada section board roles, publikasi, dan speaking. Untuk posisi direktur, C-level, atau konsultan senior.</div>
-    </div>
-  </div>
-</div>
-
-<!-- MAIN LAYOUT -->
-<div class="main-layout">
-
-  <!-- FORM PANEL -->
-  <div class="form-panel" id="formPanel">
-
-
-      <div class="upgrade-banner">
-        <div class="upgrade-banner-left">
-          <div class="upgrade-banner-ico">⭐</div>
+    <details class="sec" open>
+      <summary>Data diri <svg class="ic"><use href="#i-chev"/></svg></summary>
+      <div class="sec-body">
+        <div class="photo">
+          <div class="photo-box" id="photoBox"><svg class="ic"><use href="#i-user"/></svg></div>
           <div>
-            <div class="upgrade-banner-title">Ingin CV tanpa watermark + feedback profesional?</div>
-            <div class="upgrade-banner-desc">CV Review oleh Arief Permadi — feedback tertulis + revisi. Mulai Rp 150.000.</div>
+            <div class="txt">Foto formal, latar polos. Opsional.</div>
+            <div class="acts"><button type="button" class="btn-link" onclick="document.getElementById('photoIn').click()">Pilih foto</button><button type="button" class="btn-link" id="photoDel" onclick="setPhoto(null)" hidden>Hapus</button></div>
+            <input type="file" id="photoIn" accept="image/*">
           </div>
         </div>
-        <a href="https://wa.me/6285714142712?text=Halo%2C%20saya%20ingin%20CV%20Review%20profesional%20tanpa%20watermark" target="_blank" class="upgrade-banner-btn">
-          💬 Minta CV Review →
-        </a>
-      </div>
-
-    <!-- S1: Info Pribadi -->
-    <div class="section-header active" onclick="toggleSection('s1')">
-      <div class="section-header-left">
-        <div class="section-num">1</div>
-        <div class="section-header-nm">📋 Informasi Pribadi</div>
-      </div>
-      <span class="section-arrow" id="arr-s1">▲</span>
-    </div>
-    <div class="section-body show" id="s1">
-      <div class="photo-upload">
-        <div class="photo-preview" id="photoPreview" onclick="document.getElementById('photoInput').click()">📷</div>
-        <div class="photo-upload-info">
-          <p>Foto profesional (opsional). Gunakan foto formal dengan latar belakang netral.</p>
-          <label class="photo-upload-btn" onclick="document.getElementById('photoInput').click()">📁 Pilih Foto</label>
-          <input type="file" id="photoInput" accept="image/*" onchange="handlePhoto(this)">
+        <div class="f"><label for="name">Nama lengkap</label><input id="name" data-k="name" placeholder="Budi Santoso" autocomplete="name"></div>
+        <div class="f"><label for="title">Posisi yang dilamar</label><input id="title" data-k="title" placeholder="Marketing Manager"></div>
+        <div class="row">
+          <div class="f"><label for="email">Email</label><input id="email" data-k="email" type="email" placeholder="nama@email.com" autocomplete="email"></div>
+          <div class="f"><label for="phone">Telepon</label><input id="phone" data-k="phone" placeholder="0812 3456 7890" autocomplete="tel"></div>
+        </div>
+        <div class="row">
+          <div class="f"><label for="city">Kota</label><input id="city" data-k="city" placeholder="Jakarta"></div>
+          <div class="f"><label for="link">LinkedIn / portofolio <em>opsional</em></label><input id="link" data-k="link" placeholder="linkedin.com/in/budi"></div>
         </div>
       </div>
-      <div class="form-row">
-        <div class="form-group">
-          <div class="form-label">Nama Lengkap <span class="req">*</span></div>
-          <input class="form-input" id="fn" placeholder="Contoh: Arief Permadi" oninput="update()">
-        </div>
-        <div class="form-group">
-          <div class="form-label">Judul / Posisi Target <span class="req">*</span></div>
-          <input class="form-input" id="ftitle" placeholder="Contoh: Data Analyst" oninput="update()">
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <div class="form-label">Email <span class="req">*</span></div>
-          <input class="form-input" id="femail" placeholder="nama@email.com" oninput="update()">
-        </div>
-        <div class="form-group">
-          <div class="form-label">Nomor Telepon</div>
-          <input class="form-input" id="fphone" placeholder="+62 812 3456 7890" oninput="update()">
+    </details>
+
+    <details class="sec" open>
+      <summary>Ringkasan</summary>
+      <div class="sec-body">
+        <div class="f">
+          <label for="summary">Ringkasan diri</label>
+          <textarea id="summary" data-k="summary" rows="4" maxlength="600" placeholder="Marketing manager dengan 8 tahun pengalaman di FMCG. Memimpin tim 12 orang dan menaikkan penjualan digital 40% dalam 2 tahun."></textarea>
+          <div class="hint">2–3 kalimat: siapa kamu, keahlian utama, dan satu pencapaian dengan angka. Fresh graduate: tulis bidang yang dituju dan bekal yang kamu punya.</div>
+          <div class="count" id="sumCount">0 / 400</div>
         </div>
       </div>
-      <div class="form-row">
-        <div class="form-group">
-          <div class="form-label">Kota / Lokasi</div>
-          <input class="form-input" id="floc" placeholder="Jakarta, Indonesia" oninput="update()">
-        </div>
-        <div class="form-group">
-          <div class="form-label">LinkedIn URL</div>
-          <input class="form-input" id="flinkedin" placeholder="linkedin.com/in/username" oninput="update()">
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="form-label">Website / Portfolio</div>
-        <input class="form-input" id="fweb" placeholder="https://portofolio.com" oninput="update()">
-      </div>
-    </div>
+    </details>
 
-    <!-- S2: Summary / Objective -->
-    <div class="section-header" onclick="toggleSection('s2')">
-      <div class="section-header-left">
-        <div class="section-num">2</div>
-        <div class="section-header-nm" id="s2-label">✍️ Tujuan Karir</div>
+    <details class="sec" open>
+      <summary>Pengalaman kerja <small>termasuk magang</small> <svg class="ic"><use href="#i-chev"/></svg></summary>
+      <div class="sec-body">
+        <div id="list-exp" style="display:grid;gap:12px"></div>
+        <button type="button" class="btn btn-sec add" onclick="addItem('exp')"><svg class="ic"><use href="#i-plus"/></svg>Tambah pengalaman</button>
       </div>
-      <span class="section-arrow" id="arr-s2">▼</span>
-    </div>
-    <div class="section-body" id="s2">
-      <div class="form-group">
-        <div class="form-label" id="s2-main-label">Tujuan Karir (Career Objective)</div>
-        <div class="form-hint" id="s2-hint">2–3 kalimat tentang tujuanmu, skill yang dimiliki, dan nilai yang bisa kamu berikan kepada perusahaan. Fokus pada potensi dan antusiasme.</div>
-        <textarea class="form-textarea" id="fsummary" rows="4" placeholder="Tuliskan tujuan karir kamu..." oninput="update();countChar(this,'sc')"></textarea>
-        <div class="char-count"><span id="sc">0</span>/300 karakter</div>
-      </div>
-      <!-- Expert only: Core Competencies -->
-      <div id="competencies-section" class="tier-only">
-        <div class="form-group" style="margin-top:12px">
-          <div class="form-label">Core Competencies</div>
-          <div class="form-hint">Area keahlian utama yang menjadi identitas profesionalmu (6-9 item)</div>
-          <div class="skills-container" id="compList"></div>
-          <div class="skill-input-row">
-            <input id="compInput" placeholder="Tambah kompetensi (Enter)" onkeydown="if(event.key==='Enter')addComp()">
-            <button onclick="addComp()">+</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    </details>
 
-    <!-- S3: Pendidikan -->
-    <div class="section-header" onclick="toggleSection('s3')">
-      <div class="section-header-left">
-        <div class="section-num">3</div>
-        <div class="section-header-nm">🎓 Pendidikan</div>
+    <details class="sec">
+      <summary>Pendidikan <svg class="ic"><use href="#i-chev"/></svg></summary>
+      <div class="sec-body">
+        <div id="list-edu" style="display:grid;gap:12px"></div>
+        <button type="button" class="btn btn-sec add" onclick="addItem('edu')"><svg class="ic"><use href="#i-plus"/></svg>Tambah pendidikan</button>
       </div>
-      <span class="section-arrow" id="arr-s3">▼</span>
-    </div>
-    <div class="section-body" id="s3">
-      <div id="edu-list"></div>
-      <button class="btn-add" onclick="addEdu()">+ Tambah Pendidikan</button>
-    </div>
+    </details>
 
-    <!-- S4: Pengalaman Kerja -->
-    <div class="section-header" onclick="toggleSection('s4')">
-      <div class="section-header-left">
-        <div class="section-num">4</div>
-        <div class="section-header-nm" id="s4-label">💼 Pengalaman / Magang</div>
+    <details class="sec">
+      <summary>Keahlian dan bahasa <svg class="ic"><use href="#i-chev"/></svg></summary>
+      <div class="sec-body">
+        <div class="f"><label for="skills">Keahlian</label><input id="skills" data-k="skills" placeholder="Digital marketing, Google Analytics, negosiasi"><div class="hint">Pisahkan dengan koma. Pilih 6–10 yang paling relevan dengan posisi yang dilamar.</div></div>
+        <div class="f"><label for="langs">Bahasa</label><input id="langs" data-k="langs" placeholder="Indonesia (native), Inggris (aktif)"></div>
       </div>
-      <span class="section-arrow" id="arr-s4">▼</span>
-    </div>
-    <div class="section-body" id="s4">
-      <div id="exp-list"></div>
-      <button class="btn-add" onclick="addExp()">+ Tambah Pengalaman</button>
-    </div>
+    </details>
 
-    <!-- S5: Proyek (Fresh only) / Board Roles (Expert only) -->
-    <div class="section-header" onclick="toggleSection('s5')">
-      <div class="section-header-left">
-        <div class="section-num">5</div>
-        <div class="section-header-nm" id="s5-label">🚀 Proyek</div>
+    <details class="sec">
+      <summary>Sertifikasi, organisasi, proyek <small>opsional</small> <svg class="ic"><use href="#i-chev"/></svg></summary>
+      <div class="sec-body">
+        <div id="list-oth" style="display:grid;gap:12px"></div>
+        <button type="button" class="btn btn-sec add" onclick="addItem('oth')"><svg class="ic"><use href="#i-plus"/></svg>Tambah item</button>
       </div>
-      <span class="section-arrow" id="arr-s5">▼</span>
-    </div>
-    <div class="section-body" id="s5">
-      <div id="proj-list"></div>
-      <button class="btn-add" id="s5-add-btn" onclick="addProj()">+ Tambah Proyek</button>
-    </div>
+    </details>
 
-    <!-- S6: Organisasi/Aktivitas (Fresh) / Sertifikasi (Experienced) / Publikasi (Expert) -->
-    <div class="section-header" onclick="toggleSection('s6')">
-      <div class="section-header-left">
-        <div class="section-num">6</div>
-        <div class="section-header-nm" id="s6-label">🏆 Kegiatan & Organisasi</div>
-      </div>
-      <span class="section-arrow" id="arr-s6">▼</span>
-    </div>
-    <div class="section-body" id="s6">
-      <div id="act-list"></div>
-      <button class="btn-add" id="s6-add-btn" onclick="addAct()">+ Tambah Kegiatan</button>
-    </div>
+    <div class="note">Mau CV-mu dibaca dan dikomentari praktisi HR sebelum melamar? <a href="https://wa.me/6285714142712?text=Halo%2C%20saya%20ingin%20CV%20Review" target="_blank" rel="noopener">CV Review mulai Rp150.000</a></div>
+  </section>
 
-    <!-- S7: Keahlian -->
-    <div class="section-header" onclick="toggleSection('s7')">
-      <div class="section-header-left">
-        <div class="section-num">7</div>
-        <div class="section-header-nm">⚡ Keahlian (Skills)</div>
-      </div>
-      <span class="section-arrow" id="arr-s7">▼</span>
-    </div>
-    <div class="section-body" id="s7">
-      <div class="form-group">
-        <div class="form-label">Technical / Hard Skills</div>
-        <div class="skills-container" id="techSkills"></div>
-        <div class="skill-input-row">
-          <input id="techInput" placeholder="Ketik skill, tekan Enter" onkeydown="if(event.key==='Enter')addSkill('tech')">
-          <button onclick="addSkill('tech')">+</button>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="form-label">Soft Skills</div>
-        <div class="skills-container" id="softSkills"></div>
-        <div class="skill-input-row">
-          <input id="softInput" placeholder="Ketik skill, tekan Enter" onkeydown="if(event.key==='Enter')addSkill('soft')">
-          <button onclick="addSkill('soft')">+</button>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="form-label">Bahasa</div>
-        <div class="skills-container" id="langSkills"></div>
-        <div class="skill-input-row">
-          <input id="langInput" placeholder="Bahasa (contoh: Inggris - Fluent)" onkeydown="if(event.key==='Enter')addSkill('lang')">
-          <button onclick="addSkill('lang')">+</button>
-        </div>
-      </div>
-    </div>
+  <section class="view" aria-label="Pratinjau CV">
+    <div class="view-hd"><span><b>Pratinjau</b>, ukuran A4</span><button class="btn-link" type="button" onclick="downloadPDF()"><svg class="ic"><use href="#i-dl"/></svg>Unduh PDF</button></div>
+    <div class="sheet-wrap" id="sheetWrap"><div class="sheet-scale" id="sheetScale"><div class="sheet" id="sheet"></div></div></div>
+  </section>
+</main>
 
-    <!-- S8: Sertifikasi & Penghargaan -->
-    <div class="section-header" onclick="toggleSection('s8')">
-      <div class="section-header-left">
-        <div class="section-num">8</div>
-        <div class="section-header-nm" id="s8-label">📜 Sertifikasi & Penghargaan</div>
-      </div>
-      <span class="section-arrow" id="arr-s8">▼</span>
-    </div>
-    <div class="section-body" id="s8">
-      <div id="cert-list"></div>
-      <button class="btn-add" onclick="addCert()">+ Tambah Sertifikasi / Penghargaan</button>
-    </div>
-
-  </div>
-
-  <!-- PREVIEW PANEL -->
-  <div class="preview-panel">
-    <div class="preview-wm-notice">
-      🔒 Preview menampilkan watermark. <strong>CV Review</strong> = versi bersih + feedback profesional.
-      <a href="https://wa.me/6285714142712?text=Saya%20ingin%20CV%20Review" target="_blank" style="color:#D97706;font-weight:700;margin-left:4px">Upgrade →</a>
-    </div>
-    <div class="preview-toolbar">
-      <div class="preview-label">👁️ Preview CV — Update realtime saat kamu mengetik</div>
-      <div style="display:flex;gap:8px">
-        <select id="templateSelect" style="font-size:.75rem;padding:5px 10px;border:1px solid #CBD5E1;border-radius:6px;background:#fff" onchange="update()">
-          <option value="auto">Template Otomatis</option>
-          <option value="horizon">Horizon (Fresh)</option>
-          <option value="meridian">Meridian (Experienced)</option>
-          <option value="summit">Summit (Expert)</option>
-        </select>
-      </div>
-    </div>
-    <div class="cv-paper" id="cvPreview">
-      <div style="height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;color:#94A3B8">
-        <div style="font-size:3rem">📄</div>
-        <div style="font-size:1rem;font-weight:700">Preview CV akan muncul di sini</div>
-        <div style="font-size:.85rem">Mulai isi form di sebelah kiri</div>
-      </div>
-    </div>
-  </div>
-
-</div>
+<nav class="tabs" aria-label="Tampilan">
+  <button class="btn btn-sec" type="button" id="tabBtn" onclick="toggleTab()"><svg class="ic"><use href="#i-eye"/></svg><span>Lihat CV</span></button>
+  <button class="btn btn-pri" type="button" onclick="downloadPDF()"><svg class="ic"><use href="#i-dl"/></svg>Unduh PDF</button>
+</nav>
 
 <script>
-
-
-// ── Mobile preview toggle ─────────────────────────────────────────
-function toggleMobilePreview() {
-  const pp = document.querySelector('.preview-panel');
-  const fp = document.querySelector('.form-panel');
-  if(!pp || !fp) return;
-  const isPreview = pp.style.display === 'flex';
-  if(isPreview) {
-    pp.style.display = 'none'; fp.style.display = '';
-    document.querySelector('.mobile-preview-bar .btn-app').textContent = '👁️ Preview';
-  } else {
-    _doUpdate(); // ensure fresh
-    pp.style.display = 'flex'; fp.style.display = 'none';
-    document.querySelector('.mobile-preview-bar .btn-app').textContent = '✏️ Edit';
-  }
-}
-
-// ── Dynamic layout offset ────────────────────────────────────────
-function fixLayout() {
-  const topbar = document.querySelector('.topbar');
-  const tier   = document.querySelector('.tier-wrap');
-  const main   = document.querySelector('.main-layout');
-  const diffBtn = document.querySelector('.tier-diff-btn');
-  if(!topbar || !tier || !main) return;
-  const topH  = topbar.offsetHeight;   // 56
-  const tierH = tier.offsetHeight;     // measured
-  const offset = topH + tierH;
-  main.style.marginTop = offset + 'px';
-  if(window.innerWidth > 768) main.style.height = (window.innerHeight - offset) + 'px';
-  else main.style.height = '';
-  if(diffBtn) {
-    diffBtn.style.top = (offset + 8) + 'px';
-    const dp = document.getElementById('diffPanel');
-    if(dp) dp.style.top = (offset + 36) + 'px';
-  }
-}
-window.addEventListener('DOMContentLoaded', ()=>{ fixLayout(); setTimeout(fixLayout,100); });
-window.addEventListener('resize', fixLayout);
-
-// ══════════════════════════════════════════
-// STATE
-// ══════════════════════════════════════════
-let STATE = {
-  tier: 'fresh', photo: null,
-  personal: { name:'', title:'', email:'', phone:'', location:'', linkedin:'', website:'' },
-  summary: '',
-  experiences: [],
-  education: [],
-  projects: [],
-  activities: [],
-  certs: [],
-  skills: { tech:[], soft:[], lang:[] },
-  competencies: []
-};
-
-let expId=0, eduId=0, projId=0, actId=0, certId=0;
-
-// ══════════════════════════════════════════
-// TIER
-// ══════════════════════════════════════════
-function setTier(t) {
-  STATE.tier = t;
-  document.querySelectorAll('.tier-card').forEach(c => c.classList.remove('active'));
-  document.getElementById('tier-'+t).classList.add('active');
-
-  const s2l = document.getElementById('s2-label');
-  const s2h = document.getElementById('s2-hint');
-  const s2ml = document.getElementById('s2-main-label');
-  const s4l = document.getElementById('s4-label');
-  const s5l = document.getElementById('s5-label');
-  const s6l = document.getElementById('s6-label');
-  const s8l = document.getElementById('s8-label');
-  const compSec = document.getElementById('competencies-section');
-
-  if(t === 'fresh') {
-    s2l.textContent = '✍️ Tujuan Karir';
-    s2ml.textContent = 'Career Objective';
-    s2h.textContent = '2–3 kalimat tentang tujuanmu, skill yang dimiliki, dan nilai yang bisa kamu berikan. Fokus pada potensi.';
-    s4l.textContent = '💼 Pengalaman & Magang';
-    s5l.textContent = '🚀 Proyek & Karya';
-    s6l.textContent = '🏆 Kegiatan & Organisasi';
-    s8l.textContent = '📜 Sertifikasi & Penghargaan';
-    compSec.style.display = 'none';
-    document.getElementById('s5-add-btn').textContent = '+ Tambah Proyek';
-    document.getElementById('s5-add-btn').onclick = addProj;
-    document.getElementById('s6-add-btn').textContent = '+ Tambah Kegiatan';
-    document.getElementById('s6-add-btn').onclick = addAct;
-  } else if(t === 'experienced') {
-    s2l.textContent = '✍️ Ringkasan Profesional';
-    s2ml.textContent = 'Professional Summary';
-    s2h.textContent = '3–4 kalimat dengan pencapaian konkret dan angka. Contoh: "HR Manager dengan 6 tahun pengalaman, memimpin tim 15 orang, berhasil menurunkan turnover 30%."';
-    s4l.textContent = '💼 Pengalaman Kerja';
-    s5l.textContent = '📜 Sertifikasi & Pelatihan';
-    s6l.textContent = '🏅 Penghargaan & Keanggotaan';
-    s8l.textContent = '🌐 Afiliasi Profesional';
-    compSec.style.display = 'none';
-    document.getElementById('s5-add-btn').textContent = '+ Tambah Sertifikasi';
-    document.getElementById('s5-add-btn').onclick = addCert;
-    document.getElementById('s6-add-btn').textContent = '+ Tambah Penghargaan';
-    document.getElementById('s6-add-btn').onclick = addAct;
-  } else {
-    s2l.textContent = '✍️ Executive Summary & Kompetensi';
-    s2ml.textContent = 'Executive Summary';
-    s2h.textContent = 'Narasi profesional yang menceritakan rekam jejak, dampak strategis, dan nilai kepemimpinanmu. 4–6 kalimat yang kuat.';
-    s4l.textContent = '💼 Pengalaman Profesional';
-    s5l.textContent = '🏛️ Board & Advisory Roles';
-    s6l.textContent = '📚 Publikasi & Speaking';
-    s8l.textContent = '🌐 Afiliasi & Keanggotaan';
-    compSec.style.display = 'block';
-    document.getElementById('s5-add-btn').textContent = '+ Tambah Board/Advisory Role';
-    document.getElementById('s5-add-btn').onclick = addBoardRole;
-    document.getElementById('s6-add-btn').textContent = '+ Tambah Publikasi/Speaking';
-    document.getElementById('s6-add-btn').onclick = addPublication;
-  }
-  renderLists(); update();
-}
-
-// ══════════════════════════════════════════
-// SECTION TOGGLE
-// ══════════════════════════════════════════
-function toggleSection(id) {
-  const body = document.getElementById(id);
-  const arr  = document.getElementById('arr-'+id);
-  const hdr  = body.previousElementSibling;
-  const isOpen = body.classList.contains('show');
-  body.classList.toggle('show', !isOpen);
-  arr.textContent = isOpen ? '▼' : '▲';
-  hdr.classList.toggle('active', !isOpen);
-}
-
-// ══════════════════════════════════════════
-// PHOTO
-// ══════════════════════════════════════════
-function handlePhoto(input) {
-  const file = input.files[0];
-  if(!file) return;
-  const reader = new FileReader();
-  reader.onload = e => {
-    STATE.photo = e.target.result;
-    const pp = document.getElementById('photoPreview');
-    pp.innerHTML = `<img src="${STATE.photo}" style="width:100%;height:100%;object-fit:cover">`;
-    update();
+(function(){
+  var KEY='ks-cv-v2';
+  var S={tpl:'k',photo:null,name:'',title:'',email:'',phone:'',city:'',link:'',summary:'',skills:'',langs:'',exp:[],edu:[],oth:[]};
+  var FIELDS={
+    exp:[['role','Posisi','Marketing Executive'],['org','Perusahaan','PT Maju Bersama'],['start','Mulai','Jan 2021'],['end','Selesai','Sekarang'],['desc','Tugas dan pencapaian','Satu poin per baris, mulai dengan kata kerja.\nMenaikkan penjualan online 40% dalam 1 tahun',1]],
+    edu:[['school','Institusi','Universitas Indonesia'],['major','Jurusan dan gelar','S1 Manajemen'],['start','Mulai','2016'],['end','Lulus','2020'],['note','Keterangan','IPK 3,6 / 4,0 (opsional)']],
+    oth:[['name','Nama','Sertifikasi Google Ads'],['org','Penerbit / organisasi','Google'],['year','Tahun','2024'],['desc','Keterangan','Opsional',1]]
   };
-  reader.readAsDataURL(file);
-}
+  var LABEL={exp:'Pengalaman',edu:'Pendidikan',oth:'Item'};
 
-// ══════════════════════════════════════════
-// REPEATABLE: EXPERIENCE
-// ══════════════════════════════════════════
-function addExp() {
-  const id = ++expId;
-  STATE.experiences.push({id, title:'', company:'', location:'', start:'', end:'', current:false, desc:'', bullets:['']});
-  renderLists(); update();
-  setTimeout(()=>document.getElementById(`exp-title-${id}`)?.focus(),100);
-}
-function removeExp(id) {
-  STATE.experiences = STATE.experiences.filter(e=>e.id!==id);
-  renderLists(); update();
-}
-function addExpBullet(id) {
-  const exp = STATE.experiences.find(e=>e.id===id);
-  if(exp) { exp.bullets.push(''); renderLists(); update(); }
-}
-function removeExpBullet(id, idx) {
-  const exp = STATE.experiences.find(e=>e.id===id);
-  if(exp) { exp.bullets.splice(idx,1); renderLists(); update(); }
-}
+  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function load(){try{var d=JSON.parse(localStorage.getItem(KEY)||'null');if(d&&typeof d==='object'){for(var k in S){if(k in d)S[k]=d[k];}}}catch(e){}}
+  var saveT;function save(){clearTimeout(saveT);saveT=setTimeout(function(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}},300);}
 
-// ══════════════════════════════════════════
-// REPEATABLE: EDUCATION
-// ══════════════════════════════════════════
-function addEdu() {
-  const id = ++eduId;
-  STATE.education.push({id, institution:'', degree:'', field:'', start:'', end:'', gpa:'', courses:''});
-  renderLists(); update();
-}
-function removeEdu(id) {
-  STATE.education = STATE.education.filter(e=>e.id!==id);
-  renderLists(); update();
-}
-
-// ══════════════════════════════════════════
-// REPEATABLE: PROJECTS / BOARD ROLES
-// ══════════════════════════════════════════
-function addProj() {
-  const id = ++projId;
-  STATE.projects.push({id, type:'project', name:'', tech:'', link:'', bullets:['']});
-  renderLists(); update();
-}
-function addBoardRole() {
-  const id = ++projId;
-  STATE.projects.push({id, type:'board', org:'', role:'', start:'', end:'', desc:''});
-  renderLists(); update();
-}
-function removeProj(id) {
-  STATE.projects = STATE.projects.filter(p=>p.id!==id);
-  renderLists(); update();
-}
-function addProjBullet(id) {
-  const p = STATE.projects.find(p=>p.id===id);
-  if(p && p.bullets) { p.bullets.push(''); renderLists(); update(); }
-}
-
-// ══════════════════════════════════════════
-// REPEATABLE: ACTIVITIES / PUBLICATIONS
-// ══════════════════════════════════════════
-function addAct() {
-  const id = ++actId;
-  STATE.activities.push({id, type:'activity', org:'', role:'', start:'', end:'', desc:''});
-  renderLists(); update();
-}
-function addPublication() {
-  const id = ++actId;
-  STATE.activities.push({id, type:'pub', title:'', publisher:'', year:'', url:''});
-  renderLists(); update();
-}
-function removeAct(id) {
-  STATE.activities = STATE.activities.filter(a=>a.id!==id);
-  renderLists(); update();
-}
-
-// ══════════════════════════════════════════
-// REPEATABLE: CERTIFICATIONS
-// ══════════════════════════════════════════
-function addCert() {
-  const id = ++certId;
-  STATE.certs.push({id, name:'', issuer:'', year:'', credential:''});
-  renderLists(); update();
-}
-function removeCert(id) {
-  STATE.certs = STATE.certs.filter(c=>c.id!==id);
-  renderLists(); update();
-}
-
-// ══════════════════════════════════════════
-// SKILLS
-// ══════════════════════════════════════════
-function addSkill(type) {
-  const inp = document.getElementById(type+'Input');
-  const val = inp.value.trim();
-  if(!val) return;
-  STATE.skills[type].push(val);
-  inp.value = '';
-  renderSkills(type); update();
-}
-function removeSkill(type, idx) {
-  STATE.skills[type].splice(idx,1);
-  renderSkills(type); update();
-}
-function renderSkills(type) {
-  const c = document.getElementById(type+'Skills');
-  c.innerHTML = STATE.skills[type].map((s,i)=>
-    `<span class="skill-tag">${s}<span class="rm" onclick="removeSkill('${type}',${i})">✕</span></span>`
-  ).join('');
-}
-
-// Competencies
-function addComp() {
-  const inp = document.getElementById('compInput');
-  const val = inp.value.trim();
-  if(!val) return;
-  STATE.competencies.push(val);
-  inp.value = '';
-  renderComps(); update();
-}
-function removeComp(idx) {
-  STATE.competencies.splice(idx,1);
-  renderComps(); update();
-}
-function renderComps() {
-  const c = document.getElementById('compList');
-  c.innerHTML = STATE.competencies.map((s,i)=>
-    `<span class="skill-tag">${s}<span class="rm" onclick="removeComp(${i})">✕</span></span>`
-  ).join('');
-}
-
-// ══════════════════════════════════════════
-// RENDER LISTS
-// ══════════════════════════════════════════
-function fld(id, field, stateArr, key) {
-  const inp = document.getElementById(id);
-  if(inp) {
-    const item = stateArr.find(e=>e.id===parseInt(id.split('-').pop()));
-    if(item) { item[key]=inp.value; update(); }
+  /* ---------- form ---------- */
+  function bindSimple(){
+    document.querySelectorAll('[data-k]').forEach(function(el){
+      el.value=S[el.dataset.k]||'';
+      el.addEventListener('input',function(){S[el.dataset.k]=el.value;if(el.id==='summary')countSum();render();save();});
+    });
+    document.querySelectorAll('input[name=tpl]').forEach(function(r){r.checked=r.value===S.tpl;r.addEventListener('change',function(){S.tpl=r.value;render();save();});});
+    document.getElementById('photoIn').addEventListener('change',function(){
+      var f=this.files&&this.files[0];if(!f)return;
+      var rd=new FileReader();rd.onload=function(){shrink(rd.result,function(u){setPhoto(u);});};rd.readAsDataURL(f);this.value='';
+    });
+    countSum();
   }
-}
+  function shrink(src,cb){var im=new Image();im.onload=function(){var s=360,c=document.createElement('canvas'),r=Math.min(1,s/Math.max(im.width,im.height));c.width=Math.round(im.width*r);c.height=Math.round(im.height*r);c.getContext('2d').drawImage(im,0,0,c.width,c.height);cb(c.toDataURL('image/jpeg',.85));};im.src=src;}
+  window.setPhoto=function(u){S.photo=u;var b=document.getElementById('photoBox');b.innerHTML=u?'<img alt="" src="'+u+'">':'<svg class="ic"><use href="#i-user"/></svg>';document.getElementById('photoDel').hidden=!u;render();save();};
+  function countSum(){var n=(S.summary||'').length,el=document.getElementById('sumCount');el.textContent=n+' / 400';el.classList.toggle('over',n>400);}
 
-function renderLists() {
-  // Experience
-  const el = document.getElementById('exp-list');
-  el.innerHTML = STATE.experiences.map(exp => `
-    <div class="repeat-item" id="exp-item-${exp.id}">
-      <div class="repeat-item-header">
-        <div class="repeat-item-title">💼 ${exp.title||'Posisi baru'} ${exp.company?'@ '+exp.company:''}</div>
-        <div class="repeat-item-actions">
-          <button class="btn-remove" onclick="removeExp(${exp.id})">✕ Hapus</button>
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <div class="form-label">Jabatan / Posisi</div>
-          <input class="form-input" id="exp-title-${exp.id}" value="${exp.title}" placeholder="Software Engineer" oninput="STATE.experiences.find(e=>e.id===${exp.id}).title=this.value;update()">
-        </div>
-        <div class="form-group">
-          <div class="form-label">Perusahaan / Organisasi</div>
-          <input class="form-input" id="exp-co-${exp.id}" value="${exp.company}" placeholder="PT Nama Perusahaan" oninput="STATE.experiences.find(e=>e.id===${exp.id}).company=this.value;update()">
-        </div>
-      </div>
-      <div class="form-row-3">
-        <div class="form-group">
-          <div class="form-label">Mulai</div>
-          <input class="form-input" id="exp-start-${exp.id}" value="${exp.start}" placeholder="Jan 2022" oninput="STATE.experiences.find(e=>e.id===${exp.id}).start=this.value;update()">
-        </div>
-        <div class="form-group">
-          <div class="form-label">Selesai</div>
-          <input class="form-input" id="exp-end-${exp.id}" value="${exp.end}" placeholder="Des 2023" oninput="STATE.experiences.find(e=>e.id===${exp.id}).end=this.value;update()">
-        </div>
-        <div class="form-group">
-          <div class="form-label">Lokasi</div>
-          <input class="form-input" id="exp-loc-${exp.id}" value="${exp.location}" placeholder="Jakarta" oninput="STATE.experiences.find(e=>e.id===${exp.id}).location=this.value;update()">
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="form-label">Pencapaian & Tanggung Jawab</div>
-        <div class="form-hint">Gunakan action verb + angka. Contoh: "Meningkatkan efisiensi proses sebesar 40%"</div>
-        <div class="bullet-list" id="exp-bullets-${exp.id}">
-          ${exp.bullets.map((b,i)=>`
-            <div class="bullet-row">
-              <input value="${b}" placeholder="• Pencapaian konkret dengan angka..." oninput="STATE.experiences.find(e=>e.id===${exp.id}).bullets[${i}]=this.value;update()">
-              <button class="btn-bullet-remove" onclick="removeExpBullet(${exp.id},${i})">✕</button>
-            </div>
-          `).join('')}
-        </div>
-        <button class="btn-bullet-add" onclick="addExpBullet(${exp.id})">+ Tambah poin</button>
-      </div>
-    </div>
-  `).join('');
+  function renderList(type){
+    var box=document.getElementById('list-'+type);
+    box.innerHTML=S[type].map(function(it,i){
+      var head=it[FIELDS[type][0][0]]||(LABEL[type]+' '+(i+1));
+      var fs=FIELDS[type],html='';
+      // first two full width, then two-column date row, then textarea
+      fs.forEach(function(f,j){
+        var id=type+i+f[0],inp=f[3]?'<textarea id="'+id+'" rows="4" data-t="'+type+'" data-i="'+i+'" data-f="'+f[0]+'" placeholder="'+esc(f[2])+'">'+esc(it[f[0]]||'')+'</textarea>':'<input id="'+id+'" data-t="'+type+'" data-i="'+i+'" data-f="'+f[0]+'" placeholder="'+esc(f[2])+'" value="'+esc(it[f[0]]||'')+'">';
+        var cell='<div class="f"><label for="'+id+'">'+f[1]+'</label>'+inp+'</div>';
+        if(j===2) html+='<div class="row">'+cell; else if(j===3&&!f[3]) html+=cell+'</div>'; else html+=cell;
+      });
+      return '<div class="item"><div class="item-hd"><b>'+esc(head)+'</b><button type="button" class="btn-x" aria-label="Hapus" onclick="removeItem(\''+type+'\','+i+')"><svg class="ic"><use href="#i-x"/></svg></button></div>'+html+'</div>';
+    }).join('');
+    box.querySelectorAll('[data-t]').forEach(function(el){
+      el.addEventListener('input',function(){var it=S[el.dataset.t][+el.dataset.i];it[el.dataset.f]=el.value;
+        if(el.dataset.f===FIELDS[el.dataset.t][0][0]){el.closest('.item').querySelector('.item-hd b').textContent=el.value||LABEL[el.dataset.t]+' '+(+el.dataset.i+1);}
+        render();save();});
+    });
+  }
+  window.addItem=function(type){S[type].push({});renderList(type);render();save();var last=document.querySelectorAll('#list-'+type+' .item');var f=last[last.length-1]&&last[last.length-1].querySelector('input');if(f)f.focus();};
+  window.removeItem=function(type,i){S[type].splice(i,1);renderList(type);render();save();};
 
-  // Education
-  const edl = document.getElementById('edu-list');
-  edl.innerHTML = STATE.education.map(edu => `
-    <div class="repeat-item">
-      <div class="repeat-item-header">
-        <div class="repeat-item-title">🎓 ${edu.institution||'Institusi baru'}</div>
-        <button class="btn-remove" onclick="removeEdu(${edu.id})">✕ Hapus</button>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <div class="form-label">Nama Institusi</div>
-          <input class="form-input" value="${edu.institution}" placeholder="Universitas Indonesia" oninput="STATE.education.find(e=>e.id===${edu.id}).institution=this.value;update()">
-        </div>
-        <div class="form-group">
-          <div class="form-label">Gelar / Jenjang</div>
-          <input class="form-input" value="${edu.degree}" placeholder="S1 / Bachelor's" oninput="STATE.education.find(e=>e.id===${edu.id}).degree=this.value;update()">
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <div class="form-label">Jurusan / Program Studi</div>
-          <input class="form-input" value="${edu.field}" placeholder="Teknik Informatika" oninput="STATE.education.find(e=>e.id===${edu.id}).field=this.value;update()">
-        </div>
-        <div class="form-group">
-          <div class="form-label">IPK / GPA (opsional)</div>
-          <input class="form-input" value="${edu.gpa}" placeholder="3.75 / 4.00" oninput="STATE.education.find(e=>e.id===${edu.id}).gpa=this.value;update()">
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <div class="form-label">Tahun Mulai</div>
-          <input class="form-input" value="${edu.start}" placeholder="2020" oninput="STATE.education.find(e=>e.id===${edu.id}).start=this.value;update()">
-        </div>
-        <div class="form-group">
-          <div class="form-label">Tahun Selesai</div>
-          <input class="form-input" value="${edu.end}" placeholder="2024" oninput="STATE.education.find(e=>e.id===${edu.id}).end=this.value;update()">
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="form-label">Mata Kuliah / Aktivitas Relevan (opsional)</div>
-        <input class="form-input" value="${edu.courses}" placeholder="Pemrograman Web, Basis Data, Statistika" oninput="STATE.education.find(e=>e.id===${edu.id}).courses=this.value;update()">
-      </div>
-    </div>
-  `).join('');
+  /* ---------- CV ---------- */
+  function ph(v,p){return v?esc(v):'<span class="ph">'+p+'</span>';}
+  function list(s){return String(s||'').split(',').map(function(x){return x.trim();}).filter(Boolean);}
+  function bullets(t){var l=String(t||'').split('\n').map(function(x){return x.replace(/^[-•*]\s*/,'').trim();}).filter(Boolean);return l.length?'<ul>'+l.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul>':'';}
+  function dates(a,b){return esc([a,b].filter(Boolean).join(' – '));}
+  function filled(arr,keys){return arr.filter(function(it){return keys.some(function(k){return (it[k]||'').trim();});});}
+  function expHTML(){return filled(S.exp,['role','org','desc']).map(function(e){return '<div class="entry"><div class="e-hd"><div><span class="e-t">'+esc(e.role)+'</span>'+(e.org?'<div class="e-s">'+esc(e.org)+'</div>':'')+'</div><div class="e-d">'+dates(e.start,e.end)+'</div></div>'+bullets(e.desc)+'</div>';}).join('');}
+  function eduHTML(){return filled(S.edu,['school','major']).map(function(e){return '<div class="entry"><div class="e-hd"><div><span class="e-t">'+esc(e.school)+'</span>'+(e.major?'<div class="e-s">'+esc(e.major)+'</div>':'')+'</div><div class="e-d">'+dates(e.start,e.end)+'</div></div>'+(e.note?'<div class="e-x">'+esc(e.note)+'</div>':'')+'</div>';}).join('');}
+  function othHTML(){return filled(S.oth,['name','org']).map(function(e){return '<div class="entry"><div class="e-hd"><div><span class="e-t">'+esc(e.name)+'</span>'+(e.org?'<div class="e-s">'+esc(e.org)+'</div>':'')+'</div><div class="e-d">'+esc(e.year||'')+'</div></div>'+(e.desc?'<div class="e-x">'+esc(e.desc)+'</div>':'')+'</div>';}).join('');}
+  function contacts(){return [S.email,S.phone,S.city,S.link].filter(Boolean).map(esc);}
+  function empty(){return !(S.name||S.title||S.summary||filled(S.exp,['role','org']).length||filled(S.edu,['school']).length);}
 
-  // Projects / Board Roles
-  const pl = document.getElementById('proj-list');
-  pl.innerHTML = STATE.projects.map(p => {
-    if(p.type === 'board') return `
-      <div class="repeat-item">
-        <div class="repeat-item-header">
-          <div class="repeat-item-title">🏛️ ${p.role||'Board Role baru'}</div>
-          <button class="btn-remove" onclick="removeProj(${p.id})">✕ Hapus</button>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <div class="form-label">Organisasi / Perusahaan</div>
-            <input class="form-input" value="${p.org}" placeholder="Nama Organisasi" oninput="STATE.projects.find(x=>x.id===${p.id}).org=this.value;update()">
-          </div>
-          <div class="form-group">
-            <div class="form-label">Peran / Jabatan</div>
-            <input class="form-input" value="${p.role}" placeholder="Commissioner / Advisor" oninput="STATE.projects.find(x=>x.id===${p.id}).role=this.value;update()">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group"><div class="form-label">Mulai</div><input class="form-input" value="${p.start}" placeholder="2020" oninput="STATE.projects.find(x=>x.id===${p.id}).start=this.value;update()"></div>
-          <div class="form-group"><div class="form-label">Selesai</div><input class="form-input" value="${p.end}" placeholder="Sekarang" oninput="STATE.projects.find(x=>x.id===${p.id}).end=this.value;update()"></div>
-        </div>
-      </div>`;
-    return `
-      <div class="repeat-item">
-        <div class="repeat-item-header">
-          <div class="repeat-item-title">🚀 ${p.name||'Proyek baru'}</div>
-          <button class="btn-remove" onclick="removeProj(${p.id})">✕ Hapus</button>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <div class="form-label">Nama Proyek</div>
-            <input class="form-input" value="${p.name}" placeholder="Sistem Informasi HR" oninput="STATE.projects.find(x=>x.id===${p.id}).name=this.value;update()">
-          </div>
-          <div class="form-group">
-            <div class="form-label">Teknologi / Tools</div>
-            <input class="form-input" value="${p.tech}" placeholder="React, Node.js, PostgreSQL" oninput="STATE.projects.find(x=>x.id===${p.id}).tech=this.value;update()">
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="form-label">Link (opsional)</div>
-          <input class="form-input" value="${p.link}" placeholder="github.com/username/project" oninput="STATE.projects.find(x=>x.id===${p.id}).link=this.value;update()">
-        </div>
-        <div class="form-group">
-          <div class="form-label">Deskripsi & Dampak</div>
-          <div class="bullet-list">
-            ${(p.bullets||['']).map((b,i)=>`
-              <div class="bullet-row">
-                <input value="${b}" placeholder="• Apa yang dibangun dan dampaknya..." oninput="STATE.projects.find(x=>x.id===${p.id}).bullets[${i}]=this.value;update()">
-                <button class="btn-bullet-remove" onclick="STATE.projects.find(x=>x.id===${p.id}).bullets.splice(${i},1);renderLists();update()">✕</button>
-              </div>`).join('')}
-          </div>
-          <button class="btn-bullet-add" onclick="addProjBullet(${p.id})">+ Tambah poin</button>
-        </div>
-      </div>`;
-  }).join('');
+  function klasik(){
+    var c=contacts(),sk=list(S.skills),lg=list(S.langs),ex=expHTML(),ed=eduHTML(),ot=othHTML();
+    var h='<div class="cv cv-k"><div class="top">'+(S.photo?'<img alt="" src="'+S.photo+'">':'')+'<div><div class="nm">'+ph(S.name,'Nama Lengkap')+'</div><div class="tt">'+ph(S.title,'Posisi yang dilamar')+'</div>'+
+      '<div class="ct">'+(c.length?c.map(function(x){return '<span>'+x+'</span>';}).join(''):'<span class="ph">email · telepon · kota</span>')+'</div></div></div>';
+    if(S.summary) h+='<h2>Ringkasan</h2><p>'+esc(S.summary)+'</p>'; else if(empty()) h+='<h2 class="ph">Ringkasan</h2><p class="ph">Ringkasan dirimu akan tampil di sini.</p>';
+    if(ex) h+='<h2>Pengalaman kerja</h2>'+ex; else if(empty()) h+='<h2 class="ph">Pengalaman kerja</h2>';
+    if(ed) h+='<h2>Pendidikan</h2>'+ed;
+    if(sk.length||lg.length){h+='<h2>Keahlian dan bahasa</h2>';if(sk.length)h+='<p class="sk"><b>Keahlian:</b> '+sk.map(esc).join(', ')+'</p>';if(lg.length)h+='<p class="sk" style="margin-top:3px"><b>Bahasa:</b> '+lg.map(esc).join(', ')+'</p>';}
+    if(ot) h+='<h2>Sertifikasi dan kegiatan</h2>'+ot;
+    return h+'</div>';
+  }
+  function modern(){
+    var c=contacts(),sk=list(S.skills),lg=list(S.langs),ex=expHTML(),ed=eduHTML(),ot=othHTML();
+    var side=(S.photo?'<img alt="" src="'+S.photo+'">':'')+'<h3 style="margin-top:0">Kontak</h3>'+(c.length?'<ul>'+c.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul>':'<p class="ph">Email, telepon, kota</p>');
+    if(sk.length) side+='<h3>Keahlian</h3><ul>'+sk.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul>';
+    if(lg.length) side+='<h3>Bahasa</h3><ul>'+lg.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul>';
+    var m='<div class="nm">'+ph(S.name,'Nama Lengkap')+'</div><div class="tt">'+ph(S.title,'Posisi yang dilamar')+'</div><div class="bar-acc"></div>';
+    if(S.summary) m+='<h2>Ringkasan</h2><p>'+esc(S.summary)+'</p>'; else if(empty()) m+='<h2 class="ph">Ringkasan</h2><p class="ph">Ringkasan dirimu akan tampil di sini.</p>';
+    if(ex) m+='<h2>Pengalaman kerja</h2>'+ex;
+    if(ed) m+='<h2>Pendidikan</h2>'+ed;
+    if(ot) m+='<h2>Sertifikasi dan kegiatan</h2>'+ot;
+    return '<div class="cv cv-m"><aside class="side">'+side+'</aside><div class="main">'+m+'</div></div>';
+  }
+  var rT;function render(){cancelAnimationFrame(rT);rT=requestAnimationFrame(function(){document.getElementById('sheet').innerHTML=S.tpl==='m'?modern():klasik();fit();});}
 
-  // Activities / Publications
-  const al = document.getElementById('act-list');
-  al.innerHTML = STATE.activities.map(a => {
-    if(a.type === 'pub') return `
-      <div class="repeat-item">
-        <div class="repeat-item-header">
-          <div class="repeat-item-title">📚 ${a.title||'Publikasi baru'}</div>
-          <button class="btn-remove" onclick="removeAct(${a.id})">✕ Hapus</button>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <div class="form-label">Judul Publikasi / Topik Speaking</div>
-            <input class="form-input" value="${a.title}" placeholder="Judul artikel atau topik presentasi" oninput="STATE.activities.find(x=>x.id===${a.id}).title=this.value;update()">
-          </div>
-          <div class="form-group">
-            <div class="form-label">Publisher / Event</div>
-            <input class="form-input" value="${a.publisher||''}" placeholder="Nama media atau konferensi" oninput="STATE.activities.find(x=>x.id===${a.id}).publisher=this.value;update()">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group"><div class="form-label">Tahun</div><input class="form-input" value="${a.year||''}" placeholder="2023" oninput="STATE.activities.find(x=>x.id===${a.id}).year=this.value;update()"></div>
-          <div class="form-group"><div class="form-label">URL (opsional)</div><input class="form-input" value="${a.url||''}" placeholder="https://..." oninput="STATE.activities.find(x=>x.id===${a.id}).url=this.value;update()"></div>
-        </div>
-      </div>`;
-    return `
-      <div class="repeat-item">
-        <div class="repeat-item-header">
-          <div class="repeat-item-title">🏆 ${a.org||'Kegiatan baru'}</div>
-          <button class="btn-remove" onclick="removeAct(${a.id})">✕ Hapus</button>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <div class="form-label">Organisasi / Program</div>
-            <input class="form-input" value="${a.org}" placeholder="BEM Fakultas / Himpunan" oninput="STATE.activities.find(x=>x.id===${a.id}).org=this.value;update()">
-          </div>
-          <div class="form-group">
-            <div class="form-label">Jabatan / Peran</div>
-            <input class="form-input" value="${a.role}" placeholder="Ketua / Koordinator" oninput="STATE.activities.find(x=>x.id===${a.id}).role=this.value;update()">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group"><div class="form-label">Mulai</div><input class="form-input" value="${a.start}" placeholder="2022" oninput="STATE.activities.find(x=>x.id===${a.id}).start=this.value;update()"></div>
-          <div class="form-group"><div class="form-label">Selesai</div><input class="form-input" value="${a.end}" placeholder="2023" oninput="STATE.activities.find(x=>x.id===${a.id}).end=this.value;update()"></div>
-        </div>
-        <div class="form-group">
-          <div class="form-label">Deskripsi Kontribusi</div>
-          <input class="form-input" value="${a.desc}" placeholder="Apa yang kamu lakukan dan dampaknya" oninput="STATE.activities.find(x=>x.id===${a.id}).desc=this.value;update()">
-        </div>
-      </div>`;
-  }).join('');
+  function fit(){
+    var w=document.getElementById('sheetWrap'),sc=document.getElementById('sheetScale'),sh=document.getElementById('sheet');
+    var k=Math.min(1,w.clientWidth/794);sc.style.transform='scale('+k+')';w.style.height=(sh.offsetHeight*k)+'px';
+  }
+  window.addEventListener('resize',fit);
 
-  // Certifications
-  const cl = document.getElementById('cert-list');
-  cl.innerHTML = STATE.certs.map(c => `
-    <div class="repeat-item">
-      <div class="repeat-item-header">
-        <div class="repeat-item-title">📜 ${c.name||'Sertifikasi baru'}</div>
-        <button class="btn-remove" onclick="removeCert(${c.id})">✕ Hapus</button>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <div class="form-label">Nama Sertifikasi / Penghargaan</div>
-          <input class="form-input" value="${c.name}" placeholder="Google Analytics Certified" oninput="STATE.certs.find(x=>x.id===${c.id}).name=this.value;update()">
-        </div>
-        <div class="form-group">
-          <div class="form-label">Penerbit / Institusi</div>
-          <input class="form-input" value="${c.issuer}" placeholder="Google / Coursera" oninput="STATE.certs.find(x=>x.id===${c.id}).issuer=this.value;update()">
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group"><div class="form-label">Tahun</div><input class="form-input" value="${c.year}" placeholder="2023" oninput="STATE.certs.find(x=>x.id===${c.id}).year=this.value;update()"></div>
-        <div class="form-group"><div class="form-label">Nomor Credential (opsional)</div><input class="form-input" value="${c.credential}" placeholder="ABC-12345" oninput="STATE.certs.find(x=>x.id===${c.id}).credential=this.value;update()"></div>
-      </div>
-    </div>
-  `).join('');
-}
+  window.toggleTab=function(){var w=document.getElementById('wrap'),v=w.dataset.tab==='form';w.dataset.tab=v?'view':'form';
+    document.getElementById('tabBtn').innerHTML=v?'<svg class="ic"><use href="#i-edit"/></svg><span>Isi data</span>':'<svg class="ic"><use href="#i-eye"/></svg><span>Lihat CV</span>';window.scrollTo(0,0);fit();};
+  window.downloadPDF=function(){
+    var w=document.getElementById('wrap'),prev=w.dataset.tab;w.dataset.tab='view';
+    var old=document.title;document.title='CV '+(S.name||'KaryawanSakti');
+    try{gtag('event','cv_download',{template:S.tpl});}catch(e){}
+    setTimeout(function(){window.print();document.title=old;w.dataset.tab=prev;fit();},60);
+  };
 
-// ══════════════════════════════════════════
-// CHAR COUNT
-// ══════════════════════════════════════════
-function countChar(el, countId) {
-  document.getElementById(countId).textContent = el.value.length;
-}
-
-// ══════════════════════════════════════════
-// COLLECT STATE FROM FORM
-// ══════════════════════════════════════════
-function collectState() {
-  STATE.personal.name     = document.getElementById('fn').value;
-  STATE.personal.title    = document.getElementById('ftitle').value;
-  STATE.personal.email    = document.getElementById('femail').value;
-  STATE.personal.phone    = document.getElementById('fphone').value;
-  STATE.personal.location = document.getElementById('floc').value;
-  STATE.personal.linkedin = document.getElementById('flinkedin').value;
-  STATE.personal.website  = document.getElementById('fweb').value;
-  STATE.summary           = document.getElementById('fsummary').value;
-}
-
-// ══════════════════════════════════════════
-// RENDER CV PREVIEW
-// ══════════════════════════════════════════
-function getTier() {
-  const sel = document.getElementById('templateSelect').value;
-  if(sel !== 'auto') return {horizon:'fresh',meridian:'experienced',summit:'expert'}[sel] || STATE.tier;
-  return STATE.tier;
-}
-
-function photoHTML(cls, style='') {
-  if(STATE.photo) return `<img src="${STATE.photo}" class="${cls}" style="${style}">`;
-  return `<div class="${cls}-placeholder" style="${style}">👤</div>`;
-}
-
-function bulletList(items, cls) {
-  const valid = (items||[]).filter(b=>b.trim());
-  if(!valid.length) return '';
-  return `<ul class="${cls}">${valid.map(b=>`<li>${b}</li>`).join('')}</ul>`;
-}
-
-function renderHorizon() {
-  const p = STATE.personal;
-  const contacts = [
-    p.email && `📧 ${p.email}`,
-    p.phone && `📱 ${p.phone}`,
-    p.location && `📍 ${p.location}`,
-    p.linkedin && `🔗 ${p.linkedin}`,
-  ].filter(Boolean);
-
-  const expHTML = STATE.experiences.map(e=>`
-    <div class="cv-entry">
-      <div class="cv-entry-head">
-        <div><div class="cv-entry-title">${e.title}</div><div class="cv-entry-sub">${e.company}${e.location?` · ${e.location}`:''}</div></div>
-        <div class="cv-entry-date">${e.start}${e.end?' – '+e.end:''}</div>
-      </div>
-      ${bulletList(e.bullets,'cv-bullets')}
-    </div>`).join('');
-
-  const eduHTML = STATE.education.map(e=>`
-    <div class="cv-entry">
-      <div class="cv-entry-head">
-        <div><div class="cv-entry-title">${e.institution}</div><div class="cv-entry-sub">${e.degree}${e.field?' · '+e.field:''}</div></div>
-        <div class="cv-entry-date">${e.start}${e.end?' – '+e.end:''}</div>
-      </div>
-      ${e.gpa?`<div style="font-size:8.5pt;margin-top:2px">IPK: <span class="cv-gpa">${e.gpa}</span></div>`:''}
-      ${e.courses?`<div style="font-size:8.5pt;color:#64748B;margin-top:3px">Coursework: ${e.courses}</div>`:''}
-    </div>`).join('');
-
-  const projHTML = STATE.projects.filter(p=>p.type==='project').map(p=>`
-    <div class="cv-entry">
-      <div class="cv-entry-head">
-        <div class="cv-entry-title">${p.name}</div>
-        ${p.tech?`<div style="font-size:7.5pt;color:#64748B;background:#F1F5F9;padding:2px 7px;border-radius:3px">${p.tech}</div>`:''}
-      </div>
-      ${bulletList(p.bullets,'cv-bullets')}
-    </div>`).join('');
-
-  const actHTML = STATE.activities.filter(a=>a.type==='activity').map(a=>`
-    <div class="cv-entry">
-      <div class="cv-entry-head">
-        <div><div class="cv-entry-title">${a.role}${a.org?' — '+a.org:''}</div></div>
-        <div class="cv-entry-date">${a.start}${a.end?' – '+a.end:''}</div>
-      </div>
-      ${a.desc?`<div style="font-size:8.5pt;color:#374151">${a.desc}</div>`:''}
-    </div>`).join('');
-
-  const techS = STATE.skills.tech.length ? `<div class="cv-skills-grid">${STATE.skills.tech.map(s=>`<span class="cv-skill-tag">${s}</span>`).join('')}</div>` : '';
-  const softS = STATE.skills.soft.length ? `<div class="cv-skills-grid" style="margin-top:6px">${STATE.skills.soft.map(s=>`<span class="cv-skill-tag" style="background:#F0FDF4;color:#166534">${s}</span>`).join('')}</div>` : '';
-  const langS = STATE.skills.lang.length ? `<div style="margin-top:8px"><div style="font-size:8pt;font-weight:700;color:#64748B;margin-bottom:4px">BAHASA</div>${STATE.skills.lang.map(s=>`<div style="font-size:8.5pt;color:#374151">• ${s}</div>`).join('')}</div>` : '';
-
-  const certHTML = STATE.certs.map(c=>`<div style="font-size:8.5pt;color:#374151;margin-bottom:4px">▸ <strong>${c.name}</strong>${c.issuer?' · '+c.issuer:''} ${c.year?'('+c.year+')':''}</div>`).join('');
-
-  return `<div class="cv-watermark"><div class="cv-horizon">
-    <div class="cv-head">
-      ${photoHTML('cv-photo')}
-      <div class="cv-head-info">
-        <div class="cv-name">${p.name||'Nama Lengkap'}</div>
-        <div class="cv-title">${p.title||'Target Posisi'}</div>
-        <div class="cv-contacts">${contacts.map(c=>`<div class="cv-contact">${c}</div>`).join('')}</div>
-      </div>
-    </div>
-    <div class="cv-body">
-      ${STATE.summary?`<div class="cv-section"><div class="cv-section-title">Tujuan Karir</div><div class="cv-objective">${STATE.summary}</div></div>`:''}
-      ${eduHTML?`<div class="cv-section"><div class="cv-section-title">Pendidikan</div>${eduHTML}</div>`:''}
-      ${expHTML?`<div class="cv-section"><div class="cv-section-title">Pengalaman & Magang</div>${expHTML}</div>`:''}
-      ${projHTML?`<div class="cv-section"><div class="cv-section-title">Proyek & Karya</div>${projHTML}</div>`:''}
-      <div class="cv-two-col">
-        ${(techS||softS||langS)?`<div class="cv-section"><div class="cv-section-title">Keahlian</div>${techS}${softS}${langS}</div>`:''}
-        ${actHTML?`<div class="cv-section"><div class="cv-section-title">Kegiatan & Organisasi</div>${actHTML}</div>`:''}
-      </div>
-      ${certHTML?`<div class="cv-section"><div class="cv-section-title">Sertifikasi & Penghargaan</div>${certHTML}</div>`:''}
-    </div>
-  </div>  <div class="cv-watermark-bar">
-    <div class="cv-watermark-left">
-      <span class="cv-watermark-logo">KaryawanSakti</span>
-      <span class="cv-watermark-text">karyawansakti.com · CV Builder Free Version</span>
-    </div>
-    <span class="cv-watermark-cta">⭐ Upgrade: CV Review Rp 150rb</span>
-  </div>
-</div>`;
-}
-
-function renderMeridian() {
-  const p = STATE.personal;
-  const contacts = [
-    p.email && `📧 ${p.email}`,
-    p.phone && `📱 ${p.phone}`,
-    p.linkedin && `🔗 ${p.linkedin}`,
-    p.location && `📍 ${p.location}`,
-    p.website && `🌐 ${p.website}`,
-  ].filter(Boolean);
-
-  const expHTML = STATE.experiences.map(e=>`
-    <div class="cv-entry">
-      <div class="cv-entry-head">
-        <div><div class="cv-entry-title">${e.title}</div><div class="cv-entry-sub">${e.company}${e.location?' · '+e.location:''}</div></div>
-        <div class="cv-entry-date">${e.start}${e.end?' – '+e.end:''}</div>
-      </div>
-      ${bulletList(e.bullets,'cv-bullets')}
-    </div>`).join('');
-
-  const eduHTML = STATE.education.map(e=>`
-    <div style="margin-bottom:8px">
-      <div style="font-size:9.5pt;font-weight:700;color:#0F172A">${e.degree}${e.field?' · '+e.field:''}</div>
-      <div style="font-size:8.5pt;color:#1E3A5F">${e.institution}</div>
-      <div style="font-size:8pt;color:#64748B">${e.start}${e.end?' – '+e.end:''}${e.gpa?' · IPK '+e.gpa:''}</div>
-    </div>`).join('');
-
-  const certHTML = [...STATE.certs,...STATE.projects.filter(p=>p.type!=='project')].map(c=>`
-    <div class="cv-cert-item">${c.name||c.role} ${c.issuer?'· '+c.issuer:''} ${c.year||c.start?'('+(c.year||c.start)+')':''}</div>`).join('');
-
-  const skillGroups = [];
-  if(STATE.skills.tech.length) skillGroups.push({name:'Technical',skills:STATE.skills.tech});
-  if(STATE.skills.soft.length) skillGroups.push({name:'Soft Skills',skills:STATE.skills.soft});
-  if(STATE.skills.lang.length) skillGroups.push({name:'Bahasa',skills:STATE.skills.lang});
-
-  const actHTML = STATE.activities.filter(a=>a.type!=='pub').map(a=>`
-    <div style="margin-bottom:6px;font-size:8.5pt">
-      <span style="font-weight:700;color:#0F172A">${a.role}</span>${a.org?' — '+a.org:''}<br>
-      <span style="color:#64748B">${a.start}${a.end?' – '+a.end:''}</span>
-    </div>`).join('');
-
-  return `<div class="cv-watermark"><div class="cv-meridian">
-    <div class="cv-head">
-      <div class="cv-head-top">
-        <div class="cv-head-left">
-          ${photoHTML('cv-photo')}
-          <div><div class="cv-name">${p.name||'Nama Lengkap'}</div><div class="cv-title">${p.title||'Professional Title'}</div></div>
-        </div>
-      </div>
-      <div class="cv-contacts">${contacts.map(c=>`<div class="cv-contact">${c}</div>`).join('')}</div>
-    </div>
-    ${STATE.summary?`<div class="cv-summary-band"><div class="cv-summary-label">Professional Summary</div><div class="cv-summary-text">${STATE.summary}</div></div>`:''}
-    <div class="cv-main">
-      ${expHTML?`<div class="cv-section"><div class="cv-section-title">Pengalaman Kerja</div>${expHTML}</div>`:''}
-      <div class="cv-two-col">
-        <div>
-          ${skillGroups.length?`<div class="cv-section"><div class="cv-section-title">Keahlian</div>${skillGroups.map(g=>`<div style="margin-bottom:10px"><div class="cv-skill-group-nm">${g.name}</div><div class="cv-skill-list">${g.skills.join(' · ')}</div></div>`).join('')}</div>`:''}
-          ${actHTML?`<div class="cv-section"><div class="cv-section-title">Penghargaan & Asosiasi</div>${actHTML}</div>`:''}
-        </div>
-        <div>
-          ${eduHTML?`<div class="cv-section"><div class="cv-section-title">Pendidikan</div>${eduHTML}</div>`:''}
-          ${certHTML?`<div class="cv-section"><div class="cv-section-title">Sertifikasi</div>${certHTML}</div>`:''}
-        </div>
-      </div>
-    </div>
-  </div>  <div class="cv-watermark-bar">
-    <div class="cv-watermark-left">
-      <span class="cv-watermark-logo">KaryawanSakti</span>
-      <span class="cv-watermark-text">karyawansakti.com · CV Builder Free Version</span>
-    </div>
-    <span class="cv-watermark-cta">⭐ Upgrade: CV Review Rp 150rb</span>
-  </div>
-</div>`;
-}
-
-function renderSummit() {
-  const p = STATE.personal;
-  const contacts = [
-    p.email && `📧 ${p.email}`,
-    p.phone && `📱 ${p.phone}`,
-    p.linkedin && `🔗 ${p.linkedin}`,
-    p.location && `📍 ${p.location}`,
-  ].filter(Boolean);
-
-  const expHTML = STATE.experiences.map(e=>`
-    <div class="cv-entry">
-      <div class="cv-entry-head">
-        <div>
-          <div class="cv-entry-title">${e.title}</div>
-          <div class="cv-entry-sub">${e.company}${e.location?' | '+e.location:''}</div>
-        </div>
-        <div class="cv-entry-date">${e.start}${e.end?' – '+e.end:''}</div>
-      </div>
-      ${bulletList(e.bullets,'cv-bullets')}
-    </div>`).join('');
-
-  const boardHTML = STATE.projects.filter(x=>x.type==='board').map(b=>`
-    <div style="margin-bottom:8px">
-      <div style="font-size:10pt;font-weight:700;color:#0F172A">${b.role}</div>
-      <div style="font-size:8.5pt;color:#D4A342;font-weight:600">${b.org}</div>
-      <div style="font-size:8pt;color:#64748B">${b.start}${b.end?' – '+b.end:''}</div>
-    </div>`).join('');
-
-  const pubHTML = STATE.activities.filter(a=>a.type==='pub').map(a=>`
-    <div class="cv-pub-item">${a.title}${a.publisher?` — <em>${a.publisher}</em>`:''} ${a.year?'('+a.year+')':''}</div>`).join('');
-
-  const eduHTML = STATE.education.map(e=>`
-    <div style="margin-bottom:8px">
-      <div style="font-size:9.5pt;font-weight:700;color:#0F172A">${e.degree}${e.field?', '+e.field:''}</div>
-      <div style="font-size:8.5pt;color:#475569">${e.institution}${e.end?' · '+e.end:''}</div>
-    </div>`).join('');
-
-  const certHTML = STATE.certs.map(c=>`
-    <div style="font-size:8.5pt;color:#374151;margin-bottom:5px">▪ <strong>${c.name}</strong>${c.issuer?' — '+c.issuer:''} ${c.year?'('+c.year+')':''}</div>`).join('');
-
-  const actHTML = STATE.activities.filter(a=>a.type!=='pub').map(a=>`
-    <div style="font-size:8.5pt;color:#374151;margin-bottom:4px">▪ ${a.role?`<strong>${a.role}</strong>, `:''}${a.org}${a.start?' ('+a.start+(a.end?' – '+a.end:'')+')':''}</div>`).join('');
-
-  const compHTML = STATE.competencies.length ?
-    `<div class="cv-competencies">${STATE.competencies.map(c=>`<div class="cv-comp-item">${c}</div>`).join('')}</div>` : '';
-
-  const skillHTML = [
-    STATE.skills.tech.length && `<div style="margin-bottom:6px"><span style="font-size:8pt;font-weight:700;color:#0F172A">Technical: </span><span style="font-size:8.5pt;color:#374151">${STATE.skills.tech.join(' · ')}</span></div>`,
-    STATE.skills.lang.length && `<div><span style="font-size:8pt;font-weight:700;color:#0F172A">Bahasa: </span><span style="font-size:8.5pt;color:#374151">${STATE.skills.lang.join(' · ')}</span></div>`,
-  ].filter(Boolean).join('');
-
-  return `<div class="cv-watermark"><div class="cv-summit">
-    <div class="cv-head">
-      ${photoHTML('cv-photo')}
-      <div class="cv-head-right">
-        <div class="cv-name">${p.name||'Nama Lengkap'}</div>
-        <div class="cv-title">${p.title||'Executive Title'}</div>
-        <div class="cv-contacts">${contacts.map(c=>`<div class="cv-contact">${c}</div>`).join('')}</div>
-      </div>
-    </div>
-    <div class="cv-gold-bar"></div>
-    <div class="cv-body">
-      ${STATE.summary?`<div class="cv-section"><div class="cv-section-title">Executive Summary</div><div class="cv-exec-summary">${STATE.summary}</div></div>`:''}
-      ${compHTML?`<div class="cv-section"><div class="cv-section-title">Core Competencies</div>${compHTML}</div>`:''}
-      ${expHTML?`<div class="cv-section"><div class="cv-section-title">Pengalaman Profesional</div>${expHTML}</div>`:''}
-      ${boardHTML?`<div class="cv-section"><div class="cv-section-title">Board & Advisory Roles</div>${boardHTML}</div>`:''}
-      <div class="cv-two-col">
-        <div>
-          ${eduHTML?`<div class="cv-section"><div class="cv-section-title">Pendidikan & Kredensial</div>${eduHTML}${certHTML}</div>`:''}
-          ${skillHTML?`<div class="cv-section"><div class="cv-section-title">Keahlian</div>${skillHTML}</div>`:''}
-        </div>
-        <div>
-          ${pubHTML?`<div class="cv-section"><div class="cv-section-title">Publikasi & Speaking</div>${pubHTML}</div>`:''}
-          ${actHTML?`<div class="cv-section"><div class="cv-section-title">Afiliasi Profesional</div>${actHTML}</div>`:''}
-        </div>
-      </div>
-    </div>
-  </div>  <div class="cv-watermark-bar">
-    <div class="cv-watermark-left">
-      <span class="cv-watermark-logo">KaryawanSakti</span>
-      <span class="cv-watermark-text">karyawansakti.com · CV Builder Free Version</span>
-    </div>
-    <span class="cv-watermark-cta">⭐ Upgrade: CV Review Rp 150rb</span>
-  </div>
-</div>`;
-}
-
-// ══════════════════════════════════════════
-// UPDATE
-// ══════════════════════════════════════════
-let updateTimer;
-function update() {
-  clearTimeout(updateTimer);
-  updateTimer = setTimeout(_doUpdate, 120);
-}
-function _doUpdate() {
-  collectState();
-  const tier = getTier();
-  let html = '';
-  if(tier === 'fresh') html = renderHorizon();
-  else if(tier === 'experienced') html = renderMeridian();
-  else html = renderSummit();
-  document.getElementById('cvPreview').innerHTML = html;
-}
-
-// ══════════════════════════════════════════
-// PRINT
-// ══════════════════════════════════════════
-function printCV() {
-  collectState();
-  const tier = getTier();
-  let cvHTML = '';
-  if(tier === 'fresh') cvHTML = renderHorizon();
-  else if(tier === 'experienced') cvHTML = renderMeridian();
-  else cvHTML = renderSummit();
-
-  const win = window.open('','_blank');
-  win.document.write(`<!DOCTYPE html><html><head>
-    <meta charset="UTF-8">
-    <title>CV - ${STATE.personal.name||'Resume'}</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-      *{box-sizing:border-box;margin:0;padding:0}
-      body{font-family:'Lato',sans-serif;background:#fff;color:#1a1a1a}
-      @page{margin:0 0 0 0;size:A4}.cv-watermark-bar{position:fixed;bottom:0;left:0;right:0}
-      @media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
-      ${document.querySelector('style').textContent}
-    </style>
-  </head><body>${cvHTML}
-<!-- Mobile bottom bar -->
-<div class="mobile-preview-bar" id="mobileBar">
-  <button class="btn-app btn-ghost" onclick="toggleMobilePreview()">👁️ Preview</button>
-  <button class="btn-app btn-success" onclick="printCV()" style="flex:2">📥 Download PDF</button>
-</div>
-
-</body></html>`);
-  win.document.close();
-  setTimeout(()=>win.print(),600);
-}
-
-function previewOnly() {
-  document.getElementById('formPanel').style.display =
-    document.getElementById('formPanel').style.display === 'none' ? '' : 'none';
-}
-
-// ══════════════════════════════════════════
-// INIT
-// ══════════════════════════════════════════
-document.addEventListener('DOMContentLoaded', () => {
-  addEdu(); addExp(); addProj(); addAct(); addCert();
-  setTier('fresh');
-});
+  load();
+  if(!S.exp.length) S.exp.push({});
+  if(!S.edu.length) S.edu.push({});
+  bindSimple();
+  if(S.photo) setPhoto(S.photo);
+  ['exp','edu','oth'].forEach(renderList);
+  render();
+})();
 </script>
-
-<!-- Mobile bottom bar -->
-<div class="mobile-preview-bar" id="mobileBar">
-  <button class="btn-app btn-ghost" onclick="toggleMobilePreview()">👁️ Preview</button>
-  <button class="btn-app btn-success" onclick="printCV()" style="flex:2">📥 Download PDF</button>
-</div>
-
 </body>
 </html>
