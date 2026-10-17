@@ -142,6 +142,16 @@ button{font-family:inherit}
 .k-facts{display:flex;gap:20px;flex-wrap:wrap;margin-top:28px}
 .k-facts>span{display:inline-flex;align-items:center;gap:7px;font-size:.875rem;font-weight:600;color:var(--ink2)}
 .k-facts .ic{width:18px;height:18px;color:var(--green)}
+.k-hlinks{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px;padding-top:24px;border-top:1px solid var(--g200);max-width:560px}
+.k-hlinks a{display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--white);border:1px solid var(--g200);border-radius:12px;text-decoration:none;transition:var(--tr)}
+.k-hlinks a:hover{border-color:var(--indigo);box-shadow:var(--sh)}
+.k-hl-ic{width:36px;height:36px;border-radius:10px;background:var(--indigoP);color:var(--indigo);display:grid;place-items:center;flex:none}
+.k-hl-ic .ic{width:18px;height:18px}
+.k-hlinks b{display:block;font-family:var(--fd);font-size:.9rem;font-weight:700;color:var(--ink);line-height:1.3}
+.k-hlinks small{display:block;font-size:.8rem;color:var(--ink3);line-height:1.35}
+.k-hlinks .k-hl-ar{width:16px;height:16px;color:var(--ink3);margin-left:auto;transition:transform .2s}
+.k-hlinks a:hover .k-hl-ar{transform:translateX(3px);color:var(--indigo)}
+@media(max-width:560px){.k-hlinks{grid-template-columns:1fr}}
 
 /* hero visual: sample result card */
 .k-visual{position:relative;max-width:420px;margin-left:auto}
@@ -392,12 +402,13 @@ button{font-family:inherit}
               <a href="https://cv.karyawansakti.com"><span>CV Builder</span><small data-k="x_i_cv_d">CV rapi dan ATS-friendly</small></a>
               <a href="/website-builder.html"><span data-k="x_i_web">Website personal branding</span><small data-k="x_i_web_d">Profil profesional yang mudah dicari</small></a>
               <a href="/siap-kerja.html"><span>Siap Kerja</span><small data-k="x_i_sk_d">Program 1 hari untuk SMA/SMK</small></a>
+              <a href="/knowledge-center.html"><span>Knowledge Center</span><small data-k="x_i_kc_d">Cerita &amp; tips dunia kerja</small></a>
             </div>
             <div>
               <h4 data-k="x_p3">Tim &amp; bisnis</h4>
               <a href="https://sop.karyawansakti.com"><span>SOP Builder</span><small data-k="x_i_sop_d">Dokumen prosedur siap audit</small></a>
               <a href="#" onclick="openTraining('team');return false"><span data-k="x_i_tna">Analisis kebutuhan training</span><small data-k="x_i_tna_d">Peta gap tim dan roadmap training</small></a>
-              <a href="https://training.karyawansakti.com"><span>Knowledge Center</span><small data-k="x_i_kc_d">Training, produk digital, event</small></a>
+              <a href="/training.html"><span data-k="x_i_tr">Training soft skill</span><small data-k="x_i_tr_d">Kisi-kisi, outline &amp; biaya</small></a>
             </div>
           </div>
         </li>
@@ -426,10 +437,11 @@ button{font-family:inherit}
   <a href="https://cv.karyawansakti.com">CV Builder<small data-k="x_i_cv_d">CV rapi dan ATS-friendly</small></a>
   <a href="/website-builder.html"><span data-k="x_i_web">Website personal branding</span><small data-k="x_i_web_d">Profil profesional yang mudah dicari</small></a>
   <a href="/siap-kerja.html">Siap Kerja<small data-k="x_i_sk_d">Program 1 hari untuk SMA/SMK</small></a>
+  <a href="/knowledge-center.html">Knowledge Center<small data-k="x_i_kc_d">Cerita &amp; tips dunia kerja</small></a>
   <h4 data-k="x_p3">Tim &amp; bisnis</h4>
   <a href="https://sop.karyawansakti.com">SOP Builder<small data-k="x_i_sop_d">Dokumen prosedur siap audit</small></a>
   <a href="#" onclick="openTraining('team');return false"><span data-k="x_i_tna">Analisis kebutuhan training</span><small data-k="x_i_tna_d">Peta gap tim dan roadmap training</small></a>
-  <a href="https://training.karyawansakti.com">Knowledge Center<small data-k="x_i_kc_d">Training, produk digital, event</small></a>
+  <a href="/training.html"><span data-k="x_i_tr">Training soft skill</span><small data-k="x_i_tr_d">Kisi-kisi, outline &amp; biaya</small></a>
   <a href="#tests" class="btn btn-pri" data-k="hcta1">Mulai tes gratis</a>
 </div>
 
@@ -447,6 +459,10 @@ button{font-family:inherit}
         <span><svg class="ic"><use href="#i-check-c"/></svg><span data-k="hp1">Tanpa daftar akun</span></span>
         <span><svg class="ic"><use href="#i-check-c"/></svg><span data-k="hp2">100% gratis</span></span>
         <span><svg class="ic"><use href="#i-check-c"/></svg><span data-k="hp3">Hasil langsung ke email</span></span>
+      </div>
+      <div class="k-hlinks">
+        <a href="/knowledge-center.html"><span class="k-hl-ic"><svg class="ic"><use href="#i-msg"/></svg></span><span><b>Knowledge Center</b><small data-k="x_h_kc">Cerita &amp; tips dunia kerja</small></span><svg class="ic k-hl-ar"><use href="#i-arrow"/></svg></a>
+        <a href="/training.html"><span class="k-hl-ic"><svg class="ic"><use href="#i-users"/></svg></span><span><b data-k="x_i_tr">Training soft skill</b><small data-k="x_h_tr">Untuk tim: kisi-kisi &amp; biaya</small></span><svg class="ic k-hl-ar"><use href="#i-arrow"/></svg></a>
       </div>
     </div>
     <div class="k-visual" aria-hidden="true">
@@ -523,6 +539,7 @@ button{font-family:inherit}
           <li><a href="https://cv.karyawansakti.com"><div class="k-it"><b>CV Builder</b><small data-k="x_i_cv_d">CV rapi dan ATS-friendly</small></div><svg class="ic"><use href="#i-arrow"/></svg></a></li>
           <li><a href="/website-builder.html"><div class="k-it"><b data-k="x_i_web">Website personal branding</b><small data-k="x_i_web_d">Profil profesional yang mudah dicari</small></div><svg class="ic"><use href="#i-arrow"/></svg></a></li>
           <li><a href="/siap-kerja.html"><div class="k-it"><b>Siap Kerja</b><small data-k="x_i_sk_d">Program 1 hari untuk SMA/SMK</small></div><svg class="ic"><use href="#i-arrow"/></svg></a></li>
+          <li><a href="/knowledge-center.html"><div class="k-it"><b>Knowledge Center</b><small data-k="x_i_kc_d">Cerita &amp; tips dunia kerja</small></div><svg class="ic"><use href="#i-arrow"/></svg></a></li>
         </ul>
       </div>
       <div class="k-pillar">
@@ -531,7 +548,7 @@ button{font-family:inherit}
         <ul class="k-items">
           <li><a href="https://sop.karyawansakti.com"><div class="k-it"><b>SOP Builder</b><small data-k="x_i_sop_d">Dokumen prosedur siap audit</small></div><svg class="ic"><use href="#i-arrow"/></svg></a></li>
           <li><button type="button" onclick="openTraining('team')"><div class="k-it"><b><span data-k="x_i_tna">Analisis kebutuhan training</span><span class="k-tag">TNA</span></b><small data-k="x_i_tna_d">Peta gap tim dan roadmap training</small></div><svg class="ic"><use href="#i-arrow"/></svg></button></li>
-          <li><a href="https://training.karyawansakti.com"><div class="k-it"><b>Knowledge Center</b><small data-k="x_i_kc_d">Training, produk digital, event</small></div><svg class="ic"><use href="#i-arrow"/></svg></a></li>
+          <li><a href="/training.html"><div class="k-it"><b data-k="x_i_tr">Training soft skill</b><small data-k="x_i_tr_d">Kisi-kisi, outline &amp; biaya</small></div><svg class="ic"><use href="#i-arrow"/></svg></a></li>
         </ul>
       </div>
     </div>
@@ -591,7 +608,8 @@ button{font-family:inherit}
       <h4 data-k="x_f_h2">Program</h4>
       <ul>
         <li><a href="/siap-kerja.html">Siap Kerja (SMA/SMK)</a></li>
-        <li><a href="https://training.karyawansakti.com">Knowledge Center</a></li>
+        <li><a href="/training.html" data-k="x_i_tr">Training soft skill</a></li>
+        <li><a href="/knowledge-center.html">Knowledge Center</a></li>
         <li><a href="#" onclick="openTraining('team');return false" data-k="x_i_tna">Analisis kebutuhan training</a></li>
       </ul>
     </div>
@@ -1433,7 +1451,8 @@ addLink('&#x1F3E0; Beranda','#hero');
 addLink('&#x1F9E0; Pilih Tes','#tests');
 addLabel('Products');
 addLink('&#x1F393; SIAP KERJA','/siap-kerja.html');
-addLink('&#x1F4DA; Knowledge Center','https://training.karyawansakti.com');
+addLink('&#x1F4DA; Knowledge Center','/knowledge-center.html');
+addLink('&#x1F465; Training Soft Skill','/training.html');
 addLink('&#x1F4C4; CV Builder','https://cv.karyawansakti.com');
 addLink('&#x1F4CB; SOP Builder','https://sop.karyawansakti.com');
 addLink('&#x1F310; Website Builder','https://website.karyawansakti.com');
@@ -3057,7 +3076,8 @@ if (tm) tm.addEventListener('click', function(e) { if (e.target === this) closeT
     x_i_sk_d: 'Program 1 hari untuk SMA/SMK',
     x_i_sop_d: 'Dokumen prosedur siap audit',
     x_i_tna: 'Analisis kebutuhan training', x_i_tna_d: 'Peta gap tim dan roadmap training',
-    x_i_kc_d: 'Training, produk digital, event',
+    x_i_kc_d: 'Cerita & tips dunia kerja', x_i_tr: 'Training soft skill', x_i_tr_d: 'Kisi-kisi, outline & biaya',
+    x_h_kc: 'Cerita & tips dunia kerja', x_h_tr: 'Untuk tim: kisi-kisi & biaya',
     x_v_lbl: 'Contoh hasil tes DISC', x_v_done: 'Selesai', x_v_title: 'Profil dominan: Steadiness',
     x_v_ft: '<strong>Kekuatan:</strong> konsisten, pendengar yang baik, menjaga ritme tim. <strong>Perlu dilatih:</strong> menyampaikan ketidaksetujuan lebih awal.',
     x_v_b1: 'Kirim ke email', x_v_b2: 'Unduh PDF', x_v_chip: 'Laporan terkirim',
@@ -3098,7 +3118,8 @@ if (tm) tm.addEventListener('click', function(e) { if (e.target === this) closeT
     x_i_sk_d: 'One-day program for high school students',
     x_i_sop_d: 'Audit-ready procedure documents',
     x_i_tna: 'Training needs analysis', x_i_tna_d: 'Team gap map and training roadmap',
-    x_i_kc_d: 'Training, digital products, events',
+    x_i_kc_d: 'Workplace stories & tips', x_i_tr: 'Soft skill training', x_i_tr_d: 'Syllabus, outline & pricing',
+    x_h_kc: 'Workplace stories & tips', x_h_tr: 'For teams: syllabus & pricing',
     x_v_lbl: 'Sample DISC result', x_v_done: 'Complete', x_v_title: 'Dominant profile: Steadiness',
     x_v_ft: '<strong>Strengths:</strong> consistent, a good listener, keeps the team\'s rhythm. <strong>To practice:</strong> voicing disagreement earlier.',
     x_v_b1: 'Send to email', x_v_b2: 'Download PDF', x_v_chip: 'Report sent',
