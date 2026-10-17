@@ -10,1444 +10,778 @@ gtag('js',new Date());
 gtag('config','G-65EKSH52XF');
 </script>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SIAP KERJA — Program 6 Jam Kesiapan Kerja untuk SMA/SMK | KaryawanSakti</title>
-<meta name="description" content="Program work readiness 6 jam (1 hari) untuk pelajar SMA/SMK kelas 11-12. Berbasis kasus nyata, bukan seminar motivasi. Framework S.I.A.P — 4 tools langsung dibawa pulang. Hubungi kami untuk proposal.">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SIAP KERJA — Program Kesiapan Kerja 1 Hari untuk SMA/SMK | KaryawanSakti</title>
+<meta name="description" content="Program kesiapan kerja 6 jam untuk pelajar SMA/SMK/MA kelas 11–12. Berbasis kasus nyata, bukan seminar motivasi. Rp 200.000/peserta, minimal 20 peserta. Buat proposal resmi untuk sekolah Anda dalam 2 menit.">
 <link rel="canonical" href="https://karyawansakti.com/siap-kerja.html">
-<meta property="og:title" content="SIAP KERJA — Work Readiness Program untuk SMA/SMK">
-<meta property="og:description" content="Program 6 jam yang membekali pelajar dengan kompetensi nyata dunia kerja. Bukan seminar motivasi. Berbasis kasus, micro-reflection, dan script konkret.">
+<meta property="og:title" content="SIAP KERJA — Program Kesiapan Kerja untuk SMA/SMK">
+<meta property="og:description" content="6 jam, berbasis kasus nyata, 6 output konkret per peserta. Buat proposal resmi untuk sekolah Anda.">
 <meta property="og:url" content="https://karyawansakti.com/siap-kerja.html">
+<meta property="og:image" content="https://karyawansakti.com/logo-karyawansakti.png">
+<meta name="theme-color" content="#062C6A">
+<link rel="icon" href="https://karyawansakti.com/favicon.png">
+<link rel="apple-touch-icon" href="https://karyawansakti.com/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
 <style>
 :root{
-  --navy:#0D1B2A;--navy2:#1A2E42;--navy3:#243B53;
-  --gold:#F5A623;--gold2:#FFB84D;--goldD:#D4890A;--goldP:#FFF8EC;
-  --ink:#0F172A;--ink2:#334155;--ink3:#64748B;
-  --white:#FFFFFF;--cream:#FFFEF7;--cream2:#F5F3EC;
-  --g100:#F1F5F9;--g200:#E2E8F0;--g400:#94A3B8;
-  --green:#10B981;--greenP:#ECFDF5;
-  --red:#EF4444;--redP:#FEF2F2;
-  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
-  --sh:0 2px 16px rgba(15,23,42,.08);--shl:0 16px 48px rgba(15,23,42,.18);
-  --tr:all .25s cubic-bezier(.4,0,.2,1);
+  --navy:#062C6A;--navyD:#041C45;--blue:#0167FC;--blueD:#0052D6;--blueP:#E8F0FF;--blueL:#7FB0FF;
+  --paper:#F7F4EC;--paper2:#EFEBE0;--white:#fff;--line:#E1DDD1;
+  --ink:#062C6A;--ink2:#2B3D63;--ink3:#5A6580;--ok:#1B7A53;
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;--nav:68px;
+  --sh:0 1px 2px rgba(6,44,106,.06);--shm:0 10px 30px rgba(6,44,106,.10);
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;overflow-x:hidden}
-body{font-family:var(--fb);color:var(--ink);background:var(--cream);line-height:1.65;overflow-x:hidden;padding-top:64px}
-.container{max-width:1100px;margin:0 auto;padding:0 24px}
-.container-sm{max-width:760px;margin:0 auto;padding:0 24px}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--fb);color:var(--ink);background:var(--paper);line-height:1.6;font-size:16px;padding-top:var(--nav);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+[hidden]{display:none!important}
+:focus-visible{outline:3px solid var(--blueL);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.ic{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.ic.sm{width:16px;height:16px}
+.skip{position:absolute;left:16px;top:-60px;z-index:3000;background:var(--navy);color:#fff;padding:10px 16px;border-radius:8px;font-weight:600;text-decoration:none}
+.skip:focus{top:12px}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,27,42,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(245,166,35,.15)}
-.nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
-.logo{font-family:var(--fd);font-size:1.1rem;font-weight:800;color:var(--white);text-decoration:none;letter-spacing:-.03em}
-.logo span{color:var(--gold)}
-.logo-badge{display:inline-flex;align-items:center;gap:6px;margin-left:10px;background:rgba(245,166,35,.15);border:1px solid rgba(245,166,35,.3);border-radius:50px;padding:3px 10px;font-size:.68rem;font-weight:700;color:var(--gold);letter-spacing:.04em}
-.nav-r{display:flex;align-items:center;gap:10px}
-.btn-nav-ghost{padding:8px 16px;background:transparent;color:rgba(255,255,255,.7);font-size:.85rem;font-weight:600;border:1px solid rgba(255,255,255,.2);border-radius:9px;text-decoration:none;transition:var(--tr);font-family:var(--fb)}
-.btn-nav-ghost:hover{border-color:var(--gold);color:var(--gold)}
-.btn-nav-gold{padding:9px 20px;background:var(--gold);color:var(--navy);font-size:.875rem;font-weight:800;border-radius:10px;text-decoration:none;transition:var(--tr);font-family:var(--fb)}
-.btn-nav-gold:hover{background:var(--gold2);transform:translateY(-1px)}
+/* type */
+.eyebrow{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
+h1,h2,h3{font-family:var(--fd);color:var(--ink);letter-spacing:-.03em}
+.h1{font-weight:800;font-size:clamp(2.2rem,5vw,3.5rem);line-height:1.08;margin-top:14px}
+.h1 em{font-style:normal;color:var(--blue)}
+.h2{font-weight:800;font-size:clamp(1.6rem,3.2vw,2.2rem);line-height:1.15;margin-top:10px}
+.h3{font-weight:700;font-size:1.08rem;line-height:1.3;letter-spacing:-.015em}
+.lead{font-size:1.1rem;line-height:1.7;color:var(--ink2);max-width:34em;margin-top:18px}
+.sub{color:var(--ink3);max-width:38em;margin-top:12px}
+.head{margin-bottom:40px}
+.head.c{text-align:center}.head.c .sub{margin-left:auto;margin-right:auto}
 
-/* HERO */
-.hero{background:linear-gradient(160deg,#0D1B2A 0%,#1A2E42 40%,#0F2337 70%,#0D1B2A 100%);padding:88px 0 72px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23F5A623' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");opacity:.4}
-.hero-blob{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none}
-.hero-blob1{width:500px;height:500px;background:radial-gradient(circle,rgba(245,166,35,.12) 0%,transparent 70%);top:-100px;right:-100px}
-.hero-blob2{width:400px;height:400px;background:radial-gradient(circle,rgba(16,185,129,.08) 0%,transparent 70%);bottom:-50px;left:-80px}
-.hero-in{display:grid;grid-template-columns:1fr 400px;gap:56px;align-items:center;position:relative;z-index:1}
-.hero-eye{display:inline-flex;align-items:center;gap:8px;background:rgba(245,166,35,.12);border:1px solid rgba(245,166,35,.25);border-radius:50px;padding:5px 14px;font-size:.73rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
-.hero h1{font-family:var(--fd);font-size:clamp(2rem,4.5vw,3rem);font-weight:900;color:var(--white);letter-spacing:-.04em;line-height:1.08;margin-bottom:16px}
-.hero h1 em{color:var(--gold);font-style:normal}
-.hero-sub{font-size:1rem;color:rgba(255,255,255,.6);line-height:1.75;margin-bottom:28px;max-width:480px}
-.hero-btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
-.btn-gold{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;background:var(--gold);color:var(--navy);font-weight:800;font-size:.95rem;border-radius:12px;text-decoration:none;transition:var(--tr);font-family:var(--fb)}
-.btn-gold:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(245,166,35,.4)}
-.btn-outline-white{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;background:transparent;color:var(--white);font-weight:700;font-size:.95rem;border:1.5px solid rgba(255,255,255,.3);border-radius:12px;text-decoration:none;transition:var(--tr);font-family:var(--fb)}
-.btn-outline-white:hover{border-color:var(--gold);color:var(--gold)}
-.hero-stats{display:flex;gap:20px;flex-wrap:wrap}
-.h-stat{display:flex;align-items:center;gap:8px;font-size:.82rem;color:rgba(255,255,255,.55)}
-.h-stat strong{color:var(--gold);font-weight:800}
+/* buttons: 3 variants */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:10px;font-weight:700;font-size:.95rem;line-height:1.2;text-decoration:none;cursor:pointer;border:1.5px solid transparent;transition:background .2s,border-color .2s,color .2s;white-space:nowrap}
+.btn-pri{background:var(--blue);color:#fff;border-color:var(--blue)}
+.btn-pri:hover{background:var(--blueD);border-color:var(--blueD)}
+.btn-sec{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn-sec:hover{border-color:var(--ink);background:var(--white)}
+.btn-link{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:var(--blue);text-decoration:none;background:none;border:0;cursor:pointer}
+.btn-link:hover{color:var(--blueD)}
+.btn.sm{padding:9px 16px;font-size:.875rem}
+.btn.full{width:100%}
+.dark .btn-sec{color:#fff;border-color:rgba(255,255,255,.3)}
+.dark .btn-sec:hover{background:rgba(255,255,255,.08);border-color:#fff}
 
-/* HERO CARD */
-.hero-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:24px;backdrop-filter:blur(8px)}
-.hc-label{font-size:.68rem;font-weight:700;color:rgba(255,255,255,.35);letter-spacing:.07em;text-transform:uppercase;margin-bottom:14px}
-.hc-badge{display:flex;align-items:center;gap:10px;background:rgba(245,166,35,.1);border:1px solid rgba(245,166,35,.2);border-radius:12px;padding:14px;margin-bottom:8px}
-.hc-badge-ico{width:36px;height:36px;border-radius:9px;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
-.hc-badge-nm{font-size:.88rem;font-weight:700;color:var(--white)}
-.hc-badge-desc{font-size:.74rem;color:rgba(255,255,255,.45)}
-.hc-divider{height:1px;background:rgba(255,255,255,.08);margin:14px 0}
-.hc-price-label{font-size:.7rem;color:rgba(255,255,255,.35);margin-bottom:4px}
-.hc-price{font-family:var(--fd);font-size:1.8rem;font-weight:900;color:var(--gold);line-height:1}
-.hc-price-note{font-size:.74rem;color:rgba(255,255,255,.4);margin-top:4px}
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;height:var(--nav);z-index:1000;background:rgba(247,244,236,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{height:100%;display:flex;align-items:center;gap:28px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}
+.logo img{height:32px;width:auto}
+.logo .tag{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);padding-left:10px;border-left:1px solid var(--line);line-height:1.2}
+.menu{display:flex;gap:4px;list-style:none;margin-left:auto}
+.menu a{display:block;padding:8px 12px;border-radius:8px;font-size:.925rem;font-weight:600;color:var(--ink2);text-decoration:none}
+.menu a:hover{background:var(--white);color:var(--ink)}
+.nav .btn{flex:none}
 
-/* TRUST BAR */
-.trust-bar{background:var(--navy);padding:14px 0;border-bottom:1px solid rgba(245,166,35,.1)}
-.trust-items{display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap}
-.trust-item{display:flex;align-items:center;gap:8px;font-size:.82rem;font-weight:600;color:rgba(255,255,255,.5)}
-.trust-item svg{color:var(--gold);flex-shrink:0}
+/* sections */
+.sec{padding:88px 0}
+.sec.alt{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:28px}
 
-/* DATA SECTION */
-.data-section{padding:72px 0;background:var(--white)}
-.sec-eye{display:inline-flex;align-items:center;gap:6px;background:var(--goldP);border-radius:50px;padding:4px 13px;font-size:.74rem;font-weight:700;color:var(--goldD);letter-spacing:.04em;text-transform:uppercase;margin-bottom:12px}
-.sec-h{font-family:var(--fd);font-size:clamp(1.7rem,3.5vw,2.3rem);font-weight:800;color:var(--ink);letter-spacing:-.035em;margin-bottom:10px;line-height:1.15}
-.sec-h span{color:var(--goldD)}
-.sec-p{font-size:.95rem;color:var(--ink3);line-height:1.72;max-width:540px}
-.data-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
-.data-card{background:var(--navy);border-radius:20px;padding:28px;text-align:center;position:relative;overflow:hidden}
-.data-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(245,166,35,.08) 0%,transparent 60%)}
-.data-num{font-family:var(--fd);font-size:3rem;font-weight:900;color:var(--gold);line-height:1;margin-bottom:8px;position:relative;z-index:1}
-.data-label{font-size:.88rem;color:rgba(255,255,255,.6);line-height:1.5;position:relative;z-index:1}
-.data-source{font-size:.7rem;color:rgba(255,255,255,.25);margin-top:8px;position:relative;z-index:1}
+/* hero */
+.hero{padding:72px 0 80px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.trust{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:28px;list-style:none;color:var(--ink2);font-size:.92rem;font-weight:500}
+.trust li{display:flex;align-items:center;gap:8px}
+.trust .ic{color:var(--ok)}
+.offer{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:30px;box-shadow:var(--shm);position:relative}
+.offer::before{content:'';position:absolute;left:30px;right:30px;top:0;height:3px;background:var(--blue);border-radius:0 0 3px 3px}
+.offer .k{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3)}
+.offer .price{font-family:var(--fd);font-weight:800;font-size:2.4rem;letter-spacing:-.04em;line-height:1.1;margin-top:6px}
+.offer .price small{font-size:.95rem;font-weight:600;color:var(--ink3);letter-spacing:0}
+.offer .note{font-size:.88rem;color:var(--ink3);margin-top:4px}
+.ticks{list-style:none;display:grid;gap:10px;margin:22px 0 24px}
+.ticks li{display:flex;gap:10px;align-items:flex-start;font-size:.95rem;color:var(--ink2)}
+.ticks .ic{color:var(--blue);margin-top:2px}
+.ticks li.no{color:var(--ink3)}
+.ticks li.no .ic{color:#B4B7C3}
 
-/* PROBLEM SECTION */
-.problem-section{padding:72px 0;background:var(--cream2)}
-.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:40px}
-.problem-card{background:var(--white);border-radius:16px;padding:24px;border:1px solid var(--g200);transition:var(--tr)}
-.problem-card:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:var(--shl)}
-.prob-ico{font-size:1.8rem;margin-bottom:12px}
-.prob-title{font-family:var(--fd);font-size:1rem;font-weight:800;color:var(--ink);margin-bottom:8px}
-.prob-desc{font-size:.86rem;color:var(--ink3);line-height:1.65}
-.prob-tag{display:inline-flex;margin-top:10px;background:var(--redP);color:var(--red);font-size:.7rem;font-weight:700;padding:3px 9px;border-radius:50px}
+/* grids */
+.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.feat .ico{width:44px;height:44px;border-radius:12px;background:var(--blueP);color:var(--blue);display:grid;place-items:center;margin-bottom:16px}
+.feat p{color:var(--ink3);font-size:.95rem;margin-top:8px}
 
-/* FRAMEWORK */
-.framework-section{padding:72px 0;background:var(--navy)}
-.fw-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
-.fw-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px;transition:var(--tr)}
-.fw-card:hover{background:rgba(245,166,35,.08);border-color:rgba(245,166,35,.25);transform:translateY(-3px)}
-.fw-letter{font-family:var(--fd);font-size:3rem;font-weight:900;color:var(--gold);line-height:1;margin-bottom:6px}
-.fw-title{font-size:.8rem;font-weight:700;color:var(--gold);letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px}
-.fw-desc{font-size:.84rem;color:rgba(255,255,255,.55);line-height:1.65}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s;list-style:none}
+.steps li{position:relative;padding-top:56px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;top:0;left:0;width:40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;font-family:var(--fd);font-weight:700;display:grid;place-items:center}
+.steps li::after{content:'';position:absolute;top:20px;left:52px;right:-8px;height:1px;background:var(--line)}
+.steps li:last-child::after{display:none}
+.steps p{color:var(--ink3);font-size:.94rem;margin-top:6px}
 
-/* WHY DIFFERENT */
-.why-section{padding:72px 0;background:var(--white)}
-.compare-table{width:100%;border-collapse:collapse;margin-top:32px;font-size:.88rem}
-.compare-table th{padding:14px 18px;font-family:var(--fd);font-weight:700;text-align:left;font-size:.82rem}
-.compare-table th:first-child{background:var(--g100);color:var(--ink3);border-radius:12px 0 0 0}
-.compare-table th:last-child{background:var(--navy);color:var(--gold);border-radius:0 12px 0 0}
-.compare-table td{padding:12px 18px;border-bottom:1px solid var(--g200);vertical-align:top}
-.compare-table tr:last-child td{border-bottom:none}
-.compare-table tbody tr:nth-child(even) td:last-child{background:#1A2E42}
-.compare-table td:first-child{color:var(--ink2);font-size:.85rem;font-weight:600}
-.compare-table td:nth-child(2){color:var(--ink3);font-size:.85rem}
-.compare-table td:last-child{color:var(--white);background:var(--navy);font-size:.85rem;font-weight:600;padding:14px 18px}
-.x-mark{color:var(--g400)}
-.check-gold{color:var(--gold);font-weight:800}
+/* faq */
+.faq{max-width:780px;margin:0 auto;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font-family:var(--fd);font-weight:700;font-size:1.02rem;letter-spacing:-.01em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .ic{transition:transform .2s;color:var(--ink3)}
+.faq details[open] summary .ic{transform:rotate(180deg)}
+.faq details p{color:var(--ink2);padding:0 0 22px;max-width:44em}
 
-/* OUTPUT */
-.output-section{padding:72px 0;background:var(--cream2)}
-.output-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
-.output-card{background:var(--white);border-radius:16px;padding:22px;border:1px solid var(--g200);display:flex;gap:14px;align-items:flex-start;transition:var(--tr)}
-.output-card:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:var(--sh)}
-.out-ico{width:44px;height:44px;border-radius:12px;background:var(--goldP);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
-.out-title{font-family:var(--fd);font-size:.92rem;font-weight:800;color:var(--ink);margin-bottom:4px}
-.out-desc{font-size:.8rem;color:var(--ink3);line-height:1.6}
+/* closing band */
+.close{background:var(--navy);color:#fff;padding:84px 0;position:relative;overflow:hidden}
+.close::after{content:'';position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;border:60px solid rgba(1,103,252,.18)}
+.close .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:center}
+.close h2{color:#fff}
+.close p{color:#BFD0EE;margin-top:14px;max-width:34em}
+.close .acts{display:grid;gap:12px}
+.close .meta{font-size:.85rem;color:#8FA6CF;text-align:center}
 
-/* SCHEDULE */
-.schedule-section{padding:72px 0;background:var(--white)}
-.sched-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px}
-.sched-day{background:var(--white);border-radius:20px;overflow:hidden;border:1.5px solid var(--g200);box-shadow:var(--sh)}
-.sched-header{padding:18px 22px;display:flex;align-items:center;gap:12px}
-.sched-header.day1{background:var(--navy)}
-.sched-header.day2{background:linear-gradient(135deg,var(--goldD),var(--gold))}
-.sched-day-num{font-family:var(--fd);font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.6;margin-bottom:2px}
-.sched-day-title{font-family:var(--fd);font-size:1rem;font-weight:800;color:var(--white)}
-.sched-body{padding:16px}
-.sched-item{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--g100)}
-.sched-item:last-child{border-bottom:none}
-.sched-time{font-size:.72rem;font-weight:700;color:var(--ink3);white-space:nowrap;padding-top:2px;min-width:50px}
-.sched-sesi{font-size:.74rem;font-weight:700;color:var(--gold);letter-spacing:.03em;text-transform:uppercase;margin-bottom:2px}
-.sched-topic{font-size:.85rem;font-weight:600;color:var(--ink)}
-.sched-dur{font-size:.72rem;color:var(--ink3)}
+/* footer */
+.foot{background:var(--navyD);color:#8FA6CF;padding:36px 0 40px;font-size:.88rem}
+.foot .wrap{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between}
+.foot img{height:28px;width:auto}
+.foot nav{display:flex;flex-wrap:wrap;gap:6px 20px}
+.foot a{color:#BFD0EE;text-decoration:none}
+.foot a:hover{color:#fff}
 
-/* PRICING */
-.pricing-section{padding:72px 0;background:var(--navy);position:relative;overflow:hidden}
-.pricing-section::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23F5A623' fill-opacity='0.04'%3E%3Cpath d='M20 0L0 20L20 40L40 20L20 0Z'/%3E%3C/g%3E%3C/svg%3E")}
-.pricing-in{position:relative;z-index:1}
-.price-card{background:rgba(255,255,255,.05);border:1.5px solid rgba(245,166,35,.25);border-radius:24px;padding:40px;max-width:640px;margin:40px auto 0}
-.price-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:16px}
-.price-main{font-family:var(--fd);font-size:3.2rem;font-weight:900;color:var(--gold);line-height:1}
-.price-per{font-size:.9rem;color:rgba(255,255,255,.4);font-weight:500}
-.price-min{background:rgba(245,166,35,.1);border:1px solid rgba(245,166,35,.2);border-radius:12px;padding:14px 18px;text-align:center}
-.price-min-num{font-family:var(--fd);font-size:1.3rem;font-weight:800;color:var(--gold)}
-.price-min-label{font-size:.72rem;color:rgba(255,255,255,.4)}
-.price-includes{list-style:none;display:grid;gap:10px;margin-bottom:28px}
-.price-includes li{display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:rgba(255,255,255,.7)}
-.price-includes li::before{content:'✓';color:var(--gold);font-weight:800;flex-shrink:0;margin-top:1px}
-.price-excludes{background:rgba(255,255,255,.03);border-radius:12px;padding:14px 18px;margin-bottom:28px}
-.price-excludes-label{font-size:.68rem;font-weight:700;color:rgba(255,255,255,.25);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
-.price-excludes-items{display:flex;gap:6px;flex-wrap:wrap}
-.price-ex-tag{font-size:.75rem;color:rgba(255,255,255,.35);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:6px;padding:3px 8px}
-.price-divider{height:1px;background:rgba(255,255,255,.08);margin-bottom:24px}
-.btn-gold-lg{display:block;width:100%;padding:16px;background:var(--gold);color:var(--navy);font-weight:800;font-size:1rem;border-radius:12px;text-align:center;text-decoration:none;transition:var(--tr);font-family:var(--fb)}
-.btn-gold-lg:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 10px 32px rgba(245,166,35,.4)}
-.btn-wa-lg{display:block;width:100%;padding:14px;background:transparent;color:var(--white);font-weight:700;font-size:.95rem;border-radius:12px;text-align:center;text-decoration:none;transition:var(--tr);border:1.5px solid rgba(255,255,255,.2);margin-top:10px;font-family:var(--fb)}
-.btn-wa-lg:hover{border-color:var(--gold);color:var(--gold)}
+/* sticky mobile bar */
+.mbar{display:none}
 
-/* FORM */
-.form-section{padding:72px 0;background:var(--cream2)}
-.form-card{background:var(--white);border-radius:24px;padding:40px;border:1px solid var(--g200);box-shadow:var(--shl);max-width:680px;margin:0 auto}
-.form-title{font-family:var(--fd);font-size:1.5rem;font-weight:800;color:var(--ink);margin-bottom:6px}
-.form-sub{font-size:.9rem;color:var(--ink3);margin-bottom:28px}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.form-group{display:flex;flex-direction:column;gap:6px}
-.form-group.full{grid-column:1/-1}
-.form-label{font-size:.82rem;font-weight:700;color:var(--ink2)}
-.form-label span{color:var(--red)}
-.form-input,.form-select,.form-textarea{padding:11px 14px;border:1.5px solid var(--g200);border-radius:10px;font-size:.9rem;color:var(--ink);font-family:var(--fb);background:var(--white);transition:var(--tr);outline:none;width:100%}
-.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(245,166,35,.12)}
-.form-textarea{resize:vertical;min-height:100px}
-.btn-submit{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px;background:var(--navy);color:var(--white);font-weight:800;font-size:.95rem;border-radius:12px;border:none;cursor:pointer;transition:var(--tr);font-family:var(--fb);margin-top:8px}
-.btn-submit:hover{background:var(--navy2);transform:translateY(-1px);box-shadow:0 8px 24px rgba(13,27,42,.3)}
-.form-note{font-size:.78rem;color:var(--ink3);text-align:center;margin-top:10px}
-.form-success{display:none;text-align:center;padding:32px 0}
-.form-success .suc-ico{font-size:3rem;margin-bottom:12px}
-.form-success h3{font-family:var(--fd);font-size:1.3rem;font-weight:800;color:var(--ink);margin-bottom:8px}
-.form-success p{font-size:.9rem;color:var(--ink3)}
+/* forms */
+.field{display:grid;gap:6px}
+.field label{font-size:.85rem;font-weight:600;color:var(--ink2)}
+.field label i{font-style:normal;color:var(--blue)}
+.field input,.field select,.field textarea{width:100%;padding:11px 13px;border:1.5px solid var(--line);border-radius:10px;background:#fff;font-size:.95rem;transition:border-color .2s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--blue)}
+.field .err{font-size:.8rem;color:#C0392B}
+.field.bad input,.field.bad select{border-color:#C0392B}
 
-/* IMPACT */
-.impact-section{padding:72px 0;background:var(--white)}
-.impact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
-.impact-card{border-radius:16px;padding:24px;border:1px solid var(--g200);transition:var(--tr)}
-.impact-card:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:var(--sh)}
-.imp-before{background:var(--g100);border-radius:10px;padding:12px;margin-bottom:12px}
-.imp-before-label{font-size:.68rem;font-weight:700;color:var(--g400);letter-spacing:.05em;text-transform:uppercase;margin-bottom:4px}
-.imp-before-text{font-size:.85rem;color:var(--ink3)}
-.imp-arrow{text-align:center;font-size:1.2rem;color:var(--gold);margin-bottom:12px}
-.imp-after{background:var(--goldP);border-radius:10px;padding:12px}
-.imp-after-label{font-size:.68rem;font-weight:700;color:var(--goldD);letter-spacing:.05em;text-transform:uppercase;margin-bottom:4px}
-.imp-after-text{font-size:.85rem;color:var(--ink);font-weight:600}
-
-/* FAQ */
-.faq-section{padding:72px 0;background:var(--cream2)}
-.faq-list{display:grid;gap:10px;margin-top:32px;max-width:720px;margin-left:auto;margin-right:auto}
-.faq-item{background:var(--white);border:1px solid var(--g200);border-radius:12px;overflow:hidden;transition:var(--tr)}
-.faq-item.open{border-color:var(--gold)}
-.faq-q{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;cursor:pointer;font-weight:600;font-size:.92rem;color:var(--ink);gap:12px}
-.faq-q:hover{background:var(--g100)}
-.faq-arr{width:20px;height:20px;border-radius:50%;background:var(--g200);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .2s}
-.faq-item.open .faq-arr{transform:rotate(180deg);background:var(--gold);color:var(--navy)}
-.faq-a{padding:0 20px 16px;font-size:.87rem;color:var(--ink3);line-height:1.72;display:none}
-.faq-item.open .faq-a{display:block}
-
-/* CTA STRIP */
-.cta-strip{background:linear-gradient(135deg,var(--goldD),var(--gold),var(--gold2));padding:64px 0;text-align:center;position:relative;overflow:hidden}
-.cta-strip::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%230D1B2A' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4z'/%3E%3C/g%3E%3C/svg%3E")}
-.cta-strip h2{font-family:var(--fd);font-size:clamp(1.7rem,3vw,2.4rem);font-weight:900;color:var(--navy);letter-spacing:-.04em;margin-bottom:10px;position:relative;z-index:1}
-.cta-strip p{font-size:.95rem;color:rgba(13,27,42,.65);margin-bottom:28px;position:relative;z-index:1}
-.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
-.btn-navy{padding:14px 28px;background:var(--navy);color:var(--white);font-weight:800;font-size:.95rem;border-radius:12px;text-decoration:none;transition:var(--tr);font-family:var(--fb)}
-.btn-navy:hover{background:var(--navy2);transform:translateY(-2px)}
-.btn-outline-navy{padding:14px 24px;background:transparent;color:var(--navy);font-weight:700;font-size:.95rem;border:2px solid rgba(13,27,42,.3);border-radius:12px;text-decoration:none;transition:var(--tr);font-family:var(--fb)}
-.btn-outline-navy:hover{border-color:var(--navy);background:rgba(13,27,42,.08)}
-
-/* FOOTER */
-footer{background:var(--navy);padding:36px 0;border-top:1px solid rgba(245,166,35,.1)}
-.ft-in{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.ft-logo{font-family:var(--fd);font-size:1.1rem;font-weight:800;color:var(--white);text-decoration:none}
-.ft-logo span{color:var(--gold)}
-.ft-copy{font-size:.78rem;color:rgba(255,255,255,.25)}
-.ft-links{display:flex;gap:16px}
-.ft-link{font-size:.8rem;color:rgba(255,255,255,.35);text-decoration:none;transition:var(--tr)}
-.ft-link:hover{color:var(--gold)}
-
-/* WA FLOAT */
-.wa-float{position:fixed;bottom:24px;right:24px;z-index:999}
-.wa-btn{display:flex;align-items:center;justify-content:center;width:52px;height:52px;background:#25D366;border-radius:50%;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:var(--tr);text-decoration:none}
-.wa-btn:hover{transform:scale(1.1);box-shadow:0 8px 32px rgba(37,211,102,.5)}
-.wa-btn svg{width:28px;height:28px;fill:white}
-
-/* RESPONSIVE */
-@media(max-width:960px){
-  .hero-in{grid-template-columns:1fr;gap:32px}
-  .data-grid{grid-template-columns:1fr}
-  .fw-grid{grid-template-columns:1fr 1fr}
-  .sched-grid{grid-template-columns:1fr}
-  .output-grid{grid-template-columns:1fr 1fr}
-  .impact-grid{grid-template-columns:1fr}
-  .form-grid{grid-template-columns:1fr}
-  .problem-grid{grid-template-columns:1fr}
-  .compare-table{font-size:.78rem}
+@media (max-width:960px){
+  .hero .wrap,.close .wrap{grid-template-columns:1fr}
+  .g3,.g4,.steps{grid-template-columns:repeat(2,1fr)}
+  .steps li::after{display:none}
+  .menu{display:none}
+  .nav .btn{margin-left:auto}
 }
-@media(max-width:600px){
-  .output-grid{grid-template-columns:1fr}
-  .fw-grid{grid-template-columns:1fr}
-  .trust-items{gap:12px}
-  .data-num{font-size:2.4rem}
-  .hero-stats{flex-direction:column;gap:8px}
-  .price-top{flex-direction:column}
-  .form-card{padding:24px 20px}
+@media (max-width:640px){
+  :root{--nav:60px}
+  .wrap{padding:0 16px}
+  .sec{padding:64px 0}
+  .hero{padding:44px 0 56px}
+  .g2,.g3,.g4,.steps{grid-template-columns:1fr}
+  .logo img{height:26px}
+  .logo .tag{display:none}
+  .nav .btn{padding:8px 13px;font-size:.84rem}
+  .cta-row .btn{width:100%}
+  .card,.offer{padding:22px}
+  .close{padding:64px 0}
+  body{padding-bottom:76px}
+  .mbar{display:flex;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:999;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(6,44,106,.08)}
+  .mbar .btn{flex:1;padding:12px 10px}
 }
-:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:4px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* ===== page: siap kerja ===== */
+.facts{list-style:none;display:grid;gap:0;margin:20px 0 24px}
+.facts li{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--line)}
+.facts li:first-child{border-top:0;padding-top:4px}
+.facts .ic{color:var(--blue);margin-top:2px}
+.facts b{display:block;font-family:var(--fd);font-weight:700;font-size:.98rem}
+.facts span{font-size:.88rem;color:var(--ink3)}
+.gap .num{font-family:var(--fd);font-weight:800;font-size:.85rem;color:var(--blue);letter-spacing:.08em}
+.siap{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:18px;background:var(--white);overflow:hidden}
+.siap > div{padding:28px;border-left:1px solid var(--line)}
+.siap > div:first-child{border-left:0}
+.siap .L{font-family:var(--fd);font-weight:800;font-size:2.6rem;line-height:1;color:var(--navy);letter-spacing:-.04em}
+.siap .L::after{content:'.';color:var(--blue)}
+.siap h3{margin-top:14px}
+.siap p{color:var(--ink3);font-size:.93rem;margin-top:8px}
+.vs{width:100%;border-collapse:collapse;background:var(--white);border:1px solid var(--line);border-radius:16px;overflow:hidden;font-size:.95rem}
+.vs th,.vs td{padding:15px 20px;text-align:left;vertical-align:top;border-top:1px solid var(--line)}
+.vs thead th{border-top:0;font-family:var(--fd);font-size:.85rem;letter-spacing:.02em;background:var(--paper2);color:var(--ink2)}
+.vs thead th.us{background:var(--navy);color:#fff}
+.vs td:first-child{font-weight:700;color:var(--ink2);width:18%}
+.vs td.them{color:var(--ink3)}
+.vs td.us{color:var(--ink);font-weight:600;background:#F5F9FF}
+.out .ico{width:40px;height:40px;border-radius:10px;background:var(--blueP);color:var(--blue);display:grid;place-items:center;flex:none}
+.out{display:flex;gap:14px;align-items:flex-start}
+.out p{color:var(--ink3);font-size:.92rem;margin-top:4px}
+.tl{list-style:none;max-width:820px;margin:0 auto}
+.tl li{display:grid;grid-template-columns:84px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.tl li:first-child{border-top:1px solid var(--line)}
+.tl time{font-family:var(--fd);font-weight:800;font-size:1.15rem;color:var(--navy)}
+.tl .dur{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.tl h3{margin-top:2px}
+.tl p{color:var(--ink3);font-size:.92rem;margin-top:4px}
+.tl li.brk{opacity:.7}
+.inv{display:grid;grid-template-columns:.9fr 1.1fr;gap:24px;align-items:stretch}
+.price-card{background:var(--navy);color:#fff;border-radius:18px;padding:34px;display:flex;flex-direction:column}
+.price-card .k{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8FA6CF}
+.price-card .p{font-family:var(--fd);font-weight:800;font-size:2.8rem;letter-spacing:-.04em;line-height:1.1;margin-top:8px}
+.price-card .p small{font-size:1rem;font-weight:600;color:#BFD0EE;letter-spacing:0}
+.price-card .m{color:#BFD0EE;margin-top:8px}
+.price-card .pay{margin-top:auto;padding-top:22px;border-top:1px solid rgba(255,255,255,.15);font-size:.9rem;color:#BFD0EE}
+.price-card .btn{margin-top:22px}
+.inc{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.inc h3{font-size:.95rem;margin-bottom:12px}
+.inc .ticks{margin:0}
+.benefit{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px}
+.benefit div{display:flex;gap:12px;align-items:flex-start;padding:18px 20px;background:var(--white);border:1px solid var(--line);border-radius:14px;font-size:.93rem;color:var(--ink2)}
+.benefit .ic{color:var(--blue);margin-top:2px}
+.benefit b{display:block;color:var(--ink);font-family:var(--fd);font-size:.95rem}
+.prop{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:start}
+.prop .why{list-style:none;display:grid;gap:14px;margin-top:26px}
+.prop .why li{display:flex;gap:12px;color:var(--ink2)}
+.prop .why .ic{color:var(--blue);margin-top:3px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fgrid .w{grid-column:1/-1}
+.calc{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 16px;border-radius:12px;background:var(--blueP);color:var(--ink2);font-size:.92rem}
+.calc output{font-family:var(--fd);font-weight:800;font-size:1.25rem;color:var(--navy)}
+.fnote{font-size:.82rem;color:var(--ink3);text-align:center;margin-top:12px}
+.done{text-align:center;padding:16px 0}
+.done .big{width:60px;height:60px;border-radius:50%;background:#E6F6EE;color:var(--ok);display:grid;place-items:center;margin:0 auto 18px}
+.done .big .ic{width:28px;height:28px}
+.done p{color:var(--ink3);margin:10px auto 0;max-width:30em}
+.done .acts{display:grid;gap:10px;max-width:340px;margin:24px auto 0}
+@media (max-width:960px){
+  .siap{grid-template-columns:repeat(2,1fr)}
+  .siap > div:nth-child(3){border-left:0}
+  .siap > div:nth-child(n+3){border-top:1px solid var(--line)}
+  .inv,.prop{grid-template-columns:1fr}
+  .benefit{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .siap{grid-template-columns:1fr}
+  .siap > div{border-left:0;border-top:1px solid var(--line)}
+  .siap > div:first-child{border-top:0}
+  .vs th,.vs td{padding:12px 12px;font-size:.86rem}
+  .vs td:first-child{display:none}.vs thead th:first-child{display:none}
+  .tl li{grid-template-columns:64px 1fr;gap:14px}
+  .inc,.fgrid{grid-template-columns:1fr}
+  .price-card{padding:26px}
+}
 </style>
 </head>
 <body>
+<a href="#proposal" class="skip">Langsung ke form proposal</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><line x1="6" y1="12" x2="18" y2="12"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.5 8.5 0 1 1 21 11.5z"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-trend" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></symbol>
+  <symbol id="i-msg" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol>
+  <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+</svg>
 
-<a href="#form-request" style="position:absolute;left:-9999px;top:4px;z-index:9999;background:var(--gold);color:var(--navy);padding:8px 16px;border-radius:4px;font-weight:700;font-size:.875rem;text-decoration:none" onfocus="this.style.left='4px'" onblur="this.style.left='-9999px'">Skip ke konten utama</a>
 
-<!-- NAV -->
-<nav role="navigation" aria-label="Menu navigasi SIAP KERJA">
-  <div class="container">
-    <div class="nav-in">
-      <a href="/" class="logo">Karyawan<span>Sakti</span><span class="logo-badge">✦ SIAP KERJA</span></a>
-      <div class="nav-r">
-        <a href="#form-request" class="btn-nav-ghost">Request Proposal</a>
-        <a href="https://wa.me/6285714142712?text=Halo%2C%20saya%20ingin%20info%20program%20SIAP%20KERJA%20untuk%20sekolah%20kami" target="_blank" class="btn-nav-gold">💬 WhatsApp</a>
-      </div>
-    </div>
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="https://karyawansakti.com/" aria-label="KaryawanSakti — beranda">
+      <img src="https://karyawansakti.com/logo-karyawansakti.png" alt="KaryawanSakti" width="191" height="32">
+      <span class="tag">Siap Kerja</span>
+    </a>
+    <ul class="menu">
+      <li><a href="#program">Program</a></li>
+      <li><a href="#jadwal">Jadwal</a></li>
+      <li><a href="#investasi">Investasi</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a class="btn btn-pri sm" href="#proposal">Buat proposal</a>
   </div>
-</nav>
+</header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-blob hero-blob1"></div>
-  <div class="hero-blob hero-blob2"></div>
-  <div class="container">
-    <div class="hero-in">
+<main id="main">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
       <div>
-        <div class="hero-eye">✦ Work Readiness Program · Untuk SMA/SMK</div>
-        <h1>Lulusan Anda <em>Siap Kerja</em> —<br>Bukan Sekadar<br>Siap Wisuda.</h1>
-        <p class="hero-sub">Program 6 jam berbasis kasus nyata yang membekali pelajar kelas 11–12 dengan kompetensi yang paling dibutuhkan dunia kerja — tapi tidak pernah diajarkan di kurikulum standar.</p>
-        <div class="hero-btns">
-          <a href="#form-request" class="btn-gold">📋 Request Proposal Sekolah →</a>
-          <a href="#program" class="btn-outline-white">Pelajari Program</a>
+        <span class="eyebrow">Program untuk SMA / SMK / MA · Kelas 11–12</span>
+        <h1 class="h1">Lulusan yang <em>siap kerja</em>, bukan sekadar siap wisuda.</h1>
+        <p class="lead">Program 6 jam berbasis kasus nyata dunia kerja. Setiap peserta pulang membawa CV, peta diri, script menghadapi situasi sulit, dan rencana aksi 30 hari.</p>
+        <div class="cta-row">
+          <a class="btn btn-pri" href="#proposal">Buat proposal untuk sekolah <svg class="ic sm"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-sec" data-wa="Halo, saya dari pihak sekolah dan tertarik program SIAP KERJA. Bisa konsultasi gratis?" href="https://wa.me/6285714142712" target="_blank" rel="noopener"><svg class="ic sm"><use href="#i-wa"/></svg> Konsultasi gratis</a>
         </div>
-        <div class="hero-stats">
-          <div class="h-stat"><strong>85%</strong> kesuksesan karier ditentukan soft skills</div>
-          <div class="h-stat">·</div>
-          <div class="h-stat">Hanya <strong>11%</strong> employer puas dengan lulusan baru</div>
-          <div class="h-stat">·</div>
-          <div class="h-stat"><strong>6 Jam</strong> program intensif berbasis kasus</div>
-        </div>
+        <ul class="trust">
+          <li><svg class="ic sm"><use href="#i-check"/></svg> Bukan seminar motivasi</li>
+          <li><svg class="ic sm"><use href="#i-check"/></svg> Materi disesuaikan dengan sekolah</li>
+          <li><svg class="ic sm"><use href="#i-check"/></svg> Laporan pasca-program</li>
+        </ul>
       </div>
-      <div>
-        <div class="hero-card">
-          <div class="hc-label">Program Overview</div>
-          <div class="hc-badge">
-            <div class="hc-badge-ico">📋</div>
-            <div>
-              <div class="hc-badge-nm">Program 6 Jam (1 Hari)</div>
-              <div class="hc-badge-desc">09.00–15.00 · Storytelling + Case-Based</div>
-            </div>
-          </div>
-          <div class="hc-badge">
-            <div class="hc-badge-ico">🎓</div>
-            <div>
-              <div class="hc-badge-nm">Target: Kelas 11–12 SMA/SMK/MA</div>
-              <div class="hc-badge-desc">20–40 peserta per batch</div>
-            </div>
-          </div>
-          <div class="hc-badge">
-            <div class="hc-badge-ico">🏆</div>
-            <div>
-              <div class="hc-badge-nm">Sertifikat SIAP KERJA</div>
-              <div class="hc-badge-desc">CV + Personal Profile + 30-Day Action Plan</div>
-            </div>
-          </div>
-          <div class="hc-divider"></div>
-          <div class="hc-price-label">Investasi per Peserta</div>
-          <div class="hc-price">Rp 200.000</div>
-          <div class="hc-price-note">Min. 20 peserta / batch · All-in program package</div>
-        </div>
-      </div>
+      <aside class="offer" aria-label="Ringkasan program">
+        <span class="k">Investasi per peserta</span>
+        <div class="price">Rp 200.000</div>
+        <p class="note">Minimal 20 peserta (Rp 4 juta / batch) · all-in</p>
+        <ul class="facts">
+          <li><svg class="ic"><use href="#i-clock"/></svg><div><b>1 hari · 09.00–15.00</b><span>4 sesi + penutupan</span></div></li>
+          <li><svg class="ic"><use href="#i-users"/></svg><div><b>20–40 peserta per batch</b><span>Kelas 11–12 SMA/SMK/MA</span></div></li>
+          <li><svg class="ic"><use href="#i-award"/></svg><div><b>Sertifikat + 6 output</b><span>Dibawa pulang setiap peserta</span></div></li>
+        </ul>
+        <a class="btn btn-pri full" href="#proposal">Hitung &amp; buat proposal</a>
+      </aside>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <div class="container">
-    <div class="trust-items">
-      <div class="trust-item">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-        Berbasis riset Harvard & WEF 2025
+  <!-- MASALAH -->
+  <section class="sec alt">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Kenapa program ini ada</span>
+        <h2 class="h2">Yang paling menentukan di tempat kerja, justru jarang diajarkan di kelas</h2>
+        <p class="sub">Pengalaman HRD di lapangan menunjukkan pola yang sama: lulusan baru lebih sering tersandung karena sikap dan komunikasi, bukan kemampuan teknis.</p>
       </div>
-      <div class="trust-item">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-        Bukan seminar motivasi biasa
-      </div>
-      <div class="trust-item">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-        Mendukung SKL non-kognitif Kemendikbud
-      </div>
-      <div class="trust-item">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-        Output konkret untuk setiap peserta
-      </div>
-      <div class="trust-item">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-        Konsultasi gratis untuk kepala sekolah
+      <div class="g4">
+        <div class="gap"><span class="num">01</span><h3 class="h3" style="margin-top:8px">Respons situasi sulit</h3><p class="sub" style="font-size:.93rem">Reaktif saat dikritik atasan atau diremehkan senior — tanpa pegangan cara merespons.</p></div>
+        <div class="gap"><span class="num">02</span><h3 class="h3" style="margin-top:8px">Komunikasi</h3><p class="sub" style="font-size:.93rem">Sulit menyampaikan ide secara terstruktur, menulis pesan profesional, atau bicara di rapat.</p></div>
+        <div class="gap"><span class="num">03</span><h3 class="h3" style="margin-top:8px">Kerja dalam tim</h3><p class="sub" style="font-size:.93rem">Kaget dengan tim lintas usia dan gaya kerja yang berbeda dari suasana sekolah.</p></div>
+        <div class="gap"><span class="num">04</span><h3 class="h3" style="margin-top:8px">Peta diri</h3><p class="sub" style="font-size:.93rem">Belum bisa menjawab "ceritakan tentang diri Anda" dengan meyakinkan saat interview.</p></div>
       </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<!-- DATA -->
-<section class="data-section">
-  <div class="container">
-    <div class="sec-eye">📊 Data yang Tidak Bisa Diabaikan</div>
-    <h2 class="sec-h">Kenapa <span>Program Ini Harus Ada</span></h2>
-    <p class="sec-p">Fakta dari Harvard, Stanford, BPS, dan World Economic Forum 2025 — bukan asumsi. Ini krisis yang nyata.</p>
-    <div class="data-grid">
-      <div class="data-card">
-        <div class="data-num">85%</div>
-        <div class="data-label">Kesuksesan karier ditentukan soft skills — bukan kemampuan teknis</div>
-        <div class="data-source">Harvard & Stanford Research</div>
+  <!-- FRAMEWORK -->
+  <section class="sec" id="program">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Framework S.I.A.P</span>
+        <h2 class="h2">Empat kompetensi inti, dalam satu hari</h2>
       </div>
-      <div class="data-card">
-        <div class="data-num">60%</div>
-        <div class="data-label">Fresh graduate gagal melewati masa probation 6 bulan pertama</div>
-        <div class="data-source">Survei NACE Job Outlook 2025</div>
+      <div class="siap">
+        <div><div class="L">S</div><h3 class="h3">Self-awareness</h3><p>Mengenali kekuatan, nilai, dan cara kerja diri. Fondasi growth mindset.</p></div>
+        <div><div class="L">I</div><h3 class="h3">Interpersonal</h3><p>Komunikasi efektif — rapat, pesan tertulis, dan cara tidak setuju dengan sopan.</p></div>
+        <div><div class="L">A</div><h3 class="h3">Attitude</h3><p>Aturan tak tertulis di kantor dan script konkret untuk situasi sulit.</p></div>
+        <div><div class="L">P</div><h3 class="h3">Planning</h3><p>CV yang lolos 7 detik pertama, menjawab interview, dan rencana karier.</p></div>
       </div>
-      <div class="data-card">
-        <div class="data-num">11%</div>
-        <div class="data-label">Employer yang merasa lulusan baru benar-benar siap dipakai kerja</div>
-        <div class="data-source">Survei 400+ HRD Indonesia</div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- PROBLEM -->
-<section class="problem-section">
-  <div class="container">
-    <div class="sec-eye">⚠️ Tantangan Nyata</div>
-    <h2 class="sec-h">Apa yang Dihadapi <span>Lulusan Anda</span></h2>
-    <p class="sec-p">Survei 400+ HRD Indonesia: tiga alasan fresh graduate dipecat — tidak satu pun berhubungan dengan kemampuan teknis.</p>
-    <div class="problem-grid">
-      <div class="problem-card">
-        <div class="prob-ico">😶</div>
-        <div class="prob-title">Attitude & Respons Situasi Sulit</div>
-        <div class="prob-desc">Tidak tahu bagaimana merespons atasan toxic, senior yang meremehkan, atau situasi gesekan di tempat kerja. Reaktif, emosional, tidak punya framework.</div>
-        <span class="prob-tag">67% kasus pemecatan</span>
-      </div>
-      <div class="problem-card">
-        <div class="prob-ico">💬</div>
-        <div class="prob-title">Komunikasi Lisan & Tulisan</div>
-        <div class="prob-desc">Tidak bisa menyampaikan ide dengan terstruktur, tidak tahu cara menulis email profesional, dan tidak berani bicara di rapat — padahal ini skill dasar dunia kerja.</div>
-        <span class="prob-tag">54% kasus pemecatan</span>
-      </div>
-      <div class="problem-card">
-        <div class="prob-ico">👥</div>
-        <div class="prob-title">Kegagalan Bekerja dalam Tim</div>
-        <div class="prob-desc">Tidak siap menghadapi dinamika tim yang heterogen — perbedaan usia, gaya kerja, dan ekspektasi yang berbeda dari apa yang dibayangkan saat sekolah.</div>
-        <span class="prob-tag">48% kasus pemecatan</span>
-      </div>
-      <div class="problem-card">
-        <div class="prob-ico">🗺️</div>
-        <div class="prob-title">Tidak Punya Peta Diri</div>
-        <div class="prob-desc">Tidak tahu kekuatan dan kelemahan sendiri, tidak bisa menjawab "ceritakan tentang dirimu" dengan meyakinkan, tidak punya arah pengembangan yang jelas.</div>
-        <span class="prob-tag">Self-awareness gap</span>
+      <div style="margin-top:56px">
+        <table class="vs">
+          <thead><tr><th scope="col">Aspek</th><th scope="col">Seminar biasa</th><th scope="col" class="us">SIAP KERJA</th></tr></thead>
+          <tbody>
+            <tr><td>Metode</td><td class="them">Ceramah motivasi &amp; yel-yel</td><td class="us">Storytelling + studi kasus dunia kerja</td></tr>
+            <tr><td>Keterlibatan</td><td class="them">Role play yang membuat peserta malu</td><td class="us">Micro-reflection: Think &amp; Jot, Shock Question</td></tr>
+            <tr><td>Konten</td><td class="them">Teori umum</td><td class="us">Script konkret yang langsung bisa dipakai</td></tr>
+            <tr><td>Setelah acara</td><td class="them">Semangat hilang dalam 2 hari</td><td class="us">Rencana aksi 30 hari + surat 6 bulan</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FRAMEWORK -->
-<section class="framework-section" id="program">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:0">
-      <div class="sec-eye" style="background:rgba(245,166,35,.12);color:var(--gold)">✦ Framework S.I.A.P</div>
-      <h2 class="sec-h" style="color:var(--white);text-align:center">Empat Pilar <span>Kompetensi Bertahan Hidup</span></h2>
-      <p class="sec-p" style="color:rgba(255,255,255,.5);margin:0 auto;text-align:center">Program dibangun di atas framework yang mengintegrasikan empat kompetensi inti paling dibutuhkan fresh graduate Indonesia.</p>
-    </div>
-    <div class="fw-grid">
-      <div class="fw-card">
-        <div class="fw-letter">S</div>
-        <div class="fw-title">Self-Awareness</div>
-        <div class="fw-desc">Mengenali kekuatan, nilai, dan cara kerja diri sendiri. Membangun growth mindset sebagai fondasi pengembangan karier jangka panjang.</div>
+  <!-- OUTPUT -->
+  <section class="sec alt">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Yang dibawa pulang</span>
+        <h2 class="h2">Enam output nyata untuk setiap peserta</h2>
       </div>
-      <div class="fw-card">
-        <div class="fw-letter">I</div>
-        <div class="fw-title">Interpersonal Skills</div>
-        <div class="fw-desc">Komunikasi efektif di berbagai konteks: one-on-one, rapat, email, dan situasi sulit. Termasuk cara tidak setuju dengan elegan dan tetap profesional.</div>
-      </div>
-      <div class="fw-card">
-        <div class="fw-letter">A</div>
-        <div class="fw-title">Attitude & Professional Mindset</div>
-        <div class="fw-desc">Unwritten rules tempat kerja, navigasi politik kantor, mengelola situasi sulit — diremehkan, ide diklaim, atasan toxic — dengan script konkret.</div>
-      </div>
-      <div class="fw-card">
-        <div class="fw-letter">P</div>
-        <div class="fw-title">Planning & Career Navigation</div>
-        <div class="fw-desc">CV yang benar-benar dibaca HRD dalam 7 detik, interview yang memenangkan posisi, membangun reputasi profesional sejak hari pertama kerja.</div>
+      <div class="g3" style="gap:32px 28px">
+        <div class="out"><div class="ico"><svg class="ic"><use href="#i-file"/></svg></div><div><h3 class="h3">Draft CV</h3><p>Disusun dengan standar yang dilihat HRD di 7 detik pertama.</p></div></div>
+        <div class="out"><div class="ico"><svg class="ic"><use href="#i-compass"/></svg></div><div><h3 class="h3">Personal SIAP Profile</h3><p>Peta kekuatan, gaya kerja, dan area pengembangan diri.</p></div></div>
+        <div class="out"><div class="ico"><svg class="ic"><use href="#i-msg"/></svg></div><div><h3 class="h3">Survival Script</h3><p>Kalimat siap pakai untuk 6 situasi sulit di tempat kerja.</p></div></div>
+        <div class="out"><div class="ico"><svg class="ic"><use href="#i-list"/></svg></div><div><h3 class="h3">Rencana Aksi 30 Hari</h3><p>Tiga komitmen terukur dengan pemicu yang jelas.</p></div></div>
+        <div class="out"><div class="ico"><svg class="ic"><use href="#i-mail"/></svg></div><div><h3 class="h3">Surat untuk Diri Sendiri</h3><p>Ditulis hari itu, dikirim kembali oleh sekolah 6 bulan kemudian.</p></div></div>
+        <div class="out"><div class="ico"><svg class="ic"><use href="#i-award"/></svg></div><div><h3 class="h3">Sertifikat SIAP KERJA</h3><p>Bisa dilampirkan di CV dan portofolio.</p></div></div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- WHY DIFFERENT -->
-<section class="why-section">
-  <div class="container-sm">
-    <div style="text-align:center">
-      <div class="sec-eye">⚡ Beda dari Program Biasa</div>
-      <h2 class="sec-h" style="text-align:center">Mengapa Pendekatan Seminar Biasa <span>Menguap dalam 48 Jam</span></h2>
+  <!-- JADWAL -->
+  <section class="sec" id="jadwal">
+    <div class="wrap">
+      <div class="head c">
+        <span class="eyebrow">Jadwal</span>
+        <h2 class="h2">Satu hari, 09.00–15.00</h2>
+      </div>
+      <ol class="tl">
+        <li><time>09.00</time><div><span class="dur">Sesi 1 · 90 menit</span><h3 class="h3">Wake-up call &amp; self-awareness</h3><p>Iceberg model, micro-reflection, tool #1.</p></div></li>
+        <li><time>10.30</time><div><span class="dur">Sesi 2 · 90 menit</span><h3 class="h3">Attitude &amp; aturan tak tertulis</h3><p>Bedah situasi sulit, reaktif vs responsif, tool #2.</p></div></li>
+        <li class="brk"><time>12.00</time><div><span class="dur">60 menit</span><h3 class="h3">Ishoma</h3><p>Disediakan pihak sekolah.</p></div></li>
+        <li><time>13.00</time><div><span class="dur">Sesi 3 · 60 menit</span><h3 class="h3">Komunikasi PREP &amp; problem solving</h3><p>Demo langsung dan latihan berpasangan, tool #3.</p></div></li>
+        <li><time>14.00</time><div><span class="dur">Sesi 4 · 45 menit</span><h3 class="h3">CV, interview &amp; komitmen</h3><p>Anatomi CV, 3 pertanyaan interview, rencana 30 hari, tool #4–6.</p></div></li>
+        <li><time>14.45</time><div><span class="dur">Penutupan · 15 menit</span><h3 class="h3">Surat untuk diri sendiri &amp; sertifikat</h3><p>Ritual komitmen dan penyerahan sertifikat.</p></div></li>
+      </ol>
     </div>
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th>Aspek</th>
-          <th>Seminar Biasa</th>
-          <th>SIAP KERJA</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Metode</td>
-          <td><span class="x-mark">✗</span> Ceramah motivasional & yel-yel</td>
-          <td><span class="check-gold">✓</span> Storytelling + case-based dari realita industri</td>
-        </tr>
-        <tr>
-          <td>Engagement</td>
-          <td><span class="x-mark">✗</span> Role play berlebihan (pasif/malu)</td>
-          <td><span class="check-gold">✓</span> Micro-reflection: Think & Jot, Shock Question</td>
-        </tr>
-        <tr>
-          <td>Konten</td>
-          <td><span class="x-mark">✗</span> Teori abstrak & generik</td>
-          <td><span class="check-gold">✓</span> Script konkret yang bisa langsung dipakai</td>
-        </tr>
-        <tr>
-          <td>Pendekatan</td>
-          <td><span class="x-mark">✗</span> Treat peserta seperti anak-anak</td>
-          <td><span class="check-gold">✓</span> Treat peserta sebagai calon profesional dewasa</td>
-        </tr>
-        <tr>
-          <td>Retensi</td>
-          <td><span class="x-mark">✗</span> Inspirasi menguap dalam 48 jam</td>
-          <td><span class="check-gold">✓</span> 30-Day Action Plan + Buddy + Surat 6 Bulan</td>
-        </tr>
-        <tr>
-          <td>Relevansi</td>
-          <td><span class="x-mark">✗</span> Konten sama untuk semua sekolah</td>
-          <td><span class="check-gold">✓</span> Dikustomisasi sesuai kebutuhan institusi</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
+  </section>
 
-<!-- OUTPUT -->
-<section class="output-section">
-  <div class="container">
-    <div>
-      <div class="sec-eye">🎁 Yang Peserta Bawa Pulang</div>
-      <h2 class="sec-h">6 Output Konkret — <span>Bukan Sekadar Inspirasi</span></h2>
-      <p class="sec-p">Setiap peserta yang menyelesaikan program SIAP KERJA membawa pulang enam output nyata yang langsung berguna.</p>
-    </div>
-    <div class="output-grid">
-      <div class="output-card">
-        <div class="out-ico">📄</div>
-        <div>
-          <div class="out-title">Draft CV Profesional</div>
-          <div class="out-desc">CV yang direview langsung menggunakan standar yang benar-benar dilihat HRD dalam 7 detik pertama.</div>
-        </div>
+  <!-- INVESTASI -->
+  <section class="sec alt" id="investasi">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Investasi</span>
+        <h2 class="h2">Transparan, tanpa biaya tersembunyi</h2>
       </div>
-      <div class="output-card">
-        <div class="out-ico">🗺️</div>
-        <div>
-          <div class="out-title">Personal SIAP Profile</div>
-          <div class="out-desc">Peta diri yang mencakup kekuatan, gaya kerja, dan area pengembangan — hasil refleksi terstruktur selama dua hari.</div>
+      <div class="inv">
+        <div class="price-card">
+          <span class="k">Per peserta · all-in</span>
+          <div class="p">Rp 200.000</div>
+          <p class="m">Minimal 20 peserta = Rp 4.000.000 per batch. Maksimal 40 peserta per batch.</p>
+          <a class="btn btn-pri full" href="#proposal">Hitung untuk sekolah saya</a>
+          <p class="pay">Pembayaran: 50% setelah MoU, 50% paling lambat H-7. Invoice &amp; kuitansi resmi tersedia.</p>
         </div>
-      </div>
-      <div class="output-card">
-        <div class="out-ico">💬</div>
-        <div>
-          <div class="out-title">Survival Script Collection</div>
-          <div class="out-desc">Kumpulan kalimat konkret untuk 6 situasi sulit paling umum di tempat kerja — bisa langsung dipakai.</div>
-        </div>
-      </div>
-      <div class="output-card">
-        <div class="out-ico">📋</div>
-        <div>
-          <div class="out-title">30-Day Action Plan</div>
-          <div class="out-desc">Tiga komitmen konkret dengan trigger situasi yang jelas — bukan aspirasi kosong, tapi rencana tindakan terukur.</div>
-        </div>
-      </div>
-      <div class="output-card">
-        <div class="out-ico">✉️</div>
-        <div>
-          <div class="out-title">Surat untuk Diri Sendiri</div>
-          <div class="out-desc">Ditulis di hari terakhir program dan dikirim kembali 6 bulan kemudian — mekanisme akuntabilitas jangka panjang.</div>
-        </div>
-      </div>
-      <div class="output-card">
-        <div class="out-ico">🏆</div>
-        <div>
-          <div class="out-title">Sertifikat SIAP KERJA</div>
-          <div class="out-desc">Sertifikat resmi yang dapat dilampirkan dalam portofolio atau CV sebagai bukti kesiapan kerja.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SCHEDULE -->
-<section class="schedule-section">
-  <div class="container">
-    <div>
-      <div class="sec-eye">📅 Jadwal Program</div>
-      <h2 class="sec-h">Cetak Biru <span>6 Jam Penuh</span></h2>
-      <p class="sec-p">Padat, efisien, dan tanpa waktu terbuang. 09.00–15.00 (1 hari) — 4 sesi + penutup berbasis realita industri.</p>
-    </div>
-    <div class="sched-grid" style="grid-template-columns:1fr">
-      <div class="sched-day">
-        <div class="sched-header day1">
+        <div class="card inc">
           <div>
-            <div class="sched-day-num">Program 1 Hari · 09.00 – 15.00</div>
-            <div class="sched-day-title">6 Jam Penuh — Padat, Efisien, Tanpa Waktu Terbuang</div>
+            <h3 class="h3">Sudah termasuk</h3>
+            <ul class="ticks">
+              <li><svg class="ic sm"><use href="#i-check"/></svg> Fasilitator &amp; co-fasilitator</li>
+              <li><svg class="ic sm"><use href="#i-check"/></svg> Handbook peserta</li>
+              <li><svg class="ic sm"><use href="#i-check"/></svg> Worksheet &amp; kartu rencana 30 hari</li>
+              <li><svg class="ic sm"><use href="#i-check"/></svg> Sertifikat cetak</li>
+              <li><svg class="ic sm"><use href="#i-check"/></svg> Kustomisasi materi</li>
+              <li><svg class="ic sm"><use href="#i-check"/></svg> Briefing &amp; laporan pasca-program</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="h3">Disediakan sekolah</h3>
+            <ul class="ticks">
+              <li class="no"><svg class="ic sm"><use href="#i-minus"/></svg> Ruangan</li>
+              <li class="no"><svg class="ic sm"><use href="#i-minus"/></svg> Konsumsi peserta</li>
+              <li class="no"><svg class="ic sm"><use href="#i-minus"/></svg> Proyektor &amp; sound</li>
+              <li class="no"><svg class="ic sm"><use href="#i-minus"/></svg> Dokumentasi</li>
+              <li class="no"><svg class="ic sm"><use href="#i-minus"/></svg> Transport fasilitator (luar kota)</li>
+            </ul>
           </div>
         </div>
-        <div class="sched-body" style="display:grid;grid-template-columns:1fr 1fr;gap:0">
-          <div class="sched-item">
-            <div class="sched-time">09.00</div>
-            <div>
-              <div class="sched-sesi">Sesi 1 · 90 menit</div>
-              <div class="sched-topic">Wake Up Call + Self-Awareness</div>
-              <div class="sched-dur">Data provokasi · Iceberg model · Micro-reflection 3 pertanyaan · Tool #1 dibagikan</div>
-            </div>
+      </div>
+      <div class="benefit">
+        <div><svg class="ic"><use href="#i-target"/></svg><span><b>Mendukung BK &amp; BKK</b>Program kesiapan kerja yang terstruktur dan terdokumentasi.</span></div>
+        <div><svg class="ic"><use href="#i-trend"/></svg><span><b>Nilai jual sekolah</b>Pembeda nyata saat promosi penerimaan siswa baru.</span></div>
+        <div><svg class="ic"><use href="#i-shield"/></svg><span><b>Bisa dipertanggungjawabkan</b>Laporan evaluasi 3–5 hari kerja setelah program.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROPOSAL FORM -->
+  <section class="sec" id="proposal">
+    <div class="wrap prop">
+      <div>
+        <span class="eyebrow">Proposal resmi · 2 menit</span>
+        <h2 class="h2">Dapatkan proposal atas nama sekolah Anda</h2>
+        <p class="sub">Isi data singkat di samping. Proposal PDF langsung terunduh — siap diajukan ke kepala sekolah atau yayasan.</p>
+        <ul class="why">
+          <li><svg class="ic sm"><use href="#i-download"/></svg> PDF berisi nama sekolah, rincian program, dan total investasi</li>
+          <li><svg class="ic sm"><use href="#i-wa"/></svg> Data juga terkirim ke tim kami via WhatsApp agar bisa ditindaklanjuti</li>
+          <li><svg class="ic sm"><use href="#i-shield"/></svg> Tanpa kewajiban — konsultasi tetap gratis</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <form id="pf" novalidate>
+          <div class="fgrid">
+            <div class="field w"><label for="fSchool">Nama sekolah <i>*</i></label><input id="fSchool" required autocomplete="organization" placeholder="SMK Negeri 1 …"></div>
+            <div class="field"><label for="fCity">Kota / kabupaten <i>*</i></label><input id="fCity" required placeholder="Bekasi"></div>
+            <div class="field"><label for="fAddress">Alamat sekolah</label><input id="fAddress" placeholder="Opsional" autocomplete="street-address"></div>
+            <div class="field w"><label for="fKepsek">Nama kepala sekolah <i>*</i></label><input id="fKepsek" required placeholder="Untuk tujuan proposal"></div>
+            <div class="field"><label for="fName">Nama Anda <i>*</i></label><input id="fName" required autocomplete="name"></div>
+            <div class="field"><label for="fRole">Jabatan <i>*</i></label>
+              <select id="fRole" required><option value="">Pilih…</option><option>Kepala Sekolah</option><option>Waka Kurikulum</option><option>Waka Kesiswaan</option><option>Guru BK / Konselor</option><option>Ketua BKK</option><option>Komite Sekolah</option><option>Lainnya</option></select></div>
+            <div class="field"><label for="fWA">Nomor WhatsApp <i>*</i></label><input id="fWA" required type="tel" inputmode="tel" autocomplete="tel" placeholder="08…"></div>
+            <div class="field"><label for="fWaktu">Rencana pelaksanaan</label>
+              <select id="fWaktu"><option>Belum pasti</option><option>1 bulan ke depan</option><option>2–3 bulan ke depan</option><option>Semester ini</option><option>Semester depan</option></select></div>
+            <div class="field w"><label for="fPeserta">Jumlah peserta <i>*</i></label><input id="fPeserta" required type="number" min="20" max="400" step="1" value="30" inputmode="numeric"></div>
+            <div class="calc w" aria-live="polite"><span id="calcTxt">30 peserta · 1 batch</span><output id="calcTot">Rp 6.000.000</output></div>
+            <div class="field w"><label for="fNote">Catatan</label><textarea id="fNote" rows="2" placeholder="Opsional — mis. fokus jurusan, tanggal yang diinginkan"></textarea></div>
           </div>
-          <div class="sched-item">
-            <div class="sched-time">10.30</div>
-            <div>
-              <div class="sched-sesi">Sesi 2 · 90 menit</div>
-              <div class="sched-topic">Attitude & Unwritten Rules</div>
-              <div class="sched-dur">Bedah 3 dari 6 situasi sulit · Reactive vs Responsive · Tool #2 dibagikan</div>
-            </div>
-          </div>
-          <div class="sched-item" style="background:var(--g100)">
-            <div class="sched-time" style="color:var(--g400)">12.00</div>
-            <div>
-              <div class="sched-sesi" style="color:var(--g400)">ISHOMA · 60 menit</div>
-              <div class="sched-topic" style="color:var(--ink3)">Istirahat + Sholat + Makan Siang</div>
-              <div class="sched-dur">Disediakan pihak sekolah/EO</div>
-            </div>
-          </div>
-          <div class="sched-item">
-            <div class="sched-time">13.00</div>
-            <div>
-              <div class="sched-sesi">Sesi 3 · 60 menit</div>
-              <div class="sched-topic">Komunikasi PREP & Problem Solving</div>
-              <div class="sched-dur">PREP framework · Demo live · Latihan berpasangan · Tool #3 dibagikan</div>
-            </div>
-          </div>
-          <div class="sched-item">
-            <div class="sched-time">14.00</div>
-            <div>
-              <div class="sched-sesi">Sesi 4 · 45 menit</div>
-              <div class="sched-topic">CV + Interview + Closing Komitmen</div>
-              <div class="sched-dur">Anatomi CV 7 detik · 3 pertanyaan interview · Isi 30-Day Action Plan · Tool #4, #5, #6</div>
-            </div>
-          </div>
-          <div class="sched-item">
-            <div class="sched-time">14.45</div>
-            <div>
-              <div class="sched-sesi">Grand Closing · 15 menit</div>
-              <div class="sched-topic">Surat untuk Diri Sendiri + Sertifikasi</div>
-              <div class="sched-dur">Ritual akuntabilitas · Penyerahan sertifikat · Dikirim sekolah 6 bulan kemudian</div>
-            </div>
+          <button class="btn btn-pri full" type="submit" style="margin-top:20px"><svg class="ic sm"><use href="#i-download"/></svg> Unduh proposal &amp; kirim ke tim</button>
+          <p class="fnote">Data hanya dipakai untuk proposal dan tindak lanjut program ini.</p>
+        </form>
+
+        <div class="done" id="done" hidden>
+          <div class="big"><svg class="ic"><use href="#i-check"/></svg></div>
+          <h3 class="h3" style="font-size:1.25rem">Proposal untuk <span id="dSchool"></span> sudah siap</h3>
+          <p id="dMsg">File PDF sudah terunduh. Pastikan pesan WhatsApp ke tim kami terkirim agar jadwal konsultasi bisa segera diatur.</p>
+          <div class="acts">
+            <a class="btn btn-pri" id="dWA" href="https://wa.me/6285714142712" target="_blank" rel="noopener"><svg class="ic sm"><use href="#i-wa"/></svg> Kirim / buka WhatsApp</a>
+            <button class="btn btn-sec" id="dPdf" type="button"><svg class="ic sm"><use href="#i-download"/></svg> Unduh ulang PDF</button>
+            <button class="btn-link" id="dEdit" type="button" style="justify-content:center;margin-top:4px">Ubah data</button>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- PRICING -->
-<section class="pricing-section">
-  <div class="container pricing-in">
-    <div style="text-align:center">
-      <div class="sec-eye" style="background:rgba(245,166,35,.12);color:var(--gold)">💰 Investasi Program</div>
-      <h2 class="sec-h" style="color:var(--white);text-align:center">Transparan. <span>Tidak Ada Biaya Tersembunyi.</span></h2>
-      <p class="sec-p" style="color:rgba(255,255,255,.5);margin:0 auto;text-align:center">Investasi terbaik yang bisa sekolah berikan untuk menyiapkan lulusan yang benar-benar kompetitif.</p>
-    </div>
-    <div class="price-card">
-      <div class="price-top">
-        <div>
-          <div style="font-size:.78rem;color:rgba(255,255,255,.4);margin-bottom:4px;font-weight:600;letter-spacing:.04em;text-transform:uppercase">Investasi per Peserta</div>
-          <div class="price-main">Rp 200.000</div>
-          <div class="price-per">per peserta · all-in package</div>
-        </div>
-        <div class="price-min">
-          <div class="price-min-num">Min. 20 Peserta</div>
-          <div class="price-min-label">= Rp 4.000.000 / batch</div>
-          <div style="margin-top:6px;font-size:.7rem;color:rgba(255,255,255,.35)">Maks. 40 peserta / batch</div>
-        </div>
-      </div>
-      <div class="price-divider"></div>
-      <ul class="price-includes">
-        <li>Honorarium fasilitator & co-fasilitator</li>
-        <li>Handbook peserta eksklusif (per orang)</li>
-        <li>Set worksheet & 30-Day Action Plan card</li>
-        <li>Sertifikat SIAP KERJA (cetak)</li>
-        <li>Kustomisasi materi sesuai kebutuhan sekolah</li>
-        <li>Briefing pre-program & laporan pasca-program</li>
-      </ul>
-      <div class="price-excludes">
-        <div class="price-excludes-label">Disediakan Pihak Sekolah</div>
-        <div class="price-excludes-items">
-          <span class="price-ex-tag">Venue/Ruangan</span>
-          <span class="price-ex-tag">Konsumsi Peserta</span>
-          <span class="price-ex-tag">Peralatan Audio-Visual</span>
-          <span class="price-ex-tag">Transport Fasilitator (luar kota)</span>
-          <span class="price-ex-tag">Dokumentasi Foto/Video</span>
-        </div>
-      </div>
-      <div class="price-divider"></div>
-      <a href="#form-request" class="btn-gold-lg">📋 Request Proposal Resmi →</a>
-      <a href="https://wa.me/6285714142712?text=Halo%2C%20saya%20Kepala%20Sekolah%2FWaka%20Kurikulum%20dari%20%5BNama%20Sekolah%5D.%20Saya%20tertarik%20dengan%20program%20SIAP%20KERJA%20untuk%20pelajar%20kami.%20Bisa%20konsultasi%20gratis%3F" target="_blank" class="btn-wa-lg">💬 Konsultasi Langsung via WhatsApp</a>
-    </div>
-  </div>
-</section>
-
-<!-- IMPACT -->
-<section class="impact-section">
-  <div class="container">
-    <div>
-      <div class="sec-eye">🔄 Transformasi Konkret</div>
-      <h2 class="sec-h">Perubahan yang <span>Bisa Sekolah Observasi</span></h2>
-      <p class="sec-p">Dampak yang terukur dan dapat diobservasi langsung oleh guru, wali kelas, dan pihak sekolah setelah program selesai.</p>
-    </div>
-    <div class="impact-grid">
-      <div class="impact-card">
-        <div class="imp-before">
-          <div class="imp-before-label">Sebelum</div>
-          <div class="imp-before-text">Reaktif & emosional saat menghadapi gesekan atau kritik</div>
-        </div>
-        <div class="imp-arrow">↓</div>
-        <div class="imp-after">
-          <div class="imp-after-label">Setelah Program</div>
-          <div class="imp-after-text">Punya framework keputusan & script konkret untuk 6 situasi sulit</div>
-        </div>
-      </div>
-      <div class="impact-card">
-        <div class="imp-before">
-          <div class="imp-before-label">Sebelum</div>
-          <div class="imp-before-text">Komunikasi tidak terstruktur, tidak percaya diri menyampaikan ide</div>
-        </div>
-        <div class="imp-arrow">↓</div>
-        <div class="imp-after">
-          <div class="imp-after-label">Setelah Program</div>
-          <div class="imp-after-text">Menggunakan PREP framework — terstruktur dan tahu cara bicara ke atasan</div>
-        </div>
-      </div>
-      <div class="impact-card">
-        <div class="imp-before">
-          <div class="imp-before-label">Sebelum</div>
-          <div class="imp-before-text">Buta potensi diri — tidak tahu kekuatan dan kelemahan sendiri</div>
-        </div>
-        <div class="imp-arrow">↓</div>
-        <div class="imp-after">
-          <div class="imp-after-label">Setelah Program</div>
-          <div class="imp-after-text">Punya Personal SIAP Profile berdasarkan refleksi terstruktur 6 jam</div>
-        </div>
+  <!-- FAQ -->
+  <section class="sec alt" id="faq">
+    <div class="wrap">
+      <div class="head c"><span class="eyebrow">FAQ</span><h2 class="h2">Pertanyaan dari sekolah</h2></div>
+      <div class="faq">
+        <details><summary>Bisa dilaksanakan di luar Jabodetabek?<svg class="ic"><use href="#i-chev"/></svg></summary><p>Bisa, di seluruh Indonesia. Untuk luar kota, transport dan akomodasi fasilitator ditanggung sekolah sesuai biaya aktual dan dicantumkan transparan di proposal.</p></details>
+        <details><summary>Berapa lama dari konfirmasi sampai pelaksanaan?<svg class="ic"><use href="#i-chev"/></svg></summary><p>Diskusi hingga konfirmasi biasanya 3–7 hari kerja. Setelah MoU ditandatangani, kami butuh minimal 14 hari untuk persiapan dan kustomisasi materi.</p></details>
+        <details><summary>Apakah materi bisa disesuaikan?<svg class="ic"><use href="#i-chev"/></svg></summary><p>Ya. Sebelum program kami melakukan briefing dengan koordinator sekolah untuk menyesuaikan kasus, contoh, dan fokus materi dengan karakter siswa dan jurusan.</p></details>
+        <details><summary>Bagaimana sistem pembayarannya?<svg class="ic"><use href="#i-chev"/></svg></summary><p>50% uang muka setelah MoU ditandatangani, 50% pelunasan paling lambat H-7. Transfer bank, dengan invoice dan kuitansi resmi untuk administrasi sekolah atau yayasan.</p></details>
+        <details><summary>Apa yang perlu disiapkan sekolah?<svg class="ic"><use href="#i-chev"/></svg></summary><p>Ruangan untuk minimal 40 orang dengan meja yang bisa diatur, proyektor + layar, mikrofon nirkabel + speaker, konsumsi peserta, dan ATK dasar (sticky notes, amplop, pulpen). Materi program kami siapkan.</p></details>
+        <details><summary>Apakah ada laporan untuk sekolah?<svg class="ic"><use href="#i-chev"/></svg></summary><p>Ya. Dalam 3–5 hari kerja setelah program, sekolah menerima laporan evaluasi: ringkasan pelaksanaan, catatan refleksi peserta, dan rekomendasi tindak lanjut.</p></details>
       </div>
     </div>
-    <!-- Institutional benefit -->
-    <div style="margin-top:32px;background:var(--navy);border-radius:20px;padding:32px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px">
-      <div style="text-align:center">
-        <div style="font-size:1.5rem;margin-bottom:8px">📈</div>
-        <div style="font-family:var(--fd);font-size:.95rem;font-weight:800;color:var(--gold);margin-bottom:4px">Employment Rate Naik</div>
-        <div style="font-size:.8rem;color:rgba(255,255,255,.5)">Indikator akreditasi yang makin diperhatikan</div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="close dark">
+    <div class="wrap">
+      <div>
+        <h2 class="h2">Siapkan angkatan ini sebelum mereka lulus.</h2>
+        <p>Konsultasi gratis untuk kepala sekolah, waka kurikulum, guru BK, dan BKK. Tanpa kewajiban apa pun.</p>
       </div>
-      <div style="text-align:center;border-left:1px solid rgba(255,255,255,.08);border-right:1px solid rgba(255,255,255,.08)">
-        <div style="font-size:1.5rem;margin-bottom:8px">🏅</div>
-        <div style="font-family:var(--fd);font-size:.95rem;font-weight:800;color:var(--gold);margin-bottom:4px">Keunggulan PPDB</div>
-        <div style="font-size:.8rem;color:rgba(255,255,255,.5)">Pembeda konkret dalam kompetisi penerimaan siswa</div>
-      </div>
-      <div style="text-align:center">
-        <div style="font-size:1.5rem;margin-bottom:8px">📋</div>
-        <div style="font-family:var(--fd);font-size:.95rem;font-weight:800;color:var(--gold);margin-bottom:4px">Penuhi SKL Non-Kognitif</div>
-        <div style="font-size:.8rem;color:rgba(255,255,255,.5)">Dimensi non-kognitif sesuai standar Kemendikbud</div>
+      <div class="acts">
+        <a class="btn btn-pri" href="#proposal"><svg class="ic sm"><use href="#i-download"/></svg> Buat proposal sekarang</a>
+        <a class="btn btn-sec" data-wa="Halo, saya dari pihak sekolah dan tertarik program SIAP KERJA. Bisa konsultasi gratis?" href="https://wa.me/6285714142712" target="_blank" rel="noopener"><svg class="ic sm"><use href="#i-wa"/></svg> Chat WhatsApp</a>
+        <span class="meta">WhatsApp +62 857-1414-2712</span>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- FORM REQUEST -->
-<section class="form-section" id="form-request">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:32px">
-      <div class="sec-eye">📋 Request Proposal</div>
-      <h2 class="sec-h" style="text-align:center">Isi Form — <span>Proposal Langsung Jadi</span></h2>
-      <p class="sec-p" style="text-align:center;margin:0 auto">Isi data sekolah Anda, proposal resmi program SIAP KERJA akan otomatis digenerate dan bisa langsung didownload.</p>
-    </div>
-    <div class="form-card">
-      <div id="formContent">
-        <div class="form-title">Generator Proposal SIAP KERJA</div>
-        <div class="form-sub">Lengkapi data di bawah — proposal PDF akan digenerate otomatis sesuai nama sekolah dan kepala sekolah Anda.</div>
-
-        <div style="background:var(--goldP);border:1px solid rgba(245,166,35,.3);border-radius:12px;padding:14px 18px;margin-bottom:24px;display:flex;align-items:center;gap:10px">
-          <span style="font-size:1.2rem">⚡</span>
-          <span style="font-size:.85rem;color:var(--goldD);font-weight:600">Proposal akan digenerate otomatis — tidak perlu tunggu balasan!</span>
-        </div>
-
-        <div class="form-grid">
-          <div class="form-group">
-            <label class="form-label">Nama Kepala Sekolah <span>*</span></label>
-            <input type="text" id="fKepsek" class="form-input" placeholder="Cth: Drs. Budi Santoso, M.Pd">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Jabatan Pengisi Form <span>*</span></label>
-            <select id="fRole" class="form-select">
-              <option value="">Pilih jabatan...</option>
-              <option>Kepala Sekolah</option>
-              <option>Waka Kurikulum</option>
-              <option>Waka Kesiswaan</option>
-              <option>Guru BK / Konselor</option>
-              <option>Komite Sekolah</option>
-              <option>Lainnya</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Nama Pengisi Form <span>*</span></label>
-            <input type="text" id="fName" class="form-input" placeholder="Nama Anda">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Nama Sekolah <span>*</span></label>
-            <input type="text" id="fSchool" class="form-input" placeholder="Cth: SMK Negeri 1 Bandung">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Alamat Sekolah <span>*</span></label>
-            <input type="text" id="fAddress" class="form-input" placeholder="Jl. ...">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Kota / Kabupaten <span>*</span></label>
-            <input type="text" id="fCity" class="form-input" placeholder="Kota lokasi sekolah">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Nomor WhatsApp <span>*</span></label>
-            <input type="tel" id="fWA" class="form-input" placeholder="08xxxxxxxxxx">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Email Sekolah</label>
-            <input type="email" id="fEmail" class="form-input" placeholder="email@sekolah.sch.id">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Estimasi Jumlah Peserta <span>*</span></label>
-            <select id="fPeserta" class="form-select">
-              <option value="">Pilih estimasi...</option>
-              <option value="20">20 peserta (1 batch) — Rp 4.000.000</option>
-              <option value="25">25 peserta (1 batch) — Rp 5.000.000</option>
-              <option value="30">30 peserta (1 batch) — Rp 6.000.000</option>
-              <option value="35">35 peserta (1 batch) — Rp 7.000.000</option>
-              <option value="40">40 peserta (1 batch) — Rp 8.000.000</option>
-              <option value="60">~60 peserta (2 batch) — Rp 12.000.000</option>
-              <option value="80">~80 peserta (2 batch) — Rp 16.000.000</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Rencana Waktu Pelaksanaan</label>
-            <select id="fWaktu" class="form-select">
-              <option value="belum ditentukan">Masih survei / belum pasti</option>
-              <option value="1 bulan ke depan">1 bulan ke depan</option>
-              <option value="2–3 bulan ke depan">2–3 bulan ke depan</option>
-              <option value="semester ini">Semester ini</option>
-              <option value="semester depan">Semester depan</option>
-            </select>
-          </div>
-          <div class="form-group full">
-            <label class="form-label">Catatan / Kebutuhan Khusus</label>
-            <textarea id="fNote" class="form-textarea" placeholder="Ada kebutuhan kustomisasi, pertanyaan khusus, atau kondisi tertentu yang perlu kami ketahui?"></textarea>
-          </div>
-        </div>
-
-        <button class="btn-submit" onclick="generateProposal()">
-          📄 Generate & Download Proposal PDF
-        </button>
-        <div style="display:flex;align-items:center;gap:8px;margin-top:12px;justify-content:center">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--ink3)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          <p class="form-note" style="margin:0">Data Anda aman dan hanya digunakan untuk keperluan proposal ini.</p>
-        </div>
-      </div>
-
-      <div class="form-success" id="formSuccess">
-        <div class="suc-ico">✅</div>
-        <h3>Proposal Berhasil Digenerate!</h3>
-        <p>Proposal SIAP KERJA untuk <strong id="sucSchool"></strong> sudah didownload. Jika file tidak terdownload, klik tombol di bawah.</p>
-        <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px">
-          <button onclick="reGenerate()" style="padding:12px 22px;background:var(--navy);color:#fff;border:none;border-radius:10px;font-weight:700;cursor:pointer;font-size:.9rem;font-family:var(--fb)">📄 Download Ulang</button>
-          <a href="https://wa.me/6285714142712?text=Halo%2C%20saya%20sudah%20generate%20proposal%20SIAP%20KERJA%20untuk%20sekolah%20kami.%20Bisa%20kita%20lanjutkan%20diskusi%3F" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:12px 22px;background:#25D366;color:white;border-radius:10px;text-decoration:none;font-weight:700;font-size:.9rem">💬 Lanjut Diskusi WA</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
-<script>
-var _formData = {};
-
-function generateProposal() {
-  var kepsek = document.getElementById('fKepsek').value.trim();
-  var role = document.getElementById('fRole').value;
-  var name = document.getElementById('fName').value.trim();
-  var school = document.getElementById('fSchool').value.trim();
-  var address = document.getElementById('fAddress').value.trim();
-  var city = document.getElementById('fCity').value.trim();
-  var wa = document.getElementById('fWA').value.trim();
-  var email = document.getElementById('fEmail').value.trim();
-  var pesertaEl = document.getElementById('fPeserta');
-  var peserta = pesertaEl.value;
-  var pesertaText = pesertaEl.options[pesertaEl.selectedIndex].text;
-  var waktu = document.getElementById('fWaktu').value;
-  var note = document.getElementById('fNote').value.trim();
-
-  if(!kepsek||!role||!name||!school||!address||!city||!wa||!peserta){
-    alert('Mohon lengkapi semua field yang wajib diisi (*)');
-    return;
-  }
-
-  _formData = {kepsek,role,name,school,address,city,wa,email,peserta,pesertaText,waktu,note};
-
-  // Wait for jsPDF to load
-  var tryBuild = function(attempt) {
-    if(typeof window.jspdf !== 'undefined') {
-      buildPDF(_formData);
-    } else if(attempt < 20) {
-      setTimeout(function(){ tryBuild(attempt+1); }, 300);
-    } else {
-      // Fallback: open WA with data
-      var msg = encodeURIComponent('Halo, saya request proposal SIAP KERJA untuk ' + school + '\nKepala Sekolah: ' + kepsek + '\nKontak: ' + name + ' (' + role + ')\nPeserta: ' + pesertaText + '\nWaktu: ' + waktu);
-      window.open('https://wa.me/6285714142712?text=' + msg, '_blank');
-      showSuccess(school);
-    }
-  };
-  tryBuild(0);
-}
-
-function reGenerate() {
-  if(_formData.school) buildPDF(_formData);
-}
-
-function showSuccess(school) {
-  document.getElementById('formContent').style.display='none';
-  document.getElementById('formSuccess').style.display='block';
-  document.getElementById('sucSchool').textContent = school;
-}
-
-function buildPDF(d) {
-  try {
-    var jsPDF = window.jspdf.jsPDF;
-    var doc = new jsPDF({ orientation:'portrait', unit:'mm', format:'a4' });
-    var W=210, M=16, CW=W-M*2;
-    var today = new Date();
-    var tgl = today.toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'});
-    var pesertaNum = parseInt(d.peserta)||20;
-    var HARGA = 200000;
-    var totalInvestasi = (pesertaNum*HARGA).toLocaleString('id-ID');
-    var dp = (pesertaNum*HARGA*0.5).toLocaleString('id-ID');
-
-    // ── HELPERS ──────────────────────────────────────────────────
-    function rgb(hex){
-      var r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);
-      return [r,g,b];
-    }
-    function fillRect(x,y,w,h,hex,round){
-      var c=rgb(hex); doc.setFillColor(c[0],c[1],c[2]);
-      if(round) doc.roundedRect(x,y,w,h,round,round,'F');
-      else doc.rect(x,y,w,h,'F');
-    }
-    function strokeRect(x,y,w,h,hex,lw,round){
-      var c=rgb(hex); doc.setDrawColor(c[0],c[1],c[2]); doc.setLineWidth(lw||0.3);
-      if(round) doc.roundedRect(x,y,w,h,round,round,'S');
-      else doc.rect(x,y,w,h,'S');
-    }
-    function hline(x1,y,x2,hex,lw){
-      var c=rgb(hex); doc.setDrawColor(c[0],c[1],c[2]); doc.setLineWidth(lw||0.3);
-      doc.line(x1,y,x2,y);
-    }
-    function sf(sz,st,hex){
-      doc.setFontSize(sz||10); doc.setFont('helvetica',st||'normal');
-      if(hex){var c=rgb(hex);doc.setTextColor(c[0],c[1],c[2]);}
-    }
-    function tx(str,x,y,opts){ doc.text(String(str),x,y,opts||{}); }
-    function wrapTx(str,x,y,maxW,lh,sz,st,hex){
-      sf(sz||9,st||'normal',hex||'#334155');
-      var lines=doc.splitTextToSize(String(str),maxW);
-      doc.text(lines,x,y); return y+lines.length*(lh||5);
-    }
-    function pageHeader(pageNum, school){
-      fillRect(0,0,W,14,'#0D1B2A');
-      fillRect(0,14,W,2,'#F5A623');
-      sf(7,'bold','#F5A623'); tx('SIAP KERJA  |  KaryawanSakti',M,10);
-      sf(7,'normal','#64748B'); tx('Proposal untuk '+school,W-M,10,{align:'right'});
-      sf(7,'normal','#475569'); tx('Hal. '+pageNum,W/2,10,{align:'center'});
-    }
-    function pageFooter(){
-      fillRect(0,284,W,13,'#0D1B2A');
-      fillRect(0,284,W,1.5,'#F5A623');
-      sf(6,'normal','#475569');
-      tx('Dokumen konfidensial untuk keperluan proposal  |  KaryawanSakti  |  karyawansakti.com  |  WA: +62 857-1414-2712',W/2,291,{align:'center'});
-    }
-
-    // ═══════════════════════════════════════════════════════════
-    // PAGE 1 — COVER
-    // ═══════════════════════════════════════════════════════════
-    // Full navy top band
-    fillRect(0,0,W,72,'#0D1B2A');
-    // Gold accent left stripe
-    fillRect(0,0,4,72,'#F5A623');
-    // Gold bottom line of header
-    fillRect(0,72,W,3,'#F5A623');
-
-    // Logo text
-    sf(22,'bold','#F5A623'); tx('KaryawanSakti',M+6,26);
-    sf(8,'normal','#94A3B8'); tx('Platform Pengembangan Karir Profesional Indonesia',M+6,34);
-    // Divider inside header
-    hline(M+6,40,W-M,'#1E3A5F',0.5);
-    sf(8,'normal','#94A3B8'); tx('karyawansakti.com/siap-kerja',M+6,48);
-    // "PROPOSAL RESMI" badge
-    fillRect(W-M-36,16,36,14,'#F5A623',3);
-    sf(7,'bold','#0D1B2A'); tx('PROPOSAL RESMI',W-M-18,24,{align:'center'});
-    sf(6,'normal','#0D1B2A'); tx('Dokumen Resmi Program',W-M-18,29,{align:'center'});
-
-    // SIAP KERJA title block
-    fillRect(M,84,CW,22,'#F5A623',3);
-    sf(17,'bold','#0D1B2A'); tx('SIAP KERJA',W/2,93,{align:'center'});
-    sf(9,'normal','#0D1B2A'); tx('Work Readiness Program untuk Pelajar SMA / SMK / MA',W/2,101,{align:'center'});
-
-    // Sub tagline
-    sf(8,'normal','#334155'); tx('Program 6 Jam Berbasis Kasus Nyata  |  Framework S.I.A.P  |  6 Tools Dibawa Pulang',W/2,113,{align:'center'});
-
-    hline(M,118,W-M,'#E2E8F0',0.4);
-
-    // TO: school card
-    fillRect(M,122,CW,48,'#F8FAFC',3);
-    strokeRect(M,122,CW,48,'#E2E8F0',0.4,3);
-    // left accent
-    fillRect(M,122,3,48,'#F5A623');
-
-    sf(6,'bold','#94A3B8'); tx('DIAJUKAN KEPADA',M+8,130);
-    sf(13,'bold','#0F172A'); tx(d.school,M+8,139);
-    sf(9,'normal','#334155'); tx(d.address,M+8,146); tx(d.city,M+8,152);
-
-    hline(M+8,157,W-M-8,'#E2E8F0',0.3);
-
-    sf(6,'bold','#94A3B8'); tx('KEPADA YTH.',M+8,163);
-    sf(11,'bold','#0F172A'); tx('Bapak/Ibu '+d.kepsek,M+8,170);
-    sf(8,'normal','#475569'); tx(d.role+' — '+d.school,M+8,176);
-
-    // 3 HIGHLIGHT BOXES
-    var hiY=178;
-    var hiW=(CW-8)/3;
-    var hiData=[
-      ['6 Jam','Program 1 Hari'],
-      ['20-40','Peserta / Batch'],
-      ['6 Tools','Dibawa Pulang']
-    ];
-    hiData.forEach(function(h,i){
-      var bx=M+i*(hiW+4);
-      fillRect(bx,hiY,hiW,20,'#0D1B2A',3);
-      sf(13,'bold','#F5A623'); tx(h[0],bx+hiW/2,hiY+10,{align:'center'});
-      sf(6,'normal','#94A3B8'); tx(h[1],bx+hiW/2,hiY+17,{align:'center'});
-    });
-
-    // Investment highlight
-    fillRect(M,204,CW,18,'#FFFBEB',3);
-    strokeRect(M,204,CW,18,'#F5A623',0.5,3);
-    sf(7,'bold','#D97706'); tx('INVESTASI PROGRAM',M+8,211);
-    sf(14,'bold','#D97706'); tx('Rp 200.000 / peserta',M+8,221);
-    sf(8,'normal','#92400E'); tx('Total '+pesertaNum+' peserta: Rp '+totalInvestasi,W-M-8,221,{align:'right'});
-
-    // Request info
-    hline(M,228,W-M,'#E2E8F0',0.3);
-    sf(7,'normal','#94A3B8'); tx('Jakarta, '+tgl,M,234);
-    tx('Diisi oleh: '+d.name+' ('+d.role+')  |  WA: '+d.wa+(d.email?' | '+d.email:''),M,240);
-
-    pageFooter();
-
-    // ═══════════════════════════════════════════════════════════
-    // PAGE 2 — MASALAH + FRAMEWORK SIAP
-    // ═══════════════════════════════════════════════════════════
-    doc.addPage();
-    pageHeader(2,d.school);
-
-    var y=24;
-
-    // WHY section
-    sf(6,'bold','#D97706'); tx('MENGAPA PROGRAM INI HARUS ADA',M,y); y+=7;
-    sf(14,'bold','#0F172A'); tx('Data yang Tidak Bisa Diabaikan',M,y); y+=10;
-
-    var stats=[
-      {num:'85%',label:'Kesuksesan karier ditentukan oleh soft skills, bukan kemampuan teknis'},
-      {num:'60%',label:'Fresh graduate gagal di 6 bulan pertama masa probation'},
-      {num:'11%',label:'Employer yang merasa lulusan baru benar-benar siap dipakai'}
-    ];
-    var sw=(CW-8)/3;
-    stats.forEach(function(s,i){
-      var sx=M+i*(sw+4);
-      fillRect(sx,y,sw,30,'#0D1B2A',3);
-      sf(18,'bold','#F5A623'); tx(s.num,sx+sw/2,y+13,{align:'center'});
-      sf(6,'normal','#94A3B8');
-      var lines=doc.splitTextToSize(s.label,sw-6);
-      doc.text(lines,sx+sw/2,y+20,{align:'center'});
-    });
-    y+=38;
-
-    sf(8,'normal','#334155');
-    y=wrapTx('Survei terhadap 400+ HRD Indonesia: tiga alasan utama fresh graduate dipecat — tidak satupun berkaitan dengan kemampuan teknis:',M,y,CW,4.5,8);
-    y+=3;
-    [['67%','Attitude dan cara merespons situasi sulit'],['54%','Kemampuan komunikasi lisan dan tulisan'],['48%','Ketidakmampuan bekerja dalam tim yang heterogen']].forEach(function(r){
-      fillRect(M,y-3,3,5,'#F5A623');
-      sf(8,'bold','#0F172A'); tx(r[0],M+6,y);
-      sf(8,'normal','#334155'); tx(r[1],M+18,y);
-      y+=6;
-    });
-    y+=6;
-
-    hline(M,y,W-M,'#E2E8F0',0.4); y+=8;
-
-    // FRAMEWORK
-    sf(6,'bold','#D97706'); tx('FRAMEWORK PROGRAM',M,y); y+=7;
-    sf(14,'bold','#0F172A'); tx('Framework S.I.A.P — Empat Pilar Kompetensi',M,y); y+=3;
-    sf(8,'normal','#64748B'); tx('Empat pilar yang saling mengunci seperti roda gigi — dirancang sebagai survival skills minimum dunia kerja.',M,y+=6); y+=8;
-
-    var pillars=[
-      {l:'S',t:'Self-Awareness',d:'Mengenali kekuatan, nilai, dan cara kerja diri. Growth mindset sebagai fondasi karier jangka panjang.'},
-      {l:'I',t:'Interpersonal Skills',d:'Komunikasi efektif dalam berbagai konteks: one-on-one, rapat, email, dan cara tidak setuju dengan elegan.'},
-      {l:'A',t:'Attitude & Professional Mindset',d:'Unwritten rules kantor, navigasi politik, dan script konkret untuk 6 situasi sulit yang paling sering mematikan karier.'},
-      {l:'P',t:'Planning & Career Navigation',d:'CV yang memenangkan 7 detik pertama HRD, interview yang menghasilkan tawaran, personal brand hari pertama kerja.'}
-    ];
-    pillars.forEach(function(p){
-      fillRect(M,y,CW,22,'#F8FAFC',3);
-      strokeRect(M,y,CW,22,'#E2E8F0',0.3,3);
-      fillRect(M,y,10,22,'#F5A623',2);
-      sf(13,'bold','#0D1B2A'); tx(p.l,M+5,y+14.5,{align:'center'});
-      sf(9,'bold','#0F172A'); tx(p.t,M+14,y+8);
-      sf(7,'normal','#64748B');
-      var ls=doc.splitTextToSize(p.d,CW-16);
-      doc.text(ls,M+14,y+14);
-      y+=26;
-    });
-
-    pageFooter();
-
-    // ═══════════════════════════════════════════════════════════
-    // PAGE 3 — JADWAL + OUTPUT + INVESTASI
-    // ═══════════════════════════════════════════════════════════
-    doc.addPage();
-    pageHeader(3,d.school);
-    y=24;
-
-    // JADWAL
-    sf(6,'bold','#D97706'); tx('JADWAL PROGRAM 6 JAM',M,y); y+=7;
-    sf(13,'bold','#0F172A'); tx('Rundown 09.00 – 15.00 (1 Hari)',M,y); y+=9;
-
-    var sessions=[
-      {time:'09.00-10.30',sesi:'S1 · 90 mnt',topic:'Wake Up Call + Self-Awareness',desc:'Data provokasi · Iceberg model · Micro-reflection · Tool #1'},
-      {time:'10.30-12.00',sesi:'S2 · 90 mnt',topic:'Attitude & Unwritten Rules',desc:'Bedah 3 situasi sulit · Reactive vs Responsive · Tool #2'},
-      {time:'12.00-13.00',sesi:'ISHOMA',topic:'Istirahat + Sholat + Makan',desc:'Disediakan pihak sekolah/EO'},
-      {time:'13.00-14.00',sesi:'S3 · 60 mnt',topic:'Komunikasi PREP & Problem Solving',desc:'PREP framework · Latihan berpasangan · Tool #3'},
-      {time:'14.00-14.45',sesi:'S4 · 45 mnt',topic:'CV + Interview + Closing Komitmen',desc:'Anatomi CV · 3 pertanyaan interview · 30-Day Action Plan · Tool #4,5,6'},
-      {time:'14.45-15.00',sesi:'Closing',topic:'Surat untuk Diri Sendiri + Sertifikasi',desc:'Ritual akuntabilitas · Penyerahan sertifikat'}
-    ];
-    sessions.forEach(function(s,i){
-      var isBreak=(s.sesi==='ISHOMA');
-      var bg=isBreak?'#F1F5F9':'#FFFFFF';
-      fillRect(M,y,CW,16,bg,2);
-      strokeRect(M,y,CW,16,'#E2E8F0',0.3,2);
-      // time column
-      fillRect(M,y,26,16,isBreak?'#94A3B8':'#0D1B2A',2);
-      sf(6,'bold',isBreak?'#FFFFFF':'#F5A623'); tx(s.time,M+13,y+7,{align:'center'});
-      sf(5,'normal',isBreak?'#E2E8F0':'#94A3B8'); tx(s.sesi,M+13,y+12,{align:'center'});
-      sf(8,'bold',isBreak?'#64748B':'#0F172A'); tx(s.topic,M+30,y+7);
-      sf(6,'normal','#94A3B8'); tx(s.desc,M+30,y+12);
-      y+=19;
-    });
-    y+=4;
-
-    hline(M,y,W-M,'#E2E8F0',0.4); y+=8;
-
-    // OUTPUT
-    sf(6,'bold','#D97706'); tx('OUTPUT KONKRET',M,y); y+=7;
-    sf(13,'bold','#0F172A'); tx('6 Tools yang Peserta Bawa Pulang',M,y); y+=9;
-
-    var outputs=[
-      ['Tool #1','Personal SIAP Profile Worksheet','Self-assessment 16 pertanyaan + peta kekuatan & blind spot'],
-      ['Tool #2','Survival Script Collection','Script persis untuk 6 situasi sulit paling umum di kantor'],
-      ['Tool #3','PREP Practice Workbook','5 skenario komunikasi kantor + framework PREP'],
-      ['Tool #4','CV Template Standar HRD','Template CV siap isi dengan panduan per bagian'],
-      ['Tool #5','Interview Prep Card','10 pertanyaan interview + framework STAR per jawaban'],
-      ['Tool #6','30-Day Action Plan Card','3 komitmen trigger-based + tracker + akuntabilitas buddy']
-    ];
-    var oW=(CW-6)/2;
-    outputs.forEach(function(o,i){
-      var ox=i%2===0?M:M+oW+6;
-      var oy=y+Math.floor(i/2)*18;
-      fillRect(ox,oy,oW,15,'#F8FAFC',2);
-      strokeRect(ox,oy,oW,15,'#E2E8F0',0.3,2);
-      fillRect(ox,oy,18,15,'#0D1B2A',2);
-      sf(5,'bold','#F5A623'); tx(o[0],ox+9,oy+8.5,{align:'center'});
-      sf(8,'bold','#0F172A'); tx(o[1],ox+22,oy+7);
-      sf(6,'normal','#64748B'); tx(o[2],ox+22,oy+12);
-    });
-    y+=Math.ceil(outputs.length/2)*18+6;
-
-    pageFooter();
-
-    // ═══════════════════════════════════════════════════════════
-    // PAGE 4 — INVESTASI + LANGKAH
-    // ═══════════════════════════════════════════════════════════
-    doc.addPage();
-    pageHeader(4,d.school);
-    y=24;
-
-    // INVESTMENT
-    sf(6,'bold','#D97706'); tx('INVESTASI PROGRAM',M,y); y+=7;
-    sf(13,'bold','#0F172A'); tx('Transparan — Tidak Ada Biaya Tersembunyi',M,y); y+=9;
-
-    // Big price box
-    fillRect(M,y,CW,30,'#0D1B2A',4);
-    fillRect(M,y,4,30,'#F5A623');
-    sf(7,'bold','#94A3B8'); tx('INVESTASI PER PESERTA',M+10,y+9);
-    sf(20,'bold','#F5A623'); tx('Rp 200.000',M+10,y+22);
-    sf(8,'normal','#94A3B8'); tx('Estimasi '+pesertaNum+' peserta:',W-M-10,y+11,{align:'right'});
-    sf(13,'bold','#FCD34D'); tx('Rp '+totalInvestasi,W-M-10,y+22,{align:'right'});
-    y+=38;
-
-    // Includes/excludes cols
-    var cW2=(CW-6)/2;
-    // LEFT: includes
-    fillRect(M,y,cW2,7,'#ECFDF5',2);
-    sf(7,'bold','#059669'); tx('TERMASUK INVESTASI',M+5,y+5);
-    y+=9;
-    ['Honorarium fasilitator & co-fasilitator','Handbook peserta eksklusif (per orang)','Set worksheet & 30-Day Action Plan card','Sertifikat SIAP KERJA (cetak)','Kustomisasi materi pre-program brief','Laporan evaluasi pasca-program'].forEach(function(s){
-      fillRect(M,y-3,2,5,'#10B981');
-      sf(7,'normal','#334155'); tx(s,M+5,y); y+=5;
-    });
-    // RIGHT: excludes
-    var ey2=y-6*5-9;
-    fillRect(M+cW2+6,ey2,cW2,7,'#FEF2F2',2);
-    sf(7,'bold','#DC2626'); tx('DISEDIAKAN SEKOLAH/EO',M+cW2+11,ey2+5);
-    ey2+=9;
-    ['Venue / Ruangan','Konsumsi peserta & fasilitator','Peralatan Audio-Visual (proyektor, mic)','Transport fasilitator (jika luar kota)'].forEach(function(s){
-      fillRect(M+cW2+6,ey2-3,2,5,'#EF4444');
-      sf(7,'normal','#334155'); tx(s,M+cW2+11,ey2); ey2+=5;
-    });
-
-    y+=6;
-
-    // Payment
-    fillRect(M,y,CW,18,'#FFFBEB',3);
-    strokeRect(M,y,CW,18,'#F5A623',0.5,3);
-    sf(7,'bold','#D97706'); tx('SKEMA PEMBAYARAN',M+8,y+7);
-    sf(7,'normal','#334155');
-    tx('50% DP setelah MoU ditandatangani: Rp '+dp,M+8,y+13);
-    tx('50% Pelunasan min. H-7 sebelum pelaksanaan program',M+8,y+18);
-    y+=26;
-
-    if(d.waktu && d.waktu!=='belum ditentukan'){
-      sf(7,'normal','#64748B'); tx('Rencana pelaksanaan: '+d.waktu,M,y); y+=7;
-    }
-    if(d.note){
-      y=wrapTx('Catatan khusus: '+d.note,M,y,CW,4.5,7,'italic','#64748B');
-      y+=5;
-    }
-
-    hline(M,y,W-M,'#E2E8F0',0.4); y+=8;
-
-    // NEXT STEPS
-    sf(6,'bold','#D97706'); tx('LANGKAH SELANJUTNYA',M,y); y+=7;
-    sf(13,'bold','#0F172A'); tx('Proses Kerjasama yang Sederhana',M,y); y+=9;
-
-    [
-      ['1','Diskusi Awal','Konfirmasi kebutuhan spesifik sekolah via WA/email. Konsultasi gratis.'],
-      ['2','Proposal Teknis','Finalisasi tanggal, peserta, kebutuhan teknis. 3–5 hari kerja.'],
-      ['3','MoU & DP 50%','Penandatanganan MoU + DP. Pengamanan jadwal min. H-14.'],
-      ['4','Pelaksanaan','Program 09.00–15.00 sesuai jadwal yang disepakati.'],
-      ['5','Laporan','Debrief hasil + laporan evaluasi dalam 3 hari kerja pasca-program.']
-    ].forEach(function(s){
-      fillRect(M,y,9,10,'#F5A623',2);
-      sf(8,'bold','#0D1B2A'); tx(s[0],M+4.5,y+7.5,{align:'center'});
-      sf(9,'bold','#0F172A'); tx(s[1],M+13,y+5);
-      sf(7,'normal','#64748B'); tx(s[2],M+13,y+10);
-      y+=14;
-    });
-
-    y+=4;
-
-    // CONTACT BOX
-    fillRect(M,y,CW,36,'#0D1B2A',4);
-    fillRect(M,y,4,36,'#F5A623');
-    sf(11,'bold','#F5A623'); tx('Siap Memulai?',M+10,y+10);
-    sf(8,'normal','#94A3B8'); tx('Konsultasi gratis, tanpa komitmen. Hubungi kami sekarang.',M+10,y+17);
-    sf(8,'bold','#F5A623'); tx('WhatsApp:',M+10,y+25);
-    sf(8,'normal','#FFFFFF'); tx('+62 857-1414-2712',M+34,y+25);
-    sf(8,'bold','#F5A623'); tx('Website:',M+10,y+32);
-    sf(8,'normal','#FFFFFF'); tx('karyawansakti.com/siap-kerja',M+30,y+32);
-    y+=44;
-
-    // CLOSING QUOTE
-    fillRect(M,y,CW,20,'#F8FAFC',3);
-    fillRect(M,y,3,20,'#F5A623');
-    sf(8,'italic','#334155');
-    var qlines=doc.splitTextToSize('"Mereka tidak butuh lebih banyak ceramah tentang semangat kerja keras. Mereka butuh peta — dan program ini adalah peta itu."',CW-12);
-    doc.text(qlines,M+8,y+8);
-    sf(6,'bold','#94A3B8'); tx('— SIAP KERJA Work Readiness Program  |  KaryawanSakti',M+8,y+18);
-    y+=26;
-
-    // SIGN
-    sf(8,'normal','#334155'); tx('Hormat kami,',M,y); y+=5;
-    sf(9,'bold','#0D1B2A'); tx('Tim Program SIAP KERJA  |  KaryawanSakti',M,y); y+=5;
-    sf(7,'normal','#64748B'); tx('karyawansakti.com  |  Arief Permadi Kuntoaji  |  arief.kunto@gmail.com',M,y);
-
-    pageFooter();
-
-    // SAVE
-    var filename='Proposal-SIAPKERJA-'+d.school.replace(/[^a-zA-Z0-9]/g,'-')+'.pdf';
-    doc.save(filename);
-    showSuccess(d.school);
-
-  } catch(err) {
-    console.error('PDF Error:', err);
-    alert('Gagal generate PDF. Coba refresh halaman dan isi ulang form.');
-  }
-}
-
-function showSuccess(school) {
-  document.getElementById('formContent').style.display='none';
-  document.getElementById('formSuccess').style.display='block';
-  document.getElementById('sucSchool').textContent = school;
-}
-</script>
-
-<!-- FAQ -->
-<section class="faq-section">
-  <div class="container">
-    <div style="text-align:center">
-      <div class="sec-eye">❓ FAQ</div>
-      <h2 class="sec-h" style="text-align:center">Pertanyaan yang <span>Sering Ditanya Sekolah</span></h2>
-    </div>
-    <div class="faq-list">
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          Apakah program ini bisa dilaksanakan di luar Jabodetabek?
-          <div class="faq-arr"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></div>
-        </div>
-        <div class="faq-a">Ya. Program bisa dilaksanakan di seluruh Indonesia. Untuk lokasi di luar kota, biaya akomodasi dan transportasi fasilitator ditanggung oleh pihak sekolah sesuai aktual — dan akan dicantumkan transparan di proposal resmi.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          Berapa lama dari konfirmasi sampai program bisa dilaksanakan?
-          <div class="faq-arr"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></div>
-        </div>
-        <div class="faq-a">Setelah MoU/surat kerjasama ditandatangani, program membutuhkan minimal 14 hari untuk persiapan materi dan kustomisasi konten. Proses dari diskusi awal hingga konfirmasi biasanya 3–7 hari kerja tergantung kecepatan koordinasi.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          Apakah materi bisa dikustomisasi sesuai kebutuhan sekolah kami?
-          <div class="faq-arr"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></div>
-        </div>
-        <div class="faq-a">Ya, ini adalah keunggulan SIAP KERJA. Sebelum program, kami melakukan pre-program brief dengan koordinator sekolah untuk menyesuaikan kasus, contoh, dan fokus materi dengan karakter peserta didik dan kebutuhan spesifik sekolah Anda.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          Bagaimana sistem pembayarannya?
-          <div class="faq-arr"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></div>
-        </div>
-        <div class="faq-a">50% down payment setelah MoU/surat kerjasama ditandatangani, 50% pelunasan H-7 sebelum pelaksanaan. Transfer bank. Invoice dan kuitansi resmi tersedia untuk keperluan administrasi sekolah atau yayasan.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          Apa yang sekolah perlu siapkan?
-          <div class="faq-arr"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></div>
-        </div>
-        <div class="faq-a">Sekolah menyediakan: ruangan aula/kelas besar (kapasitas min. 40 orang dengan meja yang bisa diatur), 1 proyektor + screen, 1 wireless microphone + speaker, konsumsi peserta (snack + makan siang), dan ATK dasar (sticky notes, amplop, pulpen). Semua materi program disiapkan oleh fasilitator.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          Apakah ada laporan hasil program untuk sekolah?
-          <div class="faq-arr"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></div>
-        </div>
-        <div class="faq-a">Ya. Dalam 3–5 hari kerja setelah program selesai, kami memberikan laporan evaluasi pasca-program kepada penyelenggara — mencakup ringkasan pelaksanaan, highlight refleksi peserta, dan rekomendasi tindak lanjut.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA STRIP -->
-<section class="cta-strip">
-  <div class="container">
-    <h2>Siap Cetak Lulusan yang<br>Benar-Benar Siap Kerja?</h2>
-    <p>Konsultasi gratis untuk kepala sekolah dan waka kurikulum. Tidak ada obligasi.</p>
-    <div class="cta-btns">
-      <a href="#form-request" class="btn-navy">📋 Request Proposal Sekolah</a>
-      <a href="https://wa.me/6285714142712?text=Halo%2C%20saya%20dari%20pihak%20sekolah%20dan%20tertarik%20dengan%20program%20SIAP%20KERJA.%20Bisa%20konsultasi%20gratis%3F" target="_blank" class="btn-outline-navy">💬 Chat WhatsApp Sekarang</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    <div class="ft-in">
-      <a href="/" class="ft-logo">Karyawan<span>Sakti</span></a>
-      <div class="ft-links">
-        <a href="/" class="ft-link">← Kembali ke KaryawanSakti</a>
-        <a href="/tentang.html" class="ft-link">Tentang</a>
-        <a href="/training-pricing.html" class="ft-link">Training</a>
-      </div>
-      <p class="ft-copy">© 2026 KaryawanSakti. Program SIAP KERJA.</p>
-    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <img src="https://karyawansakti.com/logo-karyawansakti-putih.png" alt="KaryawanSakti" width="167" height="28">
+    <nav aria-label="Footer">
+      <a href="https://karyawansakti.com/">Beranda</a>
+      <a href="https://karyawansakti.com/tentang.html">Tentang</a>
+      <a href="https://karyawansakti.com/knowledge-center.html">Knowledge Center</a>
+      <a href="https://karyawansakti.com/privacy-policy.html">Privasi</a>
+    </nav>
+    <span>© 2026 KaryawanSakti · Program SIAP KERJA</span>
   </div>
 </footer>
 
-<!-- WA FLOAT -->
-<div class="wa-float">
-  <a href="https://wa.me/6285714142712?text=Halo%2C%20saya%20tertarik%20dengan%20program%20SIAP%20KERJA%20untuk%20sekolah%20kami" target="_blank" class="wa-btn" aria-label="Chat WhatsApp untuk info SIAP KERJA">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  </a>
+<div class="mbar">
+  <a class="btn btn-sec" data-wa="Halo, saya dari pihak sekolah dan tertarik program SIAP KERJA. Bisa konsultasi gratis?" href="https://wa.me/6285714142712" target="_blank" rel="noopener"><svg class="ic sm"><use href="#i-wa"/></svg> WhatsApp</a>
+  <a class="btn btn-pri" href="#proposal">Buat proposal</a>
 </div>
 
 <script>
-function toggleFaq(el){
-  el.parentElement.classList.toggle('open');
-}
+var LOGO='data:image/png;base64,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';
+(function(){
+  var WA='https://wa.me/6285714142712', PRICE=200000, BATCH=40, MIN=20;
+  function link(t){return WA+'?text='+encodeURIComponent(t)}
+  function rp(n){return 'Rp '+Math.round(n).toLocaleString('id-ID')}
+  function $(id){return document.getElementById(id)}
+  document.querySelectorAll('[data-wa]').forEach(function(a){a.href=link(a.getAttribute('data-wa'))});
+  document.querySelectorAll('a[href*="wa.me"]').forEach(function(a){
+    a.addEventListener('click',function(){if(window.gtag)gtag('event','contact_whatsapp',{page:'siap-kerja'})});
+  });
 
-function submitForm(){
-  const name = document.getElementById('fName').value.trim();
-  const role = document.getElementById('fRole').value;
-  const school = document.getElementById('fSchool').value.trim();
-  const city = document.getElementById('fCity').value.trim();
-  const wa = document.getElementById('fWA').value.trim();
-  const peserta = document.getElementById('fPeserta').value;
+  /* live calculator */
+  function nPeserta(){var n=parseInt($('fPeserta').value,10);return isNaN(n)?0:n}
+  function batches(n){return Math.max(1,Math.ceil(n/BATCH))}
+  function calc(){
+    var n=nPeserta(), ok=n>=MIN;
+    $('calcTxt').textContent=ok?(n+' peserta · '+batches(n)+' batch'):('Minimal '+MIN+' peserta');
+    $('calcTot').textContent=rp(Math.max(n,MIN)*PRICE);
+  }
+  $('fPeserta').addEventListener('input',calc);calc();
 
-  if(!name||!role||!school||!city||!wa||!peserta){
-    alert('Mohon lengkapi semua field yang wajib diisi (*)');
-    return;
+  /* validation */
+  var REQ=['fSchool','fCity','fKepsek','fName','fRole','fWA','fPeserta'];
+  function setErr(id,msg){
+    var f=$(id).closest('.field'),e=f.querySelector('.err');
+    if(msg){f.classList.add('bad');if(!e){e=document.createElement('span');e.className='err';f.appendChild(e)}e.textContent=msg}
+    else{f.classList.remove('bad');if(e)e.remove()}
+  }
+  function validate(){
+    var first=null;
+    REQ.forEach(function(id){
+      var v=$(id).value.trim(),m='';
+      if(!v)m='Wajib diisi';
+      else if(id==='fWA'&&v.replace(/\D/g,'').length<9)m='Nomor tidak valid';
+      else if(id==='fPeserta'&&(nPeserta()<MIN||nPeserta()>400))m='Antara '+MIN+'–400 peserta';
+      setErr(id,m); if(m&&!first)first=id;
+    });
+    if(first)$(first).focus();
+    return !first;
+  }
+  REQ.forEach(function(id){$(id).addEventListener('input',function(){if($(id).closest('.field').classList.contains('bad'))setErr(id,'')})});
+
+  var D=null;
+  function data(){
+    var n=nPeserta();
+    return {school:$('fSchool').value.trim(),city:$('fCity').value.trim(),address:$('fAddress').value.trim(),
+      kepsek:$('fKepsek').value.trim(),name:$('fName').value.trim(),role:$('fRole').value,wa:$('fWA').value.trim(),
+      waktu:$('fWaktu').value,note:$('fNote').value.trim(),n:n,b:batches(n),total:n*PRICE};
+  }
+  function waMsg(d){
+    return 'Halo, saya mengajukan proposal program SIAP KERJA:\n\n'+
+      'Sekolah: '+d.school+' ('+d.city+')\n'+
+      'Kepala sekolah: '+d.kepsek+'\n'+
+      'Kontak: '+d.name+' — '+d.role+'\n'+
+      'WhatsApp: '+d.wa+'\n'+
+      'Peserta: '+d.n+' ('+d.b+' batch) — '+rp(d.total)+'\n'+
+      'Rencana: '+d.waktu+(d.note?'\nCatatan: '+d.note:'')+
+      '\n\nMohon dijadwalkan konsultasinya. Terima kasih.';
   }
 
-  const email = document.getElementById('fEmail').value.trim();
-  const waktu = document.getElementById('fWaktu').value;
-  const note = document.getElementById('fNote').value.trim();
+  $('pf').addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!validate())return;
+    D=data();
+    var w=window.open(link(waMsg(D)),'_blank');try{if(w)w.opener=null}catch(_){}
+    var pdfOk=buildPDF(D);
+    $('dSchool').textContent=D.school;
+    $('dWA').href=link(waMsg(D));
+    $('dMsg').textContent=(pdfOk?'File PDF sudah terunduh. ':'PDF belum bisa dibuat (koneksi lambat) — tim kami akan mengirimkannya via WhatsApp. ')+
+      (w?'Pastikan pesan di WhatsApp sudah Anda kirim agar konsultasi bisa segera dijadwalkan.':'Tekan tombol di bawah untuk mengirim data ke tim kami via WhatsApp.');
+    $('dPdf').hidden=!pdfOk;
+    $('pf').hidden=true;$('done').hidden=false;
+    $('proposal').scrollIntoView({behavior:'smooth',block:'start'});
+    if(window.gtag)gtag('event','generate_lead',{form:'siap_kerja_proposal',value:D.total,currency:'IDR'});
+  });
+  $('dPdf').addEventListener('click',function(){if(D)buildPDF(D)});
+  $('dEdit').addEventListener('click',function(){$('done').hidden=true;$('pf').hidden=false});
 
-  // Send via WhatsApp with all data
-  const msg = encodeURIComponent(
-    'Halo, saya mengirim Request Proposal SIAP KERJA:\n\n' +
-    'Nama: ' + name + '\n' +
-    'Jabatan: ' + role + '\n' +
-    'Sekolah: ' + school + '\n' +
-    'Kota: ' + city + '\n' +
-    'WhatsApp: ' + wa + '\n' +
-    (email ? 'Email: ' + email + '\n' : '') +
-    'Estimasi Peserta: ' + peserta + '\n' +
-    (waktu ? 'Rencana Waktu: ' + waktu + '\n' : '') +
-    (note ? '\nCatatan: ' + note : '')
-  );
+  /* ===== PDF ===== */
+  function buildPDF(d){
+    if(!window.jspdf||!window.jspdf.jsPDF)return false;
+    try{
+      var doc=new window.jspdf.jsPDF({unit:'mm',format:'a4'});
+      var W=210,M=18,CW=W-2*M,NAVY=[6,44,106],BLUE=[1,103,252],INK2=[43,61,99],INK3=[90,101,128],LINE=[225,221,209],PAPER=[247,244,236],BLUEP=[232,240,255];
+      var tgl=new Date().toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'});
+      var TOTAL=3;
+      function col(c){doc.setTextColor(c[0],c[1],c[2])}
+      function fill(c){doc.setFillColor(c[0],c[1],c[2])}
+      function draw(c,w){doc.setDrawColor(c[0],c[1],c[2]);doc.setLineWidth(w||.3)}
+      function f(sz,st,c){doc.setFont('helvetica',st||'normal');doc.setFontSize(sz);col(c||INK2)}
+      function t(s,x,y,o){doc.text(String(s),x,y,o||{})}
+      function wrap(s,x,y,w,lh){var l=doc.splitTextToSize(String(s),w);doc.text(l,x,y);return y+l.length*lh}
+      function label(s,y){f(7.5,'bold',BLUE);doc.setCharSpace(.6);t(s.toUpperCase(),M,y);doc.setCharSpace(0)}
+      function h(s,y){f(15,'bold',NAVY);t(s,M,y)}
+      function head(p){
+        doc.addImage(LOGO,'PNG',M,12,36,6);
+        f(7.5,'normal',INK3);t('Proposal SIAP KERJA  ·  '+d.school,W-M,16.5,{align:'right'});
+        draw(LINE,.3);doc.line(M,23,W-M,23);
+      }
+      function foot(p){
+        draw(LINE,.3);doc.line(M,282,W-M,282);
+        f(7,'normal',INK3);
+        t('KaryawanSakti  ·  karyawansakti.com/siap-kerja.html  ·  WhatsApp +62 857-1414-2712',M,287);
+        t(p+' / '+TOTAL,W-M,287,{align:'right'});
+      }
+      function bullet(s,x,y,w){fill(BLUE);doc.circle(x+1,y-1.2,.8,'F');f(9,'normal',INK2);return wrap(s,x+5,y,w-5,4.6)}
 
-  // Show success
-  document.getElementById('formContent').style.display='none';
-  document.getElementById('formSuccess').style.display='block';
-  document.getElementById('sucName').textContent = name;
+      /* ---------- PAGE 1 ---------- */
+      doc.addImage(LOGO,'PNG',M,16,48,8);
+      f(8,'normal',INK3);t(tgl,W-M,21,{align:'right'});
+      fill(BLUE);doc.rect(M,32,14,1.2,'F');
+      label('Proposal Program',42);
+      f(30,'bold',NAVY);t('SIAP KERJA',M,56);
+      f(11.5,'normal',INK2);t('Program Kesiapan Kerja untuk Pelajar SMA / SMK / MA Kelas 11–12',M,65);
 
-  // Open WA after short delay
-  setTimeout(()=>{
-    window.open('https://wa.me/6285714142712?text='+msg, '_blank');
-  }, 800);
-}
+      var y=78;
+      fill(PAPER);doc.roundedRect(M,y,CW,46,3,3,'F');
+      f(7,'bold',INK3);doc.setCharSpace(.5);t('DIAJUKAN KEPADA',M+8,y+9);doc.setCharSpace(0);
+      f(14,'bold',NAVY);var yy=wrap(d.school,M+8,y+17,CW-16,6);
+      f(9,'normal',INK2);t((d.address?d.address+', ':'')+d.city,M+8,yy);
+      f(9,'normal',INK2);t('Yth. Bapak/Ibu '+d.kepsek+', Kepala Sekolah',M+8,yy+7);
+      f(8.5,'normal',INK3);t('Narahubung: '+d.name+' ('+d.role+')  ·  '+d.wa,M+8,yy+13);
+      y+=56;
+
+      var bw=(CW-9)/4,facts=[['6 jam','09.00–15.00'],['20–40','peserta / batch'],['6 output','per peserta'],['Sertifikat','SIAP KERJA']];
+      facts.forEach(function(k,i){var x=M+i*(bw+3);draw(LINE,.3);doc.roundedRect(x,y,bw,20,2,2,'S');f(13,'bold',NAVY);t(k[0],x+bw/2,y+9,{align:'center'});f(7.5,'normal',INK3);t(k[1],x+bw/2,y+15,{align:'center'})});
+      y+=32;
+
+      label('Latar belakang',y);y+=7;
+      f(9.5,'normal',INK2);
+      y=wrap('Lulusan baru lebih sering tersandung di tempat kerja karena sikap, komunikasi, dan cara menghadapi situasi sulit — bukan karena kemampuan teknis. Kompetensi ini jarang diajarkan secara terstruktur di kelas. SIAP KERJA membekali pelajar kelas 11–12 dengan kompetensi tersebut melalui storytelling, studi kasus dunia kerja, dan micro-reflection — bukan ceramah motivasi.',M,y,CW,5);
+      y+=8;
+      label('Framework S.I.A.P',y);y+=8;
+      [['S','Self-awareness','Mengenali kekuatan, nilai, dan cara kerja diri; fondasi growth mindset.'],
+       ['I','Interpersonal','Komunikasi efektif di rapat, pesan tertulis, dan saat harus tidak setuju.'],
+       ['A','Attitude','Aturan tak tertulis di kantor dan script konkret untuk situasi sulit.'],
+       ['P','Planning','CV yang lolos 7 detik pertama, menjawab interview, dan rencana karier.']].forEach(function(r){
+        fill(NAVY);doc.roundedRect(M,y-5,9,9,1.5,1.5,'F');f(11,'bold',[255,255,255]);t(r[0],M+4.5,y+1.3,{align:'center'});
+        f(10,'bold',NAVY);t(r[1],M+14,y-.6);f(8.5,'normal',INK3);t(r[2],M+14,y+3.8);
+        y+=13;
+      });
+      foot(1);
+
+      /* ---------- PAGE 2 ---------- */
+      doc.addPage();head(2);y=36;
+      label('Jadwal pelaksanaan',y);y+=7;h('Satu hari, 09.00–15.00',y);y+=10;
+      [['09.00','Sesi 1 · 90 mnt','Wake-up call & self-awareness','Iceberg model, micro-reflection, tool #1'],
+       ['10.30','Sesi 2 · 90 mnt','Attitude & aturan tak tertulis','Bedah situasi sulit, reaktif vs responsif, tool #2'],
+       ['12.00','60 mnt','Ishoma','Disediakan pihak sekolah'],
+       ['13.00','Sesi 3 · 60 mnt','Komunikasi PREP & problem solving','Demo langsung, latihan berpasangan, tool #3'],
+       ['14.00','Sesi 4 · 45 mnt','CV, interview & komitmen','Anatomi CV, interview, rencana 30 hari, tool #4–6'],
+       ['14.45','15 mnt','Surat untuk diri sendiri & sertifikat','Ritual komitmen dan penyerahan sertifikat']].forEach(function(r,i){
+        if(i%2===0){fill(PAPER);doc.rect(M,y-5,CW,13,'F')}
+        f(10,'bold',NAVY);t(r[0],M+3,y+1);
+        f(7,'bold',BLUE);t(r[1].toUpperCase(),M+22,y-1);
+        f(9.5,'bold',NAVY);t(r[2],M+22,y+3.5);
+        f(8,'normal',INK3);t(r[3],W-M-3,y+3.5,{align:'right',maxWidth:70});
+        y+=13;
+      });
+      y+=10;
+      label('Output setiap peserta',y);y+=7;h('Enam hasil yang dibawa pulang',y);y+=10;
+      var outs=[['Draft CV','Disusun dengan standar yang dilihat HRD di 7 detik pertama.'],['Personal SIAP Profile','Peta kekuatan, gaya kerja, dan area pengembangan.'],['Survival Script','Kalimat siap pakai untuk 6 situasi sulit di tempat kerja.'],['Rencana Aksi 30 Hari','Tiga komitmen terukur dengan pemicu yang jelas.'],['Surat untuk Diri Sendiri','Dikirim kembali oleh sekolah 6 bulan kemudian.'],['Sertifikat SIAP KERJA','Bisa dilampirkan di CV dan portofolio.']];
+      var cw2=(CW-8)/2;
+      outs.forEach(function(o,i){var x=M+(i%2)*(cw2+8),yy=y+Math.floor(i/2)*17;
+        fill(BLUEP);doc.roundedRect(x,yy-4.5,6,6,1,1,'F');f(8,'bold',BLUE);t(String(i+1),x+3,yy-.2,{align:'center'});
+        f(9.5,'bold',NAVY);t(o[0],x+9,yy);f(8,'normal',INK3);wrap(o[1],x+9,yy+4.5,cw2-9,4);
+      });
+      y+=3*17+8;
+      label('Pembeda dari seminar biasa',y);y+=8;
+      ['Storytelling + studi kasus dunia kerja, bukan ceramah motivasi atau yel-yel.','Micro-reflection (Think & Jot, Shock Question) — peserta aktif tanpa dipermalukan.','Script konkret yang langsung bisa dipakai, bukan teori umum.','Retensi: rencana aksi 30 hari + surat 6 bulan, bukan semangat yang hilang dalam 2 hari.'].forEach(function(s){y=bullet(s,M,y,CW)+2.5});
+      foot(2);
+
+      /* ---------- PAGE 3 ---------- */
+      doc.addPage();head(3);y=36;
+      label('Investasi',y);y+=7;h('Rincian biaya untuk '+d.school,y);y+=8;
+      fill(NAVY);doc.roundedRect(M,y,CW,40,3,3,'F');
+      f(8,'normal',[191,208,238]);t('Jumlah peserta',M+8,y+10);t('Biaya per peserta',M+62,y+10);t('Total investasi',W-M-8,y+10,{align:'right'});
+      f(13,'bold',[255,255,255]);t(d.n+' peserta ('+d.b+' batch)',M+8,y+18);t(rp(PRICE),M+62,y+18);
+      f(20,'bold',[255,255,255]);t(rp(d.total),W-M-8,y+19,{align:'right'});
+      draw([60,90,140],.3);doc.line(M+8,y+25,W-M-8,y+25);
+      f(8.5,'normal',[191,208,238]);t('Uang muka 50%: '+rp(d.total/2)+' setelah MoU   ·   Pelunasan 50%: '+rp(d.total/2)+' paling lambat H-7',M+8,y+33);
+      y+=52;
+      var c2=M+CW/2+4;
+      f(10,'bold',NAVY);t('Sudah termasuk',M,y);t('Disediakan sekolah',c2,y);y+=7;
+      var inc=['Fasilitator & co-fasilitator','Handbook peserta','Worksheet & kartu rencana 30 hari','Sertifikat cetak','Kustomisasi materi','Briefing & laporan pasca-program'];
+      var sch=['Ruangan (kapasitas min. 40 orang)','Konsumsi peserta','Proyektor, layar & sound','Dokumentasi foto/video','Transport & akomodasi fasilitator (luar kota)'];
+      var y1=y,y2=y;inc.forEach(function(s){y1=bullet(s,M,y1,CW/2-6)+1.5});sch.forEach(function(s){y2=bullet(s,c2,y2,CW/2-6)+1.5});
+      y=Math.max(y1,y2)+6;
+      if(d.waktu||d.note){f(8.5,'normal',INK3);y=wrap('Rencana pelaksanaan: '+d.waktu+(d.note?'   ·   Catatan: '+d.note:''),M,y,CW,4.4)+6}
+      draw(LINE,.3);doc.line(M,y,W-M,y);y+=9;
+      label('Langkah selanjutnya',y);y+=8;
+      [['Konsultasi','Diskusi kebutuhan sekolah via WhatsApp — gratis.'],['Finalisasi','Tanggal, jumlah peserta, dan kebutuhan teknis (3–7 hari kerja).'],['MoU & DP 50%','Jadwal dikunci; persiapan materi minimal 14 hari.'],['Pelaksanaan','Program 09.00–15.00 sesuai jadwal.'],['Laporan','Laporan evaluasi 3–5 hari kerja setelah program.']].forEach(function(s,i){
+        fill(BLUE);doc.circle(M+3.5,y-1.3,3.5,'F');f(8.5,'bold',[255,255,255]);t(String(i+1),M+3.5,y+.2,{align:'center'});
+        f(9.5,'bold',NAVY);t(s[0],M+11,y);f(8.5,'normal',INK3);t(s[1],M+45,y);y+=9;
+      });
+      y+=2;
+      fill(PAPER);doc.roundedRect(M,y,CW,30,3,3,'F');fill(BLUE);doc.rect(M,y,1.4,30,'F');
+      f(12,'bold',NAVY);t('Hubungi kami',M+8,y+10);
+      f(9,'normal',INK2);t('WhatsApp  +62 857-1414-2712',M+8,y+18);t('Email  arief.kunto@gmail.com',M+8,y+24);
+      var sx=M+CW*0.58;
+      f(9,'normal',INK2);t('Hormat kami,',sx,y+10);
+      f(10,'bold',NAVY);t('Arief Permadi Kuntoaji',sx,y+20);
+      f(8,'normal',INK3);t('Tim Program SIAP KERJA · KaryawanSakti',sx,y+25);
+      foot(3);
+
+      doc.save('Proposal-SIAP-KERJA-'+d.school.replace(/[^A-Za-z0-9]+/g,'-').replace(/^-|-$/g,'')+'.pdf');
+      return true;
+    }catch(err){console.error(err);return false}
+  }
+  window.__buildPDF=buildPDF;
+})();
+
 </script>
 </body>
 </html>
